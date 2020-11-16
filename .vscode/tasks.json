@@ -13,23 +13,105 @@
             ]
         },
         {
+            "label": "Build gateway",
+            "type": "shell",
+            "command": ["${workspaceFolder}/scripts/build.sh gateway"]
+        },
+        {
             "label": "Start gateway debug",
             "dependsOn": [
                 "Destroy redirects"
             ],
             "type": "shell",
             "command": [
-                "${workspaceFolder}/scripts/debug.sh gateway ${config:kubernetesNamespace}"
+                "${workspaceFolder}/scripts/debug.sh gateway ${config:kubernetesNamespace} ${config:redeployWait}"
             ]
         },
         {
-            "label": "Reinstall simple",
+            "label": "Stop gateway debug",
+            "dependsOn": [
+                "Destroy redirects",
+                "Build gateway"
+            ],
+            "type": "shell",
+            "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/gateway"]
+        },
+        {
+            "label": "Build mainbackend",
+            "type": "shell",
+            "command": ["${workspaceFolder}/scripts/build.sh mainbackend"]
+        },
+        {
+            "label": "Start mainbackend debug",
+            "dependsOn": [
+                "Destroy redirects"
+            ],
             "type": "shell",
             "command": [
-                "helm uninstall optox",
-                "&& sleep 5",
-                "&& helm install optox ./"
+                "${workspaceFolder}/scripts/debug.sh mainbackend ${config:kubernetesNamespace} ${config:redeployWait}"
+            ]
+        },
+        {
+            "label": "Stop mainbackend debug",
+            "dependsOn": [
+                "Destroy redirects",
+                "Build mainbackend"
             ],
+            "type": "shell",
+            "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/mainbackend"]
+        },
+        {
+            "label": "Build mediator",
+            "type": "shell",
+            "command": ["${workspaceFolder}/scripts/build.sh mediator"]
+        },
+        {
+            "label": "Start mediator debug",
+            "dependsOn": [
+                "Destroy redirects"
+            ],
+            "type": "shell",
+            "command": [
+                "${workspaceFolder}/scripts/debug.sh mediator ${config:kubernetesNamespace} ${config:redeployWait}"
+            ]
+        },
+        {
+            "label": "Stop mediator debug",
+            "dependsOn": [
+                "Destroy redirects",
+                "Build mediator"
+            ],
+            "type": "shell",
+            "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/mediator"]
+        },
+        {
+            "label": "Build syncbackend",
+            "type": "shell",
+            "command": ["${workspaceFolder}/scripts/build.sh syncbackend"]
+        },
+        {
+            "label": "Start syncbackend debug",
+            "dependsOn": [
+                "Destroy redirects"
+            ],
+            "type": "shell",
+            "command": [
+                "${workspaceFolder}/scripts/debug.sh syncbackend ${config:kubernetesNamespace} ${config:redeployWait}"
+            ]
+        },
+        {
+            "label": "Stop syncbackend debug",
+            "dependsOn": [
+                "Destroy redirects",
+                "Build syncbackend"
+            ],
+            "type": "shell",
+            "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/syncbackend"]
+        },
+        {
+            "label": "Build and reinstall",
+            "type": "shell",
+            "command": ["${workspaceFolder}/scripts/install.sh reinstall"],
             "problemMatcher": []
         }
     ]

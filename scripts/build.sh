@@ -1,7 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 BASE_DIR=$(pwd)
-echo $BASE_DIR
 
 # Change to Minikube's docker environment
 eval $(minikube docker-env)

@@ -16,12 +16,12 @@ func main() {
 
 func getServiceAddresses() map[string]*url.URL {
 	services := make(map[string]*url.URL)
-	frontendHost := os.Getenv("OPTOX_FRONTEND_SERVICE_HOST")
-	frontendPort := os.Getenv("OPTOX_FRONTEND_SERVICE_PORT")
-	mainbackendHost := os.Getenv("OPTOX_MAINBACKEND_SERVICE_HOST")
-	mainbackendPort := os.Getenv("OPTOX_MAINBACKEND_SERVICE_PORT")
-	syncbackendHost := os.Getenv("OPTOX_SYNCBACKEND_SERVICE_HOST")
-	syncbackendPort := os.Getenv("OPTOX_SYNCBACKEND_SERVICE_PORT")
+	frontendHost := os.Getenv("FRONTEND_SERVICE_HOST")
+	frontendPort := os.Getenv("FRONTEND_SERVICE_PORT")
+	mainbackendHost := os.Getenv("MAINBACKEND_SERVICE_HOST")
+	mainbackendPort := os.Getenv("MAINBACKEND_SERVICE_PORT")
+	syncbackendHost := os.Getenv("SYNCBACKEND_SERVICE_HOST")
+	syncbackendPort := os.Getenv("SYNCBACKEND_SERVICE_PORT")
 	services["frontend"], _ = url.Parse("http://" + frontendHost + ":" + frontendPort)
 	services["mainbackend"], _ = url.Parse("http://" + mainbackendHost + ":" + mainbackendPort)
 	services["syncbackend"], _ = url.Parse("http://" + syncbackendHost + ":" + syncbackendPort)

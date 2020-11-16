@@ -1,8 +1,11 @@
 {
     // Debug namespace (site) can be changed by editing this variable
     "kubernetesNamespace": "central",
+    // NOTE, this value depends on the development computer speed
+    // Increase the value, if the debug is not working as intended
+    "redeployWait": 15,
     "editor.formatOnSave": true,
     "[yaml]": {
-    "editor.formatOnSave": false
-}
+        "editor.formatOnSave": false
+    }
 }

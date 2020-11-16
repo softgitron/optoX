@@ -16,6 +16,10 @@
 
 ## Kubectl cheats
 
+#### Set default namespace for subsequent commands
+
+`kubectl config set-context --current --namespace=<insert-namespace-name-here>`
+
 #### Get default namespace pods (container)
 
 `kubectl get pods`

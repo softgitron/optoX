@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "optox.fullname" . }}-postgres
+  name: {{ .Values.database.name }}
   labels:
     {{- include "optox.labels" . | nindent 4 }}
 spec:
@@ -16,6 +16,7 @@ spec:
       {{- end }}
       labels:
         {{- include "optox.selectorLabels" . | nindent 8 }}
+        deployment: {{ .Values.database.name }}
     spec:
       volumes:
         - name: pv-storage
@@ -40,6 +41,10 @@ spec:
           imagePullPolicy: {{ .Values.database.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          ports:
+            - name: database
+              containerPort: 5432
+              protocol: TCP
           env:
             - name: "POSTGRES_USERNAME"
               valueFrom:

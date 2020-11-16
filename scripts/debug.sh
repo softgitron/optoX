@@ -1,20 +1,16 @@
 #!/bin/bash
 
-# NOTE, this value depends on the development computer speed
-# Increase the value, if the debug is not working as intended
-export ROLLOUT_LAG=15
-
 cd "$(dirname "$0")"
 BASE_DIR=$(pwd)
 echo $BASE_DIR
 
 function pods() {
-    kubectl -n $NAMESPACE get pods --no-headers --field-selector=status.phase==Running -o custom-columns=":metadata.name" | grep -o "optox-$1[^[:space:]]*"
+    kubectl -n $NAMESPACE get pods --no-headers --field-selector=status.phase==Running -o custom-columns=":metadata.name" | grep -o "$1[^[:space:]]*"
 }
 
 function debug_go() {
     ./build.sh $1 .debug
-    kubectl -n $NAMESPACE rollout restart deployment/optox-$1
+    kubectl -n $NAMESPACE rollout restart deployment/$1
     sleep $ROLLOUT_LAG
     nohup kubectl -n $NAMESPACE port-forward $(pods "$1") $2:$2 >/dev/null 2>&1 &
     sleep 1
@@ -22,6 +18,7 @@ function debug_go() {
 }
 
 export NAMESPACE=$2
+export ROLLOUT_LAG=$3
 
 if [ "$1" = 'frontend' ]
 then

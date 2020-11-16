@@ -17,11 +17,16 @@ Necessary steps for setting up development environment
 - Go
 - Kubernetes
 
-## Startting and accessing application
+## Startting and accessing application for the first time
 
 1. Run `./scripts/intall.sh`
 2. Note cluster ip using `kubectl get ingress -n central`
-3. Add cluster ip to hosts using `/etc/hosts << echo '<CLUSTER IP HERE> optox.net'`
+3. Add cluster ip to hosts using `/etc/hosts << echo '<CLUSTER IP HERE> optox.net optox.fi optox.se optox.no'`
+4. Test that application has started successfully by going to _optox.net_ using web browser
+
+## Reinstalling application
+
+Run `./scripts/intall.sh reinstall` command to build and reinstall the application. Alternatively run Visual Studio code task using `Ctrl P` and write `task` with the space at the end and select _Build and reinstall_
 
 ## Steps that must be repeated after computer restart
 

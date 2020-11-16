@@ -1,0 +1,16 @@
+{{- range .Values.externalservices }}
+apiVersion: v1
+kind: Service
+metadata:
+  {{ $name := printf "%s-%s" .name .namespace }}
+  name: {{ $name }}
+  labels:
+    {{- include "optox.labels" $ | nindent 4 }}
+spec:
+  type: ExternalName
+  {{ $externalName := printf "%s.%s.svc.cluster.local" .name .namespace }}
+  externalName: {{ $externalName }}
+  ports:
+    - port: {{ .port }}
+---
+{{- end }}

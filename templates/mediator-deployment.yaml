@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "optox.fullname" . }}-mediator
+  name: {{ .Values.mediator.name }}
   labels:
     {{- include "optox.labels" . | nindent 4 }}
 spec:
@@ -16,6 +16,7 @@ spec:
       {{- end }}
       labels:
         {{- include "optox.selectorLabels" . | nindent 8 }}
+        deployment: {{ .Values.mediator.name }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

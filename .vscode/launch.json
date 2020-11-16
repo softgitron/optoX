@@ -7,6 +7,7 @@
         
         {
             "preLaunchTask": "Start gateway debug",
+            "postDebugTask": "Stop gateway debug",
             "name": "Debug gateway",
             "type": "go",
             "request": "attach",
@@ -16,6 +17,48 @@
             "cwd": "${workspaceFolder}/src/gateway",
             "remotePath": "/app",
             "port": 40000,
+            "host": "localhost"
+        },
+        {
+            "preLaunchTask": "Start mainbackend debug",
+            "postDebugTask": "Stop mainbackend debug",
+            "name": "Debug mainbackend",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "showLog": true,
+            "trace": "verbose",
+            "cwd": "${workspaceFolder}/src/mainbackend",
+            "remotePath": "/app",
+            "port": 40001,
+            "host": "localhost"
+        },
+        {
+            "preLaunchTask": "Start mediator debug",
+            "postDebugTask": "Stop mediator debug",
+            "name": "Debug mediator",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "showLog": true,
+            "trace": "verbose",
+            "cwd": "${workspaceFolder}/src/mediator",
+            "remotePath": "/app",
+            "port": 40002,
+            "host": "localhost"
+        },
+        {
+            "preLaunchTask": "Start syncbackend debug",
+            "postDebugTask": "Stop syncbackend debug",
+            "name": "Debug syncbackend",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "showLog": true,
+            "trace": "verbose",
+            "cwd": "${workspaceFolder}/src/syncbackend",
+            "remotePath": "/app",
+            "port": 40003,
             "host": "localhost"
         },
         {

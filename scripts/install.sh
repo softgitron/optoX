@@ -1,11 +1,21 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 BASE_DIR=$(pwd)
-echo $BASE_DIR
+
+if [ "$1" = 'reinstall' ]
+then
+  ./uninstall.sh
+  # Small sleep to make sure that
+  # persistent volumes are destroyed in time
+  sleep 10
+fi
+
+# Build application
+./build.sh
 
 cd ../
 # Start all sites
-helm install optox ./ --create-namespace --namespace=central
-helm install optox ./ --create-namespace --namespace=finland
-helm install optox ./ --create-namespace --namespace=sweden
-helm install optox ./ --create-namespace --namespace=norway
+helm install optox ./ --create-namespace --namespace=central -f central-values.yaml
+helm install optox ./ --create-namespace --namespace=finland -f finland-values.yaml
+helm install optox ./ --create-namespace --namespace=sweden -f sweden-values.yaml
+helm install optox ./ --create-namespace --namespace=norway -f norway-values.yaml

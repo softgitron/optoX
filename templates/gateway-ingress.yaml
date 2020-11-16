@@ -1,5 +1,5 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "optox.fullname" . -}}
+{{- $fullName := .Values.gateway.name -}}
 {{- $svcPort := .Values.gateway.service.port -}}
 {{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1
@@ -39,7 +39,7 @@ spec:
             pathType: "Prefix"
             backend:
               service:
-                name: {{ $fullName }}-gateway
+                name: {{ $fullName }}
                 port:
                   number: {{ $svcPort }}
           {{- end }}
@@ -54,7 +54,7 @@ spec:
           - path: "{{ . }}"
             pathType: "Prefix"
             backend:
-              serviceName: {{ $fullName }}-gateway
+              serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
           {{- end }}
     {{- end }}
