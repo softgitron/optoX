@@ -1,0 +1,36 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Destroy redirects",
+            "type": "shell",
+            "command": [
+                "kill -9 $(pidof kubectl)",
+                "; kill -9 $(pidof build.sh)",
+                "; exit 0"
+            ]
+        },
+        {
+            "label": "Start gateway debug",
+            "dependsOn": [
+                "Destroy redirects"
+            ],
+            "type": "shell",
+            "command": [
+                "${workspaceFolder}/scripts/debug.sh gateway ${config:kubernetesNamespace}"
+            ]
+        },
+        {
+            "label": "Reinstall simple",
+            "type": "shell",
+            "command": [
+                "helm uninstall optox",
+                "&& sleep 5",
+                "&& helm install optox ./"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "optox.fullname" . }}-postgres
+  labels:
+    {{- include "optox.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "optox.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "optox.selectorLabels" . | nindent 8 }}
+    spec:
+      volumes:
+        - name: pv-storage
+          persistentVolumeClaim:
+            claimName: "{{ include "optox.fullname" . }}-pvc"
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "optox.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}-postgres
+          volumeMounts:
+            - mountPath: "/var/lib/postgresql/data"
+              name: pv-storage
+              subPath: "fi"
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.database.image.repository }}:{{ .Values.database.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.database.image.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: "POSTGRES_USERNAME"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresUsername
+                  name: {{ .Release.Name }}-auth
+            - name: "POSTGRES_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresPassword
+                  name: {{ .Release.Name }}-auth

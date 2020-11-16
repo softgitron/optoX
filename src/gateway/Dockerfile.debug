@@ -1,0 +1,9 @@
+FROM golang:latest
+RUN go get -u github.com/go-delve/delve/cmd/dlv
+WORKDIR /app
+#VOLUME "/root/.cache/go-build"
+
+COPY . .
+RUN go build -gcflags "all=-N -l"
+
+CMD ["/go/bin/dlv", "--listen=:40000", "--headless=true", "--api-version=2", "exec", "./gateway"]

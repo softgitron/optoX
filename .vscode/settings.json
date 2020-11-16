@@ -1,0 +1,8 @@
+{
+    // Debug namespace (site) can be changed by editing this variable
+    "kubernetesNamespace": "central",
+    "editor.formatOnSave": true,
+    "[yaml]": {
+    "editor.formatOnSave": false
+}
+}

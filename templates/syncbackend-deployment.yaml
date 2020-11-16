@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "optox.fullname" . }}-syncbackend
+  labels:
+    {{- include "optox.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "optox.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "optox.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "optox.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}-syncbackend
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.syncbackend.image.repository }}:{{ .Values.syncbackend.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.syncbackend.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.syncbackend.service.port }}
+              protocol: TCP
+            {{ if .Values.debug -}}
+            - name: debug
+              containerPort: {{ .Values.syncbackend.debugPort }}
+              protocol: TCP
+            {{- end }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
