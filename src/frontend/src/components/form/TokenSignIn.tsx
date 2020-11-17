@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   formtext2: {
     fontSize: "1.20rem",
+    marginBottom: theme.spacing(2),
   },
   margin: {
     marginBottom: theme.spacing(2),
@@ -39,19 +40,22 @@ const useStyles = makeStyles((theme) => ({
     width: "38ch",
   },
   formControl: {
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(3),
     width: "38ch",
   },
   wrapper: {
-    margin: theme.spacing(1),
     position: "relative",
   },
-  buttonProgress: {
+  spinner: {
     position: "absolute",
     top: "42%",
-    left: "75%",
+    left: "80%",
     marginTop: -12,
     marginLeft: -12,
+  },
+  bottomcontent: {
+    position: "relative",
+    bottom: "-252px",
   },
 }));
 
@@ -92,7 +96,6 @@ export default function InputAdornments(props: any) {
           labelWidth={70}
         />
       </FormControl>
-      <br />
       <div className={classes.wrapper}>
         <Button
           variant="contained"
@@ -100,34 +103,24 @@ export default function InputAdornments(props: any) {
           disabled={values.loading || !values.token}
           onClick={signUp}
         >
-          {values.loading ? "Loading..." : "Sign in"}
+          Sign in
         </Button>
         {values.loading && (
-          <CircularProgress size={30} className={classes.buttonProgress} />
+          <CircularProgress size={30} className={classes.spinner} />
         )}
       </div>
-      <br /> {/*Haha HTML go brr */}
-      <br /> {/*TODO: fix if time, add appropriate margins & positionings */}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Typography className={classes.formtext2}>
-        Got token from optician?
-      </Typography>
-      <br />
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={() => props.setNormalSignUp(true)}
-      >
-        Back to employee login
-      </Button>
+      <div className={classes.bottomcontent}>
+        <Typography className={classes.formtext2}>
+          Got username and password?
+        </Typography>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => props.setNormalSignUp(true)}
+        >
+          Back to employee login
+        </Button>
+      </div>
     </div>
   );
 }

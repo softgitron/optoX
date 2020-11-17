@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   formtext2: {
     fontSize: "1.20rem",
+    marginBottom: theme.spacing(2),
   },
   margin: {
     marginBottom: theme.spacing(2),
@@ -49,19 +50,22 @@ const useStyles = makeStyles((theme) => ({
     width: "38ch",
   },
   formControl: {
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(3),
     width: "38ch",
   },
   wrapper: {
-    margin: theme.spacing(1),
     position: "relative",
   },
-  buttonProgress: {
+  spinner: {
     position: "absolute",
     top: "42%",
-    left: "75%",
+    left: "80%",
     marginTop: -12,
     marginLeft: -12,
+  },
+  bottomcontent: {
+    position: "relative",
+    bottom: "-100px",
   },
 }));
 
@@ -138,7 +142,7 @@ export default function InputAdornments(props: any) {
           labelWidth={70}
         />
       </FormControl>
-      <br />
+
       <FormControl
         variant="outlined"
         className={classes.formControl}
@@ -168,27 +172,25 @@ export default function InputAdornments(props: any) {
           }
           onClick={signUp}
         >
-          {values.loading ? "Loading..." : "Sign in"}
+          Sign in
         </Button>
         {values.loading && (
-          <CircularProgress size={30} className={classes.buttonProgress} />
+          <CircularProgress size={30} className={classes.spinner} />
         )}
       </div>
-      <br />
-      <br />
-      <br />
-      <Typography className={classes.formtext2}>
-        Got token from optician?
-      </Typography>
-      <br />
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => props.setNormalSignUp(false)}
-        disabled={values.loading}
-      >
-        Proceed to token input
-      </Button>
+      <div className={classes.bottomcontent}>
+        <Typography className={classes.formtext2}>
+          Got token from optician?
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => props.setNormalSignUp(false)}
+          disabled={values.loading}
+        >
+          Proceed to token input
+        </Button>
+      </div>
     </div>
   );
 }
