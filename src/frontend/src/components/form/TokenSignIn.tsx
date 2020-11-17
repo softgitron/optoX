@@ -113,6 +113,7 @@ export default function InputAdornments(props: any) {
         variant="outlined"
         required={true}
         error={values.error ? true : false}
+        disabled={values.loading}
       >
         <InputLabel htmlFor="outlined-adornment-email">Token</InputLabel>
         <OutlinedInput

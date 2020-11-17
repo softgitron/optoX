@@ -133,6 +133,7 @@ export default function InputAdornments(props: any) {
         variant="outlined"
         required={true}
         error={values.error ? true : false}
+        disabled={values.loading}
       >
         <InputLabel htmlFor="outlined-adornment-email">Email</InputLabel>
         <OutlinedInput
@@ -148,6 +149,7 @@ export default function InputAdornments(props: any) {
         variant="outlined"
         required={true}
         error={values.error ? true : false}
+        disabled={values.loading}
       >
         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
         <OutlinedInput
@@ -175,7 +177,7 @@ export default function InputAdornments(props: any) {
       <FormControl
         variant="outlined"
         className={classes.formControl}
-        disabled={!values.email || !values.password}
+        disabled={!values.email || !values.password || values.loading}
       >
         <InputLabel id="select-label">Select verification method</InputLabel>
         <Select
