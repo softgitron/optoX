@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   selectaction: {
     marginTop: "1.25em",
+    marginBottom: "1.5em",
     color: "white",
     fontWeight: "normal",
   },
@@ -65,10 +66,6 @@ export default function Optician() {
               <Typography className={classes.selectaction} variant="h3">
                 Please select the action:
               </Typography>
-              <br />
-              <br />
-              <br />
-              <br />
               <div>
                 <Button
                   variant="contained"
@@ -76,8 +73,7 @@ export default function Optician() {
                   className={classes.button}
                   endIcon={<ArrowRightIcon />}
                 >
-                  Upload new images &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  Upload new images
                 </Button>
               </div>
               <div>
@@ -87,8 +83,7 @@ export default function Optician() {
                   className={classes.button}
                   endIcon={<ArrowRightIcon />}
                 >
-                  View prior images &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  View prior images+
                 </Button>
               </div>
               <Typography className={classes.earnedtext}>

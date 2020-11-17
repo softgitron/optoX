@@ -55,8 +55,16 @@ const useStyles = makeStyles((theme) => ({
   },
   bottomcontent: {
     position: "relative",
-    bottom: "-252px",
+    bottom: "-202px",
   },
+  errorwrapper: {
+    fontSize: "1em",
+    height: "3em",
+    color: "red",
+    textAlign: "center",
+    marginRight: "12%",
+  },
+  errortext: {},
 }));
 
 export default function InputAdornments(props: any) {
@@ -65,28 +73,41 @@ export default function InputAdornments(props: any) {
   const [values, setValues] = React.useState({
     token: "",
     loading: false,
+    error: "",
   });
 
   const handleChange = (prop: any) => (event: any) => {
-    setValues({ ...values, [prop]: event.target.value });
+    setValues({ ...values, [prop]: event.target.value, error: "" });
   };
 
   const signUp = async () => {
     setValues({ ...values, loading: true });
     setTimeout(() => {
       //mock loading
-      setValues({ ...values, loading: false });
-      history.push("/customer");
+      if (values.token === "error") {
+        setValues({
+          ...values,
+          error: "Invalid token. Please try again.",
+          loading: false,
+        });
+      } else {
+        setValues({ ...values, error: "", loading: false });
+        history.push("/customer");
+      }
     }, 2500);
   };
   return (
     <div className={classes.root}>
       <Typography className={classes.formtext}>Please enter token:</Typography>
       <br />
+      <div className={classes.errorwrapper}>
+        <Typography className={classes.errortext}>{values.error}</Typography>
+      </div>
       <FormControl
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
         required={true}
+        error={values.error ? true : false}
       >
         <InputLabel htmlFor="outlined-adornment-email">Token</InputLabel>
         <OutlinedInput
@@ -117,6 +138,7 @@ export default function InputAdornments(props: any) {
           variant="contained"
           color="secondary"
           onClick={() => props.setNormalSignUp(true)}
+          disabled={values.loading}
         >
           Back to employee login
         </Button>

@@ -40,6 +40,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.20rem",
     marginBottom: theme.spacing(2),
   },
+  errorwrapper: {
+    fontSize: "1em",
+    height: "3em",
+    color: "red",
+    textAlign: "center",
+    marginRight: "12%",
+  },
+  errortext: {},
   margin: {
     marginBottom: theme.spacing(2),
   },
@@ -65,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
   },
   bottomcontent: {
     position: "relative",
-    bottom: "-100px",
+    bottom: "-50px",
   },
 }));
 
@@ -78,10 +86,11 @@ export default function InputAdornments(props: any) {
     showPassword: false,
     verification: "",
     loading: false,
+    error: "",
   });
 
   const handleChange = (prop: any) => (event: any) => {
-    setValues({ ...values, [prop]: event.target.value });
+    setValues({ ...values, [prop]: event.target.value, error: "" });
   };
 
   const handleClickShowPassword = () => {
@@ -95,18 +104,31 @@ export default function InputAdornments(props: any) {
     setValues({ ...values, loading: true });
     setTimeout(() => {
       //mock loading
-      setValues({ ...values, loading: false });
-      history.push("/optician");
+      if (values.email === "error") {
+        setValues({
+          ...values,
+          error: "Invalid credentials. Please try again.",
+          loading: false,
+        });
+      } else {
+        setValues({ ...values, error: "", loading: false });
+        history.push("/optician");
+      }
     }, 2500);
   };
   return (
     <div className={classes.root}>
       <Typography className={classes.formtext}>Please sign in:</Typography>
       <br />
+      <div className={classes.errorwrapper}>
+        <Typography className={classes.errortext}>{values.error}</Typography>
+      </div>
+
       <FormControl
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
         required={true}
+        error={values.error ? true : false}
       >
         <InputLabel htmlFor="outlined-adornment-email">Email</InputLabel>
         <OutlinedInput
@@ -120,6 +142,7 @@ export default function InputAdornments(props: any) {
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
         required={true}
+        error={values.error ? true : false}
       >
         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
         <OutlinedInput
