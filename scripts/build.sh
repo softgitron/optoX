@@ -9,7 +9,8 @@ function build_frontend() {
   cd "../src/frontend"
   docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
     -t "frontend:latest" \
-    -t "frontend:${COMMIT}"
+    -t "frontend:${COMMIT}" \
+    $ADDITIONAL_ARGS
   cd $BASE_DIR
 }
 
@@ -17,7 +18,8 @@ function build_gateway() {
   cd "../src/gateway"
   docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
     -t "gateway:latest" \
-    -t "gateway:${COMMIT}"
+    -t "gateway:${COMMIT}"\
+    $ADDITIONAL_ARGS
   cd $BASE_DIR
 }
 
@@ -25,7 +27,8 @@ function build_mainbackend() {
   cd "../src/mainbackend"
   docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
     -t "mainbackend:latest" \
-    -t "mainbackend:${COMMIT}"
+    -t "mainbackend:${COMMIT}"\
+    $ADDITIONAL_ARGS
   cd $BASE_DIR
 }
 
@@ -33,7 +36,8 @@ function build_mediator() {
   cd "../src/mediator"
   docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
     -t "mediator:latest" \
-    -t "mediator:${COMMIT}"
+    -t "mediator:${COMMIT}"\
+    $ADDITIONAL_ARGS
   cd $BASE_DIR
 }
 
@@ -41,11 +45,13 @@ function build_syncbackend() {
   cd "../src/syncbackend"
   docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
     -t "syncbackend:latest" \
-    -t "syncbackend:${COMMIT}"
+    -t "syncbackend:${COMMIT}"\
+    $ADDITIONAL_ARGS
   cd $BASE_DIR
 }
 
 export DOCKER_EXTENSION="$2"
+export ADDITIONAL_ARGS="$3"
 export COMMIT=$(git rev-parse --verify HEAD)
 if [ "$1" = 'frontend' ]
 then

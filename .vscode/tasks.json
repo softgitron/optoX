@@ -109,6 +109,26 @@
             "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/syncbackend"]
         },
         {
+            "label": "Build frontend",
+            "type": "shell",
+            "command": ["${workspaceFolder}/scripts/build.sh frontend"]
+        },
+        {
+            "label": "Start frontend debug",
+            "type": "shell",
+            "command": [
+                "${workspaceFolder}/scripts/debug.sh frontend ${config:kubernetesNamespace} ${config:redeployWait} ${workspaceFolder}/src/frontend"
+            ]
+        },
+        {
+            "label": "Stop frontend debug",
+            "dependsOn": [
+                "Build frontend"
+            ],
+            "type": "shell",
+            "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/frontend"]
+        },
+        {
             "label": "Build and reinstall",
             "type": "shell",
             "command": ["${workspaceFolder}/scripts/install.sh reinstall"],

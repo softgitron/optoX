@@ -1,0 +1,8 @@
+FROM node:latest
+ARG FRONTEND_SRC=/app
+WORKDIR $FRONTEND_SRC
+COPY package.json yarn.lock ./
+RUN yarn
+COPY . ./
+ENV PORT=80
+CMD ["yarn", "start"]
