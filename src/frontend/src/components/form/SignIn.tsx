@@ -12,7 +12,6 @@ import FormControl from "@material-ui/core/FormControl";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import {
-  Button,
   CircularProgress,
   MenuItem,
   Select,
@@ -20,15 +19,17 @@ import {
 } from "@material-ui/core";
 
 import { useHistory } from "react-router-dom";
+import { useOutlinedInputStyles } from "../../assets/styles/styles";
+import { GreenButton } from "../button/buttons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "white",
+    backgroundColor: "#232323c7",
     maxWidth: "400px",
     maxHeight: "500px",
     minHeight: "500px",
     padding: "30px",
-    color: "#4a4a4a",
+    color: "white",
     marginTop: "20em",
     float: "right",
     borderRadius: "5px",
@@ -43,9 +44,10 @@ const useStyles = makeStyles((theme) => ({
   errorwrapper: {
     fontSize: "1em",
     height: "3em",
-    color: "red",
+    color: "#ff3939",
     textAlign: "center",
     marginRight: "12%",
+    marginTop: "1em",
   },
   errortext: {},
   margin: {
@@ -70,16 +72,18 @@ const useStyles = makeStyles((theme) => ({
     left: "80%",
     marginTop: -12,
     marginLeft: -12,
+    color: "#03dac5",
   },
   bottomcontent: {
     position: "relative",
-    bottom: "-50px",
+    bottom: "-35px",
   },
 }));
 
 export default function InputAdornments(props: any) {
   const classes = useStyles();
   const history = useHistory();
+  const outlinedInputClasses = useOutlinedInputStyles();
   const [values, setValues] = React.useState({
     password: "",
     email: "",
@@ -119,7 +123,7 @@ export default function InputAdornments(props: any) {
   return (
     <div className={classes.root}>
       <Typography className={classes.formtext}>Please sign in:</Typography>
-      <br />
+
       <div className={classes.errorwrapper}>
         <Typography className={classes.errortext}>{values.error}</Typography>
       </div>
@@ -132,10 +136,11 @@ export default function InputAdornments(props: any) {
       >
         <InputLabel htmlFor="outlined-adornment-email">Email</InputLabel>
         <OutlinedInput
-          id="outlined-adornment-password"
+          id="outlined-adornment-email"
           value={values.email}
           onChange={handleChange("email")}
-          labelWidth={70}
+          labelWidth={60}
+          classes={outlinedInputClasses}
         />
       </FormControl>
       <FormControl
@@ -146,6 +151,7 @@ export default function InputAdornments(props: any) {
       >
         <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
         <OutlinedInput
+          classes={outlinedInputClasses}
           id="outlined-adornment-password"
           type={values.showPassword ? "text" : "password"}
           value={values.password}
@@ -162,7 +168,7 @@ export default function InputAdornments(props: any) {
               </IconButton>
             </InputAdornment>
           }
-          labelWidth={70}
+          labelWidth={85}
         />
       </FormControl>
 
@@ -179,12 +185,20 @@ export default function InputAdornments(props: any) {
           onChange={handleChange("verification")}
           label=" Select verification method"
           required={true}
+          input={
+            <OutlinedInput
+              labelWidth={200}
+              name="age"
+              id="outlined-age-simple"
+              classes={outlinedInputClasses}
+            />
+          }
         >
           <MenuItem value={1}>Suomi.fi</MenuItem>
         </Select>
       </FormControl>
       <div className={classes.wrapper}>
-        <Button
+        <GreenButton
           variant="contained"
           color="primary"
           disabled={
@@ -196,7 +210,7 @@ export default function InputAdornments(props: any) {
           onClick={signUp}
         >
           Sign in
-        </Button>
+        </GreenButton>
         {values.loading && (
           <CircularProgress size={30} className={classes.spinner} />
         )}
@@ -205,14 +219,14 @@ export default function InputAdornments(props: any) {
         <Typography className={classes.formtext2}>
           Got token from optician?
         </Typography>
-        <Button
+        <GreenButton
           variant="contained"
           color="primary"
           onClick={() => props.setNormalSignUp(false)}
           disabled={values.loading}
         >
           Proceed to token input
-        </Button>
+        </GreenButton>
       </div>
     </div>
   );

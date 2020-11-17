@@ -25,3 +25,18 @@ body,
 .MuiAppBar-colorPrimary {
   background-color: black !important;
 }
+.MuiOutlinedInput-input {
+  color: white !important;
+}
+.MuiInput-root {
+  color: #a0a0a0 !important;
+}
+.MuiInputLabel-outlined {
+  color: #a0a0a0 !important;
+}
+.MuiInputLabel-filled {
+  color: #a0a0a0 !important;
+}
+.MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline:focus {
+  border-color: white !important;
+}

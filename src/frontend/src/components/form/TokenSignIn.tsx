@@ -7,18 +7,20 @@ import InputLabel from "@material-ui/core/InputLabel";
 
 import FormControl from "@material-ui/core/FormControl";
 
-import { Button, CircularProgress, Typography } from "@material-ui/core";
+import { CircularProgress, Typography } from "@material-ui/core";
 
 import { useHistory } from "react-router-dom";
+import { GreenButton, RedButton } from "../button/buttons";
+import { useOutlinedInputStyles } from "../../assets/styles/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "white",
+    backgroundColor: "#232323c7",
     width: "400px",
     maxHeight: "500px",
     minHeight: "500px",
     padding: "30px",
-    color: "#4a4a4a",
+    color: "white",
     marginTop: "20em",
     float: "right",
     borderRadius: "5px",
@@ -52,17 +54,19 @@ const useStyles = makeStyles((theme) => ({
     left: "80%",
     marginTop: -12,
     marginLeft: -12,
+    color: "#03dac5",
   },
   bottomcontent: {
     position: "relative",
-    bottom: "-202px",
+    bottom: "-187px",
   },
   errorwrapper: {
     fontSize: "1em",
     height: "3em",
-    color: "red",
+    color: "#ff3939",
     textAlign: "center",
     marginRight: "12%",
+    marginTop: "1em",
   },
   errortext: {},
 }));
@@ -70,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
 export default function InputAdornments(props: any) {
   const classes = useStyles();
   const history = useHistory();
+  const outlinedInputClasses = useOutlinedInputStyles();
   const [values, setValues] = React.useState({
     token: "",
     loading: false,
@@ -99,7 +104,7 @@ export default function InputAdornments(props: any) {
   return (
     <div className={classes.root}>
       <Typography className={classes.formtext}>Please enter token:</Typography>
-      <br />
+
       <div className={classes.errorwrapper}>
         <Typography className={classes.errortext}>{values.error}</Typography>
       </div>
@@ -115,17 +120,18 @@ export default function InputAdornments(props: any) {
           value={values.token}
           onChange={handleChange("token")}
           labelWidth={70}
+          classes={outlinedInputClasses}
         />
       </FormControl>
       <div className={classes.wrapper}>
-        <Button
+        <GreenButton
           variant="contained"
           color="primary"
           disabled={values.loading || !values.token}
           onClick={signUp}
         >
           Sign in
-        </Button>
+        </GreenButton>
         {values.loading && (
           <CircularProgress size={30} className={classes.spinner} />
         )}
@@ -134,14 +140,14 @@ export default function InputAdornments(props: any) {
         <Typography className={classes.formtext2}>
           Got username and password?
         </Typography>
-        <Button
+        <RedButton
           variant="contained"
           color="secondary"
           onClick={() => props.setNormalSignUp(true)}
           disabled={values.loading}
         >
           Back to employee login
-        </Button>
+        </RedButton>
       </div>
     </div>
   );
