@@ -120,7 +120,7 @@ export default function InputAdornments(props: any) {
           id="outlined-adornment-password"
           value={values.token}
           onChange={handleChange("token")}
-          labelWidth={70}
+          labelWidth={50}
           classes={outlinedInputClasses}
         />
       </FormControl>

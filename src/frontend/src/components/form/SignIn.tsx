@@ -140,7 +140,7 @@ export default function InputAdornments(props: any) {
           id="outlined-adornment-email"
           value={values.email}
           onChange={handleChange("email")}
-          labelWidth={60}
+          labelWidth={50}
           classes={outlinedInputClasses}
         />
       </FormControl>
@@ -170,7 +170,7 @@ export default function InputAdornments(props: any) {
               </IconButton>
             </InputAdornment>
           }
-          labelWidth={85}
+          labelWidth={80}
         />
       </FormControl>
 
@@ -189,9 +189,9 @@ export default function InputAdornments(props: any) {
           required={true}
           input={
             <OutlinedInput
-              labelWidth={200}
+              labelWidth={190}
               name="age"
-              id="outlined-age-simple"
+              id="outlined-method"
               classes={outlinedInputClasses}
             />
           }

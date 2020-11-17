@@ -102,7 +102,7 @@ export default function InputAdornments(props: any) {
           id="outlined-adornment-fistname"
           value={values.firstname}
           onChange={handleChange("firstname")}
-          labelWidth={150}
+          labelWidth={145}
           classes={outlinedInputClasses}
         />
       </FormControl>
@@ -115,7 +115,7 @@ export default function InputAdornments(props: any) {
         </InputLabel>
         <OutlinedInput
           id="outlined-adornment-fundus"
-          labelWidth={150}
+          labelWidth={145}
           classes={outlinedInputClasses}
         />
       </FormControl>
@@ -130,7 +130,7 @@ export default function InputAdornments(props: any) {
           id="outlined-adornment-lastname"
           value={values.lastname}
           onChange={handleChange("lastname")}
-          labelWidth={150}
+          labelWidth={145}
           classes={outlinedInputClasses}
         />
       </FormControl>
@@ -186,7 +186,7 @@ export default function InputAdornments(props: any) {
           id="outlined-adornment-socialnumber"
           value={values.socialnumber}
           onChange={handleChange("socialnumber")}
-          labelWidth={250}
+          labelWidth={240}
           classes={outlinedInputClasses}
         />
       </FormControl>
