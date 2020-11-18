@@ -31,7 +31,7 @@ export const RedButton = withStyles({
     padding: "0 30px",
     fontWeight: "bold",
     "&:hover": {
-      background: "#994d4d",
+      background: "#ff6464",
     },
   },
   label: {
