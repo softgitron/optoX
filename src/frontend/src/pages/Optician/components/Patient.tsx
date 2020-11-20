@@ -104,12 +104,7 @@ export default function InputAdornments(props: any) {
     url: "",
   });
   const [values, setValues] = React.useState({
-    password: "",
     email: "",
-    showPassword: false,
-    verification: "",
-    loading: false,
-    error: "",
     firstname: "",
     lastname: "",
     socialnumber: "",
@@ -124,7 +119,7 @@ export default function InputAdornments(props: any) {
     setopenModal({ ...openModal, show: value });
   };
   const handleChange = (prop: any) => (event: any) => {
-    setValues({ ...values, [prop]: event.target.value, error: "" });
+    setValues({ ...values, [prop]: event.target.value });
   };
   const handleUploadClick = (event: any, type: imageFilesEnum) => {
     if (!event.target.files[0]) return;
@@ -151,6 +146,20 @@ export default function InputAdornments(props: any) {
       url: url,
       show: true,
     });
+  };
+  const canSubmit = () => {
+    if (
+      values.email &&
+      values.firstname &&
+      values.lastname &&
+      values.socialnumber &&
+      images.Fundusfoto.file &&
+      images.Octscan.file &&
+      images.Visualfield.file
+    ) {
+      return true;
+    }
+    return false;
   };
   return (
     <div className={classes.root}>
@@ -406,6 +415,7 @@ export default function InputAdornments(props: any) {
           variant="contained"
           color="primary"
           className={classes.button}
+          disabled={!canSubmit()}
         >
           Upload images
         </GreenButton>
