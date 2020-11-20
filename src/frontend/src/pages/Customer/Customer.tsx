@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
     textTransform: "none",
-    width: "60%",
-    left: "38%",
+    width: "30%",
+    left: "70%",
     height: "3.5em",
   },
   root: {
