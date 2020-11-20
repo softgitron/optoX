@@ -10,7 +10,7 @@ import FormControl from "@material-ui/core/FormControl";
 import { useOutlinedInputStyles } from "../../../assets/styles/styles";
 
 import { GreenButton, RedButton } from "../../../components/button/buttons";
-import { Button } from "@material-ui/core";
+import { Button, FormHelperText, FormLabel } from "@material-ui/core";
 import SimpleModal from "./Modal";
 
 const useStyles = makeStyles((theme) => ({
@@ -187,6 +187,7 @@ export default function InputAdornments(props: any) {
       <FormControl
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
+        disabled={true}
       >
         <InputLabel htmlFor="outlined-adornment-fundus">
           Fundusfoto file
@@ -320,6 +321,7 @@ export default function InputAdornments(props: any) {
           Customer email
         </InputLabel>
         <OutlinedInput
+          type="email"
           id="outlined-adornment-email"
           value={values.email}
           onChange={handleChange("email")}
@@ -330,6 +332,7 @@ export default function InputAdornments(props: any) {
       <FormControl
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
+        disabled={true}
       >
         <InputLabel htmlFor="outlined-adornment-visualfield">
           Visualfield file
