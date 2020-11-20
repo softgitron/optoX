@@ -4,8 +4,8 @@ import { Container, Typography } from "@material-ui/core";
 
 import Grid from "@material-ui/core/Grid";
 
-import SignInNormal from "../../components/form/SignIn";
-import SignInToken from "../../components/form/TokenSignIn";
+import SignInNormal from "./components/SignIn";
+import SignInToken from "./components/TokenSignIn";
 
 const useStyles = makeStyles((theme) => ({
   root: {

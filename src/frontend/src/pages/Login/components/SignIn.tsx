@@ -19,8 +19,8 @@ import {
 } from "@material-ui/core";
 
 import { useHistory } from "react-router-dom";
-import { useOutlinedInputStyles } from "../../assets/styles/styles";
-import { GreenButton } from "../button/buttons";
+import { useOutlinedInputStyles } from "../../../assets/styles/styles";
+import { GreenButton } from "../../../components/button/buttons";
 
 const useStyles = makeStyles((theme) => ({
   root: {

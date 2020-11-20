@@ -10,8 +10,8 @@ import FormControl from "@material-ui/core/FormControl";
 import { CircularProgress, Typography } from "@material-ui/core";
 
 import { useHistory } from "react-router-dom";
-import { GreenButton, RedButton } from "../button/buttons";
-import { useOutlinedInputStyles } from "../../assets/styles/styles";
+import { GreenButton, RedButton } from "../../../components/button/buttons";
+import { useOutlinedInputStyles } from "../../../assets/styles/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {

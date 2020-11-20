@@ -1,7 +1,7 @@
 import { Avatar, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 
-import PatientForm from "../../components/form/Patient";
+import PatientForm from "./components/Patient";
 
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ProfileExamplePic from "../../assets/profile.svg";
