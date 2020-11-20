@@ -11,21 +11,25 @@ export default function App() {
   return (
     <Router>
       {/* TODO autnethication for navbar, show links accordingly to role */}
-      <Nav />
+
       <Switch>
         <Route path="/login">
           <Login />
         </Route>
         <Route path="/Customer">
+          <Nav />
           <Customer />
         </Route>
         <Route path="/Admin">
+          <Nav />
           <Admin />
         </Route>
         <Route path="/Optician">
+          <Nav />
           <Optician />
         </Route>
         <Route path="/Opthalmologist">
+          <Nav />
           <Opthalmologist />
         </Route>
         <Route path="/">

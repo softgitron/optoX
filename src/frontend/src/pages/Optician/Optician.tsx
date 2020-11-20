@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   selectaction: {
-    marginTop: "1.25em",
+    marginTop: "0.75em",
     marginBottom: "1em",
     color: "white",
     fontWeight: "normal",
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   flag: {
     position: "absolute",
-    top: "45em",
+    top: "40em",
   },
   large: {
     width: theme.spacing(40),
