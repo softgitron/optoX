@@ -1,10 +1,4 @@
-import {
-  Avatar,
-  Button,
-  Grid,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Avatar, Grid, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 
 import PatientForm from "../../components/form/Patient";
@@ -24,17 +18,6 @@ const useStyles = makeStyles((theme) => ({
     height: "3.5em",
   },
   root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
     flexGrow: 1,
   },
   selectaction: {
