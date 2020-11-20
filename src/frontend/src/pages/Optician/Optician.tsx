@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   flag: {
     position: "absolute",
-    top: "48em",
+    top: "45em",
   },
   large: {
     width: theme.spacing(40),
