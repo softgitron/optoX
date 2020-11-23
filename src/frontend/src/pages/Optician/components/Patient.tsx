@@ -10,7 +10,7 @@ import FormControl from "@material-ui/core/FormControl";
 import { useOutlinedInputStyles } from "../../../assets/styles/styles";
 
 import { GreenButton, RedButton } from "../../../components/button/buttons";
-import { Button, FormHelperText, FormLabel } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import SimpleModal from "./Modal";
 
 const useStyles = makeStyles((theme) => ({
@@ -94,7 +94,7 @@ enum imageFilesEnum {
   Octscan,
   Visualfield,
 }
-const delay = (ms: any) => new Promise((res) => setTimeout(res, ms));
+//const delay = (ms: any) => new Promise((res) => setTimeout(res, ms));
 
 export default function InputAdornments(props: any) {
   const classes = useStyles();

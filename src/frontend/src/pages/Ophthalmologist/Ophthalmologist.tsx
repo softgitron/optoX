@@ -7,7 +7,7 @@ import ProfileExamplePic from "../../assets/profile.svg";
 import FinlandFlag from "../../assets/finland_flag.svg";
 
 import { GreenButton, RedButton } from "../../components/button/buttons";
-import { useHistory } from "react-router-dom";
+
 import Card from "./components/Card";
 import List from "@material-ui/core/List";
 import Modal from "../Optician/components/BiggerModal";
