@@ -132,7 +132,7 @@ export default function InputAdornments(props: any) {
     });
   };
   const handleRemoveImage = async (type: imageFilesEnum) => {
-    await delay(250); // Delay so clicking on "Remove" doesn't click on "Upload"
+    //await delay(250); // Delay so clicking on "Remove" doesn't click on "Upload"
     const name = imageFiles[type].name;
     setImages({
       ...images,

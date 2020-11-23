@@ -6,8 +6,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
-
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ProfileExamplePic from "../../assets/profile.svg";
 import FinlandFlag from "../../assets/finland_flag.svg";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -78,14 +76,83 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "100px",
     width: "1000px",
   },
+  root2: {
+    "&.MuiLinearProgress-colorPrimary:not(.MuiLinearProgress-buffer)": {
+      backgroundColor: "#60576b",
+    },
+    "& .MuiLinearProgress-colorPrimary": {
+      backgroundColor: "#60576b",
+    },
+    "& .MuiLinearProgress-barColorPrimary": {
+      backgroundColor: "#03dac5",
+    },
+  },
 }));
 
-export default function Optician() {
+export default function Customer() {
   const [values, setValues] = React.useState({
-    state: 2,
+    state: 0,
   });
 
   const classes = useStyles();
+  const renderSwitch = (state: number) => {
+    switch (state) {
+      case 0:
+        return (
+          <p>
+            Waiting for pictures. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nulla id quam sed ligula sodales tempus. Quisque
+            eget elit ullamcorper, rhoncus elit a, vulputate nunc. Nunc neque
+            nibh, facilisis vel sapien ut, pharetra tincidunt dolor. Integer
+            libero elit, semper ac odio nec, feugiat aliquet neque. Donec
+            accumsan consequat tincidunt. Pellentesque magna neque, pulvinar
+            vitae risus ut, faucibus faucibus nisl. Fusce tempor id nisi vitae
+            sodales. Maecenas faucibus nisl a metus pharetra feugiat.
+          </p>
+        );
+      case 1:
+        return (
+          <p>
+            Pictures has been now successfully taken. Next pictures will be
+            analyzed by the ophthalmologist. If the ophthalmologist approves the
+            images, results will be send directly to the drivers license. If the
+            pictures are rejected, new time must be reserved for the optician.
+          </p>
+        );
+
+      case 2:
+        return (
+          <p>
+            Pictures analyzed. In sed euismod nulla. Aliquam ac ante convallis
+            mi finibus mattis. Nunc faucibus enim nec commodo imperdiet. Sed leo
+            orci, auctor ut purus a, lacinia gravida nulla. Sed eu dolor
+            ultrices, sollicitudin tortor non, sodales nisi. Ut molestie porta
+            nisi vel fringilla. Sed nisi lorem, porta at porta eget, rhoncus
+            eget neque. Aliquam pulvinar, ex vitae semper condimentum, dolor
+            nisl pellentesque sapien, fermentum malesuada nibh ipsum vel ligula.
+            Nunc nec dolor vel orci feugiat convallis sit amet non elit. Mauris
+            porta nibh vel metus maximus, in interdum dui egestas. Aenean sed
+            sapien erat.
+          </p>
+        );
+      case 3:
+        return (
+          <p>
+            Results sent to administration. Nulla iaculis porttitor suscipit.
+            Donec faucibus tristique vestibulum. Etiam ornare magna est, eu
+            aliquet est tincidunt quis. Vivamus suscipit orci mollis, sodales
+            purus ac, lacinia purus. Vivamus eget ipsum rhoncus, pharetra ligula
+            nec, sagittis diam. Sed fermentum vulputate sem, ut fermentum orci
+            hendrerit eu. In libero risus, rutrum eget vulputate vitae, rhoncus
+            nec dolor. Maecenas semper ultricies sodales. Phasellus eros ligula,
+            vehicula non imperdiet vel, finibus a arcu. Cras nulla nunc,
+            imperdiet a sem quis, imperdiet facilisis dui.
+          </p>
+        );
+      default:
+        break;
+    }
+  };
   return (
     <div className={classes.maindiv}>
       <div className={classes.container}>
@@ -227,9 +294,13 @@ export default function Optician() {
                   </Grid>
                 </Grid>
 
-                <LinearProgress variant="determinate" value={(2 / 3) * 100} />
+                <LinearProgress
+                  variant="determinate"
+                  value={(values.state / 3) * 100}
+                  classes={{ root: classes.root2 }}
+                />
               </div>
-
+              <br />
               <div>
                 <GreenButton
                   variant="contained"
@@ -260,23 +331,47 @@ export default function Optician() {
                   Download visualfield
                 </GreenButton>
               </div>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+              <div
+                style={{
+                  color: "white",
+                  position: "relative",
+                  width: "440px",
+                  height: "0px",
+                  left: "61%",
+                  top: "-430px",
+                }}
+              >
+                {renderSwitch(values.state)}
+              </div>
               <div>
                 <RedButton
                   variant="contained"
                   color="primary"
                   className={classes.button}
+                  style={{ marginTop: "60px" }}
                   onClick={() => null}
                 >
                   Log out
                 </RedButton>
               </div>
             </div>
+            <GreenButton
+              onClick={() => {
+                setValues({ ...values, state: values.state + 1 });
+              }}
+              disabled={values.state > 2}
+            >
+              +
+            </GreenButton>
+            <GreenButton
+              style={{ margin: 20 }}
+              onClick={() => {
+                setValues({ ...values, state: values.state - 1 });
+              }}
+              disabled={values.state < 1}
+            >
+              -
+            </GreenButton>
           </Grid>
         </Grid>
       </div>

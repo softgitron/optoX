@@ -130,7 +130,7 @@ export default function Optician() {
         return (
           <>
             <Typography className={classes.selectaction} variant="h3">
-              Do something with these prior images:
+              Please fill the forms:
             </Typography>
             <RedButton
               variant="contained"
