@@ -8,7 +8,7 @@ import ProfileExamplePic from "../../assets/profile.svg";
 import FinlandFlag from "../../assets/finland_flag.svg";
 
 import { GreenButton, RedButton } from "../../components/button/buttons";
-
+import CustomerInfo from "./components/CustomerInfo";
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
@@ -72,6 +72,7 @@ enum ScreenStates {
   landScreen = 0,
   uploadImages = 1,
   viewPriorImages = 2,
+  viewCustomerStatus = 3,
 }
 
 export default function Optician() {
@@ -86,96 +87,172 @@ export default function Optician() {
       case 0:
         return (
           <>
-            <Typography className={classes.selectaction} variant="h3">
-              Please select the action:
-            </Typography>
-            <div>
-              <GreenButton
-                variant="contained"
-                color="primary"
-                className={classes.button}
-                endIcon={<ArrowRightIcon />}
-                onClick={() => setValues({ ...values, state: 1 })}
-              >
-                Upload new images
-              </GreenButton>
-            </div>
-            <div>
-              <GreenButton
-                variant="contained"
-                color="primary"
-                className={classes.button}
-                endIcon={<ArrowRightIcon />}
-                onClick={() => setValues({ ...values, state: 2 })}
-              >
-                View prior images
-              </GreenButton>
-            </div>
-            <Typography className={classes.earnedtext}>
-              You have earned so far: 950 050 €
-            </Typography>
+            <Grid container spacing={3}>
+              <Grid item xs={6}>
+                {/* Avatars etc.*/}
+                <AvatarInfo />
+              </Grid>
+              <Grid item xs={6}>
+                <div style={{ float: "right" }}>
+                  <Typography className={classes.selectaction} variant="h3">
+                    Please select the action:
+                  </Typography>
+                  <div>
+                    <GreenButton
+                      variant="contained"
+                      color="primary"
+                      className={classes.button}
+                      endIcon={<ArrowRightIcon />}
+                      onClick={() =>
+                        setValues({
+                          ...values,
+                          state: ScreenStates.uploadImages,
+                        })
+                      }
+                    >
+                      Upload new images
+                    </GreenButton>
+                  </div>
+                  <div>
+                    <GreenButton
+                      variant="contained"
+                      color="primary"
+                      className={classes.button}
+                      endIcon={<ArrowRightIcon />}
+                      onClick={() =>
+                        setValues({
+                          ...values,
+                          state: ScreenStates.viewPriorImages,
+                        })
+                      }
+                    >
+                      View prior images
+                    </GreenButton>
+                  </div>
+                  <Typography className={classes.earnedtext}>
+                    You have earned so far: 950 050 €
+                  </Typography>
+                </div>
+              </Grid>
+            </Grid>
           </>
         );
       case 1:
         return (
           <>
-            <Typography className={classes.selectaction} variant="h3">
-              Please fill the forms:
-            </Typography>
-            <PatientForm goBack={() => setValues({ ...values, state: 0 })} />
+            <Grid container spacing={3}>
+              <Grid item xs={6}>
+                {/* Avatars etc.*/}
+                <AvatarInfo />
+              </Grid>
+              <Grid item xs={6}>
+                <Typography className={classes.selectaction} variant="h3">
+                  Please fill the forms:
+                </Typography>
+                <PatientForm
+                  goBack={() =>
+                    setValues({ ...values, state: ScreenStates.landScreen })
+                  }
+                />
+              </Grid>
+            </Grid>
           </>
         );
 
       case 2:
         return (
           <>
-            <Typography className={classes.selectaction} variant="h3">
-              Please fill the forms:
-            </Typography>
-            <RedButton
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              endIcon={<ArrowRightIcon />}
-              onClick={() => setValues({ ...values, state: 0 })}
-            >
-              Back
-            </RedButton>
+            <Grid container spacing={3}>
+              <Grid item xs={6}>
+                {/* Avatars etc.*/}
+                <AvatarInfo />
+              </Grid>
+              <Grid item xs={6}>
+                <div style={{ float: "right" }}>
+                  <Typography className={classes.selectaction} variant="h3">
+                    Please fill the forms:
+                  </Typography>
+                  <div
+                    style={{
+                      marginTop: "400px",
+                    }}
+                  >
+                    <RedButton
+                      style={{ left: "30%", width: "100px" }}
+                      className={classes.button}
+                      onClick={() =>
+                        setValues({ ...values, state: ScreenStates.landScreen })
+                      }
+                    >
+                      Back
+                    </RedButton>
+                    <GreenButton
+                      style={{ left: "34%", width: "150px" }}
+                      onClick={() => {
+                        setValues({
+                          ...values,
+                          state: ScreenStates.viewCustomerStatus,
+                        });
+                      }}
+                    >
+                      View images
+                    </GreenButton>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
           </>
         );
-
+      case 3:
+        return (
+          <Grid container spacing={3}>
+            <Grid item xs={6}>
+              <AvatarInfo />
+            </Grid>
+            <Grid item xs={6}>
+              <div style={{ float: "right" }}>
+                <CustomerInfo
+                  CustomerData={{
+                    firstname: "Heikki",
+                    lastname: "Heikäläinen",
+                    email: "Heikki@heikalainen.com",
+                    loginToken: "XYZ7-3321-AD3R-0000",
+                  }}
+                  goBack={() =>
+                    setValues({ ...values, state: ScreenStates.landScreen })
+                  }
+                />
+              </div>
+            </Grid>
+          </Grid>
+        );
       default:
         break;
     }
   };
+  const AvatarInfo = () => {
+    return (
+      <div className={classes.profilewrapper}>
+        <Avatar
+          className={classes.large}
+          alt="Profile picture"
+          src={ProfileExamplePic}
+        />
+        <Typography className={classes.hellotext}>
+          Hello optician Matti Meikäläinen!
+        </Typography>
+        <img
+          alt={"flag"}
+          className={classes.flag}
+          src={FinlandFlag}
+          width="200"
+        />
+      </div>
+    );
+  };
   return (
     <div className={classes.maindiv}>
-      <div className={classes.container}>
-        <Grid container spacing={3}>
-          <Grid item xs={6}>
-            {/* Avatars etc.*/}
-            <div className={classes.profilewrapper}>
-              <Avatar
-                className={classes.large}
-                alt="Profile picture"
-                src={ProfileExamplePic}
-              />
-              <Typography className={classes.hellotext}>
-                Hello optician Matti Meikäläinen!
-              </Typography>
-              <img
-                alt={"flag"}
-                className={classes.flag}
-                src={FinlandFlag}
-                width="200"
-              />
-            </div>
-          </Grid>
-          <Grid item xs={6}>
-            <div style={{ float: "right" }}>{renderSwitch(values.state)}</div>
-          </Grid>
-        </Grid>
-      </div>
+      <div className={classes.container}>{renderSwitch(values.state)}</div>
     </div>
   );
 }

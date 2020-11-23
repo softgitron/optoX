@@ -127,8 +127,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 enum ScreenStates {
   landScreen = 0,
-  uploadImages = 1,
-  viewPriorImages = 2,
+  analyzeImages = 1,
 }
 
 export default function Ophthamologist() {
@@ -194,7 +193,12 @@ export default function Ophthamologist() {
                       color="primary"
                       className={classes.button}
                       endIcon={<ArrowRightIcon />}
-                      onClick={() => setValues({ ...values, state: 1 })}
+                      onClick={() =>
+                        setValues({
+                          ...values,
+                          state: ScreenStates.analyzeImages,
+                        })
+                      }
                     >
                       Analyze images
                     </GreenButton>
@@ -249,7 +253,9 @@ export default function Ophthamologist() {
                 <RedButton
                   style={{ width: "180px", marginTop: "40px" }}
                   className={classes.button}
-                  onClick={() => setValues({ ...values, state: 0 })}
+                  onClick={() =>
+                    setValues({ ...values, state: ScreenStates.landScreen })
+                  }
                 >
                   Back to home
                 </RedButton>
