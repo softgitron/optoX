@@ -9,6 +9,9 @@ import FinlandFlag from "../../assets/finland_flag.svg";
 
 import { GreenButton, RedButton } from "../../components/button/buttons";
 import CustomerInfo from "./components/CustomerInfo";
+
+import AsynchronousSearch from "./components/AsyncSearch";
+
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
@@ -78,6 +81,8 @@ enum ScreenStates {
 export default function Optician() {
   const [values, setValues] = React.useState({
     state: ScreenStates.landScreen,
+    selectedAppointment: "",
+    customerInfo: "",
   });
 
   const classes = useStyles();
@@ -177,6 +182,18 @@ export default function Optician() {
                       marginTop: "400px",
                     }}
                   >
+                    <AsynchronousSearch
+                      selectAppointment={(
+                        appointment: any,
+                        customerInfo: any
+                      ) => {
+                        setValues({
+                          ...values,
+                          selectedAppointment: appointment,
+                          customerInfo: customerInfo,
+                        });
+                      }}
+                    />
                     <RedButton
                       style={{ left: "30%", width: "100px" }}
                       className={classes.button}
@@ -188,6 +205,7 @@ export default function Optician() {
                     </RedButton>
                     <GreenButton
                       style={{ left: "34%", width: "150px" }}
+                      disabled={values.selectedAppointment ? false : true}
                       onClick={() => {
                         setValues({
                           ...values,
