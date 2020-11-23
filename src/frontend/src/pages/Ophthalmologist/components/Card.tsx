@@ -11,6 +11,9 @@ const useStyles = makeStyles({
     color: "white",
     backgroundColor: "#33333300",
     borderColor: "#ffffff38",
+    "&:hover": {
+      borderColor: "#ffffff8a",
+    },
   },
   title: {
     fontSize: 14,
@@ -27,6 +30,7 @@ export default function OutlinedCard({
   opticalRetail,
   index,
   selectPatient,
+  selectedPatient,
 }: {
   opticalRetail: string;
   firstname: string;
@@ -34,6 +38,7 @@ export default function OutlinedCard({
   date: string;
   index: number;
   selectPatient: (index: number) => void;
+  selectedPatient: number;
 }) {
   const classes = useStyles();
   return (
@@ -42,6 +47,10 @@ export default function OutlinedCard({
       variant="outlined"
       onClick={() => {
         selectPatient(index);
+      }}
+      style={{
+        cursor: selectedPatient === index ? "auto" : "pointer",
+        backgroundColor: selectedPatient === index ? "#4e4e4e" : "inherit",
       }}
     >
       <CardContent>

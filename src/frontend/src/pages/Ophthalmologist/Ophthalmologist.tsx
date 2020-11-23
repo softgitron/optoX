@@ -10,7 +10,7 @@ import { GreenButton, RedButton } from "../../components/button/buttons";
 import { useHistory } from "react-router-dom";
 import Card from "./components/Card";
 import List from "@material-ui/core/List";
-import SimpleModal from "../Optician/components/Modal";
+import Modal from "../Optician/components/BiggerModal";
 
 const patient1 = {
   id: "123",
@@ -241,6 +241,7 @@ export default function Ophthamologist() {
                         date={patient.date}
                         index={index}
                         selectPatient={selectPatient}
+                        selectedPatient={patients.selectedPatient}
                       />
                     ))}
                   </List>
@@ -374,11 +375,7 @@ export default function Ophthamologist() {
   };
   return (
     <div className={classes.maindiv}>
-      <SimpleModal
-        url={openModal.url}
-        show={openModal.show}
-        setModal={setModal}
-      />
+      <Modal url={openModal.url} show={openModal.show} setModal={setModal} />
 
       <div className={classes.container}>{renderSwitch(values.state)}</div>
     </div>
