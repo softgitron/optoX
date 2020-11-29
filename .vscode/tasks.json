@@ -61,30 +61,6 @@
             "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/mainbackend"]
         },
         {
-            "label": "Build mediator",
-            "type": "shell",
-            "command": ["${workspaceFolder}/scripts/build.sh mediator"]
-        },
-        {
-            "label": "Start mediator debug",
-            "dependsOn": [
-                "Destroy redirects"
-            ],
-            "type": "shell",
-            "command": [
-                "${workspaceFolder}/scripts/debug.sh mediator ${config:kubernetesNamespace} ${config:redeployWait}"
-            ]
-        },
-        {
-            "label": "Stop mediator debug",
-            "dependsOn": [
-                "Destroy redirects",
-                "Build mediator"
-            ],
-            "type": "shell",
-            "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/mediator"]
-        },
-        {
             "label": "Build syncbackend",
             "type": "shell",
             "command": ["${workspaceFolder}/scripts/build.sh syncbackend"]

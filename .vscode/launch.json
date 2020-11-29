@@ -49,20 +49,6 @@
             "host": "localhost"
         },
         {
-            "preLaunchTask": "Start mediator debug",
-            "postDebugTask": "Stop mediator debug",
-            "name": "Debug mediator",
-            "type": "go",
-            "request": "attach",
-            "mode": "remote",
-            "showLog": true,
-            "trace": "verbose",
-            "cwd": "${workspaceFolder}/src/mediator",
-            "remotePath": "/app",
-            "port": 40002,
-            "host": "localhost"
-        },
-        {
             "preLaunchTask": "Start syncbackend debug",
             "postDebugTask": "Stop syncbackend debug",
             "name": "Debug syncbackend",

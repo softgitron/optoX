@@ -9,5 +9,19 @@
     "editor.formatOnSave": true,
     "[yaml]": {
         "editor.formatOnSave": false
-    }
+    },
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "files.eol": "\n", // formatting only supports LF line ending
+    },
+    "go.useLanguageServer": true,
+    "go.vetOnSave": "package",
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": true,
+        "documentLink": true
+    },
+
 }

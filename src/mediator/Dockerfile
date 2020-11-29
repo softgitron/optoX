@@ -1,7 +1,10 @@
-FROM golang:latest
-WORKDIR /app
+FROM bitnami/pgpool:latest
+COPY pgpool.conf /etc/pgpool.conf
+#WORKDIR /app
 
-COPY . .
-RUN go build
+#Copy go.mod .
+#Run go mod download
+#COPY . .
+#RUN go build
 
-CMD ["./mediator"]
+#CMD ["./mediator"]

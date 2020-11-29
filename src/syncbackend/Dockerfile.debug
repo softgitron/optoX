@@ -3,6 +3,8 @@ RUN go get -u github.com/go-delve/delve/cmd/dlv
 WORKDIR /app
 #VOLUME "/root/.cache/go-build"
 
+Copy go.mod .
+Run go mod download
 COPY . .
 RUN go build -gcflags "all=-N -l"
 

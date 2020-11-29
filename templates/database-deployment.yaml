@@ -46,7 +46,7 @@ spec:
               containerPort: 5432
               protocol: TCP
           env:
-            - name: "POSTGRES_USERNAME"
+            - name: "POSTGRES_USER"
               valueFrom:
                 secretKeyRef:
                   key:  postgresUsername
@@ -56,3 +56,7 @@ spec:
                 secretKeyRef:
                   key:  postgresPassword
                   name: {{ .Release.Name }}-auth
+            - name: "POSTGRES_DB"
+              value: {{ .Values.database.databaseName }}
+            - name: "REGION"
+              value: {{ .Values.region }}

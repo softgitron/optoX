@@ -40,5 +40,8 @@ spec:
               containerPort: {{ .Values.syncbackend.debugPort }}
               protocol: TCP
             {{- end }}
+          env:
+            - name: "REGION"
+              value: {{ .Values.region }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

@@ -5,6 +5,15 @@ BASE_DIR=$(pwd)
 # Change to Minikube's docker environment
 eval $(minikube docker-env)
 
+function build_database() {
+  cd "../src/database"
+  docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
+    -t "database:latest" \
+    -t "database:${COMMIT}" \
+    $ADDITIONAL_ARGS
+  cd $BASE_DIR
+}
+
 function build_frontend() {
   cd "../src/frontend"
   docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
@@ -53,7 +62,10 @@ function build_syncbackend() {
 export DOCKER_EXTENSION="$2"
 export ADDITIONAL_ARGS="$3"
 export COMMIT=$(git rev-parse --verify HEAD)
-if [ "$1" = 'frontend' ]
+if [ "$1" = 'database' ]
+then
+  build_database
+elif [ "$1" = 'frontend' ]
 then
   build_frontend
 elif [ "$1" = 'gateway' ]
@@ -69,6 +81,7 @@ elif [ "$1" = 'syncbackend' ]
 then
   build_syncbackend
 else
+  build_database
   build_frontend
   build_gateway
   build_mainbackend

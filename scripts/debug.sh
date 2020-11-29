@@ -38,9 +38,6 @@ then
 elif [ "$1" = 'mainbackend' ]
 then
   debug_go 'mainbackend' '40001'
-elif [ "$1" = 'mediator' ]
-then
-  debug_go 'mediator' '40002'
 elif [ "$1" = 'syncbackend' ]
 then
   debug_go 'syncbackend' '40003'

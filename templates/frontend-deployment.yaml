@@ -35,5 +35,8 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          env:
+            - name: "REGION"
+              value: {{ .Values.region }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

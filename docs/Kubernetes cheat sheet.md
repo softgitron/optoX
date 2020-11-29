@@ -35,3 +35,7 @@
 #### Get more pod information
 
 `kubectl get pod -o wide`
+
+##### Portforward to local environment
+
+`kubectl port-forward <POD_NAME> <PORT>:<PORT>`
