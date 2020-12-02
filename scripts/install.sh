@@ -7,7 +7,7 @@ then
   ./uninstall.sh
   # Small sleep to make sure that
   # persistent volumes are destroyed in time
-  sleep 10
+  sleep 15
 fi
 
 # Build application

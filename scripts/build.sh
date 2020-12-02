@@ -5,56 +5,17 @@ BASE_DIR=$(pwd)
 # Change to Minikube's docker environment
 eval $(minikube docker-env)
 
-function build_database() {
-  cd "../src/database"
-  docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
-    -t "database:latest" \
-    -t "database:${COMMIT}" \
-    $ADDITIONAL_ARGS
-  cd $BASE_DIR
-}
+# Enable experimental docker build mode for faster builds
+export DOCKER_BUILDKIT=1
 
-function build_frontend() {
-  cd "../src/frontend"
-  docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
-    -t "frontend:latest" \
-    -t "frontend:${COMMIT}" \
-    $ADDITIONAL_ARGS
-  cd $BASE_DIR
-}
+# Create build cache directory
+mkdir -p /tmp/optox_gocache
 
-function build_gateway() {
-  cd "../src/gateway"
+function build() {
+  cd "../src/$1"
   docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
-    -t "gateway:latest" \
-    -t "gateway:${COMMIT}"\
-    $ADDITIONAL_ARGS
-  cd $BASE_DIR
-}
-
-function build_mainbackend() {
-  cd "../src/mainbackend"
-  docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
-    -t "mainbackend:latest" \
-    -t "mainbackend:${COMMIT}"\
-    $ADDITIONAL_ARGS
-  cd $BASE_DIR
-}
-
-function build_mediator() {
-  cd "../src/mediator"
-  docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
-    -t "mediator:latest" \
-    -t "mediator:${COMMIT}"\
-    $ADDITIONAL_ARGS
-  cd $BASE_DIR
-}
-
-function build_syncbackend() {
-  cd "../src/syncbackend"
-  docker image build -f "Dockerfile$DOCKER_EXTENSION" . \
-    -t "syncbackend:latest" \
-    -t "syncbackend:${COMMIT}"\
+    -t "$1:latest" \
+    -t "$1:${COMMIT}"\
     $ADDITIONAL_ARGS
   cd $BASE_DIR
 }
@@ -64,27 +25,27 @@ export ADDITIONAL_ARGS="$3"
 export COMMIT=$(git rev-parse --verify HEAD)
 if [ "$1" = 'database' ]
 then
-  build_database
+  build "database"
 elif [ "$1" = 'frontend' ]
 then
-  build_frontend
+  build "frontend"
 elif [ "$1" = 'gateway' ]
 then
-  build_gateway
+  build "gateway"
 elif [ "$1" = 'mainbackend' ]
 then
-  build_mainbackend
+  build "mainbackend"
 elif [ "$1" = 'mediator' ]
 then
-  build_mediator
+  build "mediator"
 elif [ "$1" = 'syncbackend' ]
 then
-  build_syncbackend
+  build "syncbackend"
 else
-  build_database
-  build_frontend
-  build_gateway
-  build_mainbackend
-  build_mediator
-  build_syncbackend
+  build "database"
+  build "frontend"
+  build "gateway"
+  build "mainbackend"
+  build "mediator"
+  build "syncbackend"
 fi

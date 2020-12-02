@@ -1,11 +1,15 @@
+# syntax = docker/dockerfile:experimental
 FROM golang:latest
 RUN go get -u github.com/go-delve/delve/cmd/dlv
-WORKDIR /app
+ARG GOCACHE
+ARG DOCKER_SRC=/app
+WORKDIR $DOCKER_SRC
 #VOLUME "/root/.cache/go-build"
 
 Copy go.mod .
 Run go mod download
 COPY . .
-RUN go build -gcflags "all=-N -l"
+RUN --mount=type=cache,target=/root/.cache/go-build \
+go build -gcflags "all=-N -l"
 
 CMD ["/go/bin/dlv", "--listen=:40003", "--headless=true", "--api-version=2", "exec", "./syncbackend"]

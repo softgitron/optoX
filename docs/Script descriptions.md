@@ -33,13 +33,13 @@ Uninstall application: `./scripts/uninstall.sh`
 
 ## debug.sh
 
-`debug.sh` is used for building debuging versions of the containers and initiating debuging bridges from Visual Studio Code to containers. Script has three mandotary arguments (four for react debuging).
+`debug.sh` is used for building debuging versions of the containers and initiating debuging bridges from Visual Studio Code to containers. Script has four mandotary arguments.
 
 1. Container that should be debuged
 2. Namespace that should be used for debuging
 3. Time that should be waited after container restart (used for making sure that container is ready before bridge is created)
-4. Source code directory of the current frontend
+4. Source code directory of the current project
 
 Examples:  
-Build & start gateway container in central using debug mode: `./scripts/debug.sh gateway central 20`
+Build & start gateway container in central using debug mode: `./scripts/debug.sh gateway central 20 ../src/gateway/`
 Build & start frontend container in central with source folder: `./scripts/debug.sh frontend central 20 ../src/frontend/`

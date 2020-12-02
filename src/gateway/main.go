@@ -6,11 +6,16 @@ import (
 	"net/http/httputil"
 	"net/url"
 	"os"
+
+	"github.com/softgitron/optox/src/gateway/database"
+	"github.com/softgitron/optox/src/gateway/handlers"
 )
 
 func main() {
+	db := database.Database{}
+	db.InitializeConnection()
 	services := getServiceAddresses()
-	createProxys(services)
+	createProxys(services, db)
 
 }
 
@@ -31,27 +36,21 @@ func getServiceAddresses() map[string]*url.URL {
 	return services
 }
 
-func createProxys(services map[string]*url.URL) {
+func createProxys(services map[string]*url.URL, db database.Database) {
 	frontendProxy := httputil.NewSingleHostReverseProxy(services["frontend"])
 	mainbackendProxy := httputil.NewSingleHostReverseProxy(services["mainbackend"])
 	syncbackendProxy := httputil.NewSingleHostReverseProxy(services["syncbackend"])
 
-	http.HandleFunc("/api/images/", frontendhandler(syncbackendProxy))
-	http.HandleFunc("/api/", frontendhandler(mainbackendProxy))
-	http.HandleFunc("/", frontendhandler(frontendProxy))
+	login := handlers.Handler{Db: db}
+
+	http.HandleFunc("/api/images/", handlers.FrontendHandler(syncbackendProxy))
+	http.HandleFunc("/api/users/login", login.LoginHandler)
+	http.HandleFunc("/api/", handlers.FrontendHandler(mainbackendProxy))
+	http.HandleFunc("/", handlers.FrontendHandler(frontendProxy))
 
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		println("Failed to start reverse proxy!")
 		panic(err)
-	}
-}
-
-// https://gist.github.com/JalfResi/6287706
-func frontendhandler(proxy *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request) {
-	return func(response http.ResponseWriter, request *http.Request) {
-		println(request.RemoteAddr)
-		// println(request.URL.Host)
-		proxy.ServeHTTP(response, request)
 	}
 }

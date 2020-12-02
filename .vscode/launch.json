@@ -7,7 +7,16 @@
         {
             "preLaunchTask": "Start frontend debug",
             "postDebugTask": "Stop frontend debug",
-            "name": "Start frontend debug",
+            "name": "Start frontend debug with live reload",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://${config:frontendSite}",
+            "webRoot": "${workspaceFolder}/src/frontend",
+        },
+        {
+            "preLaunchTask": "Start frontend debug classic",
+            "postDebugTask": "Stop frontend debug classic",
+            "name": "Start frontend debug classic",
             "request": "launch",
             "type": "pwa-chrome",
             "url": "http://${config:frontendSite}",
@@ -30,7 +39,6 @@
             "showLog": true,
             "trace": "verbose",
             "cwd": "${workspaceFolder}/src/gateway",
-            "remotePath": "/app",
             "port": 40000,
             "host": "localhost"
         },
@@ -44,7 +52,6 @@
             "showLog": true,
             "trace": "verbose",
             "cwd": "${workspaceFolder}/src/mainbackend",
-            "remotePath": "/app",
             "port": 40001,
             "host": "localhost"
         },
@@ -58,7 +65,6 @@
             "showLog": true,
             "trace": "verbose",
             "cwd": "${workspaceFolder}/src/syncbackend",
-            "remotePath": "/app",
             "port": 40003,
             "host": "localhost"
         },

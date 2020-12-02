@@ -15,15 +15,21 @@ function run_dbcommand() {
 # run_dbcommand "GRANT ALL PRIVILEGES ON DATABASE $POSTGRES_DB TO $POSTGRES_USER;"
 
 # Initialize database tables
-INITIALIZATION_FILE=$(cat /config/$REGION/init.sql)
+INITIALIZATION_FILE=$(cat /config/$REGION/init_tables.sql)
 run_dbcommand "$INITIALIZATION_FILE"
 
-# https://hevodata.com/learn/postgresql-logical-replication/
-# Join publications if slave node
 if [ "$REGION" != 'central' ]
 then
+  # https://hevodata.com/learn/postgresql-logical-replication/
+  # Join publications if regional node
   # Wait while for central database to come online
   sleep 5
   CONNECTION_STRING="user=$POSTGRES_USER password=$POSTGRES_PASSWORD host=database-central port=5432 dbname=$POSTGRES_DB"
-  run_dbcommand "CREATE SUBSCRIPTION replica_subscription CONNECTION '$CONNECTION_STRING' PUBLICATION replica_publication;"
+  run_dbcommand "CREATE SUBSCRIPTION ${REGION}_subscription CONNECTION '$CONNECTION_STRING' PUBLICATION ${REGION}_publication;"
+else
+  # Create initial administrator user
+  run_dbcommand "INSERT INTO administrators (username, password, access_level)VALUES ($WEB_GUI_USERNAME, $WEB_GUI_PASSWORD, 'administrator');"
+  # Import initial values
+  INITIALIZATION_FILE=$(cat /config/$REGION/init_values.sql)
+  run_dbcommand "$INITIALIZATION_FILE"
 fi

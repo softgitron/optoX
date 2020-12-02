@@ -60,3 +60,15 @@ spec:
               value: {{ .Values.database.databaseName }}
             - name: "REGION"
               value: {{ .Values.region }}
+            {{ if hasKey .Values "webGuiCredentials" -}}
+            - name: "WEB_GUI_USERNAME"
+              valueFrom:
+                secretKeyRef:
+                  key:  webGuiUsername
+                  name: {{ .Release.Name }}-gui-auth
+            - name: "WEB_GUI_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  key:  webGuiPassword
+                  name: {{ .Release.Name }}-gui-auth
+            {{- end }}

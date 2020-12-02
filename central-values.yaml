@@ -6,6 +6,9 @@ replicaCount: 1
 debug: true
 
 region: central
+webGuiCredentials:
+  username: admin
+  password: admin
 
 database:
   name: database

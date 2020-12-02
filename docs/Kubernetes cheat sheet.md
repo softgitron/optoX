@@ -12,7 +12,7 @@
 
 #### Check chart correctness
 
-`helm install optox ./ --dry-run`
+`helm install optox ./ --dry-run -f central-values.yaml`
 
 ## Kubectl cheats
 

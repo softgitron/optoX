@@ -1,0 +1,23 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "src/mainbackend"
+	},
+	{
+		"path": "src/gateway"
+	},
+	{
+		"path": "src/syncbackend"
+	}
+],
+  "settings": {
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+      "diagnostics": true,
+      "documentLink": true
+    }
+  }
+}
