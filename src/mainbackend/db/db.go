@@ -1,4 +1,4 @@
-package main
+package db
 
 import (
 	"fmt"
@@ -9,7 +9,8 @@ import (
 	"gorm.io/gorm"
 )
 
-type database struct {
+// Database stuff
+type Database struct {
 	connection *gorm.DB
 }
 
@@ -18,7 +19,7 @@ type Err struct {
 	ErrID int `gorm:"primaryKey"`
 }
 
-func (db *database) createConnection() {
+func (db *Database) createConnection() {
 	user := os.Getenv("POSTGRES_USER")
 	password := os.Getenv("POSTGRES_PASSWORD")
 	dbname := os.Getenv("POSTGRES_DB")
@@ -38,21 +39,7 @@ func (db *database) createConnection() {
 	db.connection = connection
 }
 
-func (db *database) gormCreateUser() *gorm.DB {
-	newEmployee := Employee{
-		Country:              "finland",
-		SocialSecurityNumber: "125487-5687",
-		Email:                "examle.mail",
-		Password:             "Password",
-		FirstName:            "Some name",
-		LastName:             "Some last name",
-		AccessLevel:          "administrator",
-	}
-
-	return db.connection.Create(&newEmployee)
-}
-
-func (db *database) gormCreateError() *gorm.DB {
+func (db *Database) gormCreateError() *gorm.DB {
 	newError := Err{}
 
 	return db.connection.Create(&newError)
