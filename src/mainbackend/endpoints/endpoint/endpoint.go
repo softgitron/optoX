@@ -37,7 +37,8 @@ var Endpoints = map[string]Endpoint{
 	"optician":   {url: "/api/optician", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
 	"image":      {url: "/api/image", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
 	"service":    {url: "/api/service", customHandler: nil, accepts: []string{"GET"}, dbHandler: nil},
-	"inspection": {url: "/api/service", customHandler: nil, accepts: []string{"GET"}, dbHandler: nil},
+	"inspection": {url: "/api/inspection", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
+	"contract":   {url: "/api/contract", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
 }
 
 var dbConnection db.Database
