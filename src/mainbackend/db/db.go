@@ -19,7 +19,7 @@ type Err struct {
 	ErrID int `gorm:"primaryKey"`
 }
 
-func (db *Database) createConnection() {
+func (db *Database) CreateConnection() {
 	user := os.Getenv("POSTGRES_USER")
 	password := os.Getenv("POSTGRES_PASSWORD")
 	dbname := os.Getenv("POSTGRES_DB")

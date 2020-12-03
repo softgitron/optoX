@@ -10,9 +10,3 @@ require (
 	gorm.io/driver/postgres v1.0.5
 	gorm.io/gorm v1.20.7
 )
-
-
-replace (
-	github.com/softgitron/optox/src/mainbackend => ./root
-	github.com/softgitron/optox/src/mainbackend/endpoints => ./endpoints
-)

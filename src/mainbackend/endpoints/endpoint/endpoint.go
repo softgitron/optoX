@@ -37,8 +37,17 @@ var Endpoints = map[string]Endpoint{
 	"optician": {url: "/api/optician", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
 }
 
-func Initialize() {
+var dbConnection db.Database
 
+func Initialize() {
+	dbConnection = db.Database{}
+	dbConnection.CreateConnection()
+
+	//implement the listeners
+	for _, endpoint := range Endpoints {
+		endpoint.dbHandler = &dbConnection
+		http.HandleFunc(endpoint.url, endpoint.handler)
+	}
 }
 
 func (ep *Endpoint) GetAcceptedMethods() []string {
