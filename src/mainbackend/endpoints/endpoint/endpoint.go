@@ -32,9 +32,12 @@ func (ep *Endpoint) handler(res http.ResponseWriter, req *http.Request) {
 
 //Endpoints ...
 var Endpoints = map[string]Endpoint{
-	"customer": {url: "/api/customer", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
-	"employee": {url: "/api/employee", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
-	"optician": {url: "/api/optician", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
+	"customer":   {url: "/api/customer", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
+	"employee":   {url: "/api/employee", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
+	"optician":   {url: "/api/optician", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
+	"image":      {url: "/api/image", customHandler: nil, accepts: []string{"GET", "POST"}, dbHandler: nil},
+	"service":    {url: "/api/service", customHandler: nil, accepts: []string{"GET"}, dbHandler: nil},
+	"inspection": {url: "/api/service", customHandler: nil, accepts: []string{"GET"}, dbHandler: nil},
 }
 
 var dbConnection db.Database
