@@ -11,6 +11,7 @@ import (
 )
 
 const maximumTries = 10
+const reconnectTime = 10 * time.Second
 
 // Database receiver struct for database functionalities
 type Database struct {
@@ -26,19 +27,24 @@ func (db *Database) InitializeConnection() {
 
 	var connection *gorm.DB
 	var pool *sql.DB
+	var err error
 	for try := 1; try <= maximumTries; try++ {
-		connection, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+		err = nil
+		connection, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 		if err != nil {
 			println("Failed to connect to database:")
-			println(err)
-			fmt.Printf("Trying again, try: %d/%d", try, maximumTries)
-			continue
 		}
 		pool, err = connection.DB()
 		if err != nil {
 			println("Failed to create a database pool:")
+		}
+
+		if err == nil {
+			break
+		} else {
 			println(err)
 			fmt.Printf("Trying again, try: %d/%d", try, maximumTries)
+			time.Sleep(reconnectTime)
 		}
 	}
 	pool.SetMaxIdleConns(5)

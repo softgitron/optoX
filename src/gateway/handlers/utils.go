@@ -1,15 +1,21 @@
 package handlers
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"net/http"
 )
 
-func checkAllowedMethods(methods map[string]bool, response http.ResponseWriter, request *http.Request) error {
-	if !methods[request.Method] {
+func checkAllowedMethods(methods []string, response http.ResponseWriter, request *http.Request) error {
+	var valid = false
+	for _, method := range methods {
+		valid = valid || (request.Method == method)
+	}
+
+	if !valid {
 		var keyList string
-		for method := range methods {
+		for _, method := range methods {
 			keyList += method + ", "
 		}
 		keyList = keyList[:len(keyList)-1]
@@ -18,6 +24,14 @@ func checkAllowedMethods(methods map[string]bool, response http.ResponseWriter, 
 		return errors.New("Unsupported methods encountered")
 	}
 	return nil
+}
+
+func parseRequest(decoded interface{}, response http.ResponseWriter, request *http.Request) error {
+	err := json.NewDecoder(request.Body).Decode(decoded)
+	if err != nil {
+		sendHTTPError(http.StatusBadRequest, err.Error(), response)
+	}
+	return err
 }
 
 func sendHTTPError(code int, errorMessage string, response http.ResponseWriter) {

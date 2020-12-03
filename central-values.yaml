@@ -44,6 +44,7 @@ gateway:
     type: NodePort
     port: 8080
   debugPort: 40000
+  jwtSecret: "AcOcpYvCwWzzNe4kAcBaPIynpejhNxZal7szlzm2GpygvCHGiCC8ixdAYs42Hvo"
 
 mainbackend:
   name: mainbackend

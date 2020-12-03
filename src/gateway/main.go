@@ -41,10 +41,11 @@ func createProxys(services map[string]*url.URL, db database.Database) {
 	mainbackendProxy := httputil.NewSingleHostReverseProxy(services["mainbackend"])
 	syncbackendProxy := httputil.NewSingleHostReverseProxy(services["syncbackend"])
 
-	login := handlers.Handler{Db: db}
+	handlersInstance := handlers.Handler{Db: db}
+	handlersInstance.Init()
 
 	http.HandleFunc("/api/images/", handlers.FrontendHandler(syncbackendProxy))
-	http.HandleFunc("/api/users/login", login.LoginHandler)
+	http.HandleFunc("/api/users/login", handlersInstance.LoginHandler)
 	http.HandleFunc("/api/", handlers.FrontendHandler(mainbackendProxy))
 	http.HandleFunc("/", handlers.FrontendHandler(frontendProxy))
 

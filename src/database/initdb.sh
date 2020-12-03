@@ -28,7 +28,7 @@ then
   run_dbcommand "CREATE SUBSCRIPTION ${REGION}_subscription CONNECTION '$CONNECTION_STRING' PUBLICATION ${REGION}_publication;"
 else
   # Create initial administrator user
-  run_dbcommand "INSERT INTO administrators (username, password, access_level)VALUES ($WEB_GUI_USERNAME, $WEB_GUI_PASSWORD, 'administrator');"
+  run_dbcommand "INSERT INTO administrators (username, password, access_level) VALUES ('$WEB_GUI_USERNAME', '$WEB_GUI_PASSWORD', 'administrator');"
   # Import initial values
   INITIALIZATION_FILE=$(cat /config/$REGION/init_values.sql)
   run_dbcommand "$INITIALIZATION_FILE"
