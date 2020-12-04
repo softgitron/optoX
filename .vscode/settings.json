@@ -3,7 +3,7 @@
     "kubernetesNamespace": "central",
     // NOTE, this value depends on the development computer speed
     // Increase the value, if the debug is not working as intended
-    "redeployWait": 10,
+    "redeployWait": 11,
     // Change address to edit default frontend debug site
     "frontendSite": "optox.net",
     "editor.formatOnSave": true,

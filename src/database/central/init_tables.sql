@@ -1,6 +1,6 @@
 CREATE TYPE countries AS ENUM ('Finland', 'Sweden', 'Norway');
 CREATE TYPE in_status AS ENUM ('Waiting', 'InProgress', 'Finished');
-CREATE TYPE access_lvl AS ENUM ('normal', 'moderator', 'administrator');
+CREATE TYPE access_lvl AS ENUM ('Normal', 'Moderator', 'Administrator');
 
 CREATE TABLE IF NOT EXISTS customers(
 customer_id SERIAL,
@@ -48,7 +48,7 @@ inspections_country countries,
 fundus_photo_ref INT,
 oct_scan_ref INT,
 visual_field_ref INT,
-inspectiontime TIMESTAMP,
+inspection_time TIMESTAMP,
 login_token CHAR(16),
 status in_status,
 PRIMARY KEY (inspection_id, inspections_country),
@@ -100,9 +100,9 @@ FOREIGN KEY (optician_id, optician_country) REFERENCES opticians(optician_id, op
 ) PARTITION BY LIST (optician_employee_country);
 
 CREATE TABLE IF NOT EXISTS administrators(
-employee_id SERIAL PRIMARY KEY,
+admin_id SERIAL PRIMARY KEY,
 access_level access_lvl,
-username VARCHAR(60),
+email VARCHAR(60),
 password VARCHAR(60)
 );
 

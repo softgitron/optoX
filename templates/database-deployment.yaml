@@ -60,6 +60,8 @@ spec:
               value: {{ .Values.database.databaseName }}
             - name: "REGION"
               value: {{ .Values.region }}
+            - name: "DEBUG"
+              value: "{{ .Values.debug }}"
             {{ if hasKey .Values "webGuiCredentials" -}}
             - name: "WEB_GUI_USERNAME"
               valueFrom:

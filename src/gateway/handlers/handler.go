@@ -17,9 +17,13 @@ type Handler struct {
 
 // Claims used inside JWT tokens
 type Claims struct {
-	Type  string
-	ID    int
-	Email string
+	Type        string
+	ID          int
+	Email       string
+	Country     string
+	FirstName   string
+	LastName    string
+	AccessLevel string
 }
 
 // Init initializes JWT generation

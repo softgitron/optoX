@@ -44,9 +44,9 @@ func createProxys(services map[string]*url.URL, db database.Database) {
 	handlersInstance := handlers.Handler{Db: db}
 	handlersInstance.Init()
 
-	http.HandleFunc("/api/images/", handlers.FrontendHandler(syncbackendProxy))
+	http.HandleFunc("/api/images/", handlersInstance.BackendHandler(syncbackendProxy))
 	http.HandleFunc("/api/users/login", handlersInstance.LoginHandler)
-	http.HandleFunc("/api/", handlers.FrontendHandler(mainbackendProxy))
+	http.HandleFunc("/api/", handlersInstance.BackendHandler(mainbackendProxy))
 	http.HandleFunc("/", handlers.FrontendHandler(frontendProxy))
 
 	err := http.ListenAndServe(":8080", nil)
