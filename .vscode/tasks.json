@@ -24,7 +24,7 @@
             ],
             "type": "shell",
             "command": [
-                "${workspaceFolder}/scripts/debug.sh gateway ${config:kubernetesNamespace} ${config:redeployWait}"
+                "${workspaceFolder}/scripts/debug.sh gateway ${config:kubernetesNamespace} ${config:redeployWait} ${workspaceFolder}/src/gateway"
             ]
         },
         {
@@ -48,7 +48,7 @@
             ],
             "type": "shell",
             "command": [
-                "${workspaceFolder}/scripts/debug.sh mainbackend ${config:kubernetesNamespace} ${config:redeployWait}"
+                "${workspaceFolder}/scripts/debug.sh mainbackend ${config:kubernetesNamespace} ${config:redeployWait} ${workspaceFolder}/src/mainbackend"
             ]
         },
         {
@@ -59,30 +59,6 @@
             ],
             "type": "shell",
             "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/mainbackend"]
-        },
-        {
-            "label": "Build mediator",
-            "type": "shell",
-            "command": ["${workspaceFolder}/scripts/build.sh mediator"]
-        },
-        {
-            "label": "Start mediator debug",
-            "dependsOn": [
-                "Destroy redirects"
-            ],
-            "type": "shell",
-            "command": [
-                "${workspaceFolder}/scripts/debug.sh mediator ${config:kubernetesNamespace} ${config:redeployWait}"
-            ]
-        },
-        {
-            "label": "Stop mediator debug",
-            "dependsOn": [
-                "Destroy redirects",
-                "Build mediator"
-            ],
-            "type": "shell",
-            "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/mediator"]
         },
         {
             "label": "Build syncbackend",
@@ -96,7 +72,7 @@
             ],
             "type": "shell",
             "command": [
-                "${workspaceFolder}/scripts/debug.sh syncbackend ${config:kubernetesNamespace} ${config:redeployWait}"
+                "${workspaceFolder}/scripts/debug.sh syncbackend ${config:kubernetesNamespace} ${config:redeployWait} ${workspaceFolder}/src/syncbackend"
             ]
         },
         {
@@ -121,12 +97,51 @@
             ]
         },
         {
-            "label": "Stop frontend debug",
+            "label": "Start frontend debug classic",
+            "type": "shell",
+            "command": [
+                "${workspaceFolder}/scripts/debug.sh frontend-classic ${config:kubernetesNamespace} ${config:redeployWait} ${workspaceFolder}/src/frontend"
+            ]
+        },
+        {
+            "label": "Stop frontend debug classic",
             "dependsOn": [
                 "Build frontend"
             ],
             "type": "shell",
             "command": ["kubectl -n ${config:kubernetesNamespace} rollout restart deployment/frontend"]
+        },
+        {
+            "label": "Stop frontend debug",
+            "dependsOn": [
+                "Destroy redirects",
+                "Build frontend"
+            ],
+            "type": "shell",
+            "command": ["kubectl -n ${config:kubernetesNamespace} patch deployment frontend --type=json -p='[{\"op\":\"remove\",\"path\":\"/spec/template/spec/containers/0/volumeMounts\"}]'",
+                        "; sleep 2; kubectl -n ${config:kubernetesNamespace} patch deployment frontend --type=json -p='[{\"op\":\"remove\",\"path\":\"/spec/template/spec/volumes\"}]'",
+                        "; sleep 2; kubectl -n ${config:kubernetesNamespace} rollout restart deployment/frontend",
+                        "; kill -9 $(pidof minikube); exit 0"]
+        },
+        {
+            "label": "Start database debug",
+            "dependsOn": [
+                "Destroy redirects"
+            ],
+            "type": "shell",
+            "command": [
+                "${workspaceFolder}/scripts/debug.sh database ${config:kubernetesNamespace}"
+            ]
+        },
+        {
+            "label": "Stop database debug",
+            "dependsOn": [
+                "Destroy redirects"
+            ],
+            "type": "shell",
+            "command": [
+                "echo OK"
+            ]
         },
         {
             "label": "Build and reinstall",

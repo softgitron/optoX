@@ -4,6 +4,5 @@ WORKDIR $DOCKER_SRC
 COPY package.json yarn.lock ./
 RUN yarn
 COPY . ./
-RUN rm -rf src
 ENV PORT=80
 CMD ["yarn", "start"]

@@ -35,10 +35,54 @@ spec:
             - name: http
               containerPort: {{ .Values.mediator.service.port }}
               protocol: TCP
-            {{ if .Values.debug -}}
-            - name: debug
-              containerPort: {{ .Values.mediator.debugPort }}
-              protocol: TCP
-            {{- end }}
+          env:
+            - name: "PGPOOL_POSTGRES_USERNAME"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresUsername
+                  name: {{ .Release.Name }}-auth
+            - name: "PGPOOL_POSTGRES_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresPassword
+                  name: {{ .Release.Name }}-auth
+            - name: "PGPOOL_SR_CHECK_USER"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresUsername
+                  name: {{ .Release.Name }}-auth
+            - name: "PGPOOL_SR_CHECK_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresPassword
+                  name: {{ .Release.Name }}-auth
+            - name: "PGPOOL_USERNAME"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresUsername
+                  name: {{ .Release.Name }}-auth
+            - name: "PGPOOL_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresPassword
+                  name: {{ .Release.Name }}-auth
+            - name: "PGPOOL_ADMIN_USERNAME"
+              valueFrom:
+                secretKeyRef:
+                  key:  pgpoolAdminUsername
+                  name: {{ .Release.Name }}-auth
+            - name: "PGPOOL_ADMIN_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  key:  pgpoolAdminPassword
+                  name: {{ .Release.Name }}-auth
+            - name: "PGPOOL_BACKEND_NODES"
+              value: {{ .Values.mediator.backendNodes }}
+            - name: "PGPOOL_ENABLE_LDAP"
+              value: "no"
+            - name: "PGPOOL_DISABLE_LOAD_BALANCE_ON_WRITE"
+              value: "always"
+            - name: "PGPOOL_USER_CONF_FILE"
+              value: "/etc/pgpool.conf"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

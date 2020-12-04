@@ -12,7 +12,7 @@
 
 #### Check chart correctness
 
-`helm install optox ./ --dry-run`
+`helm install optox ./ --dry-run -f central-values.yaml`
 
 ## Kubectl cheats
 
@@ -35,3 +35,7 @@
 #### Get more pod information
 
 `kubectl get pod -o wide`
+
+##### Portforward to local environment
+
+`kubectl port-forward <POD_NAME> <PORT>:<PORT>`

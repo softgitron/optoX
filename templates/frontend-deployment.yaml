@@ -35,5 +35,12 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          env:
+            - name: "REGION"
+              value: {{ .Values.region }}
+            {{ if .Values.debug -}}
+            - name: CHOKIDAR_USEPOLLING
+              value: "true"
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

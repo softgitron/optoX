@@ -3,11 +3,25 @@
     "kubernetesNamespace": "central",
     // NOTE, this value depends on the development computer speed
     // Increase the value, if the debug is not working as intended
-    "redeployWait": 15,
+    "redeployWait": 11,
     // Change address to edit default frontend debug site
     "frontendSite": "optox.net",
     "editor.formatOnSave": true,
     "[yaml]": {
         "editor.formatOnSave": false
-    }
+    },
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "files.eol": "\n", // formatting only supports LF line ending
+    },
+    "go.useLanguageServer": true,
+    "go.vetOnSave": "package",
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": true,
+        "documentLink": true
+    },
+
 }

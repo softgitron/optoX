@@ -40,5 +40,25 @@ spec:
               containerPort: {{ .Values.gateway.debugPort }}
               protocol: TCP
             {{- end }}
+          env:
+            - name: "REGION"
+              value: {{ .Values.region }}
+            - name: "POSTGRES_USER"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresUsername
+                  name: {{ .Release.Name }}-auth
+            - name: "POSTGRES_PASSWORD"
+              valueFrom:
+                secretKeyRef:
+                  key:  postgresPassword
+                  name: {{ .Release.Name }}-auth
+            - name: "JWT_SECRET"
+              valueFrom:
+                secretKeyRef:
+                  key:  jwtSecret
+                  name: {{ .Release.Name }}-gateway-secret
+            - name: "POSTGRES_DB"
+              value: {{ .Values.database.databaseName }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

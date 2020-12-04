@@ -5,15 +5,18 @@
 replicaCount: 1
 debug: true
 
+region: norway
+
 database:
   name: database
   credentials:
     postgresUsername: "optox"
     postgresPassword: "optox"
+  databaseName: optox
   image:
-    repository: postgres
+    repository: database
     tag: latest
-    pullPolicy: IfNotPresent
+    pullPolicy: Never
   service:
     type: ClusterIP
     port: 5432
@@ -38,6 +41,7 @@ gateway:
     type: NodePort
     port: 8080
   debugPort: 40000
+  jwtSecret: "AcOcpYvCwWzzNe4kAcBaPIynpejhNxZal7szlzm2GpygvCHGiCC8ixdAYs42Hvo"
 
 mainbackend:
   name: mainbackend
@@ -58,8 +62,12 @@ mediator:
     pullPolicy: Never
   service:
     type: ClusterIP
-    port: 8080
+    port: 5432
   debugPort: 40002
+  credentials:
+    pgpoolAdminUsername: "optox"
+    pgpoolAdminPassword: "optox"
+  backendNodes: "0:database-central:5432,1:database:5432"
 
 syncbackend:
   name: syncbackend

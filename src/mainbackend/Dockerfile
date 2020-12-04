@@ -1,7 +1,10 @@
+# syntax = docker/dockerfile:experimental
 FROM golang:latest
 WORKDIR /app
 
+Copy go.mod .
+Run go mod download
 COPY . .
-RUN go build
+RUN --mount=type=cache,target=/root/.cache/go-build go build
 
 CMD ["./mainbackend"]
