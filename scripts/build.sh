@@ -20,6 +20,12 @@ function build() {
   cd $BASE_DIR
 }
 
+function build_docs() {
+  cd "../"
+  apidoc -i src/ -o docs/apidoc -e src/frontend/node_modules/
+  cd $BASE_DIR
+}
+
 export DOCKER_EXTENSION="$2"
 export ADDITIONAL_ARGS="$3"
 export COMMIT=$(git rev-parse --verify HEAD)
@@ -41,6 +47,9 @@ then
 elif [ "$1" = 'syncbackend' ]
 then
   build "syncbackend"
+elif [ "$1" = 'docs' ]
+then
+  build_docs
 else
   build "database"
   build "frontend"

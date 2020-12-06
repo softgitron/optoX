@@ -1,9 +1,7 @@
 package handlers
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 )
 
@@ -18,36 +16,17 @@ type employeeLogin struct {
 
 const generallErrorMessage = "Credentials didn't work"
 
-// LoginHandler handles login requests for the platform
-func (h *Handler) LoginHandler(response http.ResponseWriter, request *http.Request) {
+// CustomerLoginHandler handles customer based logins
+func (h *Handler) CustomerLoginHandler(response http.ResponseWriter, request *http.Request) {
 	if checkAllowedMethods([]string{http.MethodPost}, response, request) != nil {
 		return
 	}
 
-	body, err := ioutil.ReadAll(request.Body)
-	if err != nil {
-		sendHTTPError(http.StatusUnauthorized, generallErrorMessage, response)
+	newLoginAttempt := customerLogin{}
+	if parseRequest(&newLoginAttempt, response, request) != nil {
 		return
 	}
 
-	// Try customer login
-	newCustomerLoginAttempt := customerLogin{}
-	customerErr := json.Unmarshal(body, &newCustomerLoginAttempt)
-
-	// Try employee login
-	newEmployeeLoginAttempt := employeeLogin{}
-	employeeErr := json.Unmarshal(body, &newEmployeeLoginAttempt)
-
-	if newCustomerLoginAttempt.Token != "" && customerErr == nil {
-		h.customerLoginHandler(newCustomerLoginAttempt, response, request)
-	} else if newEmployeeLoginAttempt.Email != "" && employeeErr == nil {
-		h.employeeLoginHandler(newEmployeeLoginAttempt, response, request)
-	} else {
-		sendHTTPError(http.StatusBadRequest, employeeErr.Error(), response)
-	}
-}
-
-func (h *Handler) customerLoginHandler(newLoginAttempt customerLogin, response http.ResponseWriter, request *http.Request) {
 	inspection, err := h.Db.GetInspectionByToken(newLoginAttempt.Token)
 	if err == nil {
 		// Get customer details based on inspection
@@ -72,7 +51,17 @@ func (h *Handler) customerLoginHandler(newLoginAttempt customerLogin, response h
 	sendHTTPError(http.StatusUnauthorized, generallErrorMessage, response)
 }
 
-func (h *Handler) employeeLoginHandler(newLoginAttempt employeeLogin, response http.ResponseWriter, request *http.Request) {
+// EmployeeLoginHandler handles employee based logins
+func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *http.Request) {
+	if checkAllowedMethods([]string{http.MethodPost}, response, request) != nil {
+		return
+	}
+
+	newLoginAttempt := employeeLogin{}
+	if parseRequest(&newLoginAttempt, response, request) != nil {
+		return
+	}
+
 	// Check login against administrator database
 	admin, err := h.Db.GetAdministratorByEmail(newLoginAttempt.Email)
 	if err == nil {

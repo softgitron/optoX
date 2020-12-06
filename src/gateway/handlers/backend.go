@@ -51,6 +51,10 @@ func setHeaderClaims(claims *Claims, request *http.Request) {
 	request.Header.Set("Type", claims.Type)
 	request.Header.Set("ID", strconv.Itoa(claims.ID))
 	request.Header.Set("Email", claims.Email)
+	request.Header.Set("Country", claims.Country)
+	request.Header.Set("FirstName", claims.FirstName)
+	request.Header.Set("LastName", claims.LastName)
+	request.Header.Set("AccessLevel", claims.AccessLevel)
 }
 
 func sendUnauthorizedHeaders(proxy *httputil.ReverseProxy, response http.ResponseWriter, request *http.Request) {
