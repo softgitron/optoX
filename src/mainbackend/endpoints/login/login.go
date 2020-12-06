@@ -1,4 +1,4 @@
-package image
+package login
 
 import (
 	"net/http"
@@ -7,5 +7,4 @@ import (
 )
 
 func Handler(ep *(db.Database), res http.ResponseWriter, req *http.Request) {
-
 }
