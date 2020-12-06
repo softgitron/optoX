@@ -1,4 +1,4 @@
-package employee
+package optician
 
 import (
 	"encoding/json"
@@ -23,7 +23,7 @@ func Handler(db *(db.Database), res http.ResponseWriter, req *http.Request) {
 		}
 
 		if params.Get("id") != "" {
-			var result templates.Employee
+			var result templates.Optician
 			db.GetConnection().Table("Contracts").Get(params.Get("id"))
 
 			output, err := json.Marshal(result)
@@ -53,9 +53,8 @@ func Handler(db *(db.Database), res http.ResponseWriter, req *http.Request) {
 			}
 		*/
 	}
-
 	if req.Method == "POST" {
-		var contract templates.Employee
+		var contract templates.Optician
 		err := json.NewDecoder(req.Body).Decode(&contract)
 
 		if err != nil {

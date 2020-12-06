@@ -1,6 +1,7 @@
 package db
 
 import (
+	"database/sql"
 	"fmt"
 	"os"
 	"time"
@@ -12,6 +13,7 @@ import (
 // Database stuff
 type Database struct {
 	connection *gorm.DB
+	pool       *sql.DB
 }
 
 // Err gorm template for causing errors on the database
@@ -19,6 +21,7 @@ type Err struct {
 	ErrID int `gorm:"primaryKey"`
 }
 
+// CreateConnection ...
 func (db *Database) CreateConnection() {
 	user := os.Getenv("POSTGRES_USER")
 	password := os.Getenv("POSTGRES_PASSWORD")
@@ -36,7 +39,14 @@ func (db *Database) CreateConnection() {
 	pool.SetMaxIdleConns(5)
 	pool.SetMaxOpenConns(100)
 	pool.SetConnMaxLifetime(time.Minute)
+
 	db.connection = connection
+	db.pool = pool
+}
+
+// GetConnection ...
+func (db *Database) GetConnection() *gorm.DB {
+	return db.connection
 }
 
 func (db *Database) gormCreateError() *gorm.DB {
