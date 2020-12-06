@@ -14,11 +14,6 @@ type Database struct {
 	connection *gorm.DB
 }
 
-// Err gorm template for causing errors on the database
-type Err struct {
-	ErrID int `gorm:"primaryKey"`
-}
-
 func (db *Database) CreateConnection() {
 	user := os.Getenv("POSTGRES_USER")
 	password := os.Getenv("POSTGRES_PASSWORD")
@@ -37,10 +32,4 @@ func (db *Database) CreateConnection() {
 	pool.SetMaxOpenConns(100)
 	pool.SetConnMaxLifetime(time.Minute)
 	db.connection = connection
-}
-
-func (db *Database) gormCreateError() *gorm.DB {
-	newError := Err{}
-
-	return db.connection.Create(&newError)
 }

@@ -45,7 +45,8 @@ func createProxys(services map[string]*url.URL, db database.Database) {
 	handlersInstance.Init()
 
 	http.HandleFunc("/api/images/", handlersInstance.BackendHandler(syncbackendProxy))
-	http.HandleFunc("/api/users/login", handlersInstance.LoginHandler)
+	http.HandleFunc("/api/authentication/customer", handlersInstance.CustomerLoginHandler)
+	http.HandleFunc("/api/authentication/employee", handlersInstance.EmployeeLoginHandler)
 	http.HandleFunc("/api/", handlersInstance.BackendHandler(mainbackendProxy))
 	http.HandleFunc("/", handlers.FrontendHandler(frontendProxy))
 
