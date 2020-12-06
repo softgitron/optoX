@@ -133,7 +133,7 @@ export default function Admin() {
                   Please select the action:
                 </Typography>
                 <div>
-                  <GreenButton
+                  {/* <GreenButton
                     variant="contained"
                     color="primary"
                     className={classes.button}
@@ -160,7 +160,7 @@ export default function Admin() {
                     }
                   >
                     Manage opthalmologists
-                  </GreenButton>
+                  </GreenButton> */}
                   <GreenButton
                     variant="contained"
                     color="primary"

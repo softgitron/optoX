@@ -1,7 +1,16 @@
-import { Grid, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import {
+  Grid,
+  List,
+  makeStyles,
+  Snackbar,
+  Typography,
+} from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert/Alert";
+import React, { SyntheticEvent } from "react";
 import { RedButton } from "../../../components/button/buttons";
 import { ScreenStates } from "../Admin";
+import Card from "./Card";
+import CreateEmployee from "./CreateEmployee";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -18,7 +27,34 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "normal",
     float: "right",
   },
+  list: {
+    width: "100%",
+    position: "relative",
+    overflow: "auto",
+    maxHeight: 600,
+    padding: 0,
+  },
 }));
+
+const employee1 = {
+  id: "123",
+  firstname: "Matti",
+  lastname: "Meikäläinen",
+  role: 0,
+};
+const employee2 = {
+  id: "1234",
+  firstname: "Seppo",
+  lastname: "Meikäläinen",
+  role: 1,
+};
+const employee3 = {
+  id: "1235",
+  firstname: "Heikki",
+  lastname: "Heikäläinen",
+  role: 1,
+};
+const employeesArray = [employee1, employee2, employee3];
 
 export default function ManageEmployees({
   setScreen,
@@ -26,10 +62,51 @@ export default function ManageEmployees({
   setScreen: (state: ScreenStates) => void;
 }) {
   const classes = useStyles();
+  //Snackbar
+  const [open, setOpen] = React.useState(false);
+  const [successText, setSuccessText] = React.useState("");
+  const [index, setIndex] = React.useState(0);
+  const handleClick = () => {
+    setOpen(false);
+    setOpen(true);
+  };
+  const handleClose = (event: SyntheticEvent<Element, Event>, reason: any) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
 
+  const [employees, setEmployees] = React.useState({
+    employees: employeesArray,
+  });
+  //get employees through api
+  const deleteEmployee = async (id: string) => {
+    console.log("deleting employee?");
+    employees.employees.splice(
+      employees.employees.findIndex((a) => a.id === id),
+      1
+    );
+    setSuccessText("Employee successfully deleted!");
+    handleClick();
+  };
+
+  const createAccount = async (account: any) => {
+    employees.employees.push(account);
+    setSuccessText("Employee successfully created!");
+    handleClick();
+  };
   return (
     <>
       <Grid container spacing={3}>
+        <Snackbar
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          open={open}
+          autoHideDuration={3000}
+          onClose={handleClose}
+        >
+          <Alert severity="success">{successText}</Alert>
+        </Snackbar>
         <Grid item xs={4}>
           <Typography
             style={{ float: "left" }}
@@ -38,7 +115,32 @@ export default function ManageEmployees({
           >
             Manage Employees:
           </Typography>
-
+          <div
+            style={{
+              backgroundColor: "#2d2d2db0",
+              height: "600px",
+              marginTop: "150px",
+              position: "relative",
+              width: "520px",
+              WebkitBoxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
+              MozBoxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
+              boxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
+            }}
+          >
+            <List className={classes.list}>
+              {employees.employees.map((employee, index) => (
+                <Card
+                  id={employee.id}
+                  key={employee.id}
+                  firstname={employee.firstname}
+                  lastname={employee.lastname}
+                  role={employee.role}
+                  index={index}
+                  deleteEmployee={deleteEmployee}
+                />
+              ))}
+            </List>
+          </div>
           <RedButton
             style={{ width: "180px", marginTop: "40px" }}
             className={classes.button}
@@ -50,7 +152,18 @@ export default function ManageEmployees({
           </RedButton>
         </Grid>
         <Grid item xs={8}>
-          Stuff
+          <Typography
+            style={{ float: "left" }}
+            className={classes.selectaction}
+            variant="h3"
+          >
+            Create an employee:
+          </Typography>
+          <br />
+          <br />
+          <br />
+          <br />
+          <CreateEmployee createAccount={createAccount} />
         </Grid>
       </Grid>
     </>
