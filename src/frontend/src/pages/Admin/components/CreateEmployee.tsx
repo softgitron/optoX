@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   errortext: {},
   margin: {
     marginBottom: theme.spacing(2),
-    marginLeft: theme.spacing(20.85),
+    marginLeft: theme.spacing(5),
   },
 
   withoutLabel: {
@@ -61,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
   buttonswrapper: {
     marginTop: theme.spacing(20),
     float: "right",
+    marginRight: theme.spacing(35),
   },
   tokentext: {
     display: "inline",
