@@ -14,6 +14,7 @@ import { GreenButton, RedButton } from "../../components/button/buttons";
 
 import axios from "axios";
 import fileDownload from "js-file-download";
+import { authenticationService } from "../../Helpers/Authenthication";
 
 const handleDownload = (url: string, filename: string) => {
   axios
@@ -107,8 +108,11 @@ export default function Customer() {
   const [values, setValues] = React.useState({
     state: 0,
   });
-
   const classes = useStyles();
+  const [user, setUser] = React.useState(
+    authenticationService.currentUserValue
+  );
+  console.log(user);
   const renderSwitch = (state: number) => {
     switch (state) {
       case 0:
@@ -181,7 +185,8 @@ export default function Customer() {
               />
 
               <Typography className={classes.hellotext}>
-                Hello customer Matti Meikäläinen!
+                Hello customer {user.FirstName}
+                {user.LastName}!
               </Typography>
               <img
                 alt={"flag"}

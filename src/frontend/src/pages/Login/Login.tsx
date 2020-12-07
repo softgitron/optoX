@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Login() {
+export default function LoginPage() {
   const classes = useStyles();
   const [isNormalSignUpOn, setNormalSignUp] = React.useState(true);
   return (

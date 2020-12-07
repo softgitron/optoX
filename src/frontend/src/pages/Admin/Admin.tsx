@@ -13,6 +13,7 @@ import ManageOphtalmologists from "./components/ManageOphtalmologists";
 import ManageEmployees from "./components/ManageEmployees";
 import ManageAgreements from "./components/ManageAgreements";
 import ManageCustomers from "./components/ManageCustomers";
+import { authenticationService } from "../../Helpers/Authenthication";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -103,6 +104,10 @@ export default function Admin() {
   const setScreen = (state: ScreenStates) => {
     setValues({ ...values, state: state });
   };
+  const [user, setUser] = React.useState(
+    authenticationService.currentUserValue
+  );
+  console.log(user);
   const renderSwitch = (state: ScreenStates) => {
     switch (state) {
       case ScreenStates.landScreen:
@@ -117,7 +122,7 @@ export default function Admin() {
                   src={ProfileExamplePic}
                 />
                 <Typography className={classes.hellotext}>
-                  Hello administrator Matti Meikäläinen!
+                  Hello administrator {user!.FirstName} {user!.LastName}!
                 </Typography>
                 <img
                   alt={"flag"}

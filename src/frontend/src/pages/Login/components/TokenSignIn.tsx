@@ -13,6 +13,8 @@ import { useHistory } from "react-router-dom";
 import { GreenButton, RedButton } from "../../../components/button/buttons";
 import { useOutlinedInputStyles } from "../../../assets/styles/styles";
 
+import { authenticationService } from "../../../Helpers/Authenthication";
+import delay from "../../../Helpers/Delay";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#232323c7",
@@ -87,19 +89,22 @@ export default function InputAdornments(props: any) {
 
   const signUp = async () => {
     setValues({ ...values, loading: true });
-    setTimeout(() => {
-      //mock loading
-      if (values.token === "error") {
-        setValues({
-          ...values,
-          error: "Invalid token. Please try again.",
-          loading: false,
-        });
-      } else {
-        setValues({ ...values, error: "", loading: false });
+    await delay(750); // Delay so the login isn't instant :)
+    const res = await authenticationService.tokenLogin(values.token);
+
+    if (res) {
+      console.log(res);
+      setValues({ ...values, error: "", loading: false });
+      if (res === "Customer") {
         history.push("/customer");
       }
-    }, 2500);
+    } else {
+      setValues({
+        ...values,
+        error: "Invalid credentials. Please try again.",
+        loading: false,
+      });
+    }
   };
   return (
     <div className={classes.root}>

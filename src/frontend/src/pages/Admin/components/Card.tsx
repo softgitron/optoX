@@ -6,6 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 
 import Typography from "@material-ui/core/Typography";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import delay from "../../../Helpers/Delay";
 
 const useStyles = makeStyles({
   root: {
@@ -23,11 +24,7 @@ const useStyles = makeStyles({
     marginTop: "0px",
   },
 });
-function sleep(delay = 0) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, delay);
-  });
-}
+
 export default function OutlinedCard({
   firstname,
   lastname,
@@ -50,7 +47,7 @@ export default function OutlinedCard({
 
   const deletion = async (id: string): Promise<void> => {
     setLoading(true);
-    await sleep(2000);
+    await delay(2000);
     await deleteEmployee(id);
     setLoading(false);
   };

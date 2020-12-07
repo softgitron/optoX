@@ -22,6 +22,8 @@ import { useHistory } from "react-router-dom";
 import { useOutlinedInputStyles } from "../../../assets/styles/styles";
 import { GreenButton } from "../../../components/button/buttons";
 
+import { authenticationService } from "../../../Helpers/Authenthication";
+import delay from "../../../Helpers/Delay";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#232323c7",
@@ -106,19 +108,30 @@ export default function InputAdornments(props: any) {
   };
   const signUp = async () => {
     setValues({ ...values, loading: true });
-    setTimeout(() => {
-      //mock loading
-      if (values.email === "error") {
-        setValues({
-          ...values,
-          error: "Invalid credentials. Please try again.",
-          loading: false,
-        });
-      } else {
-        setValues({ ...values, error: "", loading: false });
+    await delay(750);
+    const res = await authenticationService.login(
+      values.email,
+      values.password
+    );
+    if (res) {
+      console.log(res);
+      setValues({ ...values, error: "", loading: false });
+      if (res === "Administrator") {
+        history.push("/admin");
+      }
+      if (res === "Optician") {
         history.push("/optician");
       }
-    }, 2500);
+      if (res === "Opthalmologist") {
+        history.push("/opthalmologist");
+      }
+    } else {
+      setValues({
+        ...values,
+        error: "Invalid credentials. Please try again.",
+        loading: false,
+      });
+    }
   };
   return (
     <div className={classes.root}>

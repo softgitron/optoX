@@ -7,7 +7,17 @@ import Admin from "./pages/Admin/Admin";
 import Optician from "./pages/Optician/Optician";
 import Opthalmologist from "./pages/Ophthalmologist/Ophthalmologist";
 
+import { authenticationService } from "./Helpers/Authenthication";
+
 export default function App() {
+  React.useEffect(() => {
+    authenticationService.currentUser.subscribe((user) => {
+      //subscribe to changes
+      if (user) {
+        console.log(user);
+      }
+    });
+  }, []);
   return (
     <Router>
       {/* TODO autnethication for navbar, show links accordingly to role */}

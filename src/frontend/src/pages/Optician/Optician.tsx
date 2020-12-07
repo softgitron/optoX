@@ -12,6 +12,8 @@ import CustomerInfo from "./components/CustomerInfo";
 
 import AsynchronousSearch from "./components/AsyncSearch";
 
+import { authenticationService } from "../../Helpers/Authenthication";
+
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
@@ -87,6 +89,10 @@ export default function Optician() {
 
   const classes = useStyles();
 
+  const [user, setUser] = React.useState(
+    authenticationService.currentUserValue
+  );
+  console.log(user);
   const renderSwitch = (state: ScreenStates) => {
     switch (state) {
       case 0:
@@ -257,7 +263,7 @@ export default function Optician() {
           src={ProfileExamplePic}
         />
         <Typography className={classes.hellotext}>
-          Hello optician Matti Meikäläinen!
+          Hello optician {user.FirstName} {user.LastName}!
         </Typography>
         <img
           alt={"flag"}

@@ -11,6 +11,7 @@ import { GreenButton, RedButton } from "../../components/button/buttons";
 import Card from "./components/Card";
 import List from "@material-ui/core/List";
 import Modal from "../Optician/components/BiggerModal";
+import { authenticationService } from "../../Helpers/Authenthication";
 
 const patient1 = {
   id: "123",
@@ -157,6 +158,10 @@ export default function Ophthamologist() {
   const selectPatient = (index: number) => [
     setPatients({ ...patients, selectedPatient: index }),
   ];
+  const [user, setUser] = React.useState(
+    authenticationService.currentUserValue
+  );
+  console.log(user);
   const renderSwitch = (state: ScreenStates) => {
     switch (state) {
       case 0:
@@ -172,7 +177,7 @@ export default function Ophthamologist() {
                     src={ProfileExamplePic}
                   />
                   <Typography className={classes.hellotext}>
-                    Hello ophthamologist Matti Meikäläinen!
+                    Hello ophthamologist {user.FirstName} {user.LastName}!
                   </Typography>
                   <img
                     alt={"flag"}
