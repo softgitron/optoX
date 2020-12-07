@@ -1,65 +1,55 @@
 package optician
 
 import (
-	"encoding/json"
 	"net/http"
 
+	"github.com/softgitron/optox/src/mainbackend/connection"
 	"github.com/softgitron/optox/src/mainbackend/db"
-	"github.com/softgitron/optox/src/mainbackend/templates"
 )
 
 func Handler(db *(db.Database), res http.ResponseWriter, req *http.Request) {
-	if req.Method == "GET" {
-		var params = req.URL.Query()
 
-		//parse the query strings
+}
 
-		res.Header().Set("Content-Type", "application/json")
+/**
+ * @api {get} api/optician/customers Get optician customers
+ * @apiVersion 1.0.0
+ * @apiName getOptician customers
+ * @apiGroup Optician
+ *
+ * @apiHeader {String} [authenticationtoken] authentication token of the session. (Can be supplied via cookie too.)
+ *
+ * @apiSuccessExample Success-Response:
+ *     	HTTP/1.1 200 OK
+ *    	{
+ *   	"customers":[
+ *      	{
+ *         	"customerId":81,
+ *         	"socialSecurityNumber":"141195-511Y",
+ *         	"firstName":"Osku",
+ *         	"lastName":"Väänänen"
+ *      	},
+ *      	{
+ *        	 "customerId":85,
+ *         	"socialSecurityNumber":"120194-514H",
+ *        	 "firstName":"Kaisa",
+ *        	 "lastName":"Kunnari"
+ *      	}]
+ *     	}
+ *
+ *
+ * @apiError UnknownError Unknown error
+ * @apiError Unauthorized You don't have access to this customer data
+ *
+ */
 
-		//either we have malformed request or we are trying to request multiple things
-		if len(params) == 0 || (params.Get("id") != "" && params.Get("state") != "") {
-			http.Error(res, "Invalid query", http.StatusBadRequest)
-			return
-		}
-
-		if params.Get("id") != "" {
-			var result templates.Optician
-			db.GetConnection().Table("Contracts").Get(params.Get("id"))
-
-			output, err := json.Marshal(result)
-
-			if err != nil {
-				http.Error(res, err.Error(), http.StatusNoContent)
-				return
-			}
-
-			res.Write(output)
-		}
-
-		/*
-			if params.Get("state") != "" {
-				var state = State{
-					CurrentState: "OK",
-				}
-
-				output, err := json.Marshal(state)
-
-				if err != nil {
-					http.Error(res, err.Error(), http.StatusNoContent)
-					return
-				}
-
-				res.Write(output)
-			}
-		*/
-	}
-	if req.Method == "POST" {
-		var contract templates.Optician
-		err := json.NewDecoder(req.Body).Decode(&contract)
-
-		if err != nil {
-			http.Error(res, err.Error(), http.StatusBadRequest)
-			return
-		}
+// GetOpticianCustomers handles HTTP request that provides list of optician customers
+func GetOpticianCustomers(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
+	opticianEmployeeID := h.Claims.ID
+	customers, err := h.DBHandler.GetCustomersByOpticianEmployeeID(opticianEmployeeID)
+	if err == nil {
+		connection.SendOKReponse(customers, res)
+	} else {
+		connection.SendHTTPError(http.StatusInternalServerError, "Database error occurred while receiving customers information", res)
 	}
 }
