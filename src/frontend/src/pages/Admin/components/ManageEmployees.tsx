@@ -40,18 +40,21 @@ const employee1 = {
   id: "123",
   firstname: "Matti",
   lastname: "Meikäläinen",
+  email: "Matti.meikäläinen@hotmail.fi",
   role: 0,
 };
 const employee2 = {
   id: "1234",
   firstname: "Seppo",
   lastname: "Meikäläinen",
+  email: "Seppo.meikäläinen@hotmail.fi",
   role: 1,
 };
 const employee3 = {
   id: "1235",
   firstname: "Heikki",
   lastname: "Heikäläinen",
+  email: "Heikki.Heikäläinen@hotmail.fi",
   role: 1,
 };
 const employeesArray = [employee1, employee2, employee3];
@@ -135,6 +138,7 @@ export default function ManageEmployees({
                   firstname={employee.firstname}
                   lastname={employee.lastname}
                   role={employee.role}
+                  email={employee.email}
                   index={index}
                   deleteEmployee={deleteEmployee}
                 />

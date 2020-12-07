@@ -34,6 +34,7 @@ export default function OutlinedCard({
   role,
   index,
   id,
+  email,
   deleteEmployee,
 }: {
   role: number;
@@ -41,6 +42,7 @@ export default function OutlinedCard({
   lastname: string;
   index: any;
   id: string;
+  email: string;
   deleteEmployee: (id: string) => Promise<void>;
 }) {
   const classes = useStyles();
@@ -78,6 +80,7 @@ export default function OutlinedCard({
             )}
           </div>
         </Typography>
+        <Typography>{email}</Typography>
       </CardContent>
     </Card>
   );

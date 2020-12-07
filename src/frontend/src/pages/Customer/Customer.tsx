@@ -12,6 +12,20 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import { GreenButton, RedButton } from "../../components/button/buttons";
 
+import axios from "axios";
+import fileDownload from "js-file-download";
+
+const handleDownload = (url: string, filename: string) => {
+  axios
+    .get(url, {
+      responseType: "blob",
+    })
+    .then((res) => {
+      console.log(res);
+      fileDownload(res.data, filename);
+    });
+};
+
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
@@ -165,6 +179,7 @@ export default function Customer() {
                 alt="Profile picture"
                 src={ProfileExamplePic}
               />
+
               <Typography className={classes.hellotext}>
                 Hello customer Matti Meikäläinen!
               </Typography>
@@ -306,7 +321,12 @@ export default function Customer() {
                   variant="contained"
                   color="primary"
                   className={classes.button}
-                  onClick={() => null}
+                  onClick={() => {
+                    handleDownload(
+                      ProfileExamplePic, // TO BE correct url. Might have cors issues...
+                      "fundusfoto." + ProfileExamplePic.split(".").pop() //get file extension hack
+                    );
+                  }}
                 >
                   Download fundusfoto
                 </GreenButton>
