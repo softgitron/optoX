@@ -14,6 +14,13 @@ type employeeLogin struct {
 	Password string
 }
 
+// Response that will generated for the login request
+type Response struct {
+	Authentication string
+	Type           string
+	Person         interface{}
+}
+
 const generallErrorMessage = "Credentials didn't work"
 
 // CustomerLoginHandler handles customer based logins
@@ -143,9 +150,9 @@ func sendLoginOK(jwt string, response http.ResponseWriter) {
 
 func (h *Handler) sendToken(claims *Claims, response http.ResponseWriter) {
 	token, err := h.JWTBuilder.Build(&claims)
-	if err != nil {
-		sendHTTPError(http.StatusInternalServerError, "Unable to create JWT token", response)
-	} else {
+	if err == nil {
 		sendLoginOK(token.String(), response)
+	} else {
+		sendHTTPError(http.StatusInternalServerError, "Unable to create JWT token", response)
 	}
 }
