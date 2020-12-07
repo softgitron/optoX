@@ -11,6 +11,7 @@ import { RedButton } from "../../../components/button/buttons";
 import { ScreenStates } from "../Admin";
 import Card from "./Card";
 import CreateEmployee from "./CreateEmployee";
+import EmployeeSearchBar from "./EmployeeSearchBar";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -83,6 +84,9 @@ export default function ManageEmployees({
   const [employees, setEmployees] = React.useState({
     employees: employeesArray,
   });
+  const [filteredEmployees, setFilteredEmployees] = React.useState(
+    employees.employees
+  );
   //get employees through api
   const deleteEmployee = async (id: string) => {
     console.log("deleting employee?");
@@ -98,6 +102,26 @@ export default function ManageEmployees({
     employees.employees.push(account);
     setSuccessText("Employee successfully created!");
     handleClick();
+  };
+  const setFilter = (search: string, role: number) => {
+    console.log(search);
+    console.log(role);
+    if (search === "") {
+      let newArray = employees.employees.filter(function (el) {
+        return el.role === role || role === 2;
+      });
+      setFilteredEmployees(newArray);
+      return;
+    }
+    let newArray = employees.employees.filter(function (el) {
+      return (
+        (el.firstname.toLowerCase().includes(search.toLowerCase()) ||
+          el.lastname.toLowerCase().includes(search.toLowerCase())) &&
+        (el.role === role || role === 2)
+      );
+    });
+    setFilteredEmployees(newArray);
+    console.log(newArray);
   };
   return (
     <>
@@ -118,11 +142,12 @@ export default function ManageEmployees({
           >
             Manage Employees:
           </Typography>
+          <EmployeeSearchBar setValues={setFilter} />
           <div
             style={{
               backgroundColor: "#2d2d2db0",
               height: "600px",
-              marginTop: "150px",
+              marginTop: "0px",
               position: "relative",
               width: "520px",
               WebkitBoxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
@@ -131,7 +156,7 @@ export default function ManageEmployees({
             }}
           >
             <List className={classes.list}>
-              {employees.employees.map((employee, index) => (
+              {filteredEmployees.map((employee, index) => (
                 <Card
                   id={employee.id}
                   key={employee.id}
