@@ -80,7 +80,8 @@ syncbackend:
     pullPolicy: Never
   service:
     type: ClusterIP
-    port: 8080
+    httpPort: 8080
+    syncPort: 5000
   debugPort: 40003
 
 externalservices:

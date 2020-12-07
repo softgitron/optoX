@@ -40,7 +40,10 @@ spec:
           imagePullPolicy: {{ .Values.syncbackend.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.syncbackend.service.port }}
+              containerPort: {{ .Values.syncbackend.service.httpPort }}
+              protocol: TCP
+            - name: sync
+              containerPort: {{ .Values.syncbackend.service.syncPort }}
               protocol: TCP
             {{ if .Values.debug -}}
             - name: debug

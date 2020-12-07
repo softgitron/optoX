@@ -10,3 +10,8 @@ Test API function with authentication #2: `curl optox.net/api/healtz -H 'Authent
 ##### Get optician customers tests
 
 Try to receive optician customers: `curl optox.net/api/optician/customers -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.ygChtosY43j4rJWXQXSR08a2VL8giwIBgMH7ZFQPikY'`
+
+##### Image tests
+
+Upload image: `curl optox.net/api/image -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.ygChtosY43j4rJWXQXSR08a2VL8giwIBgMH7ZFQPikY' -F 'fileupload=@docs/test.jpg'`
+Download image: `curl 'optox.net/api/image?ImageID=1298498081' -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.ygChtosY43j4rJWXQXSR08a2VL8giwIBgMH7ZFQPikY' --output temp.jpg`

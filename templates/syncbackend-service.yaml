@@ -7,9 +7,13 @@ metadata:
 spec:
   type: {{ .Values.syncbackend.service.type }}
   ports:
-    - port: {{ .Values.syncbackend.service.port }}
+    - port: {{ .Values.syncbackend.service.httpPort }}
       targetPort: http
       protocol: TCP
       name: http
+    - port: {{ .Values.syncbackend.service.syncPort }}
+      targetPort: {{ .Values.syncbackend.service.syncPort }}
+      protocol: TCP
+      name: sync
   selector:
     deployment: {{ .Values.syncbackend.name }}
