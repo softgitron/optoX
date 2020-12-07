@@ -4,7 +4,7 @@ import { Route, Redirect } from "react-router-dom";
 import { authenticationService } from "./Authenthication";
 import Nav from "../components/nav/Nav";
 
-var jwtDecode = require("jwt-decode");
+//var jwtDecode = require("jwt-decode");
 
 export const PrivateRoute = ({ component: Component, roles, ...rest }: any) => (
   <Route

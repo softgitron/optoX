@@ -108,7 +108,7 @@ export default function InputAdornments(props: any) {
   };
   const signUp = async () => {
     setValues({ ...values, loading: true });
-    await delay(750);
+    await delay(750); // Delay so the login isn't instant :)
     const res = await authenticationService.login(
       values.email,
       values.password

@@ -21,6 +21,7 @@ export const authenticationService = {
   logout,
   newToken,
   tokenLogin,
+  tokenConfig,
   currentUser: currentUserSubject.asObservable(),
   get currentUserValue() {
     return currentUserSubject.value;
@@ -31,11 +32,6 @@ function newToken(token: string) {
   localStorage.setItem(token, JSON.stringify(token));
 }
 async function login(email: string, password: string) {
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
   const body = JSON.stringify({ email, password });
   try {
     const res = await axios.post(API + "/users/login", body);
@@ -54,11 +50,6 @@ async function login(email: string, password: string) {
   }
 }
 async function tokenLogin(customerToken: String) {
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
   const body = JSON.stringify({ token: customerToken });
   try {
     const res = await axios.post(API + "/users/login", body);
@@ -80,7 +71,7 @@ function logout() {
   localStorage.removeItem(token);
   currentUserSubject.next(null);
 }
-export const tokenConfig = () => {
+function tokenConfig() {
   //TODO: check if the token has expired,  if it has then logout user and push to login
   const currentUser = authenticationService.currentUserValue;
   /*   console.log(currentUser.token);
@@ -95,9 +86,9 @@ export const tokenConfig = () => {
   const config = {
     headers: {
       "Content-Type": "application/json",
-      authentication: currentUser?.token,
+      Authentication: currentUser?.token,
     },
   };
   return config;
-};
+}
 tokenConfig();
