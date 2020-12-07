@@ -6,6 +6,7 @@ import Customer from "./pages/Customer/Customer";
 import Admin from "./pages/Admin/Admin";
 import Optician from "./pages/Optician/Optician";
 import Opthalmologist from "./pages/Ophthalmologist/Ophthalmologist";
+import { PrivateRoute } from "./Helpers/PrivateRoute";
 
 import { authenticationService } from "./Helpers/Authenthication";
 
@@ -26,24 +27,29 @@ export default function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/Customer">
-          <Nav />
-          <Customer />
-        </Route>
-        <Route path="/Admin">
-          <Nav />
-          <Admin />
-        </Route>
-        <Route path="/Optician">
-          <Nav />
-          <Optician />
-        </Route>
-        <Route path="/Opthalmologist">
-          <Nav />
-          <Opthalmologist />
-        </Route>
+        <PrivateRoute
+          path="/Customer"
+          component={Customer}
+          roles={["Customer", "Administrator"]}
+        />
+        <PrivateRoute
+          path="/Admin"
+          component={Admin}
+          roles={["Administrator"]}
+        />
+        <PrivateRoute
+          path="/Optician"
+          component={Optician}
+          roles={["Optician", "Administrator"]}
+        />
+        <PrivateRoute
+          path="/Opthalmologist"
+          component={Opthalmologist}
+          roles={["Opthalmologist", "Administrator"]}
+        />
+
         <Route path="/">
-          <Login /> {/**TODO: rerouting if not authenthicated, 404 page etc. */}
+          <Login /> {/**TODO: 404 page  */}
         </Route>
       </Switch>
     </Router>

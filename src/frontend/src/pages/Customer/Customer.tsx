@@ -15,6 +15,7 @@ import { GreenButton, RedButton } from "../../components/button/buttons";
 import axios from "axios";
 import fileDownload from "js-file-download";
 import { authenticationService } from "../../Helpers/Authenthication";
+import { useHistory } from "react-router-dom";
 
 const handleDownload = (url: string, filename: string) => {
   axios
@@ -112,6 +113,7 @@ export default function Customer() {
   const [user, setUser] = React.useState(
     authenticationService.currentUserValue
   );
+  const history = useHistory();
   console.log(user);
   const renderSwitch = (state: number) => {
     switch (state) {
@@ -374,7 +376,10 @@ export default function Customer() {
                   color="primary"
                   className={classes.button}
                   style={{ marginTop: "60px" }}
-                  onClick={() => null}
+                  onClick={() => {
+                    authenticationService.logout();
+                    history.push("/login");
+                  }}
                 >
                   Log out
                 </RedButton>

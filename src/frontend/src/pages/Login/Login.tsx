@@ -6,6 +6,8 @@ import Grid from "@material-ui/core/Grid";
 
 import SignInNormal from "./components/SignIn";
 import SignInToken from "./components/TokenSignIn";
+import { authenticationService } from "../../Helpers/Authenthication";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +39,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function LoginPage() {
+  const history = useHistory();
+  React.useEffect(() => {
+    if (authenticationService.currentUserValue) {
+      if (authenticationService.currentUserValue.Type === "Administrator") {
+        history.push("/admin");
+      }
+      if (authenticationService.currentUserValue.Type === "Optician") {
+        history.push("/optician");
+      }
+      if (authenticationService.currentUserValue.Type === "Opthalmologist") {
+        history.push("/opthalmologist");
+      }
+      if (authenticationService.currentUserValue.Type === "Customer") {
+        history.push("/customer");
+      }
+    }
+  }, [history]);
   const classes = useStyles();
   const [isNormalSignUpOn, setNormalSignUp] = React.useState(true);
   return (

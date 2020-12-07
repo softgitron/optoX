@@ -81,12 +81,23 @@ function logout() {
   currentUserSubject.next(null);
 }
 export const tokenConfig = () => {
+  //TODO: check if the token has expired,  if it has then logout user and push to login
   const currentUser = authenticationService.currentUserValue;
+  /*   console.log(currentUser.token);
+  const decode: any = jwt_decode(currentUser.token);
+  if (!decode) {
+    logout();
+  }
+  console.log(decode);
+  const diff = Math.floor(new Date().getTime() / 1000) - decode.exp;
+  console.log(diff); */
+
   const config = {
     headers: {
       "Content-Type": "application/json",
-      authentication: currentUser.token,
+      authentication: currentUser?.token,
     },
   };
   return config;
 };
+tokenConfig();

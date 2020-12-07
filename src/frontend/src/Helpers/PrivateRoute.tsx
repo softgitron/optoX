@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 import { authenticationService } from "./Authenthication";
+import Nav from "../components/nav/Nav";
 
 var jwtDecode = require("jwt-decode");
 
@@ -19,27 +20,30 @@ export const PrivateRoute = ({ component: Component, roles, ...rest }: any) => (
           />
         );
       }
-
-      if (jwtDecode(currentUser.token).exp < Date.now() / 1000) {
+      // If/when JWT will have exp & iat
+      /*       if (jwtDecode(currentUser.token).exp < Date.now() / 1000) {
         return (
           <Redirect
             to={{ pathname: "/login", state: { from: props.location } }}
           />
         );
-      }
-      if (roles && roles.indexOf(currentUser.user.role) === -1) {
+      } */
+      if (roles && roles.indexOf(currentUser.Type) === -1) {
         // check if route is restricted by role
         // role not authorised so redirect to home page
-        return <Redirect to={{ pathname: "/" }} />;
+        return <Redirect to={{ pathname: "/login" }} />;
       }
       // authorised so return component
       return (
-        <Component
-          {...props}
-          data={rest.data}
-          darkMode={rest.darkMode}
-          loadUser={rest.loadUser}
-        />
+        <>
+          <Nav />
+          <Component
+            {...props}
+            data={rest.data}
+            darkMode={rest.darkMode}
+            loadUser={rest.loadUser}
+          />
+        </>
       );
     }}
   />
