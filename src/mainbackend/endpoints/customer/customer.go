@@ -48,7 +48,7 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 
 	if req.Method == "POST" {
 		var customer db.Customer
-		var _, err = json.Marshal(&customer)
+		var err = json.NewDecoder(req.Body).Decode(&customer)
 
 		if err != nil {
 			return
