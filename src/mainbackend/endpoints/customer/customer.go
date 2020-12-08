@@ -47,13 +47,13 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 	}
 
 	if req.Method == "POST" {
-		var contract db.Contract
-		var _, err = json.Marshal(&contract)
+		var customer db.Customer
+		var _, err = json.Marshal(&customer)
 
 		if err != nil {
 			return
 		}
 
-		//db.AddContract(&contract)
+		h.DBHandler.AddCustomer(&customer)
 	}
 }

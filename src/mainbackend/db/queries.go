@@ -49,3 +49,7 @@ func (db *Database) GetCustomersByID(id int) (*[]Customer, error) {
 
 	return &customers, results.Error
 }
+
+func (db *Database) AddCustomer(customer *Customer) {
+	db.connection.Create(customer)
+}
