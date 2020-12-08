@@ -9,6 +9,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"sync"
+	"time"
 
 	"github.com/cenkalti/rpc2"
 )
@@ -25,6 +26,7 @@ const rootDirectory = "/images/"
 
 // Initialize loads existing file ids to a map
 func (se *Syncengine) Initialize() {
+	rand.Seed(time.Now().UTC().UnixNano())
 	err := se.getFiles(rootDirectory)
 	if err != nil {
 		println("Couldn't receive file information from the disk.")
@@ -61,9 +63,17 @@ func (se *Syncengine) Store(newFile multipart.File) (string, error) {
 		return randomFileID, err
 	}
 	_, err = io.Copy(file, newFile)
-	if err == nil {
-		se.Files.Store(filename, true)
+	if err != nil {
+		return randomFileID, err
 	}
+
+	// Add new file to the list of files
+	se.Files.Store(filename, true)
+
+	// Send file to another clients
+	newFile.Seek(0, 0)
+	data, _ := ioutil.ReadAll(newFile)
+	se.sendFileToAllClients(filename, data)
 	return randomFileID, err
 }
 

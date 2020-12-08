@@ -16,6 +16,8 @@ var syncEngineProtocol = "tcp"
 func (se *Syncengine) StartSyncServer() {
 	server := rpc2.NewServer()
 	server.Handle("getFileNames", se.getFileNames)
+	server.Handle("getFile", se.getFile)
+	server.Handle("getHealtz", se.getHealtz)
 
 	listener, err := net.Listen(syncEngineProtocol, syncEngineHost+":"+syncEnginePort)
 	if err != nil {
@@ -45,8 +47,22 @@ func (se *Syncengine) onDisconnect(client *rpc2.Client) {
 	}
 }
 
-type getFileNamesArgs interface{}
-type getFileNamesReply []string
+// GetHealtzArgs ...
+type GetHealtzArgs interface{}
+
+// GetHealtzReply ...
+type GetHealtzReply bool
+
+func (se *Syncengine) getHealtz(client *rpc2.Client, args *GetHealtzArgs, reply *GetHealtzReply) error {
+	*reply = true
+	return nil
+}
+
+// GetFileNamesArgs ...
+type GetFileNamesArgs interface{}
+
+// GetFileNamesReply ...
+type GetFileNamesReply []string
 
 func (se *Syncengine) getFileNames(client *rpc2.Client, args interface{}, reply *[]string) error {
 	var fileIDs []string
@@ -59,17 +75,37 @@ func (se *Syncengine) getFileNames(client *rpc2.Client, args interface{}, reply 
 	return nil
 }
 
-type getFileArgs struct {
+// GetFileArgs ...
+type GetFileArgs struct {
 	FilePath string
 }
-type getFileReply struct {
+
+// GetFileReply ...
+type GetFileReply struct {
 	Data  []byte
 	Error error
 }
 
-func (se *Syncengine) getFile(client *rpc2.Client, args *getFileArgs, reply *getFileReply) error {
+func (se *Syncengine) getFile(client *rpc2.Client, args *GetFileArgs, reply *GetFileReply) error {
 	data, err := ioutil.ReadFile(args.FilePath)
 	reply.Data = data
 	reply.Error = err
+	return nil
+}
+
+func (se *Syncengine) sendFileToAllClients(filePath string, fileData []byte) error {
+	args := ReceiveNewFileArgs{
+		FilePath: filePath,
+		Data:     fileData,
+	}
+	var reply ReceiveNewFileReply
+	se.RPCServerClientLock.Lock()
+	defer se.RPCServerClientLock.Unlock()
+	for _, client := range se.RPCServerClients {
+		err := client.Call("receiveNewFile", &args, &reply)
+		if err != nil {
+			println(err)
+		}
+	}
 	return nil
 }
