@@ -57,3 +57,27 @@ func (db *Database) AddCustomer(customer *Customer) {
 func (db *Database) AddContract(contract *Contract) {
 	db.connection.Create(contract)
 }
+
+func (db *Database) GetEmployeeByEmail(email string) (Employee, error) {
+	employee := Employee{}
+	result := db.connection.Model(&Employee{}).
+		Select("* from Employee").
+		Where("Email = ?", email).
+		First(&employee)
+
+	return employee, result.Error
+}
+
+func (db *Database) AddEmployee(employee *Employee) {
+	db.connection.Create(employee)
+}
+
+func (db *Database) GetInspectionByToken(token string) (Inspection, error) {
+	inspection := Inspection{}
+	result := db.connection.Model(&Inspection{}).
+		Select("* from Inspection").
+		Where("AccessToken = ?", token).
+		First(&inspection)
+
+	return inspection, result.Error
+}
