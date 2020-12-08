@@ -11,3 +11,22 @@ func (db *Database) GetCustomersByOpticianEmployeeID(opticianEmployeeID int) (*[
 		Find(&customers)
 	return &customers, results.Error
 }
+
+func (db *Database) GetContracts() (*[]Contract, error) {
+	contracts := []Contract{}
+	results := db.connection.Model(&Contract{}).
+		Select("* from Contract").
+		Find(&contracts)
+
+	return &contracts, results.Error
+}
+
+func (db *Database) GetContractsByID(id int) (*[]Contract, error) {
+	contracts := []Contract{}
+	results := db.connection.Model(&Contract{}).
+		Select("* from Contract").
+		Where("ContractID = ?", id).
+		Find(&contracts)
+
+	return &contracts, results.Error
+}

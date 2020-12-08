@@ -3,7 +3,10 @@ package contract
 import (
 	"encoding/json"
 	"net/http"
+	"net/url"
+	"strconv"
 
+	"github.com/softgitron/optox/src/mainbackend/connection"
 	"github.com/softgitron/optox/src/mainbackend/db"
 	"github.com/softgitron/optox/src/mainbackend/templates"
 )
@@ -28,8 +31,34 @@ type State struct {
 	CurrentState string `json:"state"`
 }
 
+type Results struct {
+	contracts *[]db.Contract
+}
+
+var handlers = []func(url.Values){}
+
+// GetContractByID ...
+func GetContractByID(query url.Values, h *connection.Handler) (*[]db.Contract, error) {
+	var id, converr = strconv.ParseInt(query.Get("id"), 10, 32)
+
+	if converr != nil {
+		return nil, converr
+	}
+
+	var results, err = h.DBHandler.GetContractsByID(int(id))
+	return results, err
+}
+
+func GetAllContracts(res http.ResponseWriter, req *http.Request, h *connection.Handler) (*[]db.Contract, error) {
+	return h.DBHandler.GetContracts()
+}
+
+func AddContract() {
+
+}
+
 //Handler ...
-func Handler(db *(db.Database), res http.ResponseWriter, req *http.Request) {
+func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	//depending on whether we get a POST or GET
 	//handle things differently
 
@@ -40,55 +69,37 @@ func Handler(db *(db.Database), res http.ResponseWriter, req *http.Request) {
 	//probably based on the ID, if there's no ID
 
 	if req.Method == "GET" {
-		var params = req.URL.Query()
+		var query = req.URL.Query()
+		var results *[]db.Contract
+		var err error
 
-		//parse the query strings
+		//TODO:
+		//get
 
-		res.Header().Set("Content-Type", "application/json")
+		if query.Get("contract") != "" {
+			results, err = GetAllContracts(res, req, h)
+		} else {
+			results, err = GetContractByID(query, h)
+		}
 
-		//either we have malformed request or we are trying to request multiple things
-		if len(params) == 0 || (params.Get("id") != "" && params.Get("state") != "") {
-			http.Error(res, "Invalid query", http.StatusBadRequest)
+		if err != nil {
+			//TODO: Add proper HTTP error, or return the error in json
 			return
 		}
 
-		if params.Get("id") != "" {
-			var result templates.Contract
-			db.GetConnection().Table("Contracts").Get(params.Get("id"))
-
-			output, err := json.Marshal(result)
-
-			if err != nil {
-				http.Error(res, err.Error(), http.StatusNoContent)
-				return
-			}
-
-			res.Write(output)
-		}
-
-		if params.Get("state") != "" {
-			var state = State{
-				CurrentState: "OK",
-			}
-
-			output, err := json.Marshal(state)
-
-			if err != nil {
-				http.Error(res, err.Error(), http.StatusNoContent)
-				return
-			}
-
-			res.Write(output)
-		}
+		json.NewEncoder(res).Encode(Results{
+			contracts: results,
+		})
 	}
 
 	if req.Method == "POST" {
 		var contract templates.Contract
-		err := json.NewDecoder(req.Body).Decode(&contract)
+		var _, err = json.Marshal(&contract)
 
 		if err != nil {
-			http.Error(res, err.Error(), http.StatusBadRequest)
 			return
 		}
+
+		//db.AddContract(&contract)
 	}
 }
