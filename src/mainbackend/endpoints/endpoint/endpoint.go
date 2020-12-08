@@ -8,6 +8,8 @@ import (
 	"github.com/softgitron/optox/src/mainbackend/connection"
 	"github.com/softgitron/optox/src/mainbackend/db"
 	"github.com/softgitron/optox/src/mainbackend/endpoints/contract"
+	"github.com/softgitron/optox/src/mainbackend/endpoints/customer"
+	"github.com/softgitron/optox/src/mainbackend/endpoints/employee"
 	"github.com/softgitron/optox/src/mainbackend/endpoints/image"
 	"github.com/softgitron/optox/src/mainbackend/endpoints/inspection"
 	"github.com/softgitron/optox/src/mainbackend/endpoints/optician"
@@ -34,8 +36,8 @@ var allAccessLevels = []string{"Normal", "Moderator", "Administrator"}
 
 //Endpoints ...
 var Endpoints = map[string]Endpoint{
-	"customer": {URL: "/api/customer", middlewares: basicMiddlewares, customHandler: nil, Accepts: []string{"GET", "POST"}},
-	"employee": {URL: "/api/employee", middlewares: basicMiddlewares, customHandler: nil, Accepts: []string{"GET", "POST"}},
+	"customer": {URL: "/api/customer", middlewares: basicMiddlewares, customHandler: customer.Handler, Accepts: []string{"GET", "POST"}},
+	"employee": {URL: "/api/employee", middlewares: basicMiddlewares, customHandler: employee.Handler, Accepts: []string{"GET", "POST"}},
 	"customers": {
 		URL:                  "/api/optician/customers",
 		middlewares:          basicMiddlewares,
