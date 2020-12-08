@@ -3,7 +3,7 @@ package service
 import (
 	"net/http"
 
-	"github.com/softgitron/optox/src/mainbackend/db"
+	"github.com/softgitron/optox/src/mainbackend/connection"
 )
 
 /*
@@ -21,6 +21,6 @@ type Data struct {
 }
 
 //Handler ... will just output that if everything is OK
-func Handler(ep *(db.Database), res http.ResponseWriter, req *http.Request) {
+func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	//get states for all
 }

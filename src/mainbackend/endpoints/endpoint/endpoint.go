@@ -7,7 +7,12 @@ import (
 
 	"github.com/softgitron/optox/src/mainbackend/connection"
 	"github.com/softgitron/optox/src/mainbackend/db"
+	"github.com/softgitron/optox/src/mainbackend/endpoints/contract"
+	"github.com/softgitron/optox/src/mainbackend/endpoints/image"
+	"github.com/softgitron/optox/src/mainbackend/endpoints/inspection"
 	"github.com/softgitron/optox/src/mainbackend/endpoints/optician"
+	"github.com/softgitron/optox/src/mainbackend/endpoints/service"
+	"github.com/softgitron/optox/src/mainbackend/endpoints/users"
 	"github.com/softgitron/optox/src/mainbackend/middleware"
 )
 
@@ -39,11 +44,12 @@ var Endpoints = map[string]Endpoint{
 		AuthenticationTypes:  []string{"Optician"},
 		AuthenticationLevels: allAccessLevels,
 	},
-	"optician":   {URL: "/api/optician", middlewares: basicMiddlewares, customHandler: nil, Accepts: []string{"GET", "POST"}},
-	"image":      {URL: "/api/image", middlewares: basicMiddlewares, customHandler: nil, Accepts: []string{"GET", "POST"}},
-	"service":    {URL: "/api/service", middlewares: basicMiddlewares, customHandler: nil, Accepts: []string{"GET"}},
-	"inspection": {URL: "/api/inspection", middlewares: basicMiddlewares, customHandler: nil, Accepts: []string{"GET", "POST"}},
-	"contract":   {URL: "/api/contract", middlewares: basicMiddlewares, customHandler: nil, Accepts: []string{"GET", "POST"}},
+	"optician":   {URL: "/api/optician", middlewares: basicMiddlewares, customHandler: optician.Handler, Accepts: []string{"GET", "POST"}},
+	"image":      {URL: "/api/image", middlewares: basicMiddlewares, customHandler: image.Handler, Accepts: []string{"GET", "POST"}},
+	"service":    {URL: "/api/service", middlewares: basicMiddlewares, customHandler: service.Handler, Accepts: []string{"GET"}},
+	"inspection": {URL: "/api/inspection", middlewares: basicMiddlewares, customHandler: inspection.Handler, Accepts: []string{"GET", "POST"}},
+	"contract":   {URL: "/api/contract", middlewares: basicMiddlewares, customHandler: contract.Handler, Accepts: []string{"GET", "POST"}},
+	"users":      {URL: "/api/users", middlewares: basicMiddlewares, customHandler: users.Handler, Accepts: []string{"POST"}},
 }
 
 var dbConnection db.Database
@@ -106,5 +112,7 @@ func (ep *Endpoint) HandleRequest(res http.ResponseWriter, req *http.Request) {
 		}
 	}
 	// Finally execute custom handler
+
+	res.Header().Set("Content-Type", "application/json")
 	ep.customHandler(res, req, &extra)
 }

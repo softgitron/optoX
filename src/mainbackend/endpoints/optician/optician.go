@@ -4,10 +4,9 @@ import (
 	"net/http"
 
 	"github.com/softgitron/optox/src/mainbackend/connection"
-	"github.com/softgitron/optox/src/mainbackend/db"
 )
 
-func Handler(db *(db.Database), res http.ResponseWriter, req *http.Request) {
+func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 
 }
 

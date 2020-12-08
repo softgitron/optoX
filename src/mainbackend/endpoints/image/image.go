@@ -3,9 +3,9 @@ package image
 import (
 	"net/http"
 
-	"github.com/softgitron/optox/src/mainbackend/db"
+	"github.com/softgitron/optox/src/mainbackend/connection"
 )
 
-func Handler(ep *(db.Database), res http.ResponseWriter, req *http.Request) {
+func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 
 }

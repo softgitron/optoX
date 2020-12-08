@@ -8,7 +8,6 @@ import (
 
 	"github.com/softgitron/optox/src/mainbackend/connection"
 	"github.com/softgitron/optox/src/mainbackend/db"
-	"github.com/softgitron/optox/src/mainbackend/templates"
 )
 
 //What data should we need?
@@ -32,10 +31,15 @@ type State struct {
 }
 
 type Results struct {
-	contracts *[]db.Contract
+	Contracts *[]db.Contract
 }
 
-var handlers = []func(url.Values){}
+var validQueries = []string{"contract", "optician", "opthtamologist"}
+var handlers = map[string]func(url.Values, *connection.Handler) (*[]db.Contract, error){
+	"contract":      GetContractByID,
+	"optician":      GetContractsByOpticianID,
+	"opthamologist": GetContractsByOpthamologistID,
+}
 
 // GetContractByID ...
 func GetContractByID(query url.Values, h *connection.Handler) (*[]db.Contract, error) {
@@ -49,7 +53,20 @@ func GetContractByID(query url.Values, h *connection.Handler) (*[]db.Contract, e
 	return results, err
 }
 
-func GetAllContracts(res http.ResponseWriter, req *http.Request, h *connection.Handler) (*[]db.Contract, error) {
+func GetContracts(query url.Values, h *connection.Handler) (*[]db.Contract, error) {
+	//
+	return GetAllContracts(query, h)
+}
+
+func GetContractsByOpticianID(query url.Values, h *connection.Handler) (*[]db.Contract, error) {
+	return GetAllContracts(query, h)
+}
+
+func GetContractsByOpthamologistID(query url.Values, h *connection.Handler) (*[]db.Contract, error) {
+	return GetAllContracts(query, h)
+}
+
+func GetAllContracts(query url.Values, h *connection.Handler) (*[]db.Contract, error) {
 	return h.DBHandler.GetContracts()
 }
 
@@ -74,10 +91,10 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 		var err error
 
 		//TODO:
-		//get
+		//if multiple query parts are present, show not implemented
 
 		if query.Get("contract") != "" {
-			results, err = GetAllContracts(res, req, h)
+			results, err = GetAllContracts(query, h)
 		} else {
 			results, err = GetContractByID(query, h)
 		}
@@ -88,12 +105,12 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 		}
 
 		json.NewEncoder(res).Encode(Results{
-			contracts: results,
+			Contracts: results,
 		})
 	}
 
 	if req.Method == "POST" {
-		var contract templates.Contract
+		var contract db.Contract
 		var _, err = json.Marshal(&contract)
 
 		if err != nil {
