@@ -10,7 +10,7 @@ apiVersion: extensions/v1beta1
 {{- end }}
 kind: Ingress
 metadata:
-  name: {{ $fullName }}
+  name: {{ $fullName }}-ingress
   labels:
     {{- include "optox.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
@@ -34,15 +34,12 @@ spec:
     - host: {{ .host | quote }}
       http:
         paths:
-          {{- range .paths }}
-          - path: "{{ . }}"
-            pathType: "Prefix"
+          - pathType: "ImplementationSpecific"
             backend:
               service:
                 name: {{ $fullName }}
                 port:
                   number: {{ $svcPort }}
-          {{- end }}
     {{- end }}
   {{- else -}}
   {{"rules" | nindent 4}}:
@@ -50,13 +47,9 @@ spec:
     - host: {{ .host | quote }}
       http:
         paths:
-          {{- range .paths }}
-          - path: "{{ . }}"
-            pathType: "Prefix"
+          - pathType: "ImplementationSpecific"
             backend:
               serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
-          {{- end }}
     {{- end }}
   {{- end }}
   {{- end }}
