@@ -53,3 +53,7 @@ func (db *Database) GetCustomersByID(id int) (*[]Customer, error) {
 func (db *Database) AddCustomer(customer *Customer) {
 	db.connection.Create(customer)
 }
+
+func (db *Database) AddContract(contract *Contract) {
+	db.connection.Create(contract)
+}

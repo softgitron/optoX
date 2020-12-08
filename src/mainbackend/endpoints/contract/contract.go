@@ -111,7 +111,7 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 
 	if req.Method == "POST" {
 		var contract db.Contract
-		var _, err = json.Marshal(&contract)
+		var err = json.NewDecoder(req.Body).Decode(&contract)
 
 		if err != nil {
 			return
