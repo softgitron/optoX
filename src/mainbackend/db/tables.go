@@ -42,6 +42,7 @@ type Optician struct {
 	Name            string
 }
 
+//Opthalmologist gorm template
 type Opthalmologist struct {
 	OpthalmologistID      int `gorm:"primaryKey"`
 	BankAccountID         int
@@ -50,6 +51,7 @@ type Opthalmologist struct {
 	Price                 int
 }
 
+//Inspection gorm template
 type Inspection struct {
 	InspectionID      int `gorm:"primaryKey"`
 	CustomerID        int
@@ -64,6 +66,7 @@ type Inspection struct {
 	Status            string
 }
 
+//Contract gorm template
 type Contract struct {
 	ContractID       int `gorm:"primaryKey"`
 	OpticianID       int

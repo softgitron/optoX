@@ -12,6 +12,7 @@ func (db *Database) GetCustomersByOpticianEmployeeID(opticianEmployeeID int) (*[
 	return &customers, results.Error
 }
 
+// GetContracts ...
 func (db *Database) GetContracts() (*[]Contract, error) {
 	contracts := []Contract{}
 	results := db.connection.Model(&Contract{}).
@@ -21,6 +22,7 @@ func (db *Database) GetContracts() (*[]Contract, error) {
 	return &contracts, results.Error
 }
 
+// GetContractsByID ...
 func (db *Database) GetContractsByID(id int) (*[]Contract, error) {
 	contracts := []Contract{}
 	results := db.connection.Model(&Contract{}).
@@ -31,6 +33,7 @@ func (db *Database) GetContractsByID(id int) (*[]Contract, error) {
 	return &contracts, results.Error
 }
 
+// GetCustomers ...
 func (db *Database) GetCustomers() (*[]Customer, error) {
 	customers := []Customer{}
 	results := db.connection.Model(&Customer{}).
@@ -40,6 +43,7 @@ func (db *Database) GetCustomers() (*[]Customer, error) {
 	return &customers, results.Error
 }
 
+// GetCustomersByID ...
 func (db *Database) GetCustomersByID(id int) (*[]Customer, error) {
 	customers := []Customer{}
 	results := db.connection.Model(&Contract{}).
@@ -50,14 +54,17 @@ func (db *Database) GetCustomersByID(id int) (*[]Customer, error) {
 	return &customers, results.Error
 }
 
+// AddCustomer ...
 func (db *Database) AddCustomer(customer *Customer) {
 	db.connection.Create(customer)
 }
 
+// AddContract ...
 func (db *Database) AddContract(contract *Contract) {
 	db.connection.Create(contract)
 }
 
+// GetEmployeeByEmail ...
 func (db *Database) GetEmployeeByEmail(email string) (Employee, error) {
 	employee := Employee{}
 	result := db.connection.Model(&Employee{}).
@@ -68,10 +75,12 @@ func (db *Database) GetEmployeeByEmail(email string) (Employee, error) {
 	return employee, result.Error
 }
 
+// AddEmployee ...
 func (db *Database) AddEmployee(employee *Employee) {
 	db.connection.Create(employee)
 }
 
+// GetInspectionByToken ...
 func (db *Database) GetInspectionByToken(token string) (Inspection, error) {
 	inspection := Inspection{}
 	result := db.connection.Model(&Inspection{}).
