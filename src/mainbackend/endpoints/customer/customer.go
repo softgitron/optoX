@@ -1,7 +1,6 @@
 package customer
 
 import (
-	"encoding/json"
 	"net/http"
 	"net/url"
 
@@ -101,14 +100,14 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 	}
 
 	if req.Method == "POST" {
-		var customer db.Customer
-		var err = json.NewDecoder(req.Body).Decode(&customer)
+		err := h.DBHandler.AddCustomer(h.Body.(db.Customer))
 
 		if err != nil {
+			connection.SendHTTPError(http.StatusInternalServerError, "Couldn't parse the body", res)
 			return
 		}
 
-		h.DBHandler.AddCustomer(&customer)
+		connection.SendOKReponse(h.Body, res)
 	}
 }
 

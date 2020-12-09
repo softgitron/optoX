@@ -51,8 +51,9 @@ func (db *Database) GetCustomersByID(id int) (*[]Customer, error) {
 }
 
 // AddCustomer ...
-func (db *Database) AddCustomer(customer *Customer) {
-	db.connection.Create(customer)
+func (db *Database) AddCustomer(customer Customer) error {
+	res := db.connection.Omit("CustomerID").Create(customer)
+	return res.Error
 }
 
 // AddContract ...
