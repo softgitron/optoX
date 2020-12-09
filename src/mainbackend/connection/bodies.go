@@ -3,7 +3,7 @@ package connection
 const (
 	BodyTypeInspectionDecision = iota
 	BodyTypeLoginDetails       = iota
-	BodyTypeCustomerRequest    = iota
+	BodyTypeCustomer           = iota
 )
 
 // InspectionDecision provided by gateway
@@ -16,9 +16,4 @@ type LoginDetails struct {
 	Email    string
 	Password string
 	Token    string
-}
-
-type CustomerRequest struct {
-	OpticianID      int
-	OpthamologistID int
 }

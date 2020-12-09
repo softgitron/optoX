@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"github.com/softgitron/optox/src/mainbackend/connection"
+	"github.com/softgitron/optox/src/mainbackend/db"
 )
 
 // Middleware contains information that can be processed by the middlewares
@@ -82,6 +83,12 @@ func DecodeBody(res http.ResponseWriter, req *http.Request, mw *Middleware, h *c
 	case connection.BodyTypeLoginDetails:
 		{
 			body := connection.LoginDetails{}
+			err = json.NewDecoder(req.Body).Decode(&body)
+			h.Body = body
+		}
+	case connection.BodyTypeCustomer:
+		{
+			body := db.Customer{}
 			err = json.NewDecoder(req.Body).Decode(&body)
 			h.Body = body
 		}

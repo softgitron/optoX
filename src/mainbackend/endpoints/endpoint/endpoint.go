@@ -44,6 +44,7 @@ var Endpoints = map[string]Endpoint{
 		Accepts:              []string{"GET", "POST"},
 		AuthenticationTypes:  []string{"Optician"},
 		AuthenticationLevels: allAccessLevels,
+		bodyType:             connection.BodyTypeCustomer,
 		dbHandler:            &dbConnection,
 	},
 	"/api/customer/inspections": {
@@ -158,7 +159,6 @@ func Initialize() {
 	dbConnection.CreateConnection()
 
 	http.HandleFunc("/api/", func(res http.ResponseWriter, req *http.Request) {
-
 		var path = req.URL.Path
 
 		if endpoint, ok := Endpoints[path]; ok {

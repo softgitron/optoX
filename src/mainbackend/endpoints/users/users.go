@@ -69,5 +69,9 @@ func Register(req *http.Request, h *connection.Handler) {
 
 // Handler ...
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
-	login(h, h.Body.(connection.LoginDetails))
+	if login(h, h.Body.(connection.LoginDetails)) {
+		connection.SendOKReponse(h.Body, res)
+	} else {
+		connection.SendHTTPError(http.StatusUnauthorized, "Couldn't log in, check email and password", res)
+	}
 }

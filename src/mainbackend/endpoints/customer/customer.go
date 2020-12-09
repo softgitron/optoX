@@ -65,10 +65,18 @@ func GetCustomerByID(query url.Values, h *connection.Handler) (*[]db.Customer, e
  *
  */
 
+// GetCustomerInspections ...
 func GetCustomerInspections(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
-
+	customerID := h.Claims.ID
+	inspections, err := h.DBHandler.GetInspectionByCustomerID(customerID)
+	if err == nil {
+		connection.SendOKReponse(inspections, res)
+	} else {
+		connection.SendHTTPError(http.StatusInternalServerError, "Database error occurred while receiving inspection information", res)
+	}
 }
 
+// Handler ...
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	if req.Method == "GET" {
 		var query = req.URL.Query()
