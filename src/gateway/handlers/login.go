@@ -23,7 +23,7 @@ type Response struct {
 const generallErrorMessage = "Credentials didn't work"
 
 /**
- * @api {post} api/authentication/customer Customer authenticates with token
+ * @api {post} /authentication/customer Customer authenticates with token
  * @apiVersion 1.0.0
  * @apiName authenticateCustomer
  * @apiGroup User
@@ -91,7 +91,7 @@ func (h *Handler) CustomerLoginHandler(response http.ResponseWriter, request *ht
 }
 
 /**
- * @api {post} api/authentication/employee Authenticates with email address and password
+ * @api {post} /authentication/employee Authenticates with email address and password
  * @apiVersion 1.0.0
  * @apiName authenticateUser
  * @apiGroup User

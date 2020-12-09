@@ -28,13 +28,13 @@ func (h *Handler) ImageHandler(res http.ResponseWriter, req *http.Request) {
 }
 
 /**
- * @api {post} api/image Uploads new image and returns ImageID
+ * @api {post} /image Uploads new image and returns ImageID
  * @apiVersion 1.0.0
  * @apiName newImage
  * @apiGroup Image
  *
- * @apiHeader {String} [Authentication] authentication token of the session. (Can be supplied via cookie too.)
- * @apiParam {Binary} fileupload Image data that should be stored
+ * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
+ * @apiParam {Binary} Fileupload Image data that should be stored
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
@@ -65,7 +65,7 @@ func (h *Handler) imagePostHandler(res http.ResponseWriter, req *http.Request) {
 
 	req.ParseMultipartForm(maxFileSize)
 
-	file, _, err := req.FormFile("fileupload")
+	file, _, err := req.FormFile("Fileupload")
 	if err != nil {
 		sendHTTPError(http.StatusBadRequest, "File could not be received", res)
 		return
@@ -97,12 +97,12 @@ func (h *Handler) imagePostHandler(res http.ResponseWriter, req *http.Request) {
 }
 
 /**
- * @api {get} api/image Receives image using ImageID
+ * @api {get} /image Receives image using ImageID
  * @apiVersion 1.0.0
  * @apiName getImage
  * @apiGroup Image
  *
- * @apiHeader {String} [Authentication] authentication token of the session. (Can be supplied via cookie too.)
+ * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
  * @apiParam {Integer} ImageID ID of the image that should be received URL encoded
  *
  *

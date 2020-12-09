@@ -11,12 +11,12 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 }
 
 /**
- * @api {get} api/optician/customers Get optician customers
+ * @api {get} /optician/customers Get optician customers
  * @apiVersion 1.0.0
  * @apiName getOptician customers
  * @apiGroup Optician
  *
- * @apiHeader {String} [authenticationtoken] authentication token of the session. (Can be supplied via cookie too.)
+ * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
  *
  * @apiSuccessExample Success-Response:
  *     	HTTP/1.1 200 OK
