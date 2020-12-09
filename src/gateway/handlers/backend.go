@@ -52,6 +52,7 @@ func (h *Handler) BackendHandler(proxy *httputil.ReverseProxy) func(http.Respons
 func resetHeaderClaims(request *http.Request) {
 	request.Header.Del("Type")
 	request.Header.Del("ID")
+	request.Header.Del("EmployerID")
 	request.Header.Del("Email")
 	request.Header.Del("Country")
 	request.Header.Del("FirstName")
@@ -62,6 +63,7 @@ func resetHeaderClaims(request *http.Request) {
 func setHeaderClaims(claims *Claims, request *http.Request) {
 	request.Header.Set("Type", claims.Type)
 	request.Header.Set("ID", strconv.Itoa(claims.ID))
+	request.Header.Set("EmployerID", strconv.Itoa(claims.EmployerID))
 	request.Header.Set("Email", claims.Email)
 	request.Header.Set("Country", claims.Country)
 	request.Header.Set("FirstName", claims.FirstName)

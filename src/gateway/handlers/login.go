@@ -167,6 +167,7 @@ func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *ht
 			claims := Claims{
 				Type:        "Opthalmologist",
 				ID:          opthalmologistEmployee.EmployeeID,
+				EmployerID:  opthalmologistEmployee.OpthalmologistID,
 				Email:       opthalmologistEmployee.Email,
 				Country:     opthalmologistEmployee.OpthalmologistEmployeeCountry,
 				FirstName:   opthalmologistEmployee.FirstName,
@@ -187,6 +188,7 @@ func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *ht
 			claims := Claims{
 				Type:        "Optician",
 				ID:          opticianEmployee.EmployeeID,
+				EmployerID:  opticianEmployee.OpticianID,
 				Email:       opticianEmployee.Email,
 				Country:     opticianEmployee.OpticianEmployeeCountry,
 				FirstName:   opticianEmployee.FirstName,

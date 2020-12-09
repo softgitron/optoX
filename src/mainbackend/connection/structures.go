@@ -6,6 +6,7 @@ import "github.com/softgitron/optox/src/mainbackend/db"
 type Claims struct {
 	Type        string
 	ID          int
+	EmployerID  int
 	Email       string
 	Country     string
 	FirstName   string
@@ -17,4 +18,5 @@ type Claims struct {
 type Handler struct {
 	Claims    Claims
 	DBHandler *db.Database
+	Body      interface{}
 }

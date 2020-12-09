@@ -90,3 +90,22 @@ func (db *Database) GetInspectionByToken(token string) (Inspection, error) {
 
 	return inspection, result.Error
 }
+
+// GetInspectionByID ...
+func (db *Database) GetInspectionByID(inspectionID int) (Inspection, error) {
+	inspection := Inspection{}
+	result := db.connection.
+		Where("inspection_id = ?", inspectionID).
+		First(&inspection)
+
+	return inspection, result.Error
+}
+
+// GetInspectionsByOpthalmologistID ...
+func (db *Database) GetInspectionsByOpthalmologistID(opthalmologistID int) ([]Inspection, error) {
+	inspections := []Inspection{}
+	results := db.connection.
+		Where("opthalmologist_id = ?", opthalmologistID).
+		Find(&inspections)
+	return inspections, results.Error
+}

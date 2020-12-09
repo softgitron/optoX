@@ -53,40 +53,6 @@ import (
  */
 
 /**
- * @api {get} /ophtalmologist/inspections Get own cases
- * @apiVersion 1.0.0
- * @apiName getOphtalmologistCases
- * @apiGroup Ophtalmologis
- *
- * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
- *
- * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
- *     {
- *   	"inspections":[
- *      	{
- *         	    "CustomerId":11,
- *		        "InspectionId":24,
- *		        "Timestamp":"12.11.2020 11:12:31"
- *         	    "SocialSecurityNumber":"141195-511Y",
- *         	    "FirstName":"Osku",
- *         	    "LastName":"Väänänen"
- *      	},
- *      	{
- *        	    "CustomerId":45,
- *		        "InspectionId":266,
- * 		        "Timestamp":"12.11.2020 11:12:31"
- *         	    "SocialSecurityNumber":"120194-514H",
- *        	    "FirstName":"Kaisa",
- *        	    "LastName":"Kunnari"
- *      	}]
- *     }
- *
- *
- *
- */
-
-/**
  * @api {post} /inspection/decision approve or reject inspection images
  * @apiVersion 1.0.0
  * @apiName decision
@@ -108,4 +74,37 @@ import (
 
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 
+}
+
+func DecisionHandler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
+	body := h.Body.(connection.InspectionDecision)
+	// Check that opthalmologist employee ID macthes
+	inspection, err := h.DBHandler.GetInspectionByID(body.InspectionID)
+	if err != nil {
+		connection.SendHTTPError(http.StatusBadRequest, "No such inspection ID", res)
+		return
+	}
+
+	if inspection.OpthalmologistID != h.Claims.EmployerID {
+		connection.SendHTTPError(http.StatusUnauthorized, "Ophthalmologist does not work for a company that own inspection", res)
+		return
+	}
+
+	var status string
+	if body.Approval == 0 {
+		status = "Rejected"
+	} else if body.Approval == 1 {
+		status = "Approved"
+	} else {
+		connection.SendHTTPError(http.StatusBadRequest, "Unknown approval status", res)
+		return
+	}
+	inspection.Status = status
+
+	err = h.DBHandler.UpdateInspectionApproval(body.InspectionID, status)
+	if err == nil {
+		connection.SendOKReponse(inspection, res)
+	} else {
+		connection.SendHTTPError(http.StatusInternalServerError, "Database error while updating inspection status", res)
+	}
 }

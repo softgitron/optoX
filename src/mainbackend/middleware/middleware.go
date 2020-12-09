@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"encoding/json"
 	"errors"
 	"net/http"
 	"strconv"
@@ -14,6 +15,7 @@ type Middleware struct {
 	Accepts              []string
 	AuthenticationTypes  []string
 	AuthenticationLevels []string
+	BodyType             int
 }
 
 // CheckRequestType cheks that request has acceptable HTTP verb
@@ -43,6 +45,7 @@ func CheckAuthentication(res http.ResponseWriter, req *http.Request, mw *Middlew
 	claims := connection.Claims{}
 	claims.Type = req.Header.Get("Type")
 	claims.ID, _ = strconv.Atoi(req.Header.Get("ID"))
+	claims.EmployerID, _ = strconv.Atoi(req.Header.Get("EmployerID"))
 	claims.Email = req.Header.Get("Email")
 	claims.Country = req.Header.Get("Country")
 	claims.FirstName = req.Header.Get("FirstName")
@@ -61,6 +64,21 @@ func CheckAuthentication(res http.ResponseWriter, req *http.Request, mw *Middlew
 	if typeOK == false || levelOK == false {
 		connection.SendHTTPError(http.StatusUnauthorized, "Unauthorized or authorization type does not match.", res)
 		return errors.New("unauthorized or authorization type does not match")
+	}
+	return nil
+}
+
+// DecodeBody decodes http body json to designated structure
+func DecodeBody(res http.ResponseWriter, req *http.Request, mw *Middleware, h *connection.Handler) error {
+	var err error
+	if mw.BodyType == connection.BodyTypeInspectionDecision {
+		body := connection.InspectionDecision{}
+		err = json.NewDecoder(req.Body).Decode(&body)
+		h.Body = body
+	}
+	if err != nil {
+		connection.SendHTTPError(http.StatusBadRequest, "Unable to unmarshal request", res)
+		return err
 	}
 	return nil
 }

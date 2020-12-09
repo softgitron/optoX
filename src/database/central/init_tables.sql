@@ -1,5 +1,5 @@
 CREATE TYPE countries AS ENUM ('Finland', 'Sweden', 'Norway');
-CREATE TYPE in_status AS ENUM ('Waiting', 'InProgress', 'Finished');
+CREATE TYPE in_status AS ENUM ('Waiting', 'InProgress', 'Rejected', 'Approved');
 CREATE TYPE access_lvl AS ENUM ('Normal', 'Moderator', 'Administrator');
 
 CREATE TABLE IF NOT EXISTS customers(
