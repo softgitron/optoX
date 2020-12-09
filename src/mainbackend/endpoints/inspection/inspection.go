@@ -2,6 +2,7 @@ package inspection
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/softgitron/optox/src/mainbackend/connection"
 )
@@ -73,7 +74,31 @@ import (
  */
 
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
+	if req.Method == "GET" {
+		idstr := req.Header.Get("InspectionID")
 
+		if idstr == "" {
+			connection.SendHTTPError(http.StatusBadRequest, "ID is not given", res)
+			return
+		}
+
+		id, parseErr := strconv.ParseInt(req.Header.Get("InspectionID"), 10, 0)
+
+		if parseErr != nil {
+			connection.SendHTTPError(http.StatusBadRequest, "ID is not a number", res)
+			return
+		}
+
+		ins, err := h.DBHandler.GetInspectionByID(int(id))
+
+		if err != nil {
+			connection.SendHTTPError(http.StatusInternalServerError, "Database fetch failed", res)
+		} else {
+			connection.SendOKReponse(ins, res)
+		}
+
+		return
+	}
 }
 
 func DecisionHandler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
