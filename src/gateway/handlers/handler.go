@@ -19,6 +19,7 @@ type Handler struct {
 type Claims struct {
 	Type        string
 	ID          int
+	EmployerID  int
 	Email       string
 	Country     string
 	FirstName   string
