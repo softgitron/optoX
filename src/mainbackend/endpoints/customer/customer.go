@@ -93,13 +93,11 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 		}
 
 		if err != nil {
-			//TODO: Add proper HTTP error, or return the error in json
+			connection.SendHTTPError(http.StatusInternalServerError, "Something failed with database fetch", res)
 			return
 		}
 
-		json.NewEncoder(res).Encode(Results{
-			Customers: results,
-		})
+		connection.SendOKReponse(results, res)
 	}
 
 	if req.Method == "POST" {
