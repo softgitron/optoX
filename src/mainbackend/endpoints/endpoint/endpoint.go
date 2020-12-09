@@ -37,8 +37,34 @@ var allAccessLevels = []string{"Normal", "Moderator", "Administrator"}
 
 //Endpoints ...
 var Endpoints = map[string]Endpoint{
-	"/api/customer": {URL: "/api/customer", middlewares: basicMiddlewares, customHandler: customer.Handler, Accepts: []string{"GET", "POST"}},
-	"/api/employee": {URL: "/api/employee", middlewares: basicMiddlewares, customHandler: employee.Handler, Accepts: []string{"GET", "POST"}},
+	"/api/customer": {
+		URL:                  "/api/customer",
+		middlewares:          basicMiddlewares,
+		customHandler:        customer.Handler,
+		Accepts:              []string{"GET", "POST"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		bodyType:             connection.BodyTypeCustomer,
+		dbHandler:            &dbConnection,
+	},
+	"/api/customer/inspections": {
+		URL:                  "/api/customer/inspections",
+		middlewares:          basicMiddlewares,
+		customHandler:        customer.GetCustomerInspections,
+		Accepts:              []string{"GET", "POST"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
+	},
+	"/api/employee": {
+		URL:                  "/api/employee",
+		middlewares:          basicMiddlewares,
+		customHandler:        employee.Handler,
+		Accepts:              []string{"GET", "POST"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
+	},
 	"/api/optician/customers": {
 		URL:                  "/api/optician/customers",
 		middlewares:          basicMiddlewares,
@@ -46,11 +72,45 @@ var Endpoints = map[string]Endpoint{
 		Accepts:              []string{"GET"},
 		AuthenticationTypes:  []string{"Optician"},
 		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
 	},
-	"/api/optician":   {URL: "/api/optician", middlewares: basicMiddlewares, customHandler: optician.Handler, Accepts: []string{"GET", "POST"}},
-	"/api/image":      {URL: "/api/image", middlewares: basicMiddlewares, customHandler: image.Handler, Accepts: []string{"GET", "POST"}},
-	"/api/service":    {URL: "/api/service", middlewares: basicMiddlewares, customHandler: service.Handler, Accepts: []string{"GET"}},
-	"/api/inspection": {URL: "/api/inspection", middlewares: basicMiddlewares, customHandler: inspection.Handler, Accepts: []string{"GET", "POST"}},
+	"/api/optician": {
+		URL:                  "/api/optician",
+		middlewares:          basicMiddlewares,
+		customHandler:        optician.Handler,
+		Accepts:              []string{"GET", "POST"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
+	},
+	"/api/image": {
+		URL:                  "/api/image",
+		middlewares:          basicMiddlewares,
+		customHandler:        image.Handler,
+		Accepts:              []string{"GET", "POST"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
+	},
+	"/api/service": {
+		URL:                  "/api/service",
+		middlewares:          basicMiddlewares,
+		customHandler:        service.Handler,
+		Accepts:              []string{"GET"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
+	},
+	"/api/inspection": {
+		URL:                  "/api/inspection",
+		middlewares:          basicMiddlewares,
+		customHandler:        inspection.Handler,
+		Accepts:              []string{"GET", "POST"},
+		AuthenticationTypes:  []string{"Opthalmologist"},
+		AuthenticationLevels: allAccessLevels,
+		bodyType:             connection.BodyTypeInspectionDecision,
+		dbHandler:            &dbConnection,
+	},
 	"/api/inspection/decision": {
 		URL:                  "/api/inspection/decision",
 		middlewares:          basicBodyMiddlewares,
@@ -59,6 +119,7 @@ var Endpoints = map[string]Endpoint{
 		AuthenticationTypes:  []string{"Opthalmologist"},
 		AuthenticationLevels: allAccessLevels,
 		bodyType:             connection.BodyTypeInspectionDecision,
+		dbHandler:            &dbConnection,
 	},
 	"/api/opthalmologist/inspections": {
 		URL:                  "/api/opthalmologist/inspections",
@@ -68,9 +129,26 @@ var Endpoints = map[string]Endpoint{
 		AuthenticationTypes:  []string{"Opthalmologist"},
 		AuthenticationLevels: allAccessLevels,
 		bodyType:             connection.BodyTypeInspectionDecision,
+		dbHandler:            &dbConnection,
 	},
-	"/api/contract": {URL: "/api/contract", middlewares: basicMiddlewares, customHandler: contract.Handler, Accepts: []string{"GET", "POST"}},
-	"/api/users":    {URL: "/api/users", middlewares: basicMiddlewares, customHandler: users.Handler, Accepts: []string{"POST"}},
+	"/api/contract": {
+		URL:                  "/api/contract",
+		middlewares:          basicMiddlewares,
+		customHandler:        contract.Handler,
+		Accepts:              []string{"GET", "POST"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
+	},
+	"/api/users": {
+		URL:                  "/api/users",
+		middlewares:          basicMiddlewares,
+		customHandler:        users.Handler,
+		Accepts:              []string{"POST"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
+	},
 }
 
 var dbConnection db.Database
@@ -81,7 +159,6 @@ func Initialize() {
 	dbConnection.CreateConnection()
 
 	http.HandleFunc("/api/", func(res http.ResponseWriter, req *http.Request) {
-
 		var path = req.URL.Path
 
 		if endpoint, ok := Endpoints[path]; ok {

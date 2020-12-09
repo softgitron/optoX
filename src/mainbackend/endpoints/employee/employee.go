@@ -33,9 +33,9 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 			return
 		}
 
-		json.NewEncoder(res).Encode(Results{
+		connection.SendOKReponse(Results{
 			Customers: nil,
-		})
+		}, res)
 	}
 
 	if req.Method == "POST" {

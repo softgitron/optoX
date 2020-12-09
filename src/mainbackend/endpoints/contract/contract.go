@@ -117,6 +117,6 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 			return
 		}
 
-		//db.AddContract(&contract)
+		h.DBHandler.AddContract(&contract)
 	}
 }

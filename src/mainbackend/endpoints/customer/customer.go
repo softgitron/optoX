@@ -1,7 +1,6 @@
 package customer
 
 import (
-	"encoding/json"
 	"net/http"
 	"net/url"
 
@@ -65,6 +64,18 @@ func GetCustomerByID(query url.Values, h *connection.Handler) (*[]db.Customer, e
  *
  */
 
+// GetCustomerInspections ...
+func GetCustomerInspections(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
+	customerID := h.Claims.ID
+	inspections, err := h.DBHandler.GetInspectionByCustomerID(customerID)
+	if err == nil {
+		connection.SendOKReponse(inspections, res)
+	} else {
+		connection.SendHTTPError(http.StatusInternalServerError, "Database error occurred while receiving inspection information", res)
+	}
+}
+
+// Handler ...
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	if req.Method == "GET" {
 		var query = req.URL.Query()
@@ -81,24 +92,22 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 		}
 
 		if err != nil {
-			//TODO: Add proper HTTP error, or return the error in json
+			connection.SendHTTPError(http.StatusInternalServerError, "Something failed with database fetch", res)
 			return
 		}
 
-		json.NewEncoder(res).Encode(Results{
-			Customers: results,
-		})
+		connection.SendOKReponse(results, res)
 	}
 
 	if req.Method == "POST" {
-		var customer db.Customer
-		var err = json.NewDecoder(req.Body).Decode(&customer)
+		err := h.DBHandler.AddCustomer(h.Body.(db.Customer))
 
 		if err != nil {
+			connection.SendHTTPError(http.StatusInternalServerError, "Couldn't parse the body", res)
 			return
 		}
 
-		h.DBHandler.AddCustomer(&customer)
+		connection.SendOKReponse(h.Body, res)
 	}
 }
 
