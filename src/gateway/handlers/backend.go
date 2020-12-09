@@ -12,6 +12,7 @@ import (
 // BackendHandler provides generic reverse proxy for backend calls
 func (h *Handler) BackendHandler(proxy *httputil.ReverseProxy) func(http.ResponseWriter, *http.Request) {
 	return func(response http.ResponseWriter, request *http.Request) {
+		resetHeaderClaims(request)
 		// Check does the request contain claims
 		authenticationHeader := request.Header.Get("Authentication")
 		authenticationCookie, err := request.Cookie("Authentication")
@@ -47,10 +48,25 @@ func (h *Handler) BackendHandler(proxy *httputil.ReverseProxy) func(http.Respons
 	}
 }
 
+// Delete claims comming from outside, so security can't be by passed
+func resetHeaderClaims(request *http.Request) {
+	request.Header.Del("Type")
+	request.Header.Del("ID")
+	request.Header.Del("Email")
+	request.Header.Del("Country")
+	request.Header.Del("FirstName")
+	request.Header.Del("LastName")
+	request.Header.Del("AccessLevel")
+}
+
 func setHeaderClaims(claims *Claims, request *http.Request) {
 	request.Header.Set("Type", claims.Type)
 	request.Header.Set("ID", strconv.Itoa(claims.ID))
 	request.Header.Set("Email", claims.Email)
+	request.Header.Set("Country", claims.Country)
+	request.Header.Set("FirstName", claims.FirstName)
+	request.Header.Set("LastName", claims.LastName)
+	request.Header.Set("AccessLevel", claims.AccessLevel)
 }
 
 func sendUnauthorizedHeaders(proxy *httputil.ReverseProxy, response http.ResponseWriter, request *http.Request) {

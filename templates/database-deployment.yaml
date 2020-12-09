@@ -21,7 +21,7 @@ spec:
       volumes:
         - name: pv-storage
           persistentVolumeClaim:
-            claimName: "{{ include "optox.fullname" . }}-pvc"
+            claimName: "{{ include "optox.fullname" . }}-database-pvc"
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}

@@ -1,9 +1,6 @@
 package handlers
 
 import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"net/http"
 )
 
@@ -16,38 +13,59 @@ type employeeLogin struct {
 	Password string
 }
 
+// Response that will be generated for the login request
+type Response struct {
+	Authentication string
+	Type           string
+	Person         interface{}
+}
+
 const generallErrorMessage = "Credentials didn't work"
 
-// LoginHandler handles login requests for the platform
-func (h *Handler) LoginHandler(response http.ResponseWriter, request *http.Request) {
+/**
+ * @api {post} /authentication/customer Customer authenticates with token
+ * @apiVersion 1.0.0
+ * @apiName authenticateCustomer
+ * @apiGroup User
+ *
+ * @apiParam {String} Token
+ *
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ *     "Authentication": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiQ3VzdG9tZXIiLCJJRCI6MCwiRW1haWwiOiJ1c2VyQG1haWwuY29tIiwiQ291bnRyeSI6IkZpbmxhbmQiLCJGaXJzdE5hbWUiOiJGaXJzdCIsIkxhc3ROYW1lIjoiTGFzdCIsIkFjY2Vzc0xldmVsIjoibm9ybWFsIn0.QW2gPnygQngIQ29M1zRI6iyNAQAomgIhFfYfodwHkwU",
+ *     "Type": "Customer",
+ *     "Person": {
+ *         "CustomerID": 0,
+ *         "CustomerCountry": "Finland",
+ *         "Email": "user@mail.com",
+ *         "FirstName": "First",
+ *         "LastName": "Last"
+ *     }
+ * }
+ *
+ * @apiError TokenIncorrect Token was incorrect
+ * @apiError UnknownError Unknown error
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 401 Bad request
+ *     {
+ *       error: "Token is incorrect"
+ *     }
+ */
+
+// CustomerLoginHandler handles customer based logins
+func (h *Handler) CustomerLoginHandler(response http.ResponseWriter, request *http.Request) {
 	if checkAllowedMethods([]string{http.MethodPost}, response, request) != nil {
 		return
 	}
 
-	body, err := ioutil.ReadAll(request.Body)
-	if err != nil {
-		sendHTTPError(http.StatusUnauthorized, generallErrorMessage, response)
+	newLoginAttempt := customerLogin{}
+	if parseRequest(&newLoginAttempt, response, request) != nil {
 		return
 	}
 
-	// Try customer login
-	newCustomerLoginAttempt := customerLogin{}
-	customerErr := json.Unmarshal(body, &newCustomerLoginAttempt)
-
-	// Try employee login
-	newEmployeeLoginAttempt := employeeLogin{}
-	employeeErr := json.Unmarshal(body, &newEmployeeLoginAttempt)
-
-	if newCustomerLoginAttempt.Token != "" && customerErr == nil {
-		h.customerLoginHandler(newCustomerLoginAttempt, response, request)
-	} else if newEmployeeLoginAttempt.Email != "" && employeeErr == nil {
-		h.employeeLoginHandler(newEmployeeLoginAttempt, response, request)
-	} else {
-		sendHTTPError(http.StatusBadRequest, employeeErr.Error(), response)
-	}
-}
-
-func (h *Handler) customerLoginHandler(newLoginAttempt customerLogin, response http.ResponseWriter, request *http.Request) {
 	inspection, err := h.Db.GetInspectionByToken(newLoginAttempt.Token)
 	if err == nil {
 		// Get customer details based on inspection
@@ -65,14 +83,63 @@ func (h *Handler) customerLoginHandler(newLoginAttempt customerLogin, response h
 			LastName:    customer.LastName,
 			AccessLevel: "normal",
 		}
-		h.sendToken(&claims, response)
+		h.sendLoginOK(&claims, customer, response)
 		return
 	}
 	// If no matches, return error
 	sendHTTPError(http.StatusUnauthorized, generallErrorMessage, response)
 }
 
-func (h *Handler) employeeLoginHandler(newLoginAttempt employeeLogin, response http.ResponseWriter, request *http.Request) {
+/**
+ * @api {post} /authentication/employee Authenticates with email address and password
+ * @apiVersion 1.0.0
+ * @apiName authenticateUser
+ * @apiGroup User
+ *
+ * @apiParam {String{5..100}} Email User email address
+ * @apiParam {String{4..72}} Password User personal password.
+ *
+ *
+ * @apiHeaderExample Success-Response:
+ *     HTTP/1.1 200 OK
+ * {
+ *     "Authentication": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.ygChtosY43j4rJWXQXSR08a2VL8giwIBgMH7ZFQPikY",
+ *     "Type": "Optician",
+ *     "Person": {
+ *         "EmployeeID": 0,
+ *         "OpticianID": 0,
+ *         "OpticianCountry": "Finland",
+ *         "OpticianEmployeeCountry": "Finland",
+ *         "Email": "optician@mail.com",
+ *         "FirstName": "First",
+ *         "LastName": "Last",
+ *         "AccessLevel": "Normal"
+ *     }
+ * }
+ *
+ *
+ * @apiError EmailIncorrect Unknown email address
+ * @apiError PasswordIncorrect Password was incorrect
+ * @apiError UnknownError Unknown error
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Bad request
+ *     {
+ *       error: "Password is incorrect"
+ *     }
+ */
+
+// EmployeeLoginHandler handles employee based logins
+func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *http.Request) {
+	if checkAllowedMethods([]string{http.MethodPost}, response, request) != nil {
+		return
+	}
+
+	newLoginAttempt := employeeLogin{}
+	if parseRequest(&newLoginAttempt, response, request) != nil {
+		return
+	}
+
 	// Check login against administrator database
 	admin, err := h.Db.GetAdministratorByEmail(newLoginAttempt.Email)
 	if err == nil {
@@ -86,7 +153,7 @@ func (h *Handler) employeeLoginHandler(newLoginAttempt employeeLogin, response h
 				LastName:    "",
 				AccessLevel: "administrator",
 			}
-			h.sendToken(&claims, response)
+			h.sendLoginOK(&claims, admin, response)
 		} else {
 			sendHTTPError(http.StatusUnauthorized, generallErrorMessage, response)
 		}
@@ -106,7 +173,7 @@ func (h *Handler) employeeLoginHandler(newLoginAttempt employeeLogin, response h
 				LastName:    opthalmologistEmployee.LastName,
 				AccessLevel: opthalmologistEmployee.AccessLevel,
 			}
-			h.sendToken(&claims, response)
+			h.sendLoginOK(&claims, opthalmologistEmployee, response)
 		} else {
 			sendHTTPError(http.StatusUnauthorized, generallErrorMessage, response)
 		}
@@ -126,7 +193,7 @@ func (h *Handler) employeeLoginHandler(newLoginAttempt employeeLogin, response h
 				LastName:    opticianEmployee.LastName,
 				AccessLevel: opticianEmployee.AccessLevel,
 			}
-			h.sendToken(&claims, response)
+			h.sendLoginOK(&claims, opticianEmployee, response)
 		} else {
 			sendHTTPError(http.StatusUnauthorized, generallErrorMessage, response)
 		}
@@ -137,6 +204,31 @@ func (h *Handler) employeeLoginHandler(newLoginAttempt employeeLogin, response h
 	sendHTTPError(http.StatusUnauthorized, generallErrorMessage, response)
 }
 
+func (h *Handler) sendLoginOK(claims *Claims, person interface{}, res http.ResponseWriter) {
+	response, err := h.constructResponse(claims, person)
+	if err == nil {
+		setLoginCookie("Authentication", response.Authentication, 60*60*24, res)
+		res.Header().Set("Authentication", response.Authentication)
+		sendOKReponse(response, res)
+	} else {
+		sendHTTPError(http.StatusInternalServerError, "Unable to create JWT token", res)
+	}
+}
+
+func (h *Handler) constructResponse(claims *Claims, person interface{}) (*Response, error) {
+	token, err := h.JWTBuilder.Build(&claims)
+	if err != nil {
+		return nil, err
+	}
+
+	response := Response{
+		Authentication: token.String(),
+		Type:           claims.Type,
+		Person:         person,
+	}
+	return &response, nil
+}
+
 func setLoginCookie(name string, value string, maxAge int, response http.ResponseWriter) {
 	cookie := http.Cookie{
 		Name:   name,
@@ -144,19 +236,4 @@ func setLoginCookie(name string, value string, maxAge int, response http.Respons
 		MaxAge: maxAge,
 	}
 	http.SetCookie(response, &cookie)
-}
-
-func sendLoginOK(jwt string, response http.ResponseWriter) {
-	setLoginCookie("Authentication", jwt, 60*60*24, response)
-	response.Header().Set("Authentication", jwt)
-	response.Write([]byte(fmt.Sprintf("{\"Authentication\": \"%s\"}", jwt)))
-}
-
-func (h *Handler) sendToken(claims *Claims, response http.ResponseWriter) {
-	token, err := h.JWTBuilder.Build(&claims)
-	if err != nil {
-		sendHTTPError(http.StatusInternalServerError, "Unable to create JWT token", response)
-	} else {
-		sendLoginOK(token.String(), response)
-	}
 }

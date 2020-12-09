@@ -9,7 +9,7 @@ import (
 type Customer struct {
 	CustomerID           int    `gorm:"primaryKey"`
 	CustomerCountry      string `gorm:"primaryKey"`
-	SocialSecurityNumber string
+	SocialSecurityNumber string `json:"-"`
 	Email                string
 	FirstName            string
 	LastName             string
@@ -36,7 +36,7 @@ type Administrator struct {
 	AdminID     int `gorm:"primaryKey"`
 	AccessLevel string
 	Email       string
-	Password    string
+	Password    string `json:"-"`
 }
 
 // OpthalmologistEmployee table for optox opthalmologists
@@ -45,9 +45,9 @@ type OpthalmologistEmployee struct {
 	OpthalmologistID              int
 	OpthalmologistCountry         string `gorm:"primaryKey"`
 	OpthalmologistEmployeeCountry string
-	SocialSecurityNumber          string
+	SocialSecurityNumber          string `json:"-"`
 	Email                         string
-	Password                      string
+	Password                      string `json:"-"`
 	FirstName                     string
 	LastName                      string
 	AccessLevel                   string
@@ -59,9 +59,9 @@ type OpticianEmployee struct {
 	OpticianID              int
 	OpticianCountry         string `gorm:"primaryKey"`
 	OpticianEmployeeCountry string
-	SocialSecurityNumber    string
+	SocialSecurityNumber    string `json:"-"`
 	Email                   string
-	Password                string
+	Password                string `json:"-"`
 	FirstName               string
 	LastName                string
 	AccessLevel             string

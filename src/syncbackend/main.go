@@ -1,15 +1,26 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"os"
+
+	"github.com/softgitron/optox/src/syncbackend/handlers"
+	"github.com/softgitron/optox/src/syncbackend/syncengine"
 )
 
 func main() {
-	http.HandleFunc("/api/images/healtz", healtz)
-	http.ListenAndServe(":8080", nil)
-}
+	se := syncengine.Syncengine{}
+	se.Initialize()
+	handler := handlers.Handler{Syncengine: &se}
+	http.HandleFunc("/api/image/healtz", handlers.Healtz)
+	http.HandleFunc("/api/image", handler.ImageHandler)
 
-func healtz(response http.ResponseWriter, request *http.Request) {
-	fmt.Fprint(response, "Sync backend health OK")
+	// Host sync server, if central node
+	if os.Getenv("REGION") == "central" {
+		go se.StartSyncServer()
+	} else {
+		go se.StartSyncClient()
+	}
+
+	http.ListenAndServe(":8080", nil)
 }

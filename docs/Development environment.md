@@ -4,13 +4,14 @@ Necessary steps for setting up development environment
 
 ## Installing necessary packages
 
-1. Install screen, docker, minikube, kubectl and helm using distributions recommended methods (Arch Linux: pacman `pacman screen docker minikube kubectl helm`)
-2. Start and enable docker `systemctl enable --now docker`
-3. Create docker group and add your user to it `groupadd docker && usermod -aG docker <YOUR USERNAME HERE>`
-4. Log out and log in for changes to take effect
-5. Start minkiube `minikube start`
-6. Test kubernetes installation by running `kubectl version` (Should show both client and server version)
-7. Enable ingress controller `minikube addons enable ingress`
+1. Install screen, docker, minikube, kubectl and helm using distributions recommended methods (Arch Linux: pacman `pacman -S screen docker minikube kubectl helm`)
+2. Optionally install node, npm and apidoc for document generation (Arch Linux: `pacman -S node npm; npm install apidoc -g`)
+3. Start and enable docker `systemctl enable --now docker`
+4. Create docker group and add your user to it `groupadd docker && usermod -aG docker <YOUR USERNAME HERE>`
+5. Log out and log in for changes to take effect
+6. Start minkiube `minikube start`
+7. Test kubernetes installation by running `kubectl version` (Should show both client and server version)
+8. Enable ingress controller `minikube addons enable ingress`
 
 ## Installing VScode plugins
 

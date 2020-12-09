@@ -18,6 +18,10 @@ spec:
         {{- include "optox.selectorLabels" . | nindent 8 }}
         deployment: {{ .Values.syncbackend.name }}
     spec:
+      volumes:
+        - name: pv-storage
+          persistentVolumeClaim:
+            claimName: "{{ include "optox.fullname" . }}-syncbackend-pvc"
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -27,13 +31,19 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}-syncbackend
+          volumeMounts:
+            - mountPath: "/images"
+              name: pv-storage
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.syncbackend.image.repository }}:{{ .Values.syncbackend.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.syncbackend.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.syncbackend.service.port }}
+              containerPort: {{ .Values.syncbackend.service.httpPort }}
+              protocol: TCP
+            - name: sync
+              containerPort: {{ .Values.syncbackend.service.syncPort }}
               protocol: TCP
             {{ if .Values.debug -}}
             - name: debug

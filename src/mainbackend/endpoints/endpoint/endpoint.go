@@ -56,7 +56,7 @@ var Endpoints = map[string]Endpoint{
 
 var dbConnection db.Database
 
-//Initialize ...
+// Initialize initializes endpoints
 func Initialize() {
 	dbConnection = db.Database{}
 	dbConnection.CreateConnection()
@@ -114,7 +114,5 @@ func (ep *Endpoint) HandleRequest(res http.ResponseWriter, req *http.Request) {
 		}
 	}
 	// Finally execute custom handler
-
-	res.Header().Set("Content-Type", "application/json")
 	ep.customHandler(res, req, &extra)
 }
