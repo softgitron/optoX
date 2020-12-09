@@ -1,0 +1,33 @@
+# Change optox-298015 to your personal project id
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  dir: './src/database/'
+  args: [ 'build', '-t', 'gcr.io/optox-298015/database', '-f', 'Dockerfile', '.' ]
+  waitFor: ['-']
+- name: 'gcr.io/cloud-builders/docker'
+  dir: './src/frontend/'
+  args: [ 'build', '-t', 'gcr.io/optox-298015/frontend', '-f', 'Dockerfile', '.' ]
+  waitFor: ['-']
+- name: 'gcr.io/cloud-builders/docker'
+  dir: './src/gateway/'
+  args: [ 'build', '-t', 'gcr.io/optox-298015/gateway', '-f', 'Dockerfile.cloud', '.' ]
+  waitFor: ['-']
+- name: 'gcr.io/cloud-builders/docker'
+  dir: './src/mainbackend/'
+  args: [ 'build', '-t', 'gcr.io/optox-298015/mainbackend', '-f', 'Dockerfile.cloud', '.' ]
+  waitFor: ['-']
+- name: 'gcr.io/cloud-builders/docker'
+  dir: './src/mediator/'
+  args: [ 'build', '-t', 'gcr.io/optox-298015/mediator', '-f', 'Dockerfile', '.' ]
+  waitFor: ['-']
+- name: 'gcr.io/cloud-builders/docker'
+  dir: './src/syncbackend/'
+  args: [ 'build', '-t', 'gcr.io/optox-298015/syncbackend', '-f', 'Dockerfile.cloud', '.' ]
+  waitFor: ['-']
+images: 
+- 'gcr.io/optox-298015/database'
+- 'gcr.io/optox-298015/frontend'
+- 'gcr.io/optox-298015/gateway'
+- 'gcr.io/optox-298015/mediator'
+- 'gcr.io/optox-298015/mainbackend'
+- 'gcr.io/optox-298015/syncbackend'

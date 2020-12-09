@@ -16,10 +16,11 @@ Builds gateway with debugging enabled: `./scripts/build.sh gateway .debug`
 
 ## install.sh
 
-`install.sh` Builds and installs application using helm. Script has two optional arguments `reinstall` and `partial`. `reinstall` removes application before building and then install new version. `partial` Installs only central and Finland sites.
+`install.sh` Builds and installs application using helm. Script has two optional arguments `reinstall`, `deploy` and `partial`. `reinstall` removes application before building and then install new version. `partial` Installs only central and Finland sites.
 
 Examples:  
 Build & install the application: `./scripts/install.sh`
+Only install the application with debuging disabled: `./scripts/install.sh deploy`
 Build & partially install the application: `./scripts/install.sh partial`
 Remove & build & install the application: `./scripts/install.sh reinstall`
 Remove & build & partially install the application: `./scripts/install.sh reinstall partial`

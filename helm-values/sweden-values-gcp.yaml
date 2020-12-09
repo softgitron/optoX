@@ -3,9 +3,12 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-debug: true
+debug: false
 
-region: norway
+region: sweden
+webGuiCredentials:
+  username: admin
+  password: admin
 
 database:
   name: database
@@ -14,9 +17,9 @@ database:
     postgresPassword: "optox"
   databaseName: optox
   image:
-    repository: database
+    repository: gcr.io/optox-298015/database
     tag: latest
-    pullPolicy: Never
+    pullPolicy: Always
   service:
     type: ClusterIP
     port: 5432
@@ -24,9 +27,9 @@ database:
 frontend:
   name: frontend
   image:
-    repository: frontend
+    repository: gcr.io/optox-298015/frontend
     tag: latest
-    pullPolicy: Never
+    pullPolicy: Always
   service:
     type: ClusterIP
     port: 8080
@@ -34,9 +37,9 @@ frontend:
 gateway:
   name: gateway
   image:
-    repository: gateway
+    repository: gcr.io/optox-298015/gateway
     tag: latest
-    pullPolicy: Never
+    pullPolicy: Always
   service:
     type: NodePort
     port: 8080
@@ -46,9 +49,9 @@ gateway:
 mainbackend:
   name: mainbackend
   image:
-    repository: mainbackend
+    repository: gcr.io/optox-298015/mainbackend
     tag: latest
-    pullPolicy: Never
+    pullPolicy: Always
   service:
     type: ClusterIP
     port: 8080
@@ -57,9 +60,9 @@ mainbackend:
 mediator:
   name: mediator
   image:
-    repository: mediator
+    repository: gcr.io/optox-298015/mediator
     tag: latest
-    pullPolicy: Never
+    pullPolicy: Always
   service:
     type: ClusterIP
     port: 5432
@@ -72,13 +75,12 @@ mediator:
 syncbackend:
   name: syncbackend
   image:
-    repository: syncbackend
+    repository: gcr.io/optox-298015/syncbackend
     tag: latest
-    pullPolicy: Never
+    pullPolicy: Always
   service:
     type: ClusterIP
-    httpPort: 8080
-    syncPort: 5000
+    port: 8080
   debugPort: 40003
 
 externalservices:
@@ -95,10 +97,10 @@ externalservices:
     namespace: sweden
     port: 5432
   - name: syncbackend
-    namespace: central
+    namespace: norway
     port: 8080
   - name: database
-    namespace: central
+    namespace: norway
     port: 5432
 
 imagePullSecrets: []
@@ -115,8 +117,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: optox.no
-      paths: ["/"]
+    - host: sweden.sopala.fi
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

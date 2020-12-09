@@ -5,7 +5,7 @@
 replicaCount: 1
 debug: true
 
-region: sweden
+region: finland
 
 database:
   name: database
@@ -83,16 +83,16 @@ syncbackend:
 
 externalservices:
   - name: syncbackend
-    namespace: finland
+    namespace: central
     port: 8080
   - name: database
-    namespace: finland
+    namespace: central
     port: 5432
   - name: syncbackend
-    namespace: central
+    namespace: sweden
     port: 8080
   - name: database
-    namespace: central
+    namespace: sweden
     port: 5432
   - name: syncbackend
     namespace: norway
@@ -115,8 +115,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: optox.se
-      paths: ["/"]
+    - host: optox.fi
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
