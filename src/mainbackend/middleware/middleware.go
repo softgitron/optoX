@@ -71,11 +71,22 @@ func CheckAuthentication(res http.ResponseWriter, req *http.Request, mw *Middlew
 // DecodeBody decodes http body json to designated structure
 func DecodeBody(res http.ResponseWriter, req *http.Request, mw *Middleware, h *connection.Handler) error {
 	var err error
-	if mw.BodyType == connection.BodyTypeInspectionDecision {
-		body := connection.InspectionDecision{}
-		err = json.NewDecoder(req.Body).Decode(&body)
-		h.Body = body
+
+	switch mw.BodyType {
+	case connection.BodyTypeInspectionDecision:
+		{
+			body := connection.InspectionDecision{}
+			err = json.NewDecoder(req.Body).Decode(&body)
+			h.Body = body
+		}
+	case connection.BodyTypeLoginDetails:
+		{
+			body := connection.LoginDetails{}
+			err = json.NewDecoder(req.Body).Decode(&body)
+			h.Body = body
+		}
 	}
+
 	if err != nil {
 		connection.SendHTTPError(http.StatusBadRequest, "Unable to unmarshal request", res)
 		return err

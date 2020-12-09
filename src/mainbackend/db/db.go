@@ -18,6 +18,16 @@ type Database struct {
 	connection *gorm.DB
 }
 
+const (
+	Disconnected = iota
+	Connected    = iota
+	PoolFailed   = iota
+	ConnFailed   = iota
+)
+
+// State ...
+var State = Disconnected
+
 // CreateConnection initializes the connection to the database
 func (db *Database) CreateConnection() {
 	user := os.Getenv("POSTGRES_USER")
@@ -33,10 +43,12 @@ func (db *Database) CreateConnection() {
 		connection, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 		if err != nil {
 			println("Failed to connect to database:")
+			State = ConnFailed
 		}
 		pool, err = connection.DB()
 		if err != nil {
 			println("Failed to create a database pool:")
+			State = PoolFailed
 		}
 
 		if err == nil {
@@ -47,6 +59,11 @@ func (db *Database) CreateConnection() {
 			time.Sleep(reconnectTime)
 		}
 	}
+
+	if err == nil {
+		State = Connected
+	}
+
 	pool.SetMaxIdleConns(5)
 	pool.SetMaxOpenConns(100)
 	pool.SetConnMaxLifetime(time.Minute)

@@ -9,14 +9,9 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-// Details ...
-type Details struct {
-	Email    string
-	Password string
-	Token    string
-}
+// connection.LoginDetails ...
 
-func login(h *connection.Handler, login Details) bool {
+func login(h *connection.Handler, login connection.LoginDetails) bool {
 	//we got customer login by token
 	if login.Token != "" {
 		_, err := h.DBHandler.GetInspectionByToken(login.Token)
@@ -24,7 +19,7 @@ func login(h *connection.Handler, login Details) bool {
 	}
 
 	//check from database if email exists
-	user, err := h.DBHandler.GetEmployeeByEmail(login.Email)
+	user, err := h.DBHandler.GetOpticianEmployeeByEmail(login.Email)
 
 	if err != nil {
 		return false
@@ -41,6 +36,7 @@ func login(h *connection.Handler, login Details) bool {
 	return true
 }
 
+// Register ...
 func Register(req *http.Request, h *connection.Handler) {
 	var employee db.Employee
 
@@ -51,7 +47,7 @@ func Register(req *http.Request, h *connection.Handler) {
 	}
 
 	//check if database already contains email
-	_, err := h.DBHandler.GetEmployeeByEmail(employee.Email)
+	_, err := h.DBHandler.GetOpticianEmployeeByEmail(employee.Email)
 
 	//if we don't get any
 	if err != nil {
@@ -71,13 +67,7 @@ func Register(req *http.Request, h *connection.Handler) {
 	h.DBHandler.AddEmployee(&employee)
 }
 
+// Handler ...
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
-	var details Details
-	err := json.NewDecoder(req.Body).Decode(&details)
-
-	if err != nil {
-		return
-	}
-
-	login(h, details)
+	login(h, h.Body.(connection.LoginDetails))
 }

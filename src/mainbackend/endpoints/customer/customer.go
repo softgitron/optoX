@@ -65,6 +65,10 @@ func GetCustomerByID(query url.Values, h *connection.Handler) (*[]db.Customer, e
  *
  */
 
+func GetCustomerInspections(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
+
+}
+
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	if req.Method == "GET" {
 		var query = req.URL.Query()
