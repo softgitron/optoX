@@ -17,3 +17,11 @@ type LoginDetails struct {
 	Password string
 	Token    string
 }
+
+type CustomerDetails struct {
+	CustomerCountry      string
+	SocialSecurityNumber string
+	Email                string
+	FirstName            string
+	LastName             string
+}

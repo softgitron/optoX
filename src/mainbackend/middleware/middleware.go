@@ -7,7 +7,6 @@ import (
 	"strconv"
 
 	"github.com/softgitron/optox/src/mainbackend/connection"
-	"github.com/softgitron/optox/src/mainbackend/db"
 )
 
 // Middleware contains information that can be processed by the middlewares
@@ -73,6 +72,11 @@ func CheckAuthentication(res http.ResponseWriter, req *http.Request, mw *Middlew
 func DecodeBody(res http.ResponseWriter, req *http.Request, mw *Middleware, h *connection.Handler) error {
 	var err error
 
+	//if same endpoint supports both GET and POST don't check body if we using GET
+	if req.Method == "GET" {
+		return nil
+	}
+
 	switch mw.BodyType {
 	case connection.BodyTypeInspectionDecision:
 		{
@@ -88,7 +92,7 @@ func DecodeBody(res http.ResponseWriter, req *http.Request, mw *Middleware, h *c
 		}
 	case connection.BodyTypeCustomer:
 		{
-			body := db.Customer{}
+			body := connection.CustomerDetails{}
 			err = json.NewDecoder(req.Body).Decode(&body)
 			h.Body = body
 		}

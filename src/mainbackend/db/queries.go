@@ -1,5 +1,7 @@
 package db
 
+import "errors"
+
 // GetCustomersByOpticianEmployeeID receives customer information by specific optician
 func (db *Database) GetCustomersByOpticianEmployeeID(opticianEmployeeID int) (*[]Customer, error) {
 	customers := []Customer{}
@@ -68,9 +70,27 @@ func (db *Database) GetCustomerByEmail(email string) (*Customer, error) {
 	return &customer, results.Error
 }
 
+func (db *Database) GetCustomerBySSN(ssn string) (*Customer, error) {
+	customer := Customer{}
+	results := db.connection.Where("social_security_number = ?", ssn).
+		Find(&customer)
+
+	return &customer, results.Error
+}
+
 // AddCustomer ...
 func (db *Database) AddCustomer(customer Customer) error {
-	res := db.connection.Omit("CustomerID").Create(customer)
+	cust, _ := db.GetCustomerBySSN(customer.SocialSecurityNumber)
+
+	if cust != nil {
+		return errors.New("Customer already exists")
+	}
+
+	res := db.connection.Exec(`
+		INSERT INTO customers (customer_country, social_security_number, email, first_name, last_name)
+		VALUES (?, ?, ?, ?, ?);
+	`, customer.CustomerCountry, customer.SocialSecurityNumber, customer.Email, customer.FirstName, customer.LastName)
+
 	return res.Error
 }
 

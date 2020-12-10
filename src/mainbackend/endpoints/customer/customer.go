@@ -21,6 +21,16 @@ func GetCustomerByID(query url.Values, h *connection.Handler) (*[]db.Customer, e
 	return h.DBHandler.GetCustomers()
 }
 
+func CustomerFromDetails(cust connection.CustomerDetails) db.Customer {
+	return db.Customer{
+		CustomerCountry:      cust.CustomerCountry,
+		SocialSecurityNumber: cust.SocialSecurityNumber,
+		Email:                cust.Email,
+		FirstName:            cust.FirstName,
+		LastName:             cust.LastName,
+	}
+}
+
 /**
  * @api {post} /customer Creates new customer
  * @apiVersion 1.0.0
@@ -107,10 +117,17 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 	}
 
 	if req.Method == "POST" {
-		err := h.DBHandler.AddCustomer(h.Body.(db.Customer))
+		if h.Body == nil {
+			connection.SendHTTPError(http.StatusInternalServerError, "No body given", res)
+			return
+		}
+
+		body := h.Body.(connection.CustomerDetails)
+		cust := CustomerFromDetails(body)
+		err := h.DBHandler.AddCustomer(cust)
 
 		if err != nil {
-			connection.SendHTTPError(http.StatusInternalServerError, "Couldn't parse the body", res)
+			connection.SendHTTPError(http.StatusInternalServerError, "Couldn't create a new customer", res)
 			return
 		}
 
