@@ -440,30 +440,34 @@ export default function Ophthamologist() {
                       />
                     )}
                   </div>
-                  <GreenButton
-                    style={{
-                      width: "100px",
-                      top: "-300px",
-                      float: "right",
-                      margin: "10px",
-                      left: "-20px",
-                    }}
-                    onClick={() => setValues({ ...values, state: 0 })}
-                  >
-                    Approve
-                  </GreenButton>
-                  <RedButton
-                    style={{
-                      width: "100px",
-                      top: "-300px",
-                      float: "right",
-                      margin: "10px",
-                      left: "-20px",
-                    }}
-                    onClick={() => setValues({ ...values, state: 0 })}
-                  >
-                    Reject
-                  </RedButton>
+                  {loading ? null : (
+                    <>
+                      <GreenButton
+                        style={{
+                          width: "100px",
+                          top: "-300px",
+                          float: "right",
+                          margin: "10px",
+                          left: "-20px",
+                        }}
+                        onClick={() => setValues({ ...values, state: 0 })}
+                      >
+                        Approve
+                      </GreenButton>
+                      <RedButton
+                        style={{
+                          width: "100px",
+                          top: "-300px",
+                          float: "right",
+                          margin: "10px",
+                          left: "-20px",
+                        }}
+                        onClick={() => setValues({ ...values, state: 0 })}
+                      >
+                        Reject
+                      </RedButton>
+                    </>
+                  )}
                 </div>
               </Grid>
             </Grid>
