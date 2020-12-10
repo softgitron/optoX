@@ -16,6 +16,7 @@ import axios from "axios";
 import fileDownload from "js-file-download";
 import { authenticationService } from "../../Helpers/Authenthication";
 import { useHistory } from "react-router-dom";
+import { customerGetOwnInfo } from "../../API/API";
 
 const handleDownload = (url: string, filename: string) => {
   axios
@@ -106,6 +107,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Customer() {
+  React.useEffect(() => {
+    customerGetOwnInfo();
+  }, []);
   const [values, setValues] = React.useState({
     state: 0,
   });
@@ -118,18 +122,7 @@ export default function Customer() {
   const renderSwitch = (state: number) => {
     switch (state) {
       case 0:
-        return (
-          <p>
-            Waiting for pictures. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Nulla id quam sed ligula sodales tempus. Quisque
-            eget elit ullamcorper, rhoncus elit a, vulputate nunc. Nunc neque
-            nibh, facilisis vel sapien ut, pharetra tincidunt dolor. Integer
-            libero elit, semper ac odio nec, feugiat aliquet neque. Donec
-            accumsan consequat tincidunt. Pellentesque magna neque, pulvinar
-            vitae risus ut, faucibus faucibus nisl. Fusce tempor id nisi vitae
-            sodales. Maecenas faucibus nisl a metus pharetra feugiat.
-          </p>
-        );
+        return <p>Waiting for pictures.</p>;
       case 1:
         return (
           <p>
@@ -143,32 +136,11 @@ export default function Customer() {
       case 2:
         return (
           <p>
-            Pictures analyzed. In sed euismod nulla. Aliquam ac ante convallis
-            mi finibus mattis. Nunc faucibus enim nec commodo imperdiet. Sed leo
-            orci, auctor ut purus a, lacinia gravida nulla. Sed eu dolor
-            ultrices, sollicitudin tortor non, sodales nisi. Ut molestie porta
-            nisi vel fringilla. Sed nisi lorem, porta at porta eget, rhoncus
-            eget neque. Aliquam pulvinar, ex vitae semper condimentum, dolor
-            nisl pellentesque sapien, fermentum malesuada nibh ipsum vel ligula.
-            Nunc nec dolor vel orci feugiat convallis sit amet non elit. Mauris
-            porta nibh vel metus maximus, in interdum dui egestas. Aenean sed
-            sapien erat.
+            Pictures analyzed. Next the results will be sent to administration.
           </p>
         );
       case 3:
-        return (
-          <p>
-            Results sent to administration. Nulla iaculis porttitor suscipit.
-            Donec faucibus tristique vestibulum. Etiam ornare magna est, eu
-            aliquet est tincidunt quis. Vivamus suscipit orci mollis, sodales
-            purus ac, lacinia purus. Vivamus eget ipsum rhoncus, pharetra ligula
-            nec, sagittis diam. Sed fermentum vulputate sem, ut fermentum orci
-            hendrerit eu. In libero risus, rutrum eget vulputate vitae, rhoncus
-            nec dolor. Maecenas semper ultricies sodales. Phasellus eros ligula,
-            vehicula non imperdiet vel, finibus a arcu. Cras nulla nunc,
-            imperdiet a sem quis, imperdiet facilisis dui.
-          </p>
-        );
+        return <p>Results sent to administration.</p>;
       default:
         break;
     }

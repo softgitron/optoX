@@ -12,6 +12,7 @@ import { useOutlinedInputStyles } from "../../../assets/styles/styles";
 import { GreenButton, RedButton } from "../../../components/button/buttons";
 import { Button } from "@material-ui/core";
 import SimpleModal from "./Modal";
+import { uploadImage } from "../../../API/API";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -228,7 +229,7 @@ export default function InputAdornments(props: any) {
                 <Button variant="contained" component="label">
                   Upload
                   <input
-                    accept="image/*"
+                    accept="image/jpeg"
                     type="file"
                     hidden
                     onChange={(e) =>
@@ -300,7 +301,7 @@ export default function InputAdornments(props: any) {
                 <Button variant="contained" component="label">
                   Upload
                   <input
-                    accept="image/*"
+                    accept="image/jpeg"
                     type="file"
                     hidden
                     onChange={(e) =>
@@ -373,7 +374,7 @@ export default function InputAdornments(props: any) {
                 <Button variant="contained" component="label">
                   Upload
                   <input
-                    accept="image/*"
+                    accept="image/jpeg"
                     type="file"
                     hidden
                     onChange={(e) =>
@@ -419,6 +420,10 @@ export default function InputAdornments(props: any) {
           color="primary"
           className={classes.button}
           disabled={!canSubmit()}
+          onClick={() => {
+            console.log("uploading images...");
+            uploadImage(images.Fundusfoto.file);
+          }}
         >
           Upload images
         </GreenButton>

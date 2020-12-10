@@ -12,6 +12,11 @@ import Card from "./components/Card";
 import List from "@material-ui/core/List";
 import Modal from "../Optician/components/BiggerModal";
 import { authenticationService } from "../../Helpers/Authenthication";
+import {
+  getCustomerInfo,
+  getInspectionInfo,
+  getOpthalmologistCustomers,
+} from "../../API/API";
 
 const patient1 = {
   id: "123",
@@ -132,6 +137,25 @@ enum ScreenStates {
 }
 
 export default function Ophthamologist() {
+  React.useEffect(() => {
+    const getCustomers = async () => {
+      const customersArray = await getOpthalmologistCustomers();
+      console.log(customersArray);
+      let promises: any[] = [];
+      customersArray.forEach((customer: any) => {
+        promises.push(
+          getInspectionInfo(customer.CustomerID, customer.InspectionID)
+        );
+      });
+      customersArray.forEach((customer: any) => {
+        promises.push(getCustomerInfo(customer.CustomerID));
+      });
+      await Promise.all(promises).then((values) => {
+        console.log(values);
+      });
+    };
+    getCustomers();
+  }, []);
   const [patients, setPatients] = React.useState({
     patients: patientsArray,
     selectedPatient: 0,

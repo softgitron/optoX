@@ -8,12 +8,9 @@ import Opthalmologist from "./pages/Ophthalmologist/Ophthalmologist";
 import { PrivateRoute } from "./Helpers/PrivateRoute";
 
 import { authenticationService } from "./Helpers/Authenthication";
-import { APItest1 } from "./API/API";
 
 export default function App() {
   React.useEffect(() => {
-    APItest1();
-
     authenticationService.currentUser.subscribe((user) => {
       //subscribe to changes
       if (user) {

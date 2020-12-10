@@ -34,7 +34,7 @@ function newToken(token: string) {
 async function login(email: string, password: string) {
   const body = JSON.stringify({ email, password });
   try {
-    const res = await axios.post(API + "/users/login", body);
+    const res = await axios.post(API + "/authentication/employee", body);
     console.log(res);
 
     const userObject: { [k: string]: any } = jwt_decode(
@@ -52,7 +52,7 @@ async function login(email: string, password: string) {
 async function tokenLogin(customerToken: String) {
   const body = JSON.stringify({ token: customerToken });
   try {
-    const res = await axios.post(API + "/users/login", body);
+    const res = await axios.post(API + "/authentication/customer", body);
     console.log(res);
 
     const userObject: { [k: string]: any } = jwt_decode(

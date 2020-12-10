@@ -13,6 +13,7 @@ import CustomerInfo from "./components/CustomerInfo";
 import AsynchronousSearch from "./components/AsyncSearch";
 
 import { authenticationService } from "../../Helpers/Authenthication";
+import { getImage, getOpticianCustomers } from "../../API/API";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -81,6 +82,9 @@ enum ScreenStates {
 }
 
 export default function Optician() {
+  React.useEffect(() => {
+    getOpticianCustomers();
+  }, []);
   const [values, setValues] = React.useState({
     state: ScreenStates.landScreen,
     selectedAppointment: "",
@@ -255,6 +259,19 @@ export default function Optician() {
     }
   };
   const AvatarInfo = () => {
+    const [imagedata, setimagedata] = React.useState("");
+    const getData = async () => {
+      const imageBlobURL = await getImage("s");
+      if (imageBlobURL) {
+        setimagedata(imageBlobURL);
+      }
+      return imageBlobURL;
+    };
+    console.log("'hello");
+    React.useEffect(() => {
+      getData();
+    }, []);
+
     return (
       <div className={classes.profilewrapper}>
         <Avatar
@@ -271,6 +288,7 @@ export default function Optician() {
           src={FinlandFlag}
           width="200"
         />
+        <img className={classes.flag} src={imagedata} width="200" />
       </div>
     );
   };
