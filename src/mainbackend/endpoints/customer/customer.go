@@ -3,6 +3,7 @@ package customer
 import (
 	"net/http"
 	"net/url"
+	"strconv"
 
 	"github.com/softgitron/optox/src/mainbackend/connection"
 	"github.com/softgitron/optox/src/mainbackend/db"
@@ -15,29 +16,6 @@ type Results struct {
 func GetCustomers(query url.Values, h *connection.Handler) (*[]db.Customer, error) {
 	return h.DBHandler.GetCustomers()
 }
-
-/**
- * @api {get} /customer Searches for customer using ID
- * @apiVersion 1.0.0
- * @apiName searchCustomer
- * @apiGroup Customer
- *
- * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
- * @apiParam {String} Email email of the customer
- *
- *
- * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
- *     {
- *       "CustomerId": 100,
- *       "InspectionID":41,
- *       "Email": "example@mail.com",
- * 	     "SocialSecurityNumber": "051255-153T",
- *       "FirstName": "John",
- * 	     "LastName": "Doe"
- *     }
- *
- */
 
 func GetCustomerByID(query url.Values, h *connection.Handler) (*[]db.Customer, error) {
 	return h.DBHandler.GetCustomers()
@@ -75,20 +53,49 @@ func GetCustomerInspections(res http.ResponseWriter, req *http.Request, h *conne
 	}
 }
 
+/**
+ * @api {get} /customer Searches for customer using Email or CustomerID
+ * @apiVersion 1.0.0
+ * @apiName searchCustomer
+ * @apiGroup Customer
+ *
+ * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
+ * @apiParam {String} [Email] email of the customer
+ * @apiParam {String} [CustomerID] ID of the customer
+ *
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "CustomerId": 100,
+ *       "InspectionID":41,
+ *       "Email": "example@mail.com",
+ * 	     "SocialSecurityNumber": "051255-153T",
+ *       "FirstName": "John",
+ * 	     "LastName": "Doe"
+ *     }
+ *
+ */
+
 // Handler ...
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	if req.Method == "GET" {
 		var query = req.URL.Query()
-		var results *[]db.Customer
+		var results *db.Customer
 		var err error
 
-		//TODO:
-		//if multiple
-
-		if query.Get("customer") != "" {
-			results, err = GetCustomerByID(query, h)
+		if customerIDStr := query.Get("CustomerID"); customerIDStr != "" {
+			customerID, err := strconv.Atoi(customerIDStr)
+			if err != nil {
+				connection.SendHTTPError(http.StatusBadRequest, "CustomerID parameter is not number", res)
+				return
+			}
+			results, err = h.DBHandler.GetCustomerByID(customerID)
+		} else if email := query.Get("Email"); email != "" {
+			results, err = h.DBHandler.GetCustomerByEmail(email)
 		} else {
-			results, err = GetCustomers(query, h)
+			connection.SendHTTPError(http.StatusBadRequest, "Sufficient parameters were not found. Define either CustomerID or email", res)
+			return
 		}
 
 		if err != nil {

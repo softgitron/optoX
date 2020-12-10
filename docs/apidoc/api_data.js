@@ -76,7 +76,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/customer",
-    "title": "Searches for customer using ID",
+    "title": "Searches for customer using Email or CustomerID",
     "version": "1.0.0",
     "name": "searchCustomer",
     "group": "Customer",
@@ -99,9 +99,16 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "String",
-            "optional": false,
+            "optional": true,
             "field": "Email",
             "description": "<p>email of the customer</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "CustomerID",
+            "description": "<p>ID of the customer</p>"
           }
         ]
       }
@@ -337,15 +344,7 @@ define({ "api": [
             "type": "Number",
             "size": "0..",
             "optional": false,
-            "field": "CustomerId",
-            "description": "<p>Personal id of the customer</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "size": "0..",
-            "optional": false,
-            "field": "InspectionId",
+            "field": "InspectionID",
             "description": "<p>selected inspection's ID</p>"
           }
         ]
@@ -476,7 +475,7 @@ define({ "api": [
         }
       ]
     },
-    "filename": "src/mainbackend/endpoints/inspection/inspection.go",
+    "filename": "src/mainbackend/endpoints/opthalmologist/inspection.go",
     "groupTitle": "Ophtalmologis"
   },
   {
