@@ -1,5 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Avatar, Grid, makeStyles, Typography } from "@material-ui/core";
+import {
+  Avatar,
+  CircularProgress,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
 
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
@@ -14,6 +20,7 @@ import Modal from "../Optician/components/BiggerModal";
 import { authenticationService } from "../../Helpers/Authenthication";
 import {
   getCustomerInfo,
+  getImage,
   getInspectionInfo,
   getOpthalmologistCustomers,
 } from "../../API/API";
@@ -135,31 +142,80 @@ enum ScreenStates {
   landScreen = 0,
   analyzeImages = 1,
 }
+interface CustomerData {
+  CustomerCountry: string;
+  CustomerID: number;
+  Email: string;
+  FirstName: string;
+  FundusPhotoRef: any;
+  InspectionCountry: string;
+  InspectionId: string;
+  InspectionTime: string;
+  LastName: string;
+  LoginToken: string;
+  OctScanRef: any;
+  OpthalmologistID: number;
+  OpticianID: number;
+  SocialSecurityNumber: string;
+  Status: any;
+  VisualFieldRef: any;
+}
 
 export default function Ophthamologist() {
+  const [loading, setLoading] = React.useState(false);
+
   React.useEffect(() => {
     const getCustomers = async () => {
+      setLoading(true);
+      let finalArray: CustomerData[] = [];
+      let map = new Map();
       const customersArray = await getOpthalmologistCustomers();
-      console.log(customersArray);
       let promises: any[] = [];
       customersArray.forEach((customer: any) => {
-        promises.push(
-          getInspectionInfo(customer.CustomerID, customer.InspectionID)
-        );
-      });
-      customersArray.forEach((customer: any) => {
+        map.set(customer.CustomerID, customer);
         promises.push(getCustomerInfo(customer.CustomerID));
       });
       await Promise.all(promises).then((values) => {
-        console.log(values);
+        values.forEach((newCustomerData) => {
+          let initialCustomerData = map.get(newCustomerData.CustomerID);
+          let finalCustomerData = {
+            ...initialCustomerData,
+            ...newCustomerData,
+          };
+          finalArray.push(finalCustomerData);
+          finalArray.push(finalCustomerData);
+          finalArray.push(finalCustomerData);
+        });
       });
+      console.log(finalArray);
+      await Promise.all(
+        finalArray.map(async (customer) => {
+          const fundusFoto = await getImage(customer.FundusPhotoRef.toString());
+          const octScan = await getImage(customer.OctScanRef.toString());
+          const visualField = await getImage(
+            customer.VisualFieldRef.toString()
+          );
+          customer.FundusPhotoRef =
+            fundusFoto ||
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg";
+          customer.OctScanRef =
+            octScan ||
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg";
+          customer.VisualFieldRef =
+            visualField ||
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg";
+        })
+      );
+      setPatients(finalArray);
+      setLoading(false);
     };
     getCustomers();
   }, []);
-  const [patients, setPatients] = React.useState({
-    patients: patientsArray,
-    selectedPatient: 0,
-  });
+  const [patients, setPatients] = React.useState<CustomerData[] | undefined>(
+    undefined
+  );
+  const [selectedPatient, setSelectedPatient] = React.useState(0);
+
   const [values, setValues] = React.useState({
     state: ScreenStates.landScreen,
   });
@@ -179,9 +235,7 @@ export default function Ophthamologist() {
   const setModal = (value: boolean) => {
     setopenModal({ ...openModal, show: value });
   };
-  const selectPatient = (index: number) => [
-    setPatients({ ...patients, selectedPatient: index }),
-  ];
+  const selectPatient = (index: number) => [setSelectedPatient(index)];
   const [user, setUser] = React.useState(
     authenticationService.currentUserValue
   );
@@ -264,17 +318,27 @@ export default function Ophthamologist() {
                     boxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
                   }}
                 >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "35%",
+                      left: "43%",
+                    }}
+                  >
+                    {loading ? <CircularProgress /> : null}
+                  </div>
+
                   <List className={classes.list}>
-                    {patients.patients.map((patient, index) => (
+                    {patients?.map((patient, index) => (
                       <Card
-                        key={patient.id}
-                        firstname={patient.firstname}
-                        lastname={patient.lastname}
-                        opticalRetail={patient.opticalRetail}
-                        date={patient.date}
+                        key={patient.CustomerID}
+                        firstname={patient.FirstName}
+                        lastname={patient.LastName}
+                        opticalRetail={patient.Email}
+                        date={patient.InspectionTime}
                         index={index}
                         selectPatient={selectPatient}
-                        selectedPatient={patients.selectedPatient}
+                        selectedPatient={selectedPatient}
                       />
                     ))}
                   </List>
@@ -312,20 +376,21 @@ export default function Ophthamologist() {
                     <Typography className={classes.phototext} variant="h5">
                       Fundusfoto:
                     </Typography>
-                    <img
-                      style={{ cursor: "pointer" }}
-                      onClick={() => {
-                        handlePreview(
-                          patients.patients[patients.selectedPatient]
-                            .fundusfotoURL
-                        );
-                      }}
-                      width="220"
-                      src={
-                        patients.patients[patients.selectedPatient]
-                          .fundusfotoURL
-                      }
-                    />
+
+                    {patients && (
+                      <img
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                          if (patients) {
+                            handlePreview(
+                              patients[selectedPatient].FundusPhotoRef
+                            );
+                          }
+                        }}
+                        width="220"
+                        src={patients[selectedPatient].FundusPhotoRef}
+                      />
+                    )}
                   </div>
                   <div
                     style={{
@@ -337,20 +402,20 @@ export default function Ophthamologist() {
                     <Typography className={classes.phototext} variant="h5">
                       Visualfield:
                     </Typography>
-                    <img
-                      style={{ cursor: "pointer" }}
-                      onClick={() => {
-                        handlePreview(
-                          patients.patients[patients.selectedPatient]
-                            .visualfieldURL
-                        );
-                      }}
-                      width="220"
-                      src={
-                        patients.patients[patients.selectedPatient]
-                          .visualfieldURL
-                      }
-                    />
+                    {patients && (
+                      <img
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                          if (patients) {
+                            handlePreview(
+                              patients[selectedPatient].VisualFieldRef
+                            );
+                          }
+                        }}
+                        width="220"
+                        src={patients[selectedPatient].VisualFieldRef}
+                      />
+                    )}
                   </div>
                   <div
                     style={{
@@ -362,18 +427,18 @@ export default function Ophthamologist() {
                     <Typography className={classes.phototext} variant="h5">
                       Oct scan:
                     </Typography>
-                    <img
-                      onClick={() => {
-                        handlePreview(
-                          patients.patients[patients.selectedPatient].octscanURL
-                        );
-                      }}
-                      style={{ cursor: "pointer" }}
-                      height="180"
-                      src={
-                        patients.patients[patients.selectedPatient].octscanURL
-                      }
-                    />
+                    {patients && (
+                      <img
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                          if (patients) {
+                            handlePreview(patients[selectedPatient].OctScanRef);
+                          }
+                        }}
+                        width="220"
+                        src={patients[selectedPatient].OctScanRef}
+                      />
+                    )}
                   </div>
                   <GreenButton
                     style={{

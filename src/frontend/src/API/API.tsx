@@ -19,8 +19,11 @@ export const getInspectionInfo = async (
   InspectionId: string
 ) => {
   const config: any = tokenConfig();
-  config.param = { CustomerId, InspectionId };
-  const res = await axios.get(API + "/inspection", config);
+  config.param = { InspectionId };
+  const res = await axios.get(
+    API + `/inspection?InspectionID=${InspectionId}`,
+    config
+  );
   if (res) {
     console.log(res);
     return res.data;
@@ -28,7 +31,10 @@ export const getInspectionInfo = async (
 };
 export const getCustomerInfo = async (CustomerId: string) => {
   const config: any = tokenConfig();
-  const res = await axios.get(API + "/customer", config);
+  const res = await axios.get(
+    API + `/customer?CustomerID=${CustomerId}`,
+    config
+  );
   if (res) {
     console.log(res);
     return res.data;
@@ -64,7 +70,7 @@ export const getImage = async (id: string) => {
   const config: any = tokenConfig();
   const auth = config.headers.Authentication;
   await axios
-    .get(API + `/image?ImageID=539443706`, {
+    .get(API + `/image?ImageID=${id}`, {
       responseType: "arraybuffer",
       headers: {
         "Content-Type": "application/json",
