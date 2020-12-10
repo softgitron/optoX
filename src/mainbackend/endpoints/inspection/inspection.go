@@ -14,8 +14,7 @@ import (
  * @apiGroup Inspection
  *
  * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
- * @apiParam {Number{0..}} CustomerId Personal id of the customer
- * @apiParam {Number{0..}} InspectionId selected inspection's ID
+ * @apiParam {Number{0..}} InspectionID selected inspection's ID
  *
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
@@ -75,21 +74,28 @@ import (
 
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	if req.Method == "GET" {
-		idstr := req.Header.Get("InspectionID")
+		inspectionIDstr := req.URL.Query().Get("InspectionID")
 
-		if idstr == "" {
+		if inspectionIDstr == "" {
 			connection.SendHTTPError(http.StatusBadRequest, "ID is not given", res)
 			return
 		}
 
-		id, parseErr := strconv.ParseInt(req.Header.Get("InspectionID"), 10, 0)
+		inspectionID, parseErr := strconv.Atoi(inspectionIDstr)
 
 		if parseErr != nil {
 			connection.SendHTTPError(http.StatusBadRequest, "ID is not a number", res)
 			return
 		}
 
-		ins, err := h.DBHandler.GetInspectionByID(int(id))
+		ins, err := h.DBHandler.GetInspectionByID(inspectionID)
+
+		// Check that optician or opthalmologist is authorized to view inspection data
+		if h.Claims.EmployerID != ins.OpticianID && h.Claims.Type == "Optician" ||
+			h.Claims.EmployerID != ins.OpthalmologistID && h.Claims.Type == "Opthalmologist" {
+			connection.SendHTTPError(http.StatusUnauthorized, "Employee id does not match", res)
+			return
+		}
 
 		if err != nil {
 			connection.SendHTTPError(http.StatusInternalServerError, "Database fetch failed", res)
