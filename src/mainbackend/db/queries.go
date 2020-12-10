@@ -50,6 +50,24 @@ func (db *Database) GetCustomersByID(id int) (*[]Customer, error) {
 	return &customers, results.Error
 }
 
+// GetCustomerByID ...
+func (db *Database) GetCustomerByID(customerID int) (*Customer, error) {
+	customer := Customer{}
+	results := db.connection.Where("customer_id = ?", customerID).
+		Find(&customer)
+
+	return &customer, results.Error
+}
+
+// GetCustomerByEmail ...
+func (db *Database) GetCustomerByEmail(email string) (*Customer, error) {
+	customer := Customer{}
+	results := db.connection.Where("email = ?", email).
+		Find(&customer)
+
+	return &customer, results.Error
+}
+
 // AddCustomer ...
 func (db *Database) AddCustomer(customer Customer) error {
 	res := db.connection.Omit("CustomerID").Create(customer)
