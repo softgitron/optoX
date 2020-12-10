@@ -26,7 +26,7 @@ Download image from remote location: `curl 'optox.fi/api/image?ImageID=129849808
 
 ##### Customer tests
 
-Add customer (doesn't work yet) `curl optox.net/api/customer -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1wbG95ZXJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.j_b1DqMPS7Fh2NKcgirid_u5T6HM3sJ4btkXlivOd2Y' -d '{"CustomerCountry": "Finland", "SocialSecurityNumber": "456878-1459", "Email": "test@test.com", "FirstName": "Testy", "LastName": "Testington"}'`
+Add customer `curl optox.net/api/customer -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1wbG95ZXJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.j_b1DqMPS7Fh2NKcgirid_u5T6HM3sJ4btkXlivOd2Y' -d '{"CustomerCountry": "Finland", "SocialSecurityNumber": "456878-1459", "Email": "test@test.com", "FirstName": "Testy", "LastName": "Testington"}'`
 
 Get customer usign ID `curl 'optox.net/api/customer?CustomerID=0' -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1wbG95ZXJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.j_b1DqMPS7Fh2NKcgirid_u5T6HM3sJ4btkXlivOd2Y'`
 
