@@ -39,7 +39,7 @@ var allAccessLevels = []string{"Normal", "Moderator", "Administrator"}
 var Endpoints = map[string]Endpoint{
 	"/api/customer": {
 		URL:                  "/api/customer",
-		middlewares:          basicMiddlewares,
+		middlewares:          basicBodyMiddlewares,
 		customHandler:        customer.Handler,
 		Accepts:              []string{"GET", "POST"},
 		AuthenticationTypes:  []string{"Customer", "Optician", "Opthalmologist"},
@@ -164,6 +164,8 @@ func Initialize() {
 		if endpoint, ok := Endpoints[path]; ok {
 			endpoint.dbHandler = &dbConnection
 			endpoint.HandleRequest(res, req)
+		} else {
+			connection.SendHTTPError(http.StatusNotFound, "Not acceptable api endpoint", res)
 		}
 	})
 
@@ -208,6 +210,7 @@ func (ep *Endpoint) HandleRequest(res http.ResponseWriter, req *http.Request) {
 			return
 		}
 	}
+
 	// Finally execute custom handler
 	ep.customHandler(res, req, &extra)
 }
