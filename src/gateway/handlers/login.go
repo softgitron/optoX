@@ -2,6 +2,8 @@ package handlers
 
 import (
 	"net/http"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 type customerLogin struct {
@@ -129,6 +131,25 @@ func (h *Handler) CustomerLoginHandler(response http.ResponseWriter, request *ht
  *     }
  */
 
+// UpdatePassword ...
+func (h *Handler) UpdatePassword(id int, group string, password string) (string, error) {
+	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	pass := ""
+
+	if err == nil {
+		switch group {
+		case "admin":
+			pass, err = h.Db.UpdateAdminPassword(id, string(hash))
+		case "opthalmologist":
+			pass, err = h.Db.UpdateOpthalmologistPassword(id, string(hash))
+		case "optician":
+			pass, err = h.Db.UpdateOpticianPassword(id, string(hash))
+		}
+	}
+
+	return pass, err
+}
+
 // EmployeeLoginHandler handles employee based logins
 func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *http.Request) {
 	if checkAllowedMethods([]string{http.MethodPost}, response, request) != nil {
@@ -143,7 +164,18 @@ func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *ht
 	// Check login against administrator database
 	admin, err := h.Db.GetAdministratorByEmail(newLoginAttempt.Email)
 	if err == nil {
+		//if the password matches the old in plain text
 		if admin.Password == newLoginAttempt.Password {
+			pass, err := h.UpdatePassword(admin.AdminID, "admin", admin.Password)
+
+			if err != nil || pass == "" {
+				return
+			}
+
+			admin.Password = pass
+		}
+
+		if bcrypt.CompareHashAndPassword([]byte(admin.Password), []byte(newLoginAttempt.Password)) == nil {
 			claims := Claims{
 				Type:        "Administrator",
 				ID:          admin.AdminID,
@@ -163,7 +195,18 @@ func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *ht
 	// Check login against opthalmologist database
 	opthalmologistEmployee, err := h.Db.GetOpthalmologistEmployeeByEmail(newLoginAttempt.Email)
 	if err == nil {
+
 		if opthalmologistEmployee.Password == newLoginAttempt.Password {
+			pass, err := h.UpdatePassword(opthalmologistEmployee.EmployeeID, "ophtalmologist", opthalmologistEmployee.Password)
+
+			if err != nil || pass == "" {
+				return
+			}
+
+			opthalmologistEmployee.Password = pass
+		}
+
+		if bcrypt.CompareHashAndPassword([]byte(opthalmologistEmployee.Password), []byte(newLoginAttempt.Password)) == nil {
 			claims := Claims{
 				Type:        "Opthalmologist",
 				ID:          opthalmologistEmployee.EmployeeID,
@@ -185,6 +228,16 @@ func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *ht
 	opticianEmployee, err := h.Db.GetOpticianEmployeeByEmail(newLoginAttempt.Email)
 	if err == nil {
 		if opticianEmployee.Password == newLoginAttempt.Password {
+			pass, err := h.UpdatePassword(opticianEmployee.EmployeeID, "ophtalmologist", opticianEmployee.Password)
+
+			if err != nil || pass == "" {
+				return
+			}
+
+			opticianEmployee.Password = pass
+		}
+
+		if bcrypt.CompareHashAndPassword([]byte(opticianEmployee.Password), []byte(newLoginAttempt.Password)) == nil {
 			claims := Claims{
 				Type:        "Optician",
 				ID:          opticianEmployee.EmployeeID,

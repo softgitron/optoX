@@ -101,3 +101,23 @@ func (db *Database) GetOpticianEmployeeByEmail(email string) (*OpticianEmployee,
 	results := db.connection.Where("email = ?", email).First(&optician)
 	return &optician, results.Error
 }
+
+//Password update methods on employees
+
+// UpdateAdminPassword ...
+func (db *Database) UpdateAdminPassword(id int, hash string) (string, error) {
+	res := db.connection.Model(&Administrator{}).Where("admin_id = ?", id).Update("password", hash)
+	return hash, res.Error
+}
+
+// UpdateOpthalmologistPassword ...
+func (db *Database) UpdateOpthalmologistPassword(id int, hash string) (string, error) {
+	res := db.connection.Model(&OpthalmologistEmployee{}).Where("employee_id = ?", id).Update("password", hash)
+	return hash, res.Error
+}
+
+// UpdateOpticianPassword ...
+func (db *Database) UpdateOpticianPassword(id int, hash string) (string, error) {
+	res := db.connection.Model(&OpticianEmployee{}).Where("employee_id = ?", id).Update("password", hash)
+	return hash, res.Error
+}
