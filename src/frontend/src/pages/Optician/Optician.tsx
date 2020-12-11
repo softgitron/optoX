@@ -106,6 +106,10 @@ export default function Optician() {
 
   const [loading, setLoading] = React.useState(false);
 
+  const [values, setValues] = React.useState({
+    state: ScreenStates.landScreen,
+    selectedAppointment: null,
+  });
   React.useEffect(() => {
     const getCustomers = async () => {
       setLoading(true);
@@ -130,13 +134,10 @@ export default function Optician() {
       setCustomers(finalArray);
       setLoading(false);
     };
-    getCustomers();
-  }, []);
-
-  const [values, setValues] = React.useState({
-    state: ScreenStates.landScreen,
-    selectedAppointment: null,
-  });
+    if (values.state === ScreenStates.landScreen) {
+      getCustomers();
+    }
+  }, [values.state]);
 
   const classes = useStyles();
 

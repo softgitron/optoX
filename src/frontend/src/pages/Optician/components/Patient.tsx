@@ -219,6 +219,7 @@ export default function InputAdornments(props: any) {
       silmalaakari: -1,
     });
     setDone(false);
+    setLoginToken(uuidv4().toUpperCase());
   };
   console.log(values);
   return (
