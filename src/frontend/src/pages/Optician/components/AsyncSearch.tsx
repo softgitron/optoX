@@ -37,6 +37,7 @@ interface CustomerData {
   LastName: string;
   SocialSecurityNumber: string;
   Inspections: any[];
+  FullName: string;
 }
 export default function Asynchronous({
   selectAppointment,
@@ -80,7 +81,7 @@ export default function Asynchronous({
           <Select
             labelId="demo-simple-select-label2"
             id="select2"
-            value={chosenCustomer?.FirstName}
+            value={chosenCustomer?.FullName}
             onChange={chooseCustomer}
             label="Select appointment"
             required={true}
@@ -94,7 +95,9 @@ export default function Asynchronous({
           >
             {/* Map through appointments and render them. ID as the value*/}
             {customers?.map((customer, index) => (
-              <MenuItem value={index}>{customer.FirstName}</MenuItem>
+              <MenuItem value={index}>
+                {customer?.FirstName + " " + customer?.LastName}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>

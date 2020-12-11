@@ -93,8 +93,10 @@ interface CustomerData {
   LastName: string;
   SocialSecurityNumber: string;
   Inspections: any[];
+  FullName: string;
 }
 export default function Optician() {
+  console.log("Hello i am optician");
   const [customers, setCustomers] = React.useState<CustomerData[] | undefined>(
     undefined
   );
@@ -113,11 +115,13 @@ export default function Optician() {
       console.log(customersArray);
       let promises: any[] = [];
       customersArray.forEach((customer: any) => {
+        customer.FullName = customer.FirstName + " " + customer.LastNAme;
         map.set(customer.CustomerID, customer);
         promises.push(getInspectionInfoCID(customer.CustomerID));
       });
       await Promise.all(promises).then((values) => {
         values.forEach((newCustomerData: any[]) => {
+          console.log(newCustomerData);
           let initialCustomerData = map.get(newCustomerData[0].CustomerID);
           initialCustomerData.Inspections = newCustomerData;
           finalArray.push(initialCustomerData);
@@ -141,6 +145,7 @@ export default function Optician() {
   );
   console.log(user);
   console.log(customers);
+  console.log(chosenCustomer);
   const renderSwitch = (state: ScreenStates) => {
     switch (state) {
       case 0:
@@ -188,9 +193,6 @@ export default function Optician() {
                       View prior images
                     </GreenButton>
                   </div>
-                  <Typography className={classes.earnedtext}>
-                    You have earned so far: 950 050 €
-                  </Typography>
                 </div>
               </Grid>
             </Grid>

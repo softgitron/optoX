@@ -179,12 +179,7 @@ export default function Customer({
       default:
         return (
           <p>
-            Waiting for pictures. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Nulla id quam sed ligula sodales tempus. Quisque
-            eget elit ullamcorper, rhoncus elit a, vulputate nunc. Nunc neque
-            nibh, facilisis vel sapien ut, pharetra tincidunt dolor. Integer
-            libero elit, semper ac odio nec, feugiat aliquet neque. Donec
-            accumsan consequat tincidunt.
+            Waiting for pictures.
             <br />
             <br />
             Login token is: {CustomerData.loginToken}
@@ -319,7 +314,13 @@ export default function Customer({
             color="primary"
             className={classes.button}
             onClick={() => {
-              downloadImage("fundusfoto", CustomerData.fundusfoto);
+              downloadImage(
+                CustomerData.firstname +
+                  "_" +
+                  CustomerData.lastname +
+                  "_fundusfoto",
+                CustomerData.fundusfoto
+              );
             }}
           >
             Download fundusfoto
@@ -331,7 +332,13 @@ export default function Customer({
             color="primary"
             className={classes.button}
             onClick={() => {
-              downloadImage("octscan", CustomerData.octscan);
+              downloadImage(
+                CustomerData.firstname +
+                  "_" +
+                  CustomerData.lastname +
+                  "_octscan",
+                CustomerData.octscan
+              );
             }}
           >
             Download oct scan
@@ -343,7 +350,13 @@ export default function Customer({
             color="primary"
             className={classes.button}
             onClick={() => {
-              downloadImage("visualfield", CustomerData.visualfield);
+              downloadImage(
+                CustomerData.firstname +
+                  "_" +
+                  CustomerData.lastname +
+                  "_visualfield",
+                CustomerData.visualfield
+              );
             }}
           >
             Download visualfield
