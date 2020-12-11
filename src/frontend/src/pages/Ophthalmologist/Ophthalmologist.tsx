@@ -208,9 +208,9 @@ export default function Ophthamologist() {
         })
       );
       finalArray = finalArray.filter(
-        (x) => x.Status !== "Approved" && x.FirstName !== "Rejected"
+        (x) => x.Status !== "Approved" && x.Status !== "Rejected"
       );
-
+      console.log("Hello");
       setPatients(finalArray);
       setLoading(false);
     };
