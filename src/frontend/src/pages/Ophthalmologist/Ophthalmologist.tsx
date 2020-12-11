@@ -207,10 +207,10 @@ export default function Ophthamologist() {
             "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png";
         })
       );
-      finalArray = finalArray.filter(
-        (x) => x.Status !== "Approved" && x.Status !== "Rejected"
-      );
+      finalArray = finalArray.filter((x) => x.Status !== "Approved");
+      finalArray = finalArray.filter((x) => x.Status !== "Rejected");
       console.log("Hello");
+      console.log(finalArray);
       setPatients(finalArray);
       setLoading(false);
     };
