@@ -106,6 +106,7 @@ function uuidv4() {
 }
 
 export default function InputAdornments(props: any) {
+  const [loading, setLoading] = React.useState(false);
   const [silmalaakarit, setSilmalaakarit] = React.useState([
     {
       name: "a",
@@ -190,7 +191,8 @@ export default function InputAdornments(props: any) {
       images.Fundusfoto.file &&
       images.Octscan.file &&
       images.Visualfield.file &&
-      values.silmalaakari >= 0
+      values.silmalaakari >= 0 &&
+      !loading
     ) {
       return true;
     }
@@ -481,11 +483,14 @@ export default function InputAdornments(props: any) {
           className={classes.button}
           disabled={!canSubmit()}
           onClick={async () => {
+            setLoading(true);
             console.log("uploading images...");
             const Fundusfoto = await uploadImage(images.Fundusfoto.file);
             const OctScan = await uploadImage(images.Octscan.file);
             const VisualField = await uploadImage(images.Visualfield.file);
             console.log(Fundusfoto, OctScan, VisualField);
+            //after this show only Go back and make a new inspection etc. button that resets forms
+            setLoading(false);
           }}
         >
           Upload images
