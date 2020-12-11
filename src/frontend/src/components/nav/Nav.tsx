@@ -32,25 +32,25 @@ export default function ButtonAppBar() {
           </Typography>
           {(currentUser.Type === "Administrator" ||
             currentUser.Type === "Customer") && (
-            <Button onClick={() => history.push("/customer")} color="inherit">
+            <Button onClick={() => history.push("/Customer")} color="inherit">
               Customer
             </Button>
           )}
           {currentUser.Type === "Administrator" && (
-            <Button onClick={() => history.push("/admin")} color="inherit">
+            <Button onClick={() => history.push("/Admin")} color="inherit">
               Admin
             </Button>
           )}
           {(currentUser.Type === "Administrator" ||
             currentUser.Type === "Optician") && (
-            <Button onClick={() => history.push("/optician")} color="inherit">
+            <Button onClick={() => history.push("/Optician")} color="inherit">
               Optician
             </Button>
           )}
           {(currentUser.Type === "Administrator" ||
             currentUser.Type === "Ophtalmologist") && (
             <Button
-              onClick={() => history.push("/ophtalmologist")}
+              onClick={() => history.push("/Opthalmologist")}
               color="inherit"
             >
               Ophtalmologist

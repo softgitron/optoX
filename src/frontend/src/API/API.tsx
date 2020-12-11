@@ -138,3 +138,10 @@ export const getSilmalaakarit = async () => {
     return res.data;
   }
 };
+
+export const makeDecision = async (inspectionID: string, isOK: boolean) => {
+  const config: any = tokenConfig();
+  const body = JSON.stringify({ InspectionID: inspectionID, Approval: isOK });
+
+  const res = await axios.post(API + "/inspection/decision", body, config);
+};

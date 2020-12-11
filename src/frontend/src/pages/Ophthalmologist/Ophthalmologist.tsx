@@ -23,6 +23,7 @@ import {
   getImage,
   getInspectionInfo,
   getOpthalmologistCustomers,
+  makeDecision,
 } from "../../API/API";
 
 const patient1 = {
@@ -442,34 +443,48 @@ export default function Ophthamologist() {
                       />
                     )}
                   </div>
-                  {loading ? null : (
-                    <>
-                      <GreenButton
-                        style={{
-                          width: "100px",
-                          top: "-300px",
-                          float: "right",
-                          margin: "10px",
-                          left: "-20px",
-                        }}
-                        onClick={() => setValues({ ...values, state: 0 })}
-                      >
-                        Approve
-                      </GreenButton>
-                      <RedButton
-                        style={{
-                          width: "100px",
-                          top: "-300px",
-                          float: "right",
-                          margin: "10px",
-                          left: "-20px",
-                        }}
-                        onClick={() => setValues({ ...values, state: 0 })}
-                      >
-                        Reject
-                      </RedButton>
-                    </>
-                  )}
+                  {loading
+                    ? null
+                    : patients && (
+                        <>
+                          <GreenButton
+                            style={{
+                              width: "100px",
+                              top: "-300px",
+                              float: "right",
+                              margin: "10px",
+                              left: "-20px",
+                            }}
+                            onClick={() => {
+                              setValues({ ...values, state: 0 });
+                              makeDecision(
+                                patients[selectedPatient].CustomerID.toString(),
+                                true
+                              );
+                            }}
+                          >
+                            Approve
+                          </GreenButton>
+                          <RedButton
+                            style={{
+                              width: "100px",
+                              top: "-300px",
+                              float: "right",
+                              margin: "10px",
+                              left: "-20px",
+                            }}
+                            onClick={() => {
+                              setValues({ ...values, state: 0 });
+                              makeDecision(
+                                patients[selectedPatient].CustomerID.toString(),
+                                true
+                              );
+                            }}
+                          >
+                            Reject
+                          </RedButton>
+                        </>
+                      )}
                 </div>
               </Grid>
             </Grid>
