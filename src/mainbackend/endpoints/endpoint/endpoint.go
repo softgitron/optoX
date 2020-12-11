@@ -106,7 +106,7 @@ var Endpoints = map[string]Endpoint{
 		middlewares:          basicBodyMiddlewares,
 		customHandler:        inspection.Handler,
 		Accepts:              []string{"GET", "POST"},
-		AuthenticationTypes:  []string{"Optician", "Opthalmologist"},
+		AuthenticationTypes:  []string{"Customer", "Optician", "Opthalmologist"},
 		AuthenticationLevels: allAccessLevels,
 		bodyType:             connection.BodyTypeInspection,
 		dbHandler:            &dbConnection,

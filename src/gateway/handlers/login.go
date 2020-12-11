@@ -83,7 +83,7 @@ func (h *Handler) CustomerLoginHandler(response http.ResponseWriter, request *ht
 			Country:     customer.CustomerCountry,
 			FirstName:   customer.FirstName,
 			LastName:    customer.LastName,
-			AccessLevel: "normal",
+			AccessLevel: "Normal",
 		}
 		h.sendLoginOK(&claims, customer, response)
 		return
@@ -131,18 +131,24 @@ func (h *Handler) CustomerLoginHandler(response http.ResponseWriter, request *ht
  *     }
  */
 
+const (
+	loginTypeAdmin          = iota
+	loginTypeOptician       = iota
+	loginTypeOpthalmologist = iota
+)
+
 // UpdatePassword ...
-func (h *Handler) UpdatePassword(id int, group string, password string) (string, error) {
+func (h *Handler) UpdatePassword(id int, group int, password string) (string, error) {
 	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	pass := ""
 
 	if err == nil {
 		switch group {
-		case "admin":
+		case loginTypeAdmin:
 			pass, err = h.Db.UpdateAdminPassword(id, string(hash))
-		case "opthalmologist":
+		case loginTypeOpthalmologist:
 			pass, err = h.Db.UpdateOpthalmologistPassword(id, string(hash))
-		case "optician":
+		case loginTypeOptician:
 			pass, err = h.Db.UpdateOpticianPassword(id, string(hash))
 		}
 	}
@@ -166,7 +172,7 @@ func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *ht
 	if err == nil {
 		//if the password matches the old in plain text
 		if admin.Password == newLoginAttempt.Password {
-			pass, err := h.UpdatePassword(admin.AdminID, "admin", admin.Password)
+			pass, err := h.UpdatePassword(admin.AdminID, loginTypeAdmin, admin.Password)
 
 			if err != nil || pass == "" {
 				return
@@ -197,7 +203,7 @@ func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *ht
 	if err == nil {
 
 		if opthalmologistEmployee.Password == newLoginAttempt.Password {
-			pass, err := h.UpdatePassword(opthalmologistEmployee.EmployeeID, "ophtalmologist", opthalmologistEmployee.Password)
+			pass, err := h.UpdatePassword(opthalmologistEmployee.EmployeeID, loginTypeOpthalmologist, opthalmologistEmployee.Password)
 
 			if err != nil || pass == "" {
 				return
@@ -228,9 +234,10 @@ func (h *Handler) EmployeeLoginHandler(response http.ResponseWriter, request *ht
 	opticianEmployee, err := h.Db.GetOpticianEmployeeByEmail(newLoginAttempt.Email)
 	if err == nil {
 		if opticianEmployee.Password == newLoginAttempt.Password {
-			pass, err := h.UpdatePassword(opticianEmployee.EmployeeID, "ophtalmologist", opticianEmployee.Password)
+			pass, err := h.UpdatePassword(opticianEmployee.EmployeeID, loginTypeOptician, opticianEmployee.Password)
 
 			if err != nil || pass == "" {
+				sendHTTPError(http.StatusInternalServerError, "Unable to execute necessary database operations", response)
 				return
 			}
 

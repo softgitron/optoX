@@ -122,6 +122,11 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 			return
 		}
 
+		if h.Claims.ID != ins.CustomerID && h.Claims.Type == "Customer" {
+			connection.SendHTTPError(http.StatusUnauthorized, "Inspection is not related to the customer", res)
+			return
+		}
+
 		if err != nil {
 			connection.SendHTTPError(http.StatusInternalServerError, "Database fetch failed", res)
 		} else {
@@ -132,6 +137,11 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 	}
 
 	if req.Method == "POST" {
+		if h.Claims.Type == "Customer" {
+			connection.SendHTTPError(http.StatusUnauthorized, "Customer can't make inspections", res)
+			return
+		}
+
 		if h.Body == nil {
 			connection.SendHTTPError(http.StatusInternalServerError, "No body given", res)
 			return

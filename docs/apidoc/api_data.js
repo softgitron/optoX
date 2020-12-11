@@ -65,7 +65,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  results: \"New customer created\"\n}",
+          "content": "{\n    \"CustomerID\": 0,\n    \"CustomerCountry\": \"Finland\",\n    \"SocialSecurityNumber\": \"484878-1469\",\n    \"Email\": \"test@test.com\",\n    \"FirstName\": \"Testy\",\n    \"LastName\": \"Testington\"\n}",
           "type": "json"
         }
       ]
