@@ -504,9 +504,9 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "Number",
-            "optional": false,
+            "optional": true,
             "field": "CustomerID",
-            "description": "<p>customers ID</p>"
+            "description": "<p>customers ID (can be supplied automatically from token if customer)</p>"
           }
         ]
       }

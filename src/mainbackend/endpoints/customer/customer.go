@@ -31,9 +31,49 @@ func CustomerFromDetails(cust connection.CustomerDetails) db.Customer {
 	}
 }
 
+/**
+ * @api {get} /customers/inspections Get customer inspections based on customerID
+ * @apiVersion 1.0.0
+ * @apiName getInspectionImages
+ * @apiGroup Optician
+ *
+ * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
+ * @apiParam {Number} [CustomerID] customers ID (can be supplied automatically from token if customer)
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *      inspections: [
+ *	{
+ *		"InspectionID":23,
+ *         	"Timestamp": "13.12.2010 09:22:01"
+ *     	},
+ *	{
+ *		"InspectionID":27,
+ *         	"Timestamp": "15.11.2011 10:22:01"
+ *     	},
+ *
+ *
+ *
+ */
+
 // GetCustomerInspections ...
 func GetCustomerInspections(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
-	customerID := h.Claims.ID
+	var customerID int
+	var err error
+	if h.Claims.Type == "Customer" {
+		customerID = h.Claims.ID
+	} else if req.URL.Query().Get("CustomerID") != "" {
+		customerID, err = strconv.Atoi(req.URL.Query().Get("CustomerID"))
+		if err != nil {
+			connection.SendHTTPError(http.StatusBadRequest, "Unable to parse customer ID", res)
+			return
+		}
+	} else {
+		connection.SendHTTPError(http.StatusBadRequest, "No customer ID supplied", res)
+		return
+	}
+
 	inspections, err := h.DBHandler.GetInspectionByCustomerID(customerID)
 	if err == nil {
 		connection.SendOKReponse(inspections, res)
@@ -137,29 +177,3 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 		connection.SendOKReponse(createdCustomer, res)
 	}
 }
-
-/**
- * @api {get} /customers/inspections Get customer inspections based on customerID
- * @apiVersion 1.0.0
- * @apiName getInspectionImages
- * @apiGroup Optician
- *
- * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
- * @apiParam {Number} CustomerID customers ID
- *
- * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
- *     {
- *      inspections: [
- *	{
- *		"InspectionID":23,
- *         	"Timestamp": "13.12.2010 09:22:01"
- *     	},
- *	{
- *		"InspectionID":27,
- *         	"Timestamp": "15.11.2011 10:22:01"
- *     	},
- *
- *
- *
- */

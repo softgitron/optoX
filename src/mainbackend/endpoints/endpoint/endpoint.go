@@ -52,7 +52,7 @@ var Endpoints = map[string]Endpoint{
 		middlewares:          basicMiddlewares,
 		customHandler:        customer.GetCustomerInspections,
 		Accepts:              []string{"GET", "POST"},
-		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationTypes:  []string{"Customer", "Optician"},
 		AuthenticationLevels: allAccessLevels,
 		dbHandler:            &dbConnection,
 	},
