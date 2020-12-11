@@ -5,6 +5,10 @@ function run_dbcommand() {
     echo "$1" | psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB"
 }
 
+function import_db_file() {
+    cat "$1" | psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB"
+}
+
 # Select how the database should be initialized based on the REGION
 # REGION environment variable is provided to every container by helm
 # cp /config/$REGION/postgresql.conf /etc/postgresql/postgresql.conf
@@ -15,8 +19,8 @@ function run_dbcommand() {
 # run_dbcommand "GRANT ALL PRIVILEGES ON DATABASE $POSTGRES_DB TO $POSTGRES_USER;"
 
 # Initialize database tables
-INITIALIZATION_FILE=$(cat /config/$REGION/init_tables.sql)
-run_dbcommand "$INITIALIZATION_FILE"
+INITIALIZATION_FILE="/config/$REGION/init_tables.sql"
+import_db_file "$INITIALIZATION_FILE"
 
 if [ "$REGION" != 'central' ]
 then
@@ -32,7 +36,7 @@ else
   # Import initial values
   if [ "$DEBUG" = 'true' ]
   then
-    INITIALIZATION_FILE=$(cat /config/$REGION/init_values.sql)
-    run_dbcommand "$INITIALIZATION_FILE"
+    INITIALIZATION_FILE="/config/$REGION/init_values.sql"
+    import_db_file "$INITIALIZATION_FILE"
   fi
 fi
