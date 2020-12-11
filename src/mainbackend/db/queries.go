@@ -79,19 +79,22 @@ func (db *Database) GetCustomerBySSN(ssn string) (*Customer, error) {
 }
 
 // AddCustomer ...
-func (db *Database) AddCustomer(customer Customer) error {
+func (db *Database) AddCustomer(customer Customer) (*Customer, error) {
 	cust, _ := db.GetCustomerBySSN(customer.SocialSecurityNumber)
 
-	if cust != nil {
-		return errors.New("Customer already exists")
+	if cust.SocialSecurityNumber != "" {
+		return cust, errors.New("Customer already exists")
 	}
 
 	res := db.connection.Exec(`
 		INSERT INTO customers (customer_country, social_security_number, email, first_name, last_name)
 		VALUES (?, ?, ?, ?, ?);
 	`, customer.CustomerCountry, customer.SocialSecurityNumber, customer.Email, customer.FirstName, customer.LastName)
-
-	return res.Error
+	cust, err := db.GetCustomerBySSN(customer.SocialSecurityNumber)
+	if err != nil {
+		return cust, err
+	}
+	return cust, res.Error
 }
 
 func (db *Database) GetOpthalmologistByID(id int) (*Opthalmologist, error) {

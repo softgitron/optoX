@@ -31,27 +31,6 @@ func CustomerFromDetails(cust connection.CustomerDetails) db.Customer {
 	}
 }
 
-/**
- * @api {post} /customer Creates new customer
- * @apiVersion 1.0.0
- * @apiName newCustomer
- * @apiGroup Customer
- *
- * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
- * @apiParam {Number{0...}} CustomerID
- * @apiParam {String} SosialSecurityNumber
- * @apiParam {String} Email
- * @apiParam {String} FirstName
- * @apiParam {String} LastName
- *
- * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
- *     {
- *       results: "New customer created"
- *     }
- *
- */
-
 // GetCustomerInspections ...
 func GetCustomerInspections(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	customerID := h.Claims.ID
@@ -63,32 +42,31 @@ func GetCustomerInspections(res http.ResponseWriter, req *http.Request, h *conne
 	}
 }
 
-/**
- * @api {get} /customer Searches for customer using Email or CustomerID
- * @apiVersion 1.0.0
- * @apiName searchCustomer
- * @apiGroup Customer
- *
- * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
- * @apiParam {String} [Email] email of the customer
- * @apiParam {String} [CustomerID] ID of the customer
- *
- *
- * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
- *     {
- *       "CustomerId": 100,
- *       "InspectionID":41,
- *       "Email": "example@mail.com",
- * 	     "SocialSecurityNumber": "051255-153T",
- *       "FirstName": "John",
- * 	     "LastName": "Doe"
- *     }
- *
- */
-
 // Handler ...
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
+	/**
+	 * @api {get} /customer Searches for customer using Email or CustomerID
+	 * @apiVersion 1.0.0
+	 * @apiName searchCustomer
+	 * @apiGroup Customer
+	 *
+	 * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
+	 * @apiParam {String} [Email] email of the customer
+	 * @apiParam {String} [CustomerID] ID of the customer
+	 *
+	 *
+	 * @apiSuccessExample Success-Response:
+	 *     HTTP/1.1 200 OK
+	 *     {
+	 *       "CustomerId": 100,
+	 *       "InspectionID":41,
+	 *       "Email": "example@mail.com",
+	 * 	     "SocialSecurityNumber": "051255-153T",
+	 *       "FirstName": "John",
+	 * 	     "LastName": "Doe"
+	 *     }
+	 *
+	 */
 	if req.Method == "GET" {
 		var query = req.URL.Query()
 		var results *db.Customer
@@ -116,6 +94,31 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 		connection.SendOKReponse(results, res)
 	}
 
+	/**
+	 * @api {post} /customer Creates new customer
+	 * @apiVersion 1.0.0
+	 * @apiName newCustomer
+	 * @apiGroup Customer
+	 *
+	 * @apiHeader {String} Authentication authentication token of the session. (Can be supplied via cookie too.)
+	 * @apiParam {Number{0...}} CustomerID
+	 * @apiParam {String} SosialSecurityNumber
+	 * @apiParam {String} Email
+	 * @apiParam {String} FirstName
+	 * @apiParam {String} LastName
+	 *
+	 * @apiSuccessExample Success-Response:
+	 * {
+	 *     "CustomerID": 0,
+	 *     "CustomerCountry": "Finland",
+	 *     "SocialSecurityNumber": "484878-1469",
+	 *     "Email": "test@test.com",
+	 *     "FirstName": "Testy",
+	 *     "LastName": "Testington"
+	 * }
+	 *
+	 */
+
 	if req.Method == "POST" {
 		if h.Body == nil {
 			connection.SendHTTPError(http.StatusInternalServerError, "No body given", res)
@@ -124,14 +127,14 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 
 		body := h.Body.(connection.CustomerDetails)
 		cust := CustomerFromDetails(body)
-		err := h.DBHandler.AddCustomer(cust)
+		createdCustomer, err := h.DBHandler.AddCustomer(cust)
 
 		if err != nil {
-			connection.SendHTTPError(http.StatusInternalServerError, "Couldn't create a new customer", res)
+			connection.SendHTTPError(http.StatusInternalServerError, "Couldn't create a new customer: "+err.Error(), res)
 			return
 		}
 
-		connection.SendOKReponse(connection.Success{Result: "New customer created"}, res)
+		connection.SendOKReponse(createdCustomer, res)
 	}
 }
 
