@@ -164,7 +164,7 @@ interface CustomerData {
 
 export default function Ophthamologist() {
   const [loading, setLoading] = React.useState(false);
-
+  const [decisionLoading, setDecisionLoading] = React.useState(false);
   React.useEffect(() => {
     const getCustomers = async () => {
       setLoading(true);
@@ -329,6 +329,9 @@ export default function Ophthamologist() {
                   </div>
 
                   <List className={classes.list}>
+                    {/*Needs logic for not rendering approved/rejected stuff? -> when approving or rejecting, we need to also 
+                    remove the approved etc. customer from the patients list
+                    */}
                     {patients?.map((patient, index) => (
                       <Card
                         key={patient.CustomerID}
@@ -448,6 +451,7 @@ export default function Ophthamologist() {
                     : patients && (
                         <>
                           <GreenButton
+                            disabled={decisionLoading ? true : false}
                             style={{
                               width: "100px",
                               top: "-300px",
@@ -455,17 +459,22 @@ export default function Ophthamologist() {
                               margin: "10px",
                               left: "-20px",
                             }}
-                            onClick={() => {
+                            onClick={async () => {
+                              setDecisionLoading(true);
                               setValues({ ...values, state: 0 });
-                              makeDecision(
+                              await makeDecision(
                                 patients[selectedPatient].CustomerID.toString(),
                                 true
                               );
+                              /*        patients.splice(selectedPatient, 1);
+                              selectPatient(0);
+                              setDecisionLoading(false); */
                             }}
                           >
                             Approve
                           </GreenButton>
                           <RedButton
+                            disabled={decisionLoading ? true : false}
                             style={{
                               width: "100px",
                               top: "-300px",
@@ -473,12 +482,17 @@ export default function Ophthamologist() {
                               margin: "10px",
                               left: "-20px",
                             }}
-                            onClick={() => {
+                            onClick={async () => {
+                              setDecisionLoading(true);
                               setValues({ ...values, state: 0 });
-                              makeDecision(
+                              await makeDecision(
                                 patients[selectedPatient].CustomerID.toString(),
                                 true
-                              );
+                              ); //check for what happens if error happens
+
+                              /*     patients.splice(selectedPatient, 1);
+                              selectPatient(0);
+                              setDecisionLoading(false); */
                             }}
                           >
                             Reject
