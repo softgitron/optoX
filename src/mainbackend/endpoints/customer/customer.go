@@ -131,7 +131,7 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 			return
 		}
 
-		connection.SendOKReponse(h.Body, res)
+		connection.SendOKReponse(connection.Success{Result: "New customer created"}, res)
 	}
 }
 

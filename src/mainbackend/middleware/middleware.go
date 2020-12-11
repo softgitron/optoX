@@ -3,6 +3,7 @@ package middleware
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
 	"strconv"
 
@@ -96,7 +97,16 @@ func DecodeBody(res http.ResponseWriter, req *http.Request, mw *Middleware, h *c
 			err = json.NewDecoder(req.Body).Decode(&body)
 			h.Body = body
 		}
+
+	case connection.BodyTypeInspection:
+		{
+			body := connection.InspectionDetails{}
+			err = json.NewDecoder(req.Body).Decode(&body)
+			h.Body = body
+		}
 	}
+
+	fmt.Fprintln(res, err)
 
 	if err != nil {
 		connection.SendHTTPError(http.StatusBadRequest, "Unable to unmarshal request", res)

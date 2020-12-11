@@ -53,17 +53,20 @@ type Opthalmologist struct {
 
 //Inspection gorm template
 type Inspection struct {
-	InspectionID      int `gorm:"primaryKey"`
-	CustomerID        int
-	OpticianID        int
-	OpthalmologistID  int
-	InspectionCountry string
-	FundusPhotoRef    int
-	OctScanRef        int
-	VisualFieldRef    int
-	InspectionTime    time.Time
-	LoginToken        string
-	Status            string
+	InspectionID          int `gorm:"primaryKey"`
+	CustomerID            int
+	CustomerCountry       string
+	OpticianID            int
+	OpticianCountry       string
+	OpthalmologistID      int
+	OpthalmologistCountry string
+	InspectionsCountry    string
+	FundusPhotoRef        int
+	OctScanRef            int
+	VisualFieldRef        int
+	InspectionTime        time.Time
+	LoginToken            string
+	Status                string
 }
 
 //Contract gorm template
