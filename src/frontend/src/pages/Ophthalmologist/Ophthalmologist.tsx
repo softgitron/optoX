@@ -184,6 +184,7 @@ export default function Ophthamologist() {
             ...newCustomerData,
           };
           finalArray.push(finalCustomerData);
+          finalArray.push(finalCustomerData);
         });
       });
       console.log(finalArray);
@@ -327,7 +328,6 @@ export default function Ophthamologist() {
                   >
                     {loading ? <CircularProgress /> : null}
                   </div>
-
                   <List className={classes.list}>
                     {/*Needs logic for not rendering approved/rejected stuff? -> when approving or rejecting, we need to also 
                     remove the approved etc. customer from the patients list
@@ -357,149 +357,159 @@ export default function Ophthamologist() {
                 </RedButton>
               </Grid>
               <Grid item xs={8}>
-                <div
-                  style={{
-                    backgroundColor: "#2d2d2db0",
-                    height: "600px",
-                    marginTop: "150px",
-                    position: "relative",
-                    width: "1160px",
-                    WebkitBoxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
-                    MozBoxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
-                    boxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
-                  }}
-                >
-                  <div
-                    style={{
-                      marginLeft: "35px",
-                      position: "relative",
-                      top: "20px",
-                    }}
-                  >
-                    <Typography className={classes.phototext} variant="h5">
-                      Fundusfoto:
-                    </Typography>
+                {patients?.[0] ? (
+                  <>
+                    <div
+                      style={{
+                        backgroundColor: "#2d2d2db0",
+                        height: "600px",
+                        marginTop: "150px",
+                        position: "relative",
+                        width: "1160px",
+                        WebkitBoxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
+                        MozBoxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
+                        boxShadow: "10px 6px 17px -10px rgba(0,0,0,0.75)",
+                      }}
+                    >
+                      <div
+                        style={{
+                          marginLeft: "35px",
+                          position: "relative",
+                          top: "20px",
+                        }}
+                      >
+                        <Typography className={classes.phototext} variant="h5">
+                          Fundusfoto:
+                        </Typography>
 
-                    {patients && (
-                      <img
-                        style={{ cursor: "pointer" }}
-                        onClick={() => {
-                          if (patients) {
-                            handlePreview(
-                              patients[selectedPatient].FundusPhotoRef
-                            );
-                          }
-                        }}
-                        width="220"
-                        height="220"
-                        src={patients[selectedPatient].FundusPhotoRef}
-                      />
-                    )}
-                  </div>
-                  <div
-                    style={{
-                      marginLeft: "35px",
-                      position: "relative",
-                      top: "20px",
-                    }}
-                  >
-                    <Typography className={classes.phototext} variant="h5">
-                      Visualfield:
-                    </Typography>
-                    {patients && (
-                      <img
-                        style={{ cursor: "pointer" }}
-                        onClick={() => {
-                          if (patients) {
-                            handlePreview(
-                              patients[selectedPatient].VisualFieldRef
-                            );
-                          }
-                        }}
-                        width="220"
-                        height="220"
-                        src={patients[selectedPatient].VisualFieldRef}
-                      />
-                    )}
-                  </div>
-                  <div
-                    style={{
-                      position: "relative",
-                      left: "400px",
-                      top: "-536px",
-                    }}
-                  >
-                    <Typography className={classes.phototext} variant="h5">
-                      Oct scan:
-                    </Typography>
-                    {patients && (
-                      <img
-                        style={{ cursor: "pointer" }}
-                        onClick={() => {
-                          if (patients) {
-                            handlePreview(patients[selectedPatient].OctScanRef);
-                          }
-                        }}
-                        width="220"
-                        height="220"
-                        src={patients[selectedPatient].OctScanRef}
-                      />
-                    )}
-                  </div>
-                  {loading
-                    ? null
-                    : patients && (
-                        <>
-                          <GreenButton
-                            disabled={decisionLoading ? true : false}
-                            style={{
-                              width: "100px",
-                              top: "-300px",
-                              float: "right",
-                              margin: "10px",
-                              left: "-20px",
+                        {patients && (
+                          <img
+                            style={{ cursor: "pointer" }}
+                            onClick={() => {
+                              if (patients) {
+                                handlePreview(
+                                  patients[selectedPatient].FundusPhotoRef
+                                );
+                              }
                             }}
-                            onClick={async () => {
-                              setDecisionLoading(true);
-                              setValues({ ...values, state: 0 });
-                              await makeDecision(
-                                patients[selectedPatient].CustomerID.toString(),
-                                true
-                              );
-                              /*        patients.splice(selectedPatient, 1);
-                              selectPatient(0);
-                              setDecisionLoading(false); */
+                            width="220"
+                            height="220"
+                            src={patients[selectedPatient].FundusPhotoRef}
+                          />
+                        )}
+                      </div>
+                      <div
+                        style={{
+                          marginLeft: "35px",
+                          position: "relative",
+                          top: "20px",
+                        }}
+                      >
+                        <Typography className={classes.phototext} variant="h5">
+                          Visualfield:
+                        </Typography>
+                        {patients && (
+                          <img
+                            style={{ cursor: "pointer" }}
+                            onClick={() => {
+                              if (patients) {
+                                handlePreview(
+                                  patients[selectedPatient].VisualFieldRef
+                                );
+                              }
                             }}
-                          >
-                            Approve
-                          </GreenButton>
-                          <RedButton
-                            disabled={decisionLoading ? true : false}
-                            style={{
-                              width: "100px",
-                              top: "-300px",
-                              float: "right",
-                              margin: "10px",
-                              left: "-20px",
+                            width="220"
+                            height="220"
+                            src={patients[selectedPatient].VisualFieldRef}
+                          />
+                        )}
+                      </div>
+                      <div
+                        style={{
+                          position: "relative",
+                          left: "400px",
+                          top: "-536px",
+                        }}
+                      >
+                        <Typography className={classes.phototext} variant="h5">
+                          Oct scan:
+                        </Typography>
+                        {patients && (
+                          <img
+                            style={{ cursor: "pointer" }}
+                            onClick={() => {
+                              if (patients) {
+                                handlePreview(
+                                  patients[selectedPatient].OctScanRef
+                                );
+                              }
                             }}
-                            onClick={async () => {
-                              setDecisionLoading(true);
-                              setValues({ ...values, state: 0 });
-                              await makeDecision(
-                                patients[selectedPatient].CustomerID.toString(),
-                                true
-                              ); //check for what happens if error happens
+                            width="220"
+                            height="220"
+                            src={patients[selectedPatient].OctScanRef}
+                          />
+                        )}
+                      </div>
+                      {loading
+                        ? null
+                        : patients && (
+                            <>
+                              <GreenButton
+                                disabled={decisionLoading ? true : false}
+                                style={{
+                                  width: "100px",
+                                  top: "-300px",
+                                  float: "right",
+                                  margin: "10px",
+                                  left: "-20px",
+                                }}
+                                onClick={async () => {
+                                  setDecisionLoading(true);
 
-                              /*     patients.splice(selectedPatient, 1);
-                              selectPatient(0);
-                              setDecisionLoading(false); */
-                            }}
-                          >
-                            Reject
-                          </RedButton>
-                        </>
-                      )}
-                </div>
+                                  await makeDecision(
+                                    patients[
+                                      selectedPatient
+                                    ].CustomerID.toString(),
+                                    true
+                                  );
+                                  patients.splice(selectedPatient, 1);
+                                  selectPatient(0);
+                                  setDecisionLoading(false);
+                                }}
+                              >
+                                Approve
+                              </GreenButton>
+                              <RedButton
+                                disabled={decisionLoading ? true : false}
+                                style={{
+                                  width: "100px",
+                                  top: "-300px",
+                                  float: "right",
+                                  margin: "10px",
+                                  left: "-20px",
+                                }}
+                                onClick={async () => {
+                                  setDecisionLoading(true);
+
+                                  await makeDecision(
+                                    patients[
+                                      selectedPatient
+                                    ].CustomerID.toString(),
+                                    false
+                                  ); //check for what happens if error happens
+
+                                  patients.splice(selectedPatient, 1);
+                                  selectPatient(0);
+                                  setDecisionLoading(false);
+                                }}
+                              >
+                                Reject
+                              </RedButton>
+                            </>
+                          )}
+                    </div>
+                  </>
+                ) : null}
               </Grid>
             </Grid>
           </>
