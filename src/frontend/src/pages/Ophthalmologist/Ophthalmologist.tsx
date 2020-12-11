@@ -47,7 +47,7 @@ const patient2 = {
   fundusfotoURL:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
   octscanURL:
-    "https://www.aao.org/image.axd?id=d176ad37-e1c1-4090-a7be-fc863dc43756&t=636737514114430000",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
   visualfieldURL:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
 };
@@ -183,27 +183,26 @@ export default function Ophthamologist() {
             ...newCustomerData,
           };
           finalArray.push(finalCustomerData);
-          finalArray.push(finalCustomerData);
-          finalArray.push(finalCustomerData);
         });
       });
       console.log(finalArray);
       await Promise.all(
         finalArray.map(async (customer) => {
-          const fundusFoto = await getImage(customer.FundusPhotoRef.toString());
+          const fundusFoto = await getImage((439189665).toString());
+          console.log(fundusFoto);
           const octScan = await getImage(customer.OctScanRef.toString());
           const visualField = await getImage(
             customer.VisualFieldRef.toString()
           );
           customer.FundusPhotoRef =
             fundusFoto ||
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg";
+            "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png";
           customer.OctScanRef =
             octScan ||
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg";
+            "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png";
           customer.VisualFieldRef =
             visualField ||
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg";
+            "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png";
         })
       );
       setPatients(finalArray);
@@ -388,6 +387,7 @@ export default function Ophthamologist() {
                           }
                         }}
                         width="220"
+                        height="220"
                         src={patients[selectedPatient].FundusPhotoRef}
                       />
                     )}
@@ -413,6 +413,7 @@ export default function Ophthamologist() {
                           }
                         }}
                         width="220"
+                        height="220"
                         src={patients[selectedPatient].VisualFieldRef}
                       />
                     )}
@@ -436,6 +437,7 @@ export default function Ophthamologist() {
                           }
                         }}
                         width="220"
+                        height="220"
                         src={patients[selectedPatient].OctScanRef}
                       />
                     )}

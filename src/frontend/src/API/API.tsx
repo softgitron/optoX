@@ -29,6 +29,18 @@ export const getInspectionInfo = async (
     return res.data;
   }
 };
+export const getInspectionInfoCID = async (CustomerId: string) => {
+  const config: any = tokenConfig();
+  config.param = { CustomerId };
+  const res = await axios.get(
+    API + `/customer/inspections?CustomerID=${CustomerId}`,
+    config
+  );
+  if (res) {
+    console.log(res);
+    return res.data;
+  }
+};
 export const getCustomerInfo = async (CustomerId: string) => {
   const config: any = tokenConfig();
   const res = await axios.get(
@@ -65,6 +77,7 @@ export const uploadImage = async (Fileupload: any) => {
     return res.data;
   }
 };
+
 export const getImage = async (id: string) => {
   let returnURL = null;
   const config: any = tokenConfig();
@@ -91,10 +104,10 @@ export const getImage = async (id: string) => {
     .catch((error) => console.log(error));
   return returnURL;
 };
-export const customerGetOwnInfo = async () => {
-  console.log("Am i even called tf");
+
+export const customerGetOwnInfo = async (id: string) => {
   const config: any = tokenConfig();
-  const res = await axios.get(API + "/customer", config);
+  const res = await axios.get(API + `/customer?CustomerID=${id}`, config);
   if (res) {
     console.log(res);
     return res.data;

@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Customer() {
   React.useEffect(() => {
-    customerGetOwnInfo();
+    customerGetOwnInfo("0");
   }, []);
   const [values, setValues] = React.useState({
     state: 0,

@@ -92,6 +92,10 @@ type CustomerData = {
   lastname: string;
   email: string;
   loginToken: string;
+  inspectionState: string;
+  fundusfoto: number;
+  octscan: number;
+  visualfield: number;
 };
 export default function Customer({
   CustomerData,
@@ -101,13 +105,70 @@ export default function Customer({
   goBack: () => void;
 }) {
   const [values, setValues] = React.useState({
-    state: 0,
+    state: CustomerData.inspectionState || 0,
+    numberState: 0,
   });
-
+  const [numberState, setNumberState] = React.useState(0);
+  /*  'Waiting', 'InProgress', 'Rejected', 'Approved */
+  const getNumberState = () => {
+    switch (values.state) {
+      case "Waiting":
+        return 0;
+      case "InProgress":
+        return 1;
+      case "Rejected":
+        return 2;
+      case "Approved":
+        return 2;
+      default:
+        return 0;
+    }
+  };
   const classes = useStyles();
-  const renderSwitch = (state: number) => {
+  const renderSwitch = (state: any) => {
     switch (state) {
-      case 0:
+      case "Waiting":
+        return (
+          <p>
+            Waiting for pictures.
+            <br />
+            <br />
+            Login token is: {CustomerData.loginToken}
+          </p>
+        );
+      case "InProgress":
+        return (
+          <p>
+            Pictures has been now successfully taken. Next pictures will be
+            analyzed by the ophthalmologist. If the ophthalmologist approves the
+            images, results will be send directly to the drivers license. If the
+            pictures are rejected, new time must be reserved for the optician.
+            <br />
+            <br />
+            Login token is: {CustomerData.loginToken}
+          </p>
+        );
+      case "Approved":
+        return (
+          <p>
+            Pictures analyzed. Your results are: Approved. The results will be
+            next sent to administration.
+            <br />
+            <br />
+            Login token is: {CustomerData.loginToken}
+          </p>
+        );
+      case "Rejected":
+        return (
+          <p>
+            Pictures analyzed. Your results are: Rejected. The results will be
+            next sent to administration.
+            <br />
+            <br />
+            Login token is: {CustomerData.loginToken}
+          </p>
+        );
+      default:
         return (
           <p>
             Waiting for pictures. Lorem ipsum dolor sit amet, consectetur
@@ -121,49 +182,6 @@ export default function Customer({
             Login token is: {CustomerData.loginToken}
           </p>
         );
-      case 1:
-        return (
-          <p>
-            Pictures has been now successfully taken. Next pictures will be
-            analyzed by the ophthalmologist. If the ophthalmologist approves the
-            images, results will be send directly to the drivers license. If the
-            pictures are rejected, new time must be reserved for the optician.
-            <br />
-            <br />
-            Login token is: {CustomerData.loginToken}
-          </p>
-        );
-
-      case 2:
-        return (
-          <p>
-            Pictures analyzed. In sed euismod nulla. Aliquam ac ante convallis
-            mi finibus mattis. Nunc faucibus enim nec commodo imperdiet. Sed leo
-            orci, auctor ut purus a, lacinia gravida nulla. Sed eu dolor
-            ultrices, sollicitudin tortor non, sodales nisi. Ut molestie porta
-            nisi vel fringilla. Sed nisi lorem, porta at porta eget, rhoncus
-            eget neque.
-            <br />
-            <br />
-            Login token is: {CustomerData.loginToken}
-          </p>
-        );
-      case 3:
-        return (
-          <p>
-            Results sent to administration. Nulla iaculis porttitor suscipit.
-            Donec faucibus tristique vestibulum. Etiam ornare magna est, eu
-            aliquet est tincidunt quis. Vivamus suscipit orci mollis, sodales
-            purus ac, lacinia purus. Vivamus eget ipsum rhoncus, pharetra ligula
-            nec, sagittis diam. Sed fermentum vulputate sem, ut fermentum orci
-            hendrerit eu.
-            <br />
-            <br />
-            Login token is: {CustomerData.loginToken}
-          </p>
-        );
-      default:
-        break;
     }
   };
   return (
@@ -275,7 +293,7 @@ export default function Customer({
 
           <LinearProgress
             variant="determinate"
-            value={(values.state / 3) * 100}
+            value={(getNumberState() / 3) * 100}
             classes={{ root: classes.root2 }}
           />
         </div>
@@ -358,23 +376,6 @@ export default function Customer({
           </RedButton>
         </div>
       </div>
-      <GreenButton
-        onClick={() => {
-          setValues({ ...values, state: values.state + 1 });
-        }}
-        disabled={values.state > 2}
-      >
-        +
-      </GreenButton>
-      <GreenButton
-        style={{ margin: 20 }}
-        onClick={() => {
-          setValues({ ...values, state: values.state - 1 });
-        }}
-        disabled={values.state < 1}
-      >
-        -
-      </GreenButton>
     </>
   );
 }

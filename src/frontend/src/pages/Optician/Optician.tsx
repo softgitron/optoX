@@ -13,7 +13,12 @@ import CustomerInfo from "./components/CustomerInfo";
 import AsynchronousSearch from "./components/AsyncSearch";
 
 import { authenticationService } from "../../Helpers/Authenthication";
-import { getImage, getOpticianCustomers } from "../../API/API";
+import {
+  getImage,
+  getInspectionInfo,
+  getInspectionInfoCID,
+  getOpticianCustomers,
+} from "../../API/API";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -80,15 +85,54 @@ enum ScreenStates {
   viewPriorImages = 2,
   viewCustomerStatus = 3,
 }
-
+interface CustomerData {
+  CustomerCountry: string;
+  CustomerID: number;
+  Email: string;
+  FirstName: string;
+  LastName: string;
+  SocialSecurityNumber: string;
+  Inspections: any[];
+}
 export default function Optician() {
+  const [customers, setCustomers] = React.useState<CustomerData[] | undefined>(
+    undefined
+  );
+  const [chosenCustomer, setChosenCustomer] = React.useState<
+    CustomerData | undefined
+  >(undefined);
+
+  const [loading, setLoading] = React.useState(false);
+
   React.useEffect(() => {
-    getOpticianCustomers();
+    const getCustomers = async () => {
+      setLoading(true);
+      let finalArray: CustomerData[] = [];
+      let map = new Map();
+      const customersArray = await getOpticianCustomers();
+      console.log(customersArray);
+      let promises: any[] = [];
+      customersArray.forEach((customer: any) => {
+        map.set(customer.CustomerID, customer);
+        promises.push(getInspectionInfoCID(customer.CustomerID));
+        promises.push(getInspectionInfoCID(customer.CustomerID));
+      });
+      await Promise.all(promises).then((values) => {
+        values.forEach((newCustomerData: any[]) => {
+          let initialCustomerData = map.get(newCustomerData[0].CustomerID);
+          initialCustomerData.Inspections = newCustomerData;
+          finalArray.push(initialCustomerData);
+        });
+      });
+      setCustomers(finalArray);
+      setLoading(false);
+    };
+    getCustomers();
   }, []);
+
   const [values, setValues] = React.useState({
     state: ScreenStates.landScreen,
-    selectedAppointment: "",
-    customerInfo: "",
+    selectedAppointment: null,
   });
 
   const classes = useStyles();
@@ -97,6 +141,7 @@ export default function Optician() {
     authenticationService.currentUserValue
   );
   console.log(user);
+  console.log(customers);
   const renderSwitch = (state: ScreenStates) => {
     switch (state) {
       case 0:
@@ -187,45 +232,56 @@ export default function Optician() {
                   <Typography className={classes.selectaction} variant="h3">
                     Please fill the forms:
                   </Typography>
-                  <div
-                    style={{
-                      marginTop: "400px",
-                    }}
-                  >
-                    <AsynchronousSearch
-                      selectAppointment={(
-                        appointment: any,
-                        customerInfo: any
-                      ) => {
-                        setValues({
-                          ...values,
-                          selectedAppointment: appointment,
-                          customerInfo: customerInfo,
-                        });
-                      }}
-                    />
-                    <RedButton
-                      style={{ left: "30%", width: "100px" }}
-                      className={classes.button}
-                      onClick={() =>
-                        setValues({ ...values, state: ScreenStates.landScreen })
-                      }
-                    >
-                      Back
-                    </RedButton>
-                    <GreenButton
-                      style={{ left: "34%", width: "150px" }}
-                      disabled={values.selectedAppointment ? false : true}
-                      onClick={() => {
-                        setValues({
-                          ...values,
-                          state: ScreenStates.viewCustomerStatus,
-                        });
+                  {loading ? (
+                    "Loading.."
+                  ) : (
+                    <div
+                      style={{
+                        marginTop: "400px",
                       }}
                     >
-                      View images
-                    </GreenButton>
-                  </div>
+                      <AsynchronousSearch
+                        customers={customers}
+                        selectAppointment={(
+                          appointment: any,
+                          customerInfo: any
+                        ) => {
+                          console.log(appointment, customerInfo);
+                          setValues({
+                            ...values,
+                            selectedAppointment: appointment,
+                          });
+                          setChosenCustomer(customerInfo);
+                        }}
+                      />
+                      <RedButton
+                        style={{ left: "30%", width: "100px" }}
+                        className={classes.button}
+                        onClick={() =>
+                          setValues({
+                            ...values,
+                            state: ScreenStates.landScreen,
+                          })
+                        }
+                      >
+                        Back
+                      </RedButton>
+                      <GreenButton
+                        style={{ left: "34%", width: "150px" }}
+                        disabled={
+                          values.selectedAppointment !== null ? false : true
+                        }
+                        onClick={() => {
+                          setValues({
+                            ...values,
+                            state: ScreenStates.viewCustomerStatus,
+                          });
+                        }}
+                      >
+                        View images
+                      </GreenButton>
+                    </div>
+                  )}
                 </div>
               </Grid>
             </Grid>
@@ -241,13 +297,29 @@ export default function Optician() {
               <div style={{ float: "right" }}>
                 <CustomerInfo
                   CustomerData={{
-                    firstname: "Heikki",
-                    lastname: "Heikäläinen",
-                    email: "Heikki@heikalainen.com",
-                    loginToken: "XYZ7-3321-AD3R-0000",
+                    firstname: chosenCustomer?.FirstName || "",
+                    lastname: chosenCustomer?.LastName || "",
+                    email: chosenCustomer?.Email || "",
+                    loginToken:
+                      chosenCustomer?.Inspections[values.selectedAppointment!]
+                        .LoginToken || "",
+                    inspectionState: "Rejected" || "0",
+                    fundusfoto:
+                      chosenCustomer?.Inspections[values.selectedAppointment!]
+                        .FundusPhotoRef || 0,
+                    octscan:
+                      chosenCustomer?.Inspections[values.selectedAppointment!]
+                        .OctScanRef || 0,
+                    visualfield:
+                      chosenCustomer?.Inspections[values.selectedAppointment!]
+                        .VisualFieldRef || 0,
                   }}
                   goBack={() =>
-                    setValues({ ...values, state: ScreenStates.landScreen })
+                    setValues({
+                      ...values,
+                      state: ScreenStates.landScreen,
+                      selectedAppointment: null,
+                    })
                   }
                 />
               </div>
@@ -259,19 +331,6 @@ export default function Optician() {
     }
   };
   const AvatarInfo = () => {
-    const [imagedata, setimagedata] = React.useState("");
-    const getData = async () => {
-      const imageBlobURL = await getImage("s");
-      if (imageBlobURL) {
-        setimagedata(imageBlobURL);
-      }
-      return imageBlobURL;
-    };
-    console.log("'hello");
-    React.useEffect(() => {
-      getData();
-    }, []);
-
     return (
       <div className={classes.profilewrapper}>
         <Avatar
@@ -288,7 +347,6 @@ export default function Optician() {
           src={FinlandFlag}
           width="200"
         />
-        <img className={classes.flag} src={imagedata} width="200" />
       </div>
     );
   };
