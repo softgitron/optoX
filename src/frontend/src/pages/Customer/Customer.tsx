@@ -112,8 +112,24 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Customer() {
   React.useEffect(() => {
-    getInspectionInfoCID(user.ID);
+    const getInspections = async () => {
+      const inspections = await getInspectionInfoCID(user.ID);
+      inspections.sort(function (a: any, b: any) {
+        var keyA = new Date(a.InspectionTime),
+          keyB = new Date(b.InspectionTime);
+        // Compare the 2 dates
+        if (keyA < keyB) return -1;
+        if (keyA > keyB) return 1;
+        return 0;
+      });
+      console.log(inspections);
+      setInspectionData(inspections[0]);
+    };
+    getInspections();
   }, []);
+  const [inspectionData, setInspectionData] = React.useState<any | undefined>(
+    undefined
+  );
   const [values, setValues] = React.useState({
     state: 0,
   });
@@ -123,11 +139,11 @@ export default function Customer() {
   );
   const history = useHistory();
   console.log(user);
-  const renderSwitch = (state: number) => {
+  const renderSwitch = (state: any) => {
     switch (state) {
-      case 0:
+      case "Waiting":
         return <p>Waiting for pictures.</p>;
-      case 1:
+      case "InProgress":
         return (
           <p>
             Pictures has been now successfully taken. Next pictures will be
@@ -136,17 +152,36 @@ export default function Customer() {
             pictures are rejected, new time must be reserved for the optician.
           </p>
         );
-
-      case 2:
+      case "Approved":
         return (
           <p>
-            Pictures analyzed. Next the results will be sent to administration.
+            Pictures analyzed. The results are: Approved. The results will be
+            next sent to administration.
           </p>
         );
-      case 3:
-        return <p>Results sent to administration.</p>;
+      case "Rejected":
+        return (
+          <p>
+            Pictures analyzed. The results are: Rejected. The results will be
+            next sent to administration.
+          </p>
+        );
       default:
-        break;
+        return <p>Waiting for pictures.</p>;
+    }
+  };
+  const getNumberState = () => {
+    switch (inspectionData?.Status) {
+      case "Waiting":
+        return 0;
+      case "InProgress":
+        return 1;
+      case "Rejected":
+        return 2;
+      case "Approved":
+        return 2;
+      default:
+        return 0;
     }
   };
   return (
@@ -177,7 +212,13 @@ export default function Customer() {
           <Grid item xs={6}>
             <div style={{ float: "right" }}>
               <Typography className={classes.selectaction} variant="h3">
-                Driver license renewal progress:
+                Driver license renewal progress:&nbsp;
+                <b style={{ color: "green" }}>
+                  {inspectionData?.Status === "Approved" ? "Approved" : null}
+                </b>
+                <b style={{ color: "red" }}>
+                  {inspectionData?.Status === "Rejected" ? "Rejected" : null}
+                </b>
               </Typography>
 
               <div
@@ -294,7 +335,7 @@ export default function Customer() {
 
                 <LinearProgress
                   variant="determinate"
-                  value={(values.state / 3) * 100}
+                  value={(getNumberState() / 3) * 100}
                   classes={{ root: classes.root2 }}
                 />
               </div>
@@ -305,7 +346,7 @@ export default function Customer() {
                   color="primary"
                   className={classes.button}
                   onClick={() => {
-                    downloadImage("fundusfoto", "217028795");
+                    downloadImage("fundusfoto", inspectionData?.FundusPhotoRef);
                   }}
                 >
                   Download fundusfoto
@@ -317,7 +358,7 @@ export default function Customer() {
                   color="primary"
                   className={classes.button}
                   onClick={() => {
-                    downloadImage("octscan", "217028795");
+                    downloadImage("octscan", inspectionData?.OctScanRef);
                   }}
                 >
                   Download oct scan
@@ -329,7 +370,10 @@ export default function Customer() {
                   color="primary"
                   className={classes.button}
                   onClick={() => {
-                    downloadImage("visualfield", "217028795");
+                    downloadImage(
+                      "visualfield",
+                      inspectionData?.VisualFieldRef
+                    );
                   }}
                 >
                   Download visualfield
@@ -345,7 +389,7 @@ export default function Customer() {
                   top: "-430px",
                 }}
               >
-                {renderSwitch(values.state)}
+                {renderSwitch(inspectionData?.Status)}
               </div>
               <div>
                 <RedButton
@@ -362,23 +406,6 @@ export default function Customer() {
                 </RedButton>
               </div>
             </div>
-            <GreenButton
-              onClick={() => {
-                setValues({ ...values, state: values.state + 1 });
-              }}
-              disabled={values.state > 2}
-            >
-              +
-            </GreenButton>
-            <GreenButton
-              style={{ margin: 20 }}
-              onClick={() => {
-                setValues({ ...values, state: values.state - 1 });
-              }}
-              disabled={values.state < 1}
-            >
-              -
-            </GreenButton>
           </Grid>
         </Grid>
       </div>

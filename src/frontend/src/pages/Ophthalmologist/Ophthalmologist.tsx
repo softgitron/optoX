@@ -163,6 +163,7 @@ interface CustomerData {
 }
 
 export default function Ophthamologist() {
+  console.log("opth");
   const [loading, setLoading] = React.useState(false);
   const [decisionLoading, setDecisionLoading] = React.useState(false);
   React.useEffect(() => {
@@ -184,13 +185,12 @@ export default function Ophthamologist() {
             ...newCustomerData,
           };
           finalArray.push(finalCustomerData);
-          finalArray.push(finalCustomerData);
         });
       });
       console.log(finalArray);
       await Promise.all(
         finalArray.map(async (customer) => {
-          const fundusFoto = await getImage((439189665).toString());
+          const fundusFoto = await getImage(customer.FundusPhotoRef.toString());
           console.log(fundusFoto);
           const octScan = await getImage(customer.OctScanRef.toString());
           const visualField = await getImage(
@@ -207,6 +207,10 @@ export default function Ophthamologist() {
             "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png";
         })
       );
+      finalArray = finalArray.filter(
+        (x) => x.Status !== "Approved" && x.FirstName !== "Rejected"
+      );
+
       setPatients(finalArray);
       setLoading(false);
     };
@@ -287,9 +291,6 @@ export default function Ophthamologist() {
                       Analyze images
                     </GreenButton>
                   </div>
-                  <Typography className={classes.earnedtext}>
-                    You have earned so far: 950 050 €
-                  </Typography>
                 </div>
               </Grid>
             </Grid>
@@ -333,16 +334,18 @@ export default function Ophthamologist() {
                     remove the approved etc. customer from the patients list
                     */}
                     {patients?.map((patient, index) => (
-                      <Card
-                        key={patient.CustomerID}
-                        firstname={patient.FirstName}
-                        lastname={patient.LastName}
-                        opticalRetail={patient.Email}
-                        date={formatDate(patient.InspectionTime)}
-                        index={index}
-                        selectPatient={selectPatient}
-                        selectedPatient={selectedPatient}
-                      />
+                      <>
+                        <Card
+                          key={patient.CustomerID}
+                          firstname={patient.FirstName}
+                          lastname={patient.LastName}
+                          opticalRetail={patient.Email}
+                          date={formatDate(patient.InspectionTime)}
+                          index={index}
+                          selectPatient={selectPatient}
+                          selectedPatient={selectedPatient}
+                        />
+                      </>
                     ))}
                   </List>
                 </div>

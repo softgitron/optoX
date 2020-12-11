@@ -12,7 +12,12 @@ import { useOutlinedInputStyles } from "../../../assets/styles/styles";
 import { GreenButton, RedButton } from "../../../components/button/buttons";
 import { Button, MenuItem, Select } from "@material-ui/core";
 import SimpleModal from "./Modal";
-import { getSilmalaakarit, uploadImage } from "../../../API/API";
+import {
+  createCustomer,
+  createInspection,
+  getSilmalaakarit,
+  uploadImage,
+} from "../../../API/API";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -98,7 +103,7 @@ enum imageFilesEnum {
 //const delay = (ms: any) => new Promise((res) => setTimeout(res, ms));
 
 function uuidv4() {
-  return "xxxx-xxxx-xxxx-xxxx".replace(/[xy]/g, function (c) {
+  return "xxxxxxxxxxxxxxxx".replace(/[xy]/g, function (c) {
     var r = (Math.random() * 16) | 0,
       v = c === "x" ? r : (r & 0x3) | 0x8;
     return v.toString(16);
@@ -197,6 +202,23 @@ export default function InputAdornments(props: any) {
       return true;
     }
     return false;
+  };
+  const [isDone, setDone] = React.useState(false);
+  const resetForms = () => {
+    setImages({
+      Fundusfoto: { name: "", url: "", file: null },
+      Octscan: { name: "", url: "", file: null },
+      Visualfield: { name: "", url: "", file: null },
+    });
+    setValues({
+      email: "",
+      firstname: "",
+      lastname: "",
+      socialnumber: "",
+      previewUrl: "",
+      silmalaakari: -1,
+    });
+    setDone(false);
   };
   console.log(values);
   return (
@@ -477,24 +499,76 @@ export default function InputAdornments(props: any) {
         >
           Back
         </RedButton>
-        <GreenButton
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          disabled={!canSubmit()}
-          onClick={async () => {
-            setLoading(true);
-            console.log("uploading images...");
-            const Fundusfoto = await uploadImage(images.Fundusfoto.file);
-            const OctScan = await uploadImage(images.Octscan.file);
-            const VisualField = await uploadImage(images.Visualfield.file);
-            console.log(Fundusfoto, OctScan, VisualField);
-            //after this show only Go back and make a new inspection etc. button that resets forms
-            setLoading(false);
-          }}
-        >
-          Upload images
-        </GreenButton>
+        {isDone ? (
+          <GreenButton
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            disabled={!canSubmit()}
+            onClick={async () => {
+              resetForms();
+            }}
+          >
+            Create new inspection
+          </GreenButton>
+        ) : (
+          <GreenButton
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            disabled={!canSubmit()}
+            onClick={async () => {
+              setLoading(true);
+              console.log("uploading images...");
+              const CustomerID = await createCustomer(
+                "Finland",
+                values.socialnumber,
+                values.email,
+                values.firstname,
+                values.lastname
+              );
+              const Fundusfoto = await uploadImage(
+                images.Fundusfoto.file
+              ).catch((e) => {
+                alert("Check your images! JPEG only!");
+                setLoading(false);
+              });
+              const OctScan = await uploadImage(images.Octscan.file).catch(
+                (e) => {
+                  alert("Check your images! JPEG only!");
+                  setLoading(false);
+                }
+              );
+
+              const VisualField = await uploadImage(
+                images.Visualfield.file
+              ).catch((e) => {
+                alert("Check your images! JPEG only!");
+                setLoading(false);
+              });
+              if (!Fundusfoto || !OctScan || !VisualField) return;
+              const res = await createInspection(
+                CustomerID,
+                "Finland",
+                parseInt(Fundusfoto.ImageID),
+                parseInt(OctScan.ImageID),
+                parseInt(VisualField.ImageID),
+                loginToken
+              ).catch((e) => {
+                alert("Something went wrong!");
+                setLoading(false);
+              });
+              console.log(res);
+              console.log(Fundusfoto, OctScan, VisualField);
+              //after this show only Go back and make a new inspection etc. button that resets forms
+              setLoading(false);
+              setDone(true);
+              alert("Inspection created successfully!");
+            }}
+          >
+            Upload images
+          </GreenButton>
+        )}
       </div>
     </div>
   );

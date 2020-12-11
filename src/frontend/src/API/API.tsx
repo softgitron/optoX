@@ -142,7 +142,7 @@ export const getSilmalaakarit = async () => {
 export const makeDecision = async (inspectionID: string, isOK: boolean) => {
   const Body = JSON.stringify({
     Approval: isOK ? 1 : 0,
-    InspectionID: 0,
+    InspectionID: parseInt(inspectionID),
   });
 
   const res = await axios.post(
@@ -151,5 +151,58 @@ export const makeDecision = async (inspectionID: string, isOK: boolean) => {
     tokenConfig()
   );
 
+  console.log(res);
+};
+
+export const createCustomer = async (
+  CustomerCountry: string,
+  SocialSecurityNumber: string,
+  Email: string,
+  FirstName: string,
+  LastName: string
+) => {
+  const Body = JSON.stringify({
+    CustomerCountry,
+    SocialSecurityNumber,
+    Email,
+    FirstName,
+    LastName,
+  });
+
+  const res = await axios
+    .post(API + "/customer ", Body, tokenConfig())
+    .catch((e) => null);
+  if (res) {
+    return res.data.CustomerID;
+  } else {
+    //exists already
+    const res = await axios
+      .get(API + `/customer?Email=${Email}`, tokenConfig())
+      .catch((e) => null);
+    console.log(res);
+    return res?.data.CustomerID;
+  }
+};
+export const createInspection = async (
+  CustomerID: number,
+  InspectionCountry: string,
+  FundusPhotoRef: number,
+  OctScanRef: number,
+  VisualFieldRef: number,
+  LoginToken: string
+) => {
+  const Body = JSON.stringify({
+    CustomerID,
+    InspectionCountry,
+    FundusPhotoRef,
+    OctScanRef,
+    VisualFieldRef,
+    LoginToken,
+    TimeStamp: new Date(),
+  });
+
+  const res = await axios
+    .post(API + "/inspection ", Body, tokenConfig())
+    .catch((e) => null);
   console.log(res);
 };
