@@ -94,6 +94,78 @@ func (db *Database) AddCustomer(customer Customer) error {
 	return res.Error
 }
 
+func (db *Database) GetOpthalmologistByID(id int) (*Opthalmologist, error) {
+	opthalmologist := Opthalmologist{}
+	results := db.connection.
+		Model(&Opthalmologist{}).
+		Where("opthalmologist_id = ?", id).
+		Find(&opthalmologist)
+
+	return &opthalmologist, results.Error
+}
+
+func (db *Database) GetOpticianByID(id int) (*Optician, error) {
+	optician := Optician{}
+	results := db.connection.
+		Model(&Optician{}).
+		Where("optician_id = ?", id).
+		Find(&optician)
+
+	return &optician, results.Error
+}
+
+func (db *Database) AddInspection(ins Inspection) error {
+	cust, _ := db.GetCustomerByID(ins.CustomerID)
+	optc, _ := db.GetOpticianByID(ins.OpticianID)
+	opth, _ := db.GetOpthalmologistByID(ins.OpthalmologistID)
+
+	if cust == nil {
+		return errors.New("Customer doesn't exist")
+	}
+
+	if optc == nil {
+		return errors.New("Optician doesn't exist")
+	}
+
+	if opth == nil {
+		return errors.New("Opthamologist doesn't exist")
+	}
+
+	res := db.connection.Exec(`
+		INSERT INTO inspections (
+			customer_id,
+			customer_country,
+			optician_id,
+			optician_country,
+			opthalmologist_id,
+			opthalmologist_country,
+			inspections_country,
+			fundus_photo_ref,
+			oct_scan_ref,
+			visual_field_ref,
+			inspection_time,
+			login_token,
+			status
+		)
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+	`, cust.CustomerID,
+		cust.CustomerCountry,
+		optc.OpticianID,
+		optc.OpticianCountry,
+		opth.OpthalmologistID,
+		opth.OpthalmologistCountry,
+		ins.InspectionsCountry,
+		ins.FundusPhotoRef,
+		ins.OctScanRef,
+		ins.VisualFieldRef,
+		ins.InspectionTime,
+		ins.LoginToken,
+		ins.Status,
+	)
+
+	return res.Error
+}
+
 // AddContract ...
 func (db *Database) AddContract(contract *Contract) {
 	db.connection.Create(contract)

@@ -103,12 +103,12 @@ var Endpoints = map[string]Endpoint{
 	},
 	"/api/inspection": {
 		URL:                  "/api/inspection",
-		middlewares:          basicMiddlewares,
+		middlewares:          basicBodyMiddlewares,
 		customHandler:        inspection.Handler,
 		Accepts:              []string{"GET", "POST"},
 		AuthenticationTypes:  []string{"Optician", "Opthalmologist"},
 		AuthenticationLevels: allAccessLevels,
-		bodyType:             connection.BodyTypeInspectionDecision,
+		bodyType:             connection.BodyTypeInspection,
 		dbHandler:            &dbConnection,
 	},
 	"/api/inspection/decision": {

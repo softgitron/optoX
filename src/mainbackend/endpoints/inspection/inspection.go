@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/softgitron/optox/src/mainbackend/connection"
+	"github.com/softgitron/optox/src/mainbackend/db"
 )
 
 /**
@@ -72,6 +73,30 @@ import (
  *
  */
 
+/*
+type InspectionDetails struct {
+	CustomerID        int
+	InspectionCountry string
+	FundusPhotoRef    int
+	OctScanRef        int
+	VisualFieldRef    int
+	TimeStamp         time.Time
+	LoginToken        string
+}*/
+
+func InspectionFromInspectionDetails(details connection.InspectionDetails) db.Inspection {
+	return db.Inspection{
+		CustomerID:         details.CustomerID,
+		InspectionTime:     details.TimeStamp,
+		InspectionsCountry: details.InspectionCountry,
+		Status:             "Waiting",
+		FundusPhotoRef:     details.FundusPhotoRef,
+		OctScanRef:         details.OctScanRef,
+		VisualFieldRef:     details.VisualFieldRef,
+		LoginToken:         details.LoginToken,
+	}
+}
+
 func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) {
 	if req.Method == "GET" {
 		inspectionIDstr := req.URL.Query().Get("InspectionID")
@@ -104,6 +129,24 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 		}
 
 		return
+	}
+
+	if req.Method == "POST" {
+		if h.Body == nil {
+			connection.SendHTTPError(http.StatusInternalServerError, "No body given", res)
+			return
+		}
+
+		insp := h.Body.(connection.InspectionDetails)
+		body := InspectionFromInspectionDetails(insp)
+		err := h.DBHandler.AddInspection(body)
+
+		if err != nil {
+			connection.SendHTTPError(http.StatusInternalServerError, "Couldn't create a new inspection", res)
+			return
+		}
+
+		connection.SendOKReponse(connection.Success{Result: "New customer created"}, res)
 	}
 }
 

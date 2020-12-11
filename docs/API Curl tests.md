@@ -34,6 +34,8 @@ Get customer usign Email `curl 'optox.net/api/customer?Email=user@mail.com' -H '
 
 Try getting customer inspections `curl optox.net/api/customer/inspections -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1wbG95ZXJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.j_b1DqMPS7Fh2NKcgirid_u5T6HM3sJ4btkXlivOd2Y'`
 
-##### Get inspection info from specific inspection
+##### Inspection tests
 
 Try to get inspection info from inspection `curl 'optox.net/api/inspection?InspectionID=0' -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1wbG95ZXJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.j_b1DqMPS7Fh2NKcgirid_u5T6HM3sJ4btkXlivOd2Y'`
+
+Add inspection `curl optox.net/api/inspection -H 'Authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiT3B0aWNpYW4iLCJJRCI6MCwiRW1wbG95ZXJJRCI6MCwiRW1haWwiOiJvcHRpY2lhbkBtYWlsLmNvbSIsIkNvdW50cnkiOiJGaW5sYW5kIiwiRmlyc3ROYW1lIjoiRmlyc3QiLCJMYXN0TmFtZSI6Ikxhc3QiLCJBY2Nlc3NMZXZlbCI6Ik5vcm1hbCJ9.j_b1DqMPS7Fh2NKcgirid_u5T6HM3sJ4btkXlivOd2Y' -d '{"CustomerID": 0, "InspectionCountry": "Finland", "FundusPhotoRef": 0, "OctScanRef": 0, "VisualFieldRef": 0, "TimeStamp": "2002-10-02T15:00:00Z", "LoginToken": "1234567890123456"}'`
