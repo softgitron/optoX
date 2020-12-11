@@ -10,6 +10,7 @@ import ProfileExamplePic from "../../assets/profile.svg";
 import FinlandFlag from "../../assets/finland_flag.svg";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { GreenButton, RedButton } from "../../../components/button/buttons";
+import { downloadImage } from "../../../API/API";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -26,6 +27,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "0.75em",
     marginBottom: "1em",
     color: "white",
+    fontWeight: "normal",
+    float: "right",
+  },
+  selectactionnocolor: {
+    marginTop: "0.75em",
+    marginBottom: "1em",
     fontWeight: "normal",
     float: "right",
   },
@@ -93,9 +100,9 @@ type CustomerData = {
   email: string;
   loginToken: string;
   inspectionState: string;
-  fundusfoto: number;
-  octscan: number;
-  visualfield: number;
+  fundusfoto: any;
+  octscan: any;
+  visualfield: any;
 };
 export default function Customer({
   CustomerData,
@@ -125,6 +132,7 @@ export default function Customer({
     }
   };
   const classes = useStyles();
+  console.log(values.state);
   const renderSwitch = (state: any) => {
     switch (state) {
       case "Waiting":
@@ -151,7 +159,7 @@ export default function Customer({
       case "Approved":
         return (
           <p>
-            Pictures analyzed. Your results are: Approved. The results will be
+            Pictures analyzed. The results are: Approved. The results will be
             next sent to administration.
             <br />
             <br />
@@ -161,7 +169,7 @@ export default function Customer({
       case "Rejected":
         return (
           <p>
-            Pictures analyzed. Your results are: Rejected. The results will be
+            Pictures analyzed. The results are: Rejected. The results will be
             next sent to administration.
             <br />
             <br />
@@ -184,11 +192,18 @@ export default function Customer({
         );
     }
   };
+
   return (
     <>
       <div style={{ float: "right" }}>
         <Typography className={classes.selectaction} variant="h3">
-          Driver license renewal progress:
+          Driver license renewal progress:&nbsp;
+          <b style={{ color: "green" }}>
+            {values.state === "Approved" ? "Approved" : null}
+          </b>
+          <b style={{ color: "red" }}>
+            {values.state === "Rejected" ? "Rejected" : null}
+          </b>
         </Typography>
 
         <div
@@ -303,7 +318,9 @@ export default function Customer({
             variant="contained"
             color="primary"
             className={classes.button}
-            onClick={() => null}
+            onClick={() => {
+              downloadImage("fundusfoto", CustomerData.fundusfoto);
+            }}
           >
             Download fundusfoto
           </GreenButton>
@@ -313,7 +330,9 @@ export default function Customer({
             variant="contained"
             color="primary"
             className={classes.button}
-            onClick={() => null}
+            onClick={() => {
+              downloadImage("octscan", CustomerData.octscan);
+            }}
           >
             Download oct scan
           </GreenButton>
@@ -323,7 +342,9 @@ export default function Customer({
             variant="contained"
             color="primary"
             className={classes.button}
-            onClick={() => null}
+            onClick={() => {
+              downloadImage("visualfield", CustomerData.visualfield);
+            }}
           >
             Download visualfield
           </GreenButton>

@@ -115,7 +115,6 @@ export default function Optician() {
       customersArray.forEach((customer: any) => {
         map.set(customer.CustomerID, customer);
         promises.push(getInspectionInfoCID(customer.CustomerID));
-        promises.push(getInspectionInfoCID(customer.CustomerID));
       });
       await Promise.all(promises).then((values) => {
         values.forEach((newCustomerData: any[]) => {
@@ -303,7 +302,9 @@ export default function Optician() {
                     loginToken:
                       chosenCustomer?.Inspections[values.selectedAppointment!]
                         .LoginToken || "",
-                    inspectionState: "Rejected" || "0",
+                    inspectionState:
+                      chosenCustomer?.Inspections[values.selectedAppointment!]
+                        .Status || "0",
                     fundusfoto:
                       chosenCustomer?.Inspections[values.selectedAppointment!]
                         .FundusPhotoRef || 0,

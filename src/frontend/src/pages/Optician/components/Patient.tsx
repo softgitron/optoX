@@ -10,9 +10,9 @@ import FormControl from "@material-ui/core/FormControl";
 import { useOutlinedInputStyles } from "../../../assets/styles/styles";
 
 import { GreenButton, RedButton } from "../../../components/button/buttons";
-import { Button } from "@material-ui/core";
+import { Button, MenuItem, Select } from "@material-ui/core";
 import SimpleModal from "./Modal";
-import { uploadImage } from "../../../API/API";
+import { getSilmalaakarit, uploadImage } from "../../../API/API";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -97,7 +97,37 @@ enum imageFilesEnum {
 }
 //const delay = (ms: any) => new Promise((res) => setTimeout(res, ms));
 
+function uuidv4() {
+  return "xxxx-xxxx-xxxx-xxxx".replace(/[xy]/g, function (c) {
+    var r = (Math.random() * 16) | 0,
+      v = c === "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
 export default function InputAdornments(props: any) {
+  const [silmalaakarit, setSilmalaakarit] = React.useState([
+    {
+      name: "a",
+      id: "a",
+    },
+  ]);
+  React.useEffect(() => {
+    const getSilmaLaakarit = async () => {
+      let silmalaakariArray: any[] = [];
+      const silmalaakarit = await getSilmalaakarit();
+      for (const silmalaakari of silmalaakarit) {
+        console.log(silmalaakari);
+        silmalaakariArray.push({
+          name: silmalaakari.Name,
+          id: silmalaakari.OpthalmologistID,
+        });
+      }
+      console.log(silmalaakariArray);
+      setSilmalaakarit(silmalaakariArray);
+    };
+    getSilmaLaakarit();
+  }, []);
   const classes = useStyles();
   const outlinedInputClasses = useOutlinedInputStyles();
   const [openModal, setopenModal] = React.useState({
@@ -110,7 +140,10 @@ export default function InputAdornments(props: any) {
     lastname: "",
     socialnumber: "",
     previewUrl: "",
+    silmalaakari: -1,
   });
+  const [loginToken, setLoginToken] = React.useState(uuidv4().toUpperCase());
+
   const [images, setImages] = React.useState({
     Fundusfoto: { name: "", url: "", file: null },
     Octscan: { name: "", url: "", file: null },
@@ -156,12 +189,14 @@ export default function InputAdornments(props: any) {
       values.socialnumber &&
       images.Fundusfoto.file &&
       images.Octscan.file &&
-      images.Visualfield.file
+      images.Visualfield.file &&
+      values.silmalaakari >= 0
     ) {
       return true;
     }
     return false;
   };
+  console.log(values);
   return (
     <div className={classes.root}>
       <SimpleModal
@@ -402,9 +437,34 @@ export default function InputAdornments(props: any) {
           classes={outlinedInputClasses}
         />
       </FormControl>
-      <div className={classes.tokentext}>
-        Login token will be: XYZ3-AD22-1212-0500
-      </div>
+
+      <FormControl
+        variant="outlined"
+        className={clsx(classes.margin, classes.textField)}
+      >
+        <InputLabel id="select-label">Select opthahlmologist</InputLabel>
+        <Select
+          labelId="demo-simple-select-label2"
+          id="select2"
+          value={values.silmalaakari}
+          onChange={handleChange("silmalaakari")}
+          label="Select opthahlmologist"
+          required={true}
+          input={
+            <OutlinedInput
+              labelWidth={140}
+              id="outlined-method"
+              classes={outlinedInputClasses}
+            />
+          }
+        >
+          {/* Map through appointments and render them. ID as the value*/}
+          {silmalaakarit.map((silmalaakari, index) => (
+            <MenuItem value={silmalaakari.id}>{silmalaakari.name}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <div className={classes.tokentext}>Login token will be: {loginToken}</div>
 
       <div className={classes.buttonswrapper}>
         <RedButton
@@ -420,9 +480,12 @@ export default function InputAdornments(props: any) {
           color="primary"
           className={classes.button}
           disabled={!canSubmit()}
-          onClick={() => {
+          onClick={async () => {
             console.log("uploading images...");
-            uploadImage(images.Fundusfoto.file);
+            const Fundusfoto = await uploadImage(images.Fundusfoto.file);
+            const OctScan = await uploadImage(images.Octscan.file);
+            const VisualField = await uploadImage(images.Visualfield.file);
+            console.log(Fundusfoto, OctScan, VisualField);
           }}
         >
           Upload images

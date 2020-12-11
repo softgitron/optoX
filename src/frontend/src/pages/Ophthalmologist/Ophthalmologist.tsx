@@ -334,7 +334,7 @@ export default function Ophthamologist() {
                         firstname={patient.FirstName}
                         lastname={patient.LastName}
                         opticalRetail={patient.Email}
-                        date={patient.InspectionTime}
+                        date={formatDate(patient.InspectionTime)}
                         index={index}
                         selectPatient={selectPatient}
                         selectedPatient={selectedPatient}
@@ -487,3 +487,7 @@ export default function Ophthamologist() {
     </div>
   );
 }
+const formatDate = (dateString: string) => {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Date(dateString).toLocaleDateString("en-GB", options);
+};

@@ -10,7 +10,6 @@ export const getOpthalmologistCustomers = async () => {
     tokenConfig()
   );
   if (res) {
-    console.log(res);
     return res.data;
   }
 };
@@ -25,7 +24,6 @@ export const getInspectionInfo = async (
     config
   );
   if (res) {
-    console.log(res);
     return res.data;
   }
 };
@@ -37,7 +35,6 @@ export const getInspectionInfoCID = async (CustomerId: string) => {
     config
   );
   if (res) {
-    console.log(res);
     return res.data;
   }
 };
@@ -48,7 +45,6 @@ export const getCustomerInfo = async (CustomerId: string) => {
     config
   );
   if (res) {
-    console.log(res);
     return res.data;
   }
 };
@@ -56,7 +52,6 @@ export const getOpticianCustomers = async () => {
   const config: any = tokenConfig();
   const res = await axios.get(API + "/optician/customers", config);
   if (res) {
-    console.log(res);
     return res.data;
   }
 };
@@ -73,7 +68,6 @@ export const uploadImage = async (Fileupload: any) => {
   formData.append("Fileupload", Fileupload);
   const res = await axios.post(API + "/image", formData, config);
   if (res) {
-    console.log(res);
     return res.data;
   }
 };
@@ -104,12 +98,43 @@ export const getImage = async (id: string) => {
     .catch((error) => console.log(error));
   return returnURL;
 };
-
+export const downloadImage = async (name: string, id: string) => {
+  let returnURL = null;
+  const config: any = tokenConfig();
+  const auth = config.headers.Authentication;
+  await axios
+    .get(API + `/image?ImageID=${id}`, {
+      responseType: "arraybuffer",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "image/jpeg",
+        Authentication: auth,
+      },
+    })
+    .then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      returnURL = url;
+      console.log(url);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", name + ".jpeg"); //or any other extension
+      document.body.appendChild(link);
+      link.click();
+    })
+    .catch((error) => console.log(error));
+  return returnURL;
+};
 export const customerGetOwnInfo = async (id: string) => {
   const config: any = tokenConfig();
   const res = await axios.get(API + `/customer?CustomerID=${id}`, config);
   if (res) {
-    console.log(res);
+    return res.data;
+  }
+};
+export const getSilmalaakarit = async () => {
+  const config: any = tokenConfig();
+  const res = await axios.get(API + `/opthalmologist`, config);
+  if (res) {
     return res.data;
   }
 };

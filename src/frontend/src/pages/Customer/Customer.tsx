@@ -16,7 +16,11 @@ import axios from "axios";
 import fileDownload from "js-file-download";
 import { authenticationService } from "../../Helpers/Authenthication";
 import { useHistory } from "react-router-dom";
-import { customerGetOwnInfo } from "../../API/API";
+import {
+  customerGetOwnInfo,
+  downloadImage,
+  getInspectionInfoCID,
+} from "../../API/API";
 
 const handleDownload = (url: string, filename: string) => {
   axios
@@ -108,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Customer() {
   React.useEffect(() => {
-    customerGetOwnInfo("0");
+    getInspectionInfoCID(user.ID);
   }, []);
   const [values, setValues] = React.useState({
     state: 0,
@@ -301,10 +305,7 @@ export default function Customer() {
                   color="primary"
                   className={classes.button}
                   onClick={() => {
-                    handleDownload(
-                      ProfileExamplePic, // TO BE correct url. Might have cors issues...
-                      "fundusfoto." + ProfileExamplePic.split(".").pop() //get file extension hack
-                    );
+                    downloadImage("fundusfoto", "217028795");
                   }}
                 >
                   Download fundusfoto
@@ -315,7 +316,9 @@ export default function Customer() {
                   variant="contained"
                   color="primary"
                   className={classes.button}
-                  onClick={() => null}
+                  onClick={() => {
+                    downloadImage("octscan", "217028795");
+                  }}
                 >
                   Download oct scan
                 </GreenButton>
@@ -325,7 +328,9 @@ export default function Customer() {
                   variant="contained"
                   color="primary"
                   className={classes.button}
-                  onClick={() => null}
+                  onClick={() => {
+                    downloadImage("visualfield", "217028795");
+                  }}
                 >
                   Download visualfield
                 </GreenButton>
