@@ -219,9 +219,16 @@ func (db *Database) GetInspectionsByOpthalmologistID(opthalmologistID int) ([]In
 func (db *Database) GetInspectionByCustomerID(customer int) ([]Inspection, error) {
 	inspections := []Inspection{}
 	results := db.connection.
-		Select("customers.customer_id, customers.customer_country, customers.social_security_number, customers.email, customers.first_name, customers.last_name").
-		Joins("left join inspections on customers.customer_id = inspections.customer_id").
-		Where("customers.customer_id = ?", customer).
+		Model(&Inspection{}).
+		Where("customer_id = ?", customer).
 		Find(&inspections)
 	return inspections, results.Error
+}
+
+func (db *Database) GetOpthalmologists() ([]Opthalmologist, error) {
+	opths := []Opthalmologist{}
+	results := db.connection.Model(&Opthalmologist{}).
+		Find(&opths)
+
+	return opths, results.Error
 }
