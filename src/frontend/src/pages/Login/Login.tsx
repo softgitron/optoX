@@ -63,7 +63,7 @@ export default function LoginPage() {
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <Typography className={classes.welcome} variant="h2">
-            Welcome to OptoX!
+            Welcome to OptoX! Version 1.0.0
           </Typography>
         </Grid>
         <Grid item xs={6}>
