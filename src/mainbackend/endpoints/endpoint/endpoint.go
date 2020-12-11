@@ -149,6 +149,15 @@ var Endpoints = map[string]Endpoint{
 		AuthenticationLevels: allAccessLevels,
 		dbHandler:            &dbConnection,
 	},
+	"/api/opthalmologist": {
+		URL:                  "/api/opthalmologist",
+		middlewares:          basicMiddlewares,
+		customHandler:        opthalmologist.Handler,
+		Accepts:              []string{"GET"},
+		AuthenticationTypes:  []string{"Optician"},
+		AuthenticationLevels: allAccessLevels,
+		dbHandler:            &dbConnection,
+	},
 }
 
 var dbConnection db.Database
