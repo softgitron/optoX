@@ -195,7 +195,7 @@ export default function Customer() {
               />
 
               <Typography className={classes.hellotext}>
-                Hello customer {user.FirstName}
+                Hello customer {user.FirstName}&nbsp;
                 {user.LastName}!
               </Typography>
               <img
