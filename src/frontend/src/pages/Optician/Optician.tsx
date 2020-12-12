@@ -116,7 +116,7 @@ export default function Optician() {
       let finalArray: CustomerData[] = [];
       let map = new Map();
       const customersArray = await getOpticianCustomers();
-      console.log(customersArray);
+
       let promises: any[] = [];
       customersArray.forEach((customer: any) => {
         customer.FullName = customer.FirstName + " " + customer.LastNAme;
@@ -131,7 +131,8 @@ export default function Optician() {
           finalArray.push(initialCustomerData);
         });
       });
-      setCustomers(finalArray);
+
+      setCustomers(Array.from(new Set(finalArray)));
       setLoading(false);
     };
     if (values.state === ScreenStates.landScreen) {

@@ -124,6 +124,10 @@ export default function Ophthamologist() {
   console.log("opth");
   const [loading, setLoading] = React.useState(false);
   const [decisionLoading, setDecisionLoading] = React.useState(false);
+  const [values, setValues] = React.useState({
+    state: ScreenStates.landScreen,
+  });
+
   React.useEffect(() => {
     const getCustomers = async () => {
       setLoading(true);
@@ -154,6 +158,8 @@ export default function Ophthamologist() {
         });
       });
       console.log(finalArray); */
+      finalArray = finalArray.filter((x) => x.Status !== "Approved");
+      finalArray = finalArray.filter((x) => x.Status !== "Rejected");
       await Promise.all(
         finalArray.map(async (customer) => {
           console.log(customer);
@@ -173,22 +179,18 @@ export default function Ophthamologist() {
             "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png";
         })
       );
-
-      finalArray = finalArray.filter((x) => x.Status !== "Approved");
-      finalArray = finalArray.filter((x) => x.Status !== "Rejected");
       setPatients(finalArray);
       setLoading(false);
     };
-    getCustomers();
-  }, []);
+    if (values.state === ScreenStates.landScreen) {
+      getCustomers();
+    }
+  }, [values.state]);
   const [patients, setPatients] = React.useState<CustomerData[] | undefined>(
     undefined
   );
   const [selectedPatient, setSelectedPatient] = React.useState(0);
 
-  const [values, setValues] = React.useState({
-    state: ScreenStates.landScreen,
-  });
   const [openModal, setopenModal] = React.useState({
     show: false,
     url: "",
