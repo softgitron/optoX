@@ -59,7 +59,7 @@ async function tokenLogin(customerToken: String) {
       res.data.Authentication
     );
     userObject["token"] = res.data.Authentication;
-
+    userObject["loginToken"] = customerToken;
     currentUserSubject.next(userObject);
     localStorage.setItem(token, JSON.stringify(userObject));
     return userObject.Type;

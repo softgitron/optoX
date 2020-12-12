@@ -111,19 +111,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Customer() {
+  const [user, setUser] = React.useState(
+    authenticationService.currentUserValue
+  );
   React.useEffect(() => {
     const getInspections = async () => {
       const inspections = await getInspectionInfoCID(user.ID);
-      inspections.sort(function (a: any, b: any) {
-        var keyA = new Date(a.InspectionTime),
-          keyB = new Date(b.InspectionTime);
-        // Compare the 2 dates
-        if (keyA < keyB) return -1;
-        if (keyA > keyB) return 1;
-        return 0;
-      });
-      console.log(inspections);
-      setInspectionData(inspections[0]);
+      for (const inspection of inspections) {
+        if (inspection.LoginToken === user.loginToken) {
+          console.log("Found match");
+          setInspectionData(inspection);
+        }
+      }
     };
     getInspections();
   }, []);
@@ -134,9 +133,7 @@ export default function Customer() {
     state: 0,
   });
   const classes = useStyles();
-  const [user, setUser] = React.useState(
-    authenticationService.currentUserValue
-  );
+
   const history = useHistory();
   console.log(user);
   const renderSwitch = (state: any) => {

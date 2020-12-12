@@ -150,7 +150,7 @@ interface CustomerData {
   FirstName: string;
   FundusPhotoRef: any;
   InspectionCountry: string;
-  InspectionId: string;
+  InspectionID: string;
   InspectionTime: string;
   LastName: string;
   LoginToken: string;
@@ -188,6 +188,8 @@ export default function Ophthamologist() {
         });
       });
       console.log(finalArray);
+      finalArray = finalArray.filter((x) => x.Status !== "Approved");
+      finalArray = finalArray.filter((x) => x.Status !== "Rejected");
       await Promise.all(
         finalArray.map(async (customer) => {
           const fundusFoto = await getImage(customer.FundusPhotoRef.toString());
@@ -207,8 +209,7 @@ export default function Ophthamologist() {
             "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png";
         })
       );
-      finalArray = finalArray.filter((x) => x.Status !== "Approved");
-      finalArray = finalArray.filter((x) => x.Status !== "Rejected");
+
       console.log("Hello");
       console.log(finalArray);
       setPatients(finalArray);
@@ -472,7 +473,7 @@ export default function Ophthamologist() {
                                   await makeDecision(
                                     patients[
                                       selectedPatient
-                                    ].CustomerID.toString(),
+                                    ].InspectionID.toString(),
                                     true
                                   );
                                   patients.splice(selectedPatient, 1);
@@ -497,7 +498,7 @@ export default function Ophthamologist() {
                                   await makeDecision(
                                     patients[
                                       selectedPatient
-                                    ].CustomerID.toString(),
+                                    ].InspectionID.toString(),
                                     false
                                   ); //check for what happens if error happens
 
