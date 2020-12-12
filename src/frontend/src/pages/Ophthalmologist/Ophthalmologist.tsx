@@ -131,7 +131,15 @@ export default function Ophthamologist() {
       let map = new Map();
       const customersArray = await getOpthalmologistCustomers();
       let promises: any[] = [];
-      customersArray.forEach((customer: any) => {
+      for (const customer of customersArray) {
+        const newData = await getCustomerInfo(customer.CustomerID);
+        let finalCustomerData = {
+          ...customer,
+          ...newData,
+        };
+        finalArray.push(finalCustomerData);
+      }
+      /*       customersArray.forEach((customer: any) => {
         map.set(customer.CustomerID, customer);
         promises.push(getCustomerInfo(customer.CustomerID));
       });
@@ -145,7 +153,7 @@ export default function Ophthamologist() {
           finalArray.push(finalCustomerData);
         });
       });
-      console.log(finalArray);
+      console.log(finalArray); */
       await Promise.all(
         finalArray.map(async (customer) => {
           console.log(customer);
