@@ -21,51 +21,9 @@ import { authenticationService } from "../../Helpers/Authenthication";
 import {
   getCustomerInfo,
   getImage,
-  getInspectionInfo,
   getOpthalmologistCustomers,
   makeDecision,
 } from "../../API/API";
-
-const patient1 = {
-  id: "123",
-  firstname: "Matti",
-  lastname: "Meikäläinen",
-  date: "10.10.2020 11:10",
-  opticalRetail: "Specsavers",
-  fundusfotoURL:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
-  octscanURL:
-    "https://res.cloudinary.com/leightons/image/upload/8e5o8rPzdH5ykKhZ41kGM9rzlIEdTWS4ssjcKUEV.jpeg",
-  visualfieldURL:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
-};
-const patient2 = {
-  id: "1234",
-  firstname: "Seppo",
-  lastname: "Meikäläinen",
-  date: "20.09.2020 17:20",
-  opticalRetail: "Instrumentarium",
-  fundusfotoURL:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
-  octscanURL:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
-  visualfieldURL:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
-};
-const patient3 = {
-  id: "1235",
-  firstname: "Heikki",
-  lastname: "Heikäläinen",
-  date: "01.08.2020 06:50",
-  opticalRetail: "Instrumentarium",
-  fundusfotoURL:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
-  octscanURL:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd1norq-TYlg_6xe7G6kj1Xv6CPOoLLlUBew&usqp=CAU",
-  visualfieldURL:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Fundus_photograph_of_normal_right_eye.jpg/1024px-Fundus_photograph_of_normal_right_eye.jpg",
-};
-const patientsArray = [patient1, patient2, patient3];
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -188,12 +146,10 @@ export default function Ophthamologist() {
         });
       });
       console.log(finalArray);
-      finalArray = finalArray.filter((x) => x.Status !== "Approved");
-      finalArray = finalArray.filter((x) => x.Status !== "Rejected");
       await Promise.all(
         finalArray.map(async (customer) => {
+          console.log(customer);
           const fundusFoto = await getImage(customer.FundusPhotoRef.toString());
-          console.log(fundusFoto);
           const octScan = await getImage(customer.OctScanRef.toString());
           const visualField = await getImage(
             customer.VisualFieldRef.toString()
@@ -210,8 +166,8 @@ export default function Ophthamologist() {
         })
       );
 
-      console.log("Hello");
-      console.log(finalArray);
+      finalArray = finalArray.filter((x) => x.Status !== "Approved");
+      finalArray = finalArray.filter((x) => x.Status !== "Rejected");
       setPatients(finalArray);
       setLoading(false);
     };
@@ -331,13 +287,10 @@ export default function Ophthamologist() {
                     {loading ? <CircularProgress /> : null}
                   </div>
                   <List className={classes.list}>
-                    {/*Needs logic for not rendering approved/rejected stuff? -> when approving or rejecting, we need to also 
-                    remove the approved etc. customer from the patients list
-                    */}
                     {patients?.map((patient, index) => (
                       <>
                         <Card
-                          key={patient.CustomerID}
+                          key={index}
                           firstname={patient.FirstName}
                           lastname={patient.LastName}
                           opticalRetail={patient.Email}

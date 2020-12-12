@@ -519,6 +519,7 @@ export default function InputAdornments(props: any) {
             className={classes.button}
             disabled={!canSubmit()}
             onClick={async () => {
+              let a = false;
               setLoading(true);
               console.log("uploading images...");
               const CustomerID = await createCustomer(
@@ -527,7 +528,12 @@ export default function InputAdornments(props: any) {
                 values.email,
                 values.firstname,
                 values.lastname
-              );
+              ).catch((e) => {
+                alert("Something went wrong!");
+                setLoading(false);
+                a = true;
+              });
+              if (a) return;
               const Fundusfoto = await uploadImage(
                 images.Fundusfoto.file
               ).catch((e) => {

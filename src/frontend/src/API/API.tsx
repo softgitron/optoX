@@ -73,6 +73,7 @@ export const uploadImage = async (Fileupload: any) => {
 };
 
 export const getImage = async (id: string) => {
+  console.log(id);
   let returnURL = null;
   const config: any = tokenConfig();
   const auth = config.headers.Authentication;
@@ -88,7 +89,6 @@ export const getImage = async (id: string) => {
     .then((response) => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       returnURL = url;
-      console.log(url);
       const link = document.createElement("a");
       link.href = url;
       link.setAttribute("download", "file.jpeg"); //or any other extension
