@@ -180,6 +180,9 @@ export const createCustomer = async (
       .get(API + `/customer?Email=${Email}`, tokenConfig())
       .catch((e) => null);
     console.log(res);
+    if (res?.data.Email === "") {
+      throw new Error("Customer creating error");
+    }
     return res?.data.CustomerID;
   }
 };

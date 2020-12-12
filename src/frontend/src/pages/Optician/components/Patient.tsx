@@ -529,7 +529,9 @@ export default function InputAdornments(props: any) {
                 values.firstname,
                 values.lastname
               ).catch((e) => {
-                alert("Something went wrong!");
+                alert(
+                  "Check that your input is correct. Social number or email might be wrong"
+                );
                 setLoading(false);
                 a = true;
               });
