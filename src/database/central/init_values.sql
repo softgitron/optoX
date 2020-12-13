@@ -1,1380 +1,865 @@
-INSERT INTO bank_accounts (bank_account_id, balance) VALUES
-(1001, 117906),
-(1002, 20505),
-(1003, 239814),
-(1004, 228098),
-(1005, 133168),
-(1006, 193902),
-(1007, 85377),
-(1008, 202108),
-(1009, 282247),
-(1010, 215161),
-(1011, 172348),
-(1012, 242427),
-(1013, 187292),
-(1014, 167727),
-(1015, 21333),
-(1016, 143891),
-(1017, 294447),
-(1018, 80701),
-(1019, 448),
-(1020, 223938),
-(1021, 231406),
-(1022, 234135),
-(1023, 50034),
-(1024, 5333),
-(1025, 231421),
-(1026, 299047),
-(1027, 157960),
-(1028, 291943),
-(1029, 63869),
-(1030, 44772),
-(1031, 143646),
-(1032, 295592),
-(1033, 288155),
-(1034, 48607),
-(1035, 221588),
-(1036, 69344),
-(1037, 101844),
-(1038, 193783),
-(1039, 12835),
-(1040, 273092),
-(1041, 127936),
-(1042, 193266),
-(1043, 206771),
-(1044, 288271),
-(1045, 165911),
-(1046, 112861),
-(1047, 291276),
-(1048, 124763),
-(1049, 106616),
-(1050, 179740),
-(1051, 286962),
-(1052, 176988),
-(1053, 229636),
-(1054, 91057),
-(1055, 28967),
-(1056, 209639),
-(1057, 262213),
-(1058, 200710),
-(1059, 91502),
-(1060, 48558),
-(1061, 111157),
-(1062, 19451),
-(1063, 3145),
-(1064, 252611),
-(1065, 247463),
-(1066, 241532),
-(1067, 54933),
-(1068, 260020),
-(1069, 43250),
-(1070, 117517),
-(1071, 174768),
-(1072, 155477),
-(1073, 58589),
-(1074, 33086),
-(1075, 217636),
-(1076, 247319),
-(1077, 181537),
-(1078, 299375),
-(1079, 128697),
-(1080, 3227),
-(1081, 183998),
-(1082, 229524),
-(1083, 246976),
-(1084, 227038),
-(1085, 248558),
-(1086, 190012),
-(1087, 193755),
-(1088, 82382),
-(1089, 265796),
-(1090, 160990),
-(1091, 26150),
-(1092, 294596),
-(1093, 232385),
-(1094, 539),
-(1095, 145733),
-(1096, 894),
-(1097, 66608),
-(1098, 41202),
-(1099, 254775),
-(1100, 2996),
-(0, 0);
+insert into bank_accounts (bank_account_id, balance) values (1001, 132352);
+insert into bank_accounts (bank_account_id, balance) values (1002, 93731);
+insert into bank_accounts (bank_account_id, balance) values (1003, 53189);
+insert into bank_accounts (bank_account_id, balance) values (1004, 7547);
+insert into bank_accounts (bank_account_id, balance) values (1005, 113374);
+insert into bank_accounts (bank_account_id, balance) values (1006, 147596);
+insert into bank_accounts (bank_account_id, balance) values (1007, 114974);
+insert into bank_accounts (bank_account_id, balance) values (1008, 46377);
+insert into bank_accounts (bank_account_id, balance) values (1009, 61703);
+insert into bank_accounts (bank_account_id, balance) values (1010, 65562);
+insert into bank_accounts (bank_account_id, balance) values (1011, 77420);
+insert into bank_accounts (bank_account_id, balance) values (1012, 82285);
+insert into bank_accounts (bank_account_id, balance) values (1013, 112912);
+insert into bank_accounts (bank_account_id, balance) values (1014, 57161);
+insert into bank_accounts (bank_account_id, balance) values (1015, 29515);
+insert into bank_accounts (bank_account_id, balance) values (1016, 57632);
+insert into bank_accounts (bank_account_id, balance) values (1017, 144932);
+insert into bank_accounts (bank_account_id, balance) values (1018, 127548);
+insert into bank_accounts (bank_account_id, balance) values (1019, 28393);
+insert into bank_accounts (bank_account_id, balance) values (1020, 103575);
+insert into bank_accounts (bank_account_id, balance) values (1021, 86365);
+insert into bank_accounts (bank_account_id, balance) values (1022, 105588);
+insert into bank_accounts (bank_account_id, balance) values (1023, 149217);
+insert into bank_accounts (bank_account_id, balance) values (1024, 8169);
+insert into bank_accounts (bank_account_id, balance) values (1025, 97294);
+insert into bank_accounts (bank_account_id, balance) values (1026, 132290);
+insert into bank_accounts (bank_account_id, balance) values (1027, 107846);
+insert into bank_accounts (bank_account_id, balance) values (1028, 65077);
+insert into bank_accounts (bank_account_id, balance) values (1029, 3583);
+insert into bank_accounts (bank_account_id, balance) values (1030, 118314);
+insert into bank_accounts (bank_account_id, balance) values (1031, 2736);
+insert into bank_accounts (bank_account_id, balance) values (1032, 28205);
+insert into bank_accounts (bank_account_id, balance) values (1033, 2761);
+insert into bank_accounts (bank_account_id, balance) values (1034, 90962);
+insert into bank_accounts (bank_account_id, balance) values (1035, 96917);
+insert into bank_accounts (bank_account_id, balance) values (1036, 138518);
+insert into bank_accounts (bank_account_id, balance) values (1037, 136225);
+insert into bank_accounts (bank_account_id, balance) values (1038, 148131);
+insert into bank_accounts (bank_account_id, balance) values (1039, 129538);
+insert into bank_accounts (bank_account_id, balance) values (1040, 94949);
+insert into bank_accounts (bank_account_id, balance) values (1041, 25081);
+insert into bank_accounts (bank_account_id, balance) values (1042, 38930);
+insert into bank_accounts (bank_account_id, balance) values (1043, 87328);
+insert into bank_accounts (bank_account_id, balance) values (1044, 108534);
+insert into bank_accounts (bank_account_id, balance) values (1045, 53354);
+insert into bank_accounts (bank_account_id, balance) values (1046, 42968);
+insert into bank_accounts (bank_account_id, balance) values (1047, 10585);
+insert into bank_accounts (bank_account_id, balance) values (1048, 135720);
+insert into bank_accounts (bank_account_id, balance) values (1049, 147091);
+insert into bank_accounts (bank_account_id, balance) values (1050, 6156);
+insert into bank_accounts (bank_account_id, balance) values (1051, 109537);
+insert into bank_accounts (bank_account_id, balance) values (1052, 108125);
+insert into bank_accounts (bank_account_id, balance) values (1053, 86546);
+insert into bank_accounts (bank_account_id, balance) values (1054, 786);
+insert into bank_accounts (bank_account_id, balance) values (1055, 29125);
+insert into bank_accounts (bank_account_id, balance) values (1056, 45004);
+insert into bank_accounts (bank_account_id, balance) values (1057, 28708);
+insert into bank_accounts (bank_account_id, balance) values (1058, 44291);
+insert into bank_accounts (bank_account_id, balance) values (1059, 72120);
+insert into bank_accounts (bank_account_id, balance) values (1060, 11940);
+insert into bank_accounts (bank_account_id, balance) values (1061, 115000);
+insert into bank_accounts (bank_account_id, balance) values (1062, 2364);
+insert into bank_accounts (bank_account_id, balance) values (1063, 136965);
+insert into bank_accounts (bank_account_id, balance) values (1064, 92496);
+insert into bank_accounts (bank_account_id, balance) values (1065, 109971);
+insert into bank_accounts (bank_account_id, balance) values (1066, 39693);
+insert into bank_accounts (bank_account_id, balance) values (1067, 11836);
+insert into bank_accounts (bank_account_id, balance) values (1068, 40111);
+insert into bank_accounts (bank_account_id, balance) values (1069, 145192);
+insert into bank_accounts (bank_account_id, balance) values (1070, 126602);
+insert into bank_accounts (bank_account_id, balance) values (1071, 149744);
+insert into bank_accounts (bank_account_id, balance) values (1072, 18581);
+insert into bank_accounts (bank_account_id, balance) values (1073, 77715);
+insert into bank_accounts (bank_account_id, balance) values (1074, 12127);
+insert into bank_accounts (bank_account_id, balance) values (1075, 44890);
+insert into bank_accounts (bank_account_id, balance) values (1076, 32305);
+insert into bank_accounts (bank_account_id, balance) values (1077, 72166);
+insert into bank_accounts (bank_account_id, balance) values (1078, 115740);
+insert into bank_accounts (bank_account_id, balance) values (1079, 38679);
+insert into bank_accounts (bank_account_id, balance) values (1080, 133422);
+insert into bank_accounts (bank_account_id, balance) values (1081, 41170);
+insert into bank_accounts (bank_account_id, balance) values (1082, 28306);
+insert into bank_accounts (bank_account_id, balance) values (1083, 38692);
+insert into bank_accounts (bank_account_id, balance) values (1084, 145327);
+insert into bank_accounts (bank_account_id, balance) values (1085, 29559);
+insert into bank_accounts (bank_account_id, balance) values (1086, 141758);
+insert into bank_accounts (bank_account_id, balance) values (1087, 149920);
+insert into bank_accounts (bank_account_id, balance) values (1088, 59707);
+insert into bank_accounts (bank_account_id, balance) values (1089, 93560);
+insert into bank_accounts (bank_account_id, balance) values (1090, 122649);
+insert into bank_accounts (bank_account_id, balance) values (1091, 69176);
+insert into bank_accounts (bank_account_id, balance) values (1092, 145490);
+insert into bank_accounts (bank_account_id, balance) values (1093, 43276);
+insert into bank_accounts (bank_account_id, balance) values (1094, 94620);
+insert into bank_accounts (bank_account_id, balance) values (1095, 12696);
+insert into bank_accounts (bank_account_id, balance) values (1096, 44096);
+insert into bank_accounts (bank_account_id, balance) values (1097, 38496);
+insert into bank_accounts (bank_account_id, balance) values (1098, 63460);
+insert into bank_accounts (bank_account_id, balance) values (1099, 121246);
+insert into bank_accounts (bank_account_id, balance) values (1100, 101353);
+INSERT INTO bank_accounts (bank_account_id, balance)VALUES (0, 0);
+INSERT INTO bank_accounts (bank_account_id, balance)VALUES (1, 0);
 
-INSERT INTO opticians (optician_id, bank_account_id, optician_country, name)VALUES
-(10001, 1001, 'Sweden', 'Specsavers'),
-(10002, 1002, 'Sweden', 'Instrumentarium'),
-(10003, 1003, 'Sweden', 'Specsavers'),
-(10004, 1004, 'Sweden', 'Nissen'),
-(10005, 1005, 'Norway', 'Nissen'),
-(10006, 1006, 'Sweden', 'Specsavers'),
-(10007, 1007, 'Sweden', 'Instrumentarium'),
-(10008, 1008, 'Sweden', 'Specsavers'),
-(10009, 1009, 'Sweden', 'Instrumentarium'),
-(10010, 1010, 'Sweden', 'Instrumentarium'),
-(10011, 1011, 'Finland', 'Nissen'),
-(10012, 1012, 'Sweden', 'Nissen'),
-(10013, 1013, 'Norway', 'Specsavers'),
-(10014, 1014, 'Sweden', 'Specsavers'),
-(10015, 1015, 'Norway', 'Nissen'),
-(10016, 1016, 'Sweden', 'Instrumentarium'),
-(10017, 1017, 'Sweden', 'Nissen'),
-(10018, 1018, 'Sweden', 'Specsavers'),
-(10019, 1019, 'Sweden', 'Nissen'),
-(10020, 1020, 'Norway', 'Instrumentarium'),
-(10021, 1021, 'Sweden', 'Specsavers'),
-(10022, 1022, 'Sweden', 'Nissen'),
-(10023, 1023, 'Sweden', 'Instrumentarium'),
-(10024, 1024, 'Sweden', 'Specsavers'),
-(10025, 1025, 'Norway', 'Instrumentarium'),
-(10026, 1026, 'Sweden', 'Instrumentarium'),
-(10027, 1027, 'Norway', 'Nissen'),
-(10028, 1028, 'Sweden', 'Nissen'),
-(10029, 1029, 'Sweden', 'Nissen'),
-(10030, 1030, 'Norway', 'Specsavers'),
-(10031, 1031, 'Sweden', 'Instrumentarium'),
-(10032, 1032, 'Finland', 'Specsavers'),
-(10033, 1033, 'Sweden', 'Specsavers'),
-(10034, 1034, 'Sweden', 'Instrumentarium'),
-(10035, 1035, 'Norway', 'Instrumentarium'),
-(10036, 1036, 'Sweden', 'Instrumentarium'),
-(10037, 1037, 'Sweden', 'Instrumentarium'),
-(10038, 1038, 'Finland', 'Instrumentarium'),
-(10039, 1039, 'Sweden', 'Instrumentarium'),
-(10040, 1040, 'Finland', 'Nissen'),
-(10041, 1041, 'Norway', 'Instrumentarium'),
-(10042, 1042, 'Sweden', 'Nissen'),
-(10043, 1043, 'Sweden', 'Specsavers'),
-(10044, 1044, 'Sweden', 'Instrumentarium'),
-(10045, 1045, 'Finland', 'Instrumentarium'),
-(10046, 1046, 'Sweden', 'Specsavers'),
-(10047, 1047, 'Sweden', 'Specsavers'),
-(10048, 1048, 'Sweden', 'Instrumentarium'),
-(10049, 1049, 'Finland', 'Specsavers'),
-(10050, 1050, 'Finland', 'Nissen'),
-(0, 0, 'Finland', 'Nissen'),
-(1, 0, 'Finland', 'OpticX');
 
-INSERT INTO optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES
-(1, 10001, 'Sweden', 'Sweden', '127268-030U', 'btreswell0@friendfeed.com', '5DF7Ojbcoch', 'Betta', 'Treswell', 'Normal'),
-(2, 10002, 'Sweden', 'Sweden', '336948-952S', 'ichipp1@fastcompany.com', 'HkpBRg', 'Ilaire', 'Chipp', 'Moderator'),
-(3, 10003, 'Sweden', 'Sweden', '902672-174R', 'hcastagneri2@istockphoto.com', 'amAOMWGl64tq', 'Henryetta', 'Castagneri', 'Moderator'),
-(4, 10004, 'Sweden', 'Sweden', '567420-766D', 'jflatt3@miibeian.gov.cn', 'oHnVpns', 'James', 'Flatt', 'Normal'),
-(5, 10005, 'Norway', 'Norway', '895768-226U', 'pgoodram4@dot.gov', 'lKOyG4W', 'Patience', 'Goodram', 'Normal'),
-(6, 10006, 'Sweden', 'Sweden', '018247-704S', 'spaddeley5@bloglines.com', 'I45dCKkJx', 'Sile', 'Paddeley', 'Moderator'),
-(7, 10007, 'Sweden', 'Sweden', '590632-379Y', 'gmerritt6@indiatimes.com', 'li9rMZmdc', 'Gay', 'Merritt', 'Administrator'),
-(8, 10008, 'Sweden', 'Sweden', '147263-062Y', 'froos7@mediafire.com', 'h1R8wg6dhby', 'Fredra', 'Roos', 'Administrator'),
-(9, 10009, 'Sweden', 'Sweden', '201511-658L', 'gharrinson8@cdc.gov', '5wGwWGFC', 'Guenna', 'Harrinson', 'Moderator'),
-(10, 10010, 'Sweden', 'Sweden', '431750-400L', 'ewarry9@umn.edu', '4ZKOT1Gwdd', 'Eadie', 'Warry', 'Normal'),
-(11, 10011, 'Finland', 'Finland', '972661-149A', 'smechica@mac.com', 'KwsdCwTvzxW', 'Sophia', 'Mechic', 'Moderator'),
-(12, 10012, 'Sweden', 'Sweden', '402736-482A', 'lblareb@europa.eu', 'TmkPmJ', 'Libby', 'Blare', 'Administrator'),
-(13, 10013, 'Norway', 'Norway', '939526-272K', 'jeirwinc@bloglines.com', 'LAE4EAORMp', 'Josefa', 'Eirwin', 'Normal'),
-(14, 10014, 'Sweden', 'Sweden', '061420-072F', 'faloshechkind@cargocollective.com', '2dgT08', 'Franzen', 'Aloshechkin', 'Moderator'),
-(15, 10015, 'Norway', 'Norway', '912232-800Y', 'dsavelle@aboutads.info', 'IgREAEQ4WOkQ', 'Devin', 'Savell', 'Normal'),
-(16, 10016, 'Sweden', 'Sweden', '304472-221F', 'cponcefordf@virginia.edu', 'xpcpyUUte', 'Con', 'Ponceford', 'Administrator'),
-(17, 10017, 'Sweden', 'Sweden', '369391-056N', 'lmiddlerg@dagondesign.com', 'c7RmyDlmaOV', 'Lurette', 'Middler', 'Moderator'),
-(18, 10018, 'Sweden', 'Sweden', '859205-727Z', 'cabbisonh@wufoo.com', 'E0XxnZ6DI', 'Cari', 'Abbison', 'Administrator'),
-(19, 10019, 'Sweden', 'Sweden', '797687-558T', 'mwarri@blogtalkradio.com', 'zgQ1Dy4NeV', 'Morgan', 'Warr', 'Normal'),
-(20, 10020, 'Norway', 'Norway', '100747-086S', 'mhassewellj@yelp.com', '1x2yt7', 'Mycah', 'Hassewell', 'Moderator'),
-(21, 10021, 'Sweden', 'Sweden', '840896-428R', 'fshirtliffk@cafepress.com', 'h94xR7LDy', 'Franklyn', 'Shirtliff', 'Normal'),
-(22, 10022, 'Sweden', 'Sweden', '031410-332Q', 'byearnl@eepurl.com', 'YWUkSK9JrG', 'Berne', 'Yearn', 'Moderator'),
-(23, 10023, 'Sweden', 'Sweden', '878669-852I', 'uesilmonm@free.fr', 'm92he7rCuU7H', 'Urson', 'Esilmon', 'Moderator'),
-(24, 10024, 'Sweden', 'Sweden', '643513-049A', 'ncolegaten@fda.gov', 'OKY6NfD', 'Natasha', 'Colegate', 'Moderator'),
-(25, 10025, 'Norway', 'Norway', '197229-874W', 'wreasceo@ebay.com', 'BgArR3', 'Walther', 'Reasce', 'Administrator'),
-(26, 10026, 'Sweden', 'Sweden', '477224-088R', 'mcereceresp@blogspot.com', 'i2gIBAWgy', 'Margaux', 'Cereceres', 'Moderator'),
-(27, 10027, 'Norway', 'Norway', '201314-344G', 'jjellingsq@g.co', 'wS9t6EAZyOyg', 'Jen', 'Jellings', 'Normal'),
-(28, 10028, 'Sweden', 'Sweden', '188236-182A', 'fjindrichr@cyberchimps.com', 'PAEV3HQiecU', 'Florinda', 'Jindrich', 'Normal'),
-(29, 10029, 'Sweden', 'Sweden', '695311-231D', 'sbowketts@home.pl', 'SOyG5yHgfA', 'Sella', 'Bowkett', 'Normal'),
-(30, 10030, 'Norway', 'Norway', '260259-453S', 'kravenshawt@bigcartel.com', 'PUbpsbcdgcLD', 'Katrina', 'Ravenshaw', 'Administrator'),
-(31, 10031, 'Sweden', 'Sweden', '237026-092W', 'jcadallederu@sciencedirect.com', 'rFOiZFGrg', 'Jefferson', 'Cadalleder', 'Normal'),
-(32, 10032, 'Finland', 'Finland', '299025-530R', 'sburbagev@psu.edu', 'yAEGhRIL', 'Stephie', 'Burbage', 'Administrator'),
-(33, 10033, 'Sweden', 'Sweden', '891103-100L', 'usherreardw@plala.or.jp', 'yX0EVrqT', 'Ugo', 'Sherreard', 'Normal'),
-(34, 10034, 'Sweden', 'Sweden', '157257-067O', 'jmalyonx@jugem.jp', 'swXUfMAU', 'Jeno', 'Malyon', 'Administrator'),
-(35, 10035, 'Norway', 'Norway', '984027-591U', 'alidgardy@arstechnica.com', 'DPpauyC', 'Archibald', 'Lidgard', 'Normal'),
-(36, 10036, 'Sweden', 'Sweden', '268661-904T', 'ahargeriez@uiuc.edu', 'CTJXtvcA', 'Adrienne', 'Hargerie', 'Administrator'),
-(37, 10037, 'Sweden', 'Sweden', '589173-603H', 'rwoodroff10@cargocollective.com', 'EWjw7PB1Y', 'Richardo', 'Woodroff', 'Administrator'),
-(38, 10038, 'Finland', 'Finland', '672403-196B', 'bking11@google.ru', 'H7iSG9', 'Bella', 'King', 'Administrator'),
-(39, 10039, 'Sweden', 'Sweden', '968405-865Y', 'jerbe12@list-manage.com', 'PXEbTGWk', 'Jedidiah', 'Erbe', 'Normal'),
-(40, 10040, 'Finland', 'Finland', '344612-109H', 'rgothard13@pagesperso-orange.fr', 'J0bPqXFAD', 'Rhett', 'Gothard', 'Normal'),
-(41, 10041, 'Norway', 'Norway', '938330-679Z', 'stitman14@cmu.edu', 'aSXpzX', 'See', 'Titman', 'Normal'),
-(42, 10042, 'Sweden', 'Sweden', '556053-123I', 'poakenfall15@mayoclinic.com', 'nTFwBwTwjXor', 'Putnam', 'Oakenfall', 'Normal'),
-(43, 10043, 'Sweden', 'Sweden', '308522-067F', 'abullas16@technorati.com', 'GiRPdVfvZa', 'Audy', 'Bullas', 'Normal'),
-(44, 10044, 'Sweden', 'Sweden', '409407-926U', 'ccaselick17@tripadvisor.com', 'kINwklS', 'Charisse', 'Caselick', 'Normal'),
-(45, 10045, 'Finland', 'Finland', '170820-625C', 'dmattiessen18@marketwatch.com', '4zeNcaIcNGzq', 'Durante', 'Mattiessen', 'Normal'),
-(46, 10046, 'Sweden', 'Sweden', '532485-764D', 'aglazzard19@salon.com', 'tgXLdGRGq8', 'Augie', 'Glazzard', 'Normal'),
-(47, 10047, 'Sweden', 'Sweden', '642442-511J', 'dwenham1a@princeton.edu', '44Lwt9yo', 'Dalt', 'Wenham', 'Normal'),
-(48, 10048, 'Sweden', 'Sweden', '850387-653G', 'vgligorijevic1b@smh.com.au', '8DSwsy', 'Van', 'Gligorijevic', 'Administrator'),
-(49, 10049, 'Finland', 'Finland', '637932-916E', 'jdunguy1c@altervista.org', 'ppEfyV68', 'Junie', 'Dunguy', 'Moderator'),
-(50, 10050, 'Finland', 'Finland', '315237-175K', 'jdelcastel1d@constantcontact.com', 'AaWytkowoWsU', 'June', 'Delcastel', 'Normal'),
-(0, 0, 'Finland', 'Finland', '456878-1458', 'optician@mail.com', 'optician', 'First', 'Last', 'Normal'),
-(51, 1, 'Finland', 'Finland', '454888-1458', 'jukka.salonen@mail.com', 'optician', 'Jukka', 'Salonen', 'Normal');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10001, 1001, 'Finland', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10002, 1002, 'Finland', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10003, 1003, 'Finland', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10004, 1004, 'Finland', 'Instrumentarium');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10005, 1005, 'Finland', 'Instrumentarium');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10006, 1006, 'Finland', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10007, 1007, 'Finland', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10008, 1008, 'Finland', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10009, 1009, 'Finland', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10010, 1010, 'Finland', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10011, 1011, 'Sweden', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10012, 1012, 'Sweden', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10013, 1013, 'Sweden', 'Instrumentarium');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10014, 1014, 'Sweden', 'Instrumentarium');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10015, 1015, 'Sweden', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10016, 1016, 'Sweden', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10017, 1017, 'Sweden', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10018, 1018, 'Sweden', 'Instrumentarium');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10019, 1019, 'Sweden', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10020, 1020, 'Sweden', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10021, 1021, 'Norway', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10022, 1022, 'Norway', 'Instrumentarium');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10023, 1023, 'Norway', 'Instrumentarium');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10024, 1024, 'Norway', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10025, 1025, 'Norway', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10026, 1026, 'Norway', 'Instrumentarium');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10027, 1027, 'Norway', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10028, 1028, 'Norway', 'Nissen');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10029, 1029, 'Norway', 'Specsavers');
+insert into opticians (optician_id, bank_account_id, optician_country, name) values (10030, 1030, 'Norway', 'Specsavers');
+INSERT INTO opticians (optician_id, bank_account_id, optician_country, name)VALUES (0, 0, 'Finland', 'Nissen');
+INSERT INTO opticians (optician_id, bank_account_id, optician_country, name)VALUES (1, 1, 'Finland', 'OpticX');
 
-INSERT INTO opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name)VALUES
-(20001, 1051, 'Sweden', 'KYS'),
-(20002, 1052, 'Sweden', 'KOKS'),
-(20003, 1053, 'Finland', 'KOKS'),
-(20004, 1054, 'Sweden', 'TAYS'),
-(20005, 1055, 'Sweden', 'KOKS'),
-(20006, 1056, 'Sweden', 'TAYS'),
-(20007, 1057, 'Sweden', 'KOKS'),
-(20008, 1058, 'Sweden', 'KYS'),
-(20009, 1059, 'Sweden', 'KYS'),
-(20010, 1060, 'Sweden', 'KOKS'),
-(20011, 1061, 'Finland', 'TAYS'),
-(20012, 1062, 'Norway', 'KYS'),
-(20013, 1063, 'Sweden', 'KYS'),
-(20014, 1064, 'Sweden', 'KOKS'),
-(20015, 1065, 'Finland', 'KOKS'),
-(20016, 1066, 'Sweden', 'KYS'),
-(20017, 1067, 'Finland', 'TAYS'),
-(20018, 1068, 'Sweden', 'KYS'),
-(20019, 1069, 'Finland', 'TAYS'),
-(20020, 1070, 'Sweden', 'KYS'),
-(20021, 1071, 'Sweden', 'KYS'),
-(20022, 1072, 'Norway', 'KYS'),
-(20023, 1073, 'Sweden', 'KYS'),
-(20024, 1074, 'Sweden', 'TAYS'),
-(20025, 1075, 'Norway', 'KYS'),
-(20026, 1076, 'Sweden', 'KYS'),
-(20027, 1077, 'Sweden', 'KYS'),
-(20028, 1078, 'Sweden', 'KYS'),
-(20029, 1079, 'Finland', 'TAYS'),
-(20030, 1080, 'Finland', 'KYS'),
-(20031, 1081, 'Sweden', 'TAYS'),
-(20032, 1082, 'Finland', 'KOKS'),
-(20033, 1083, 'Finland', 'KOKS'),
-(20034, 1084, 'Sweden', 'KYS'),
-(20035, 1085, 'Sweden', 'TAYS'),
-(20036, 1086, 'Sweden', 'KOKS'),
-(20037, 1087, 'Sweden', 'TAYS'),
-(20038, 1088, 'Sweden', 'KOKS'),
-(20039, 1089, 'Sweden', 'KOKS'),
-(20040, 1090, 'Finland', 'KOKS'),
-(20041, 1091, 'Sweden', 'TAYS'),
-(20042, 1092, 'Sweden', 'TAYS'),
-(20043, 1093, 'Sweden', 'KYS'),
-(20044, 1094, 'Sweden', 'KYS'),
-(20045, 1095, 'Sweden', 'KOKS'),
-(20046, 1096, 'Sweden', 'KOKS'),
-(20047, 1097, 'Sweden', 'KOKS'),
-(20048, 1098, 'Sweden', 'KYS'),
-(20049, 1099, 'Sweden', 'TAYS'),
-(20050, 1100, 'Sweden', 'KYS'),
-(0, 0, 'Finland', 'TAYS'),
-(1, 0, 'Finland', 'HUS');
 
-INSERT INTO opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES
-(51, 20001, 'Sweden', 'Sweden', '438140-631J', 'mjandl0@fda.gov', 'ya6vQU3', 'Malinde', 'Jandl', 'Normal'),
-(52, 20002, 'Sweden', 'Sweden', '265490-804F', 'nverchambre1@blog.com', '2zvNv4', 'Natty', 'Verchambre', 'Administrator'),
-(53, 20003, 'Finland', 'Finland', '711534-851Z', 'larnoult2@over-blog.com', 'VTQZsq5lggj5', 'La verne', 'Arnoult', 'Administrator'),
-(54, 20004, 'Sweden', 'Sweden', '174732-230H', 'cdufoure3@google.cn', 'SLHgph90', 'Cathrine', 'Dufoure', 'Administrator'),
-(55, 20005, 'Sweden', 'Sweden', '874395-908H', 'tmcconnell4@vimeo.com', 'IOgJIcqr0HC5', 'Tore', 'McConnell', 'Administrator'),
-(56, 20006, 'Sweden', 'Sweden', '239826-133L', 'mmasse5@skyrock.com', '9Zw61yPdGLy', 'Mickie', 'Masse', 'Normal'),
-(57, 20007, 'Sweden', 'Sweden', '291335-115H', 'cburnsides6@unicef.org', '3zLQSJn', 'Care', 'Burnsides', 'Administrator'),
-(58, 20008, 'Sweden', 'Sweden', '276303-557H', 'ztrout7@php.net', 'crwbT9HZJuFX', 'Zuzana', 'Trout', 'Moderator'),
-(59, 20009, 'Sweden', 'Sweden', '914809-157A', 'lgreenrde8@google.de', 'RrfBhKXYuSJa', 'Langsdon', 'Greenrde', 'Moderator'),
-(60, 20010, 'Sweden', 'Sweden', '625883-226R', 'kmaccurley9@free.fr', 'WtCqWMKTjpvK', 'Katuscha', 'MacCurley', 'Moderator'),
-(61, 20011, 'Finland', 'Finland', '166824-394E', 'rstolza@canalblog.com', 'J5IbyIZo9', 'Rozalin', 'Stolz', 'Administrator'),
-(62, 20012, 'Norway', 'Norway', '084239-592R', 'cnansomb@amazon.co.jp', 'oke0J5b2U', 'Candi', 'Nansom', 'Normal'),
-(63, 20013, 'Sweden', 'Sweden', '879489-110H', 'aoreheadc@list-manage.com', 'Z55n1VQU8', 'Appolonia', 'Orehead', 'Administrator'),
-(64, 20014, 'Sweden', 'Sweden', '267464-721W', 'zeathertond@fda.gov', 'UXIMMMA', 'Zabrina', 'Eatherton', 'Normal'),
-(65, 20015, 'Finland', 'Finland', '565129-325V', 'fbrantzene@wsj.com', 'OCQMnTnrx', 'Fanchon', 'Brantzen', 'Moderator'),
-(66, 20016, 'Sweden', 'Sweden', '542370-721Z', 'hcalcraftf@g.co', 'TIRqkezGLEJ', 'Harriette', 'Calcraft', 'Moderator'),
-(67, 20017, 'Finland', 'Finland', '550445-976K', 'bwahnerg@intel.com', 'ArfGxpXZiQ', 'Britney', 'Wahner', 'Normal'),
-(68, 20018, 'Sweden', 'Sweden', '643539-255B', 'gassinderh@time.com', 'B4lpsCEb', 'Gaultiero', 'Assinder', 'Normal'),
-(69, 20019, 'Finland', 'Finland', '258953-785R', 'jlaskeyi@eepurl.com', 'FgURn76', 'Josiah', 'Laskey', 'Normal'),
-(70, 20020, 'Sweden', 'Sweden', '975475-731L', 'bschuelckej@msu.edu', '9yGh46rur', 'Betsey', 'Schuelcke', 'Normal'),
-(71, 20021, 'Sweden', 'Sweden', '547478-751Q', 'jdayk@virginia.edu', 'nDlqU70fH', 'Jillene', 'Day', 'Administrator'),
-(72, 20022, 'Norway', 'Norway', '256985-780L', 'dcockburnl@ft.com', 'gwUUdu', 'Devlen', 'Cockburn', 'Normal'),
-(73, 20023, 'Sweden', 'Sweden', '443718-479W', 'rdelamarm@e-recht24.de', 'Y5VuP8', 'Rickert', 'Delamar', 'Administrator'),
-(74, 20024, 'Sweden', 'Sweden', '666612-847W', 'arundalln@altervista.org', 'PLaGlc2MM', 'Abagael', 'Rundall', 'Administrator'),
-(75, 20025, 'Norway', 'Norway', '493244-262S', 'acrispo@naver.com', 'RqLDheU', 'Aristotle', 'Crisp', 'Normal'),
-(76, 20026, 'Sweden', 'Sweden', '937266-432Q', 'pwipperp@edublogs.org', 'tJqEbiuLuRPD', 'Pascale', 'Wipper', 'Administrator'),
-(77, 20027, 'Sweden', 'Sweden', '767375-185N', 'kboyleq@ezinearticles.com', 'pmQMNq4IgIiq', 'Kym', 'Boyle', 'Administrator'),
-(78, 20028, 'Sweden', 'Sweden', '242012-716S', 'wdannr@chron.com', 'u26iDrd5NEhk', 'Wendye', 'Dann', 'Administrator'),
-(79, 20029, 'Finland', 'Finland', '910372-952R', 'mstroulgers@springer.com', 'KklQXnn0HSo', 'Merridie', 'Stroulger', 'Moderator'),
-(80, 20030, 'Finland', 'Finland', '252285-927S', 'pnottont@unicef.org', 'zVqV21ztZ', 'Padriac', 'Notton', 'Moderator'),
-(81, 20031, 'Sweden', 'Sweden', '330821-129H', 'ojerromu@google.de', 'unmBTMY', 'Oliver', 'Jerrom', 'Normal'),
-(82, 20032, 'Finland', 'Finland', '674534-479M', 'talexisv@latimes.com', 'LdWiRl', 'Tiffie', 'Alexis', 'Moderator'),
-(83, 20033, 'Finland', 'Finland', '073220-579S', 'fpresswellw@sina.com.cn', 'j7G6Ff', 'Fabien', 'Presswell', 'Administrator'),
-(84, 20034, 'Sweden', 'Sweden', '976126-022P', 'rmaysx@noaa.gov', 'Ht0wpYH', 'Rob', 'Mays', 'Normal'),
-(85, 20035, 'Sweden', 'Sweden', '809023-708G', 'mcanteroy@studiopress.com', 'dXv3r9H', 'Margarita', 'Cantero', 'Administrator'),
-(86, 20036, 'Sweden', 'Sweden', '241362-309X', 'probardetz@google.com.br', 'eV0mENCnI1', 'Pris', 'Robardet', 'Moderator'),
-(87, 20037, 'Sweden', 'Sweden', '030798-999Z', 'mreedie10@sohu.com', 'gRGF3ZE', 'Mendel', 'Reedie', 'Moderator'),
-(88, 20038, 'Sweden', 'Sweden', '357370-214I', 'vmourant11@disqus.com', '5GoO4GvgmK9', 'Virgie', 'Mourant', 'Moderator'),
-(89, 20039, 'Sweden', 'Sweden', '183033-904E', 'crichardot12@miibeian.gov.cn', 'wruwmIpA1P', 'Cynde', 'Richardot', 'Moderator'),
-(90, 20040, 'Finland', 'Finland', '666659-310Q', 'tjansey13@umich.edu', 'jeIn1LM', 'Teirtza', 'Jansey', 'Administrator'),
-(91, 20041, 'Sweden', 'Sweden', '973608-560L', 'bairlie14@answers.com', 'p7qRrd28', 'Barr', 'Airlie', 'Administrator'),
-(92, 20042, 'Sweden', 'Sweden', '181065-562X', 'tbeekmann15@timesonline.co.uk', '68BuRIR1eq7r', 'Tessi', 'Beekmann', 'Normal'),
-(93, 20043, 'Sweden', 'Sweden', '564788-771F', 'pmargett16@google.com.au', 'TtMgsWSPeka1', 'Phyllys', 'Margett', 'Normal'),
-(94, 20044, 'Sweden', 'Sweden', '390054-980X', 'msilby17@freewebs.com', '93MmTM0dmK', 'Maria', 'Silby', 'Moderator'),
-(95, 20045, 'Sweden', 'Sweden', '043703-589Z', 'dhuggan18@army.mil', 'Pr8RgXq8a', 'Delly', 'Huggan', 'Administrator'),
-(96, 20046, 'Sweden', 'Sweden', '970292-321X', 'kreichhardt19@chron.com', 'Wl1nyry8', 'Katrina', 'Reichhardt', 'Normal'),
-(97, 20047, 'Sweden', 'Sweden', '531876-496O', 'lgahan1a@cbc.ca', 'PdnX21Ak', 'Lyndy', 'Gahan', 'Administrator'),
-(98, 20048, 'Sweden', 'Sweden', '775082-566K', 'nmcgahern1b@1und1.de', 'OGGePJwT', 'Neilla', 'McGahern', 'Administrator'),
-(99, 20049, 'Sweden', 'Sweden', '547895-832U', 'lmckerrow1c@multiply.com', 'Atc8trX', 'Larina', 'McKerrow', 'Normal'),
-(100, 20050, 'Sweden', 'Sweden', '186572-805S', 'dsein1d@addthis.com', 'NUp223vW0vm4', 'Dinny', 'Sein', 'Administrator'),
-(0, 0, 'Finland', 'Finland', '456878-1458', 'opthalmologist@mail.com', 'opthalmologist', 'First', 'Last', 'Normal'),
-(1, 1, 'Finland', 'Finland', '448878-1458', 'heli.virtanen@mail.com', 'opthalmologist', 'Heli', 'Virtanen', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (1, 10001, 'Finland', 'Finland', '451164-365B', 'bgemson0@cafepress.com', 'TlnNJC69P', 'Bathsheba', 'Gemson', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (2, 10002, 'Finland', 'Finland', '091180-404K', 'sjendrich1@blogtalkradio.com', '7evUaDWfecSm', 'Susana', 'Jendrich', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (3, 10003, 'Finland', 'Finland', '289533-482D', 'cferriby2@weebly.com', 'vZSIiF', 'Charin', 'Ferriby', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (4, 10004, 'Finland', 'Finland', '129979-415W', 'gspottswood3@domainmarket.com', '5UVbYOJhEeW', 'Georgie', 'Spottswood', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (5, 10005, 'Finland', 'Finland', '080086-023S', 'plofting4@clickbank.net', 'GeBrge0w0', 'Padgett', 'Lofting', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (6, 10006, 'Finland', 'Finland', '501502-513B', 'mjanczewski5@icq.com', 'FBkUnM1GvoO', 'Mariele', 'Janczewski', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (7, 10007, 'Finland', 'Finland', '329492-612Q', 'kgulleford6@jigsy.com', 'BqOIWRjyEc', 'Kelby', 'Gulleford', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (8, 10008, 'Finland', 'Finland', '892991-965C', 'acody7@nih.gov', '7BZTqwTgiZ', 'Alfy', 'Cody', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (9, 10009, 'Finland', 'Finland', '750743-079G', 'ctommei8@weibo.com', 'hUPxhm', 'Chaddie', 'Tommei', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (10, 10010, 'Finland', 'Finland', '991991-242V', 'bhanburybrown9@hao123.com', 'oOiIz7U4pzw', 'Blancha', 'Hanbury-Brown', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (11, 10011, 'Sweden', 'Sweden', '801144-024R', 'fhallett0@kickstarter.com', 'ko9CxAeJ', 'Faina', 'Hallett', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (12, 10012, 'Sweden', 'Sweden', '164896-254M', 'rbeumant1@bloomberg.com', 'k99wvJf', 'Rora', 'Beumant', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (13, 10013, 'Sweden', 'Sweden', '355604-830E', 'dhedan2@icq.com', 'UHNM1W32i', 'Dukie', 'Hedan', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (14, 10014, 'Sweden', 'Sweden', '810040-832R', 'rbraidon3@de.vu', '9xiqSxmm', 'Rooney', 'Braidon', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (15, 10015, 'Sweden', 'Sweden', '518965-359P', 'tupex4@eepurl.com', 'oJYzijrelT7H', 'Tiffi', 'Upex', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (16, 10016, 'Sweden', 'Sweden', '236052-586F', 'sairlie5@shutterfly.com', 'piarHnvbixuF', 'Stacy', 'Airlie', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (17, 10017, 'Sweden', 'Sweden', '130565-906E', 'hmollison6@nih.gov', 'wjFXn3', 'Hermann', 'Mollison', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (18, 10018, 'Sweden', 'Sweden', '152361-416C', 'lballantyne7@dropbox.com', 'sTrEbpii', 'Lavina', 'Ballantyne', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (19, 10019, 'Sweden', 'Sweden', '139254-706P', 'cwastie8@sbwire.com', 'UU2kqnugithm', 'Cherey', 'Wastie', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (20, 10020, 'Sweden', 'Sweden', '435147-106G', 'rbuttwell9@microsoft.com', 'rzHIWB', 'Ragnar', 'Buttwell', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (21, 10021, 'Norway', 'Norway', '799616-723H', 'lmelchior0@cafepress.com', 'ETyFDlf', 'Leesa', 'Melchior', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (22, 10022, 'Norway', 'Norway', '144846-734G', 'ureason1@creativecommons.org', '52o6ArhLbSI', 'Urbano', 'Reason', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (23, 10023, 'Norway', 'Norway', '432073-565G', 'ddoerr2@slideshare.net', 'wP2w6ANpCZ', 'Dore', 'Doerr', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (24, 10024, 'Norway', 'Norway', '147092-474R', 'pwalicki3@github.com', 'vV5zk8r18qg', 'Perla', 'Walicki', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (25, 10025, 'Norway', 'Norway', '697357-668W', 'dalexandersson4@slate.com', 'lLu72I8o0YB', 'Dorolisa', 'Alexandersson', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (26, 10026, 'Norway', 'Norway', '316734-936A', 'dantusch5@timesonline.co.uk', 'XPFG0HZ4H', 'Delmar', 'Antusch', 'Moderator');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (27, 10027, 'Norway', 'Norway', '794967-445R', 'tgyse6@tripod.com', '7UXI22sgYy', 'Terencio', 'Gyse', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (28, 10028, 'Norway', 'Norway', '719834-364U', 'mmccurrie7@ftc.gov', 'WIY7Bp5nhD', 'Marni', 'McCurrie', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (29, 10029, 'Norway', 'Norway', '213710-791H', 'aswitland8@com.com', 'KHyE85', 'Ancell', 'Switland', 'Normal');
+insert into optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (30, 10030, 'Norway', 'Norway', '314583-730N', 'ksidnell9@cbslocal.com', 'ADAiBiqb', 'Keriann', 'Sidnell', 'Moderator');
+INSERT INTO optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level)VALUES (0, 0, 'Finland', 'Finland', '456878-1458', 'optician@mail.com', 'optician', 'First', 'Last', 'Normal');
+INSERT INTO optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level)VALUES (31, 1, 'Finland', 'Finland', '454888-1458', 'jukka.salonen@mail.com', 'optician', 'Jukka', 'Salonen', 'Normal');
 
-INSERT INTO customers (customer_id, customer_country, social_security_number, email, first_name, last_name)VALUES
-(30001, 'Finland', '160955-825Z', 'gmarkovic0@vimeo.com', 'Gabriell', 'Markovic'),
-(30002, 'Sweden', '859093-175V', 'dsandford1@wisc.edu', 'Deanna', 'Sandford'),
-(30003, 'Sweden', '793180-580X', 'mteaser2@house.gov', 'Melissa', 'Teaser'),
-(30004, 'Sweden', '517221-905Q', 'fmatevosian3@wired.com', 'Felipa', 'Matevosian'),
-(30005, 'Finland', '244775-629B', 'jertelt4@sfgate.com', 'Josy', 'Ertelt'),
-(30006, 'Sweden', '579626-702Z', 'mranner5@ucsd.edu', 'Marianne', 'Ranner'),
-(30007, 'Finland', '616578-035E', 'rriolfo6@imgur.com', 'Renell', 'Riolfo'),
-(30008, 'Sweden', '210456-524Z', 'ocolvie7@bloglines.com', 'Owen', 'Colvie'),
-(30009, 'Sweden', '144441-817L', 'pbearham8@unicef.org', 'Pancho', 'Bearham'),
-(30010, 'Sweden', '672761-824S', 'dvosse9@yahoo.co.jp', 'Denver', 'Vosse'),
-(30011, 'Sweden', '581720-524G', 'rpittama@samsung.com', 'Ruthie', 'Pittam'),
-(30012, 'Sweden', '635677-385O', 'mmcculleyb@sciencedirect.com', 'Mirna', 'McCulley'),
-(30013, 'Sweden', '863119-135K', 'mbottlestonec@dion.ne.jp', 'Melisenda', 'Bottlestone'),
-(30014, 'Sweden', '459248-822L', 'eackersd@ustream.tv', 'Eugenio', 'Ackers'),
-(30015, 'Sweden', '224905-000P', 'gseedse@squarespace.com', 'Genevieve', 'Seeds'),
-(30016, 'Norway', '186373-179T', 'sfoskenf@ca.gov', 'Samaria', 'Fosken'),
-(30017, 'Sweden', '909430-628A', 'egrigorking@oakley.com', 'Efrem', 'Grigorkin'),
-(30018, 'Sweden', '263197-156P', 'cdoghartieh@unesco.org', 'Clemens', 'Doghartie'),
-(30019, 'Sweden', '650807-062Y', 'nwiersmai@opensource.org', 'Neall', 'Wiersma'),
-(30020, 'Sweden', '201453-017A', 'dhurchej@latimes.com', 'Desdemona', 'Hurche'),
-(30021, 'Sweden', '847561-912O', 'nfullylovek@nbcnews.com', 'Noella', 'Fullylove'),
-(30022, 'Finland', '663621-324Z', 'echellingworthl@youtu.be', 'Edmund', 'Chellingworth'),
-(30023, 'Norway', '271680-268I', 'mnutbeemm@cnbc.com', 'Marys', 'Nutbeem'),
-(30024, 'Sweden', '402326-705I', 'amudlen@nytimes.com', 'Alfonso', 'Mudle'),
-(30025, 'Sweden', '033693-884K', 'fsicho@discovery.com', 'Fanni', 'Sich'),
-(30026, 'Sweden', '091115-871R', 'rleverp@slideshare.net', 'Roxy', 'Lever'),
-(30027, 'Sweden', '109981-591M', 'fmckinnq@drupal.org', 'Freddie', 'McKinn'),
-(30028, 'Finland', '755568-153Z', 'pmatuskar@wikispaces.com', 'Patsy', 'Matuska'),
-(30029, 'Sweden', '187547-932W', 'gdelagness@storify.com', 'Gerhardt', 'Delagnes'),
-(30030, 'Sweden', '710286-276Q', 'scosslettt@smugmug.com', 'Shaylynn', 'Cosslett'),
-(30031, 'Sweden', '199675-541O', 'rgormleyu@nhs.uk', 'Rudiger', 'Gormley'),
-(30032, 'Finland', '038713-918T', 'barnev@bloglines.com', 'Brigit', 'Arne'),
-(30033, 'Sweden', '311969-454E', 'mkightlyw@fema.gov', 'Marlene', 'Kightly'),
-(30034, 'Sweden', '637635-838H', 'oyakubovicsx@microsoft.com', 'Olivette', 'Yakubovics'),
-(30035, 'Sweden', '155449-993H', 'cjosiahy@behance.net', 'Carolynn', 'Josiah'),
-(30036, 'Sweden', '157369-331Z', 'omechanz@unblog.fr', 'Oswald', 'Mechan'),
-(30037, 'Finland', '975284-430V', 'jbendig10@oakley.com', 'Jens', 'Bendig'),
-(30038, 'Finland', '421497-801E', 'emurcutt11@whitehouse.gov', 'Elvera', 'Murcutt'),
-(30039, 'Sweden', '480164-999S', 'bwalls12@adobe.com', 'Ban', 'Walls'),
-(30040, 'Sweden', '401654-805T', 'aeaddy13@ebay.com', 'Arlinda', 'Eaddy'),
-(30041, 'Sweden', '289736-831Z', 'lnortcliffe14@ftc.gov', 'Lida', 'Nortcliffe'),
-(30042, 'Sweden', '346233-113Z', 'vpeasegod15@dagondesign.com', 'Valerye', 'Peasegod'),
-(30043, 'Norway', '183941-581W', 'cinold16@domainmarket.com', 'Ciel', 'Inold'),
-(30044, 'Sweden', '623596-318Y', 'tdalwood17@joomla.org', 'Trista', 'Dalwood'),
-(30045, 'Sweden', '451649-614X', 'jalaway18@msu.edu', 'Justis', 'Alaway'),
-(30046, 'Finland', '558424-027R', 'msaban19@desdev.cn', 'Margit', 'Saban'),
-(30047, 'Sweden', '611590-587N', 'mmacquarrie1a@google.co.jp', 'Mariana', 'MacQuarrie'),
-(30048, 'Sweden', '930069-904J', 'hgooderham1b@de.vu', 'Hana', 'Gooderham'),
-(30049, 'Sweden', '787242-214I', 'kofer1c@wikia.com', 'Kippy', 'Ofer'),
-(30050, 'Sweden', '450460-609M', 'dcrighton1d@macromedia.com', 'Deanne', 'Crighton'),
-(30051, 'Finland', '008054-688B', 'cflintoffe1e@technorati.com', 'Cristal', 'Flintoffe'),
-(30052, 'Norway', '357378-911Y', 'ggrodden1f@yahoo.com', 'Gratia', 'Grodden'),
-(30053, 'Finland', '145858-855G', 'hscrowton1g@umich.edu', 'Heinrik', 'Scrowton'),
-(30054, 'Sweden', '211192-379D', 'nryle1h@amazon.de', 'Nariko', 'Ryle'),
-(30055, 'Sweden', '299042-841C', 'mbanting1i@artisteer.com', 'Margeaux', 'Banting'),
-(30056, 'Sweden', '342344-214J', 'mgoodbairn1j@hubpages.com', 'Marieann', 'Goodbairn'),
-(30057, 'Sweden', '036869-341X', 'coldis1k@github.com', 'Cort', 'Oldis'),
-(30058, 'Sweden', '694718-318F', 'xblum1l@addthis.com', 'Xever', 'Blum'),
-(30059, 'Sweden', '547459-748L', 'wdelcastello1m@guardian.co.uk', 'Wynn', 'Del Castello'),
-(30060, 'Sweden', '149779-145I', 'cgoodliffe1n@ft.com', 'Corri', 'Goodliffe'),
-(30061, 'Sweden', '866542-510F', 'ryusupov1o@amazon.de', 'Redd', 'Yusupov'),
-(30062, 'Sweden', '757446-846W', 'uchristofor1p@etsy.com', 'Ulick', 'Christofor'),
-(30063, 'Sweden', '579577-085C', 'jmould1q@csmonitor.com', 'Judd', 'Mould'),
-(30064, 'Sweden', '294308-456Y', 'khuish1r@google.fr', 'Kleon', 'Huish'),
-(30065, 'Sweden', '277725-950O', 'hheeron1s@japanpost.jp', 'Hamel', 'Heeron'),
-(30066, 'Sweden', '295651-627J', 'mjeaycock1t@spiegel.de', 'Morgan', 'Jeaycock'),
-(30067, 'Sweden', '462934-468G', 'dbratcher1u@simplemachines.org', 'Dedra', 'Bratcher'),
-(30068, 'Sweden', '780780-175Q', 'lskelly1v@earthlink.net', 'Lauraine', 'Skelly'),
-(30069, 'Sweden', '090981-360A', 'lfry1w@miitbeian.gov.cn', 'Lennie', 'Fry'),
-(30070, 'Sweden', '059057-825L', 'bmoughtin1x@exblog.jp', 'Barbabra', 'Moughtin'),
-(30071, 'Sweden', '443581-355P', 'kedmondson1y@miitbeian.gov.cn', 'Kore', 'Edmondson'),
-(30072, 'Sweden', '836118-586R', 'mtissier1z@tuttocitta.it', 'Maurise', 'Tissier'),
-(30073, 'Sweden', '682746-906U', 'feverton20@alexa.com', 'Fidelia', 'Everton'),
-(30074, 'Finland', '547736-973S', 'anattriss21@gizmodo.com', 'Analiese', 'Nattriss'),
-(30075, 'Finland', '435914-088I', 'bmardlin22@rambler.ru', 'Brandice', 'Mardlin'),
-(30076, 'Sweden', '211763-907K', 'kmicheli23@deviantart.com', 'Kizzee', 'Micheli'),
-(30077, 'Sweden', '006162-458K', 'cruck24@netvibes.com', 'Cayla', 'Ruck'),
-(30078, 'Finland', '669779-621C', 'aneames25@globo.com', 'Abba', 'Neames'),
-(30079, 'Norway', '539701-091O', 'khollidge26@xinhuanet.com', 'Kristofor', 'Hollidge'),
-(30080, 'Sweden', '555503-084V', 'gshowl27@msu.edu', 'Gard', 'Showl'),
-(30081, 'Sweden', '991803-132H', 'pcharlewood28@dailymotion.com', 'Perry', 'Charlewood'),
-(30082, 'Sweden', '781647-629Z', 'dbernollet29@icq.com', 'Deb', 'Bernollet'),
-(30083, 'Sweden', '960719-147U', 'shalloran2a@fema.gov', 'Shandeigh', 'Halloran'),
-(30084, 'Sweden', '545370-989I', 'mblaza2b@ca.gov', 'Mirabella', 'Blaza'),
-(30085, 'Sweden', '257789-053V', 'babelson2c@cbsnews.com', 'Brucie', 'Abelson'),
-(30086, 'Sweden', '076330-049P', 'lantrobus2d@bravesites.com', 'Lynnea', 'Antrobus'),
-(30087, 'Sweden', '597690-589J', 'csimmers2e@issuu.com', 'Cal', 'Simmers'),
-(30088, 'Sweden', '552364-991V', 'aoronan2f@hostgator.com', 'Abraham', 'O Ronan'),
-(30089, 'Sweden', '257410-664B', 'tgabbetis2g@typepad.com', 'Terence', 'Gabbetis'),
-(30090, 'Sweden', '261559-758I', 'awilkennson2h@google.ca', 'Armstrong', 'Wilkennson'),
-(30091, 'Finland', '950223-506D', 'ccoulter2i@pbs.org', 'Cece', 'Coulter'),
-(30092, 'Sweden', '867772-082D', 'pdartan2j@quantcast.com', 'Padget', 'Dartan'),
-(30093, 'Sweden', '509952-706I', 'mcurror2k@amazonaws.com', 'Madlin', 'Curror'),
-(30094, 'Sweden', '633387-535Q', 'fmcalpin2l@telegraph.co.uk', 'Farlay', 'McAlpin'),
-(30095, 'Finland', '363175-381J', 'gmasi2m@abc.net.au', 'Gery', 'Masi'),
-(30096, 'Sweden', '251074-100B', 'efriedenbach2n@amazon.com', 'Ethelind', 'Friedenbach'),
-(30097, 'Finland', '209222-685E', 'mpetruk2o@tiny.cc', 'Maurits', 'Petruk'),
-(30098, 'Sweden', '738932-855G', 'fniesing2p@usda.gov', 'Ferdy', 'Niesing'),
-(30099, 'Sweden', '698363-593O', 'eradenhurst2q@blogtalkradio.com', 'Erv', 'Radenhurst'),
-(30100, 'Sweden', '327714-455I', 'rlote2r@friendfeed.com', 'Radcliffe', 'Lote'),
-(30101, 'Norway', '323033-799F', 'bvlasov2s@cisco.com', 'Beryl', 'Vlasov'),
-(30102, 'Sweden', '453155-459J', 'bcustard2t@redcross.org', 'Burnaby', 'Custard'),
-(30103, 'Finland', '986784-912U', 'aramsden2u@craigslist.org', 'Antonio', 'Ramsden'),
-(30104, 'Sweden', '632662-308A', 'dellingsworth2v@auda.org.au', 'Dare', 'Ellingsworth'),
-(30105, 'Sweden', '954122-380E', 'tbinnion2w@google.co.uk', 'Torre', 'Binnion'),
-(30106, 'Sweden', '067129-863B', 'mwincer2x@exblog.jp', 'Melvyn', 'Wincer'),
-(30107, 'Sweden', '330627-760X', 'dcullingworth2y@youtube.com', 'Denise', 'Cullingworth'),
-(30108, 'Sweden', '539155-391I', 'bhunsworth2z@engadget.com', 'Birgit', 'Hunsworth'),
-(30109, 'Sweden', '260261-589G', 'ewolfenden30@behance.net', 'Ermina', 'Wolfenden'),
-(30110, 'Sweden', '858187-220N', 'rantonov31@pbs.org', 'Ricki', 'Antonov'),
-(30111, 'Sweden', '610125-467D', 'ksteel32@deliciousdays.com', 'Kelby', 'Steel'),
-(30112, 'Sweden', '740852-950J', 'lbalsom33@amazon.co.jp', 'Lindsey', 'Balsom'),
-(30113, 'Finland', '285162-915J', 'lfrostick34@amazon.de', 'Lanny', 'Frostick'),
-(30114, 'Sweden', '739329-758C', 'jfurmage35@meetup.com', 'Jeramie', 'Furmage'),
-(30115, 'Sweden', '096120-955U', 'trudge36@exblog.jp', 'Torrey', 'Rudge'),
-(30116, 'Norway', '561527-222C', 'aastill37@fastcompany.com', 'Arlie', 'Astill'),
-(30117, 'Sweden', '315603-131G', 'mmushawe38@epa.gov', 'Melitta', 'Mushawe'),
-(30118, 'Sweden', '874010-748U', 'gkinforth39@cisco.com', 'Geoffrey', 'Kinforth'),
-(30119, 'Sweden', '348647-565S', 'pkoles3a@google.co.jp', 'Pasquale', 'Koles'),
-(30120, 'Sweden', '413769-163S', 'plincke3b@mashable.com', 'Pamella', 'Lincke'),
-(30121, 'Sweden', '020815-476M', 'gborland3c@usgs.gov', 'Gerick', 'Borland'),
-(30122, 'Norway', '868685-724S', 'tsenter3d@hostgator.com', 'Tresa', 'Senter'),
-(30123, 'Sweden', '582471-681J', 'rbarwack3e@sitemeter.com', 'Redford', 'Barwack'),
-(30124, 'Sweden', '896430-559V', 'emanchester3f@omniture.com', 'Elka', 'Manchester'),
-(30125, 'Sweden', '254707-792W', 'sspiring3g@omniture.com', 'Scotti', 'Spiring'),
-(30126, 'Sweden', '531054-490Z', 'etampling3h@xing.com', 'Elwood', 'Tampling'),
-(30127, 'Sweden', '162720-899Z', 'adenisyev3i@sbwire.com', 'Alfy', 'Denisyev'),
-(30128, 'Sweden', '638544-798F', 'idoram3j@mashable.com', 'Ingrim', 'Doram'),
-(30129, 'Sweden', '247080-044Z', 'tpresley3k@ucoz.com', 'Thayne', 'Presley'),
-(30130, 'Sweden', '934277-882Y', 'tivie3l@techcrunch.com', 'Taylor', 'Ivie'),
-(30131, 'Finland', '307991-164P', 'wdrinkel3m@yale.edu', 'Willi', 'Drinkel'),
-(30132, 'Sweden', '709447-804S', 'lspurr3n@hatena.ne.jp', 'Lotte', 'Spurr'),
-(30133, 'Sweden', '372809-010S', 'jfedynski3o@tinyurl.com', 'Jeramey', 'Fedynski'),
-(30134, 'Sweden', '955599-851X', 'arosier3p@rediff.com', 'Ara', 'Rosier'),
-(30135, 'Sweden', '020871-771Y', 'kcollihole3q@bbb.org', 'Katina', 'Collihole'),
-(30136, 'Sweden', '313212-915U', 'croyson3r@answers.com', 'Cody', 'Royson'),
-(30137, 'Sweden', '826667-696N', 'myakovitch3s@indiegogo.com', 'Mirilla', 'Yakovitch'),
-(30138, 'Norway', '858023-052E', 'kgianilli3t@1688.com', 'Kellyann', 'Gianilli'),
-(30139, 'Sweden', '027048-150Q', 'hpetrulis3u@washington.edu', 'Herold', 'Petrulis'),
-(30140, 'Norway', '781260-702B', 'backwood3v@rambler.ru', 'Birch', 'Ackwood'),
-(30141, 'Sweden', '673799-958E', 'koliveto3w@pbs.org', 'Kamila', 'Oliveto'),
-(30142, 'Sweden', '680706-717O', 'bthow3x@bandcamp.com', 'Blayne', 'Thow'),
-(30143, 'Finland', '408766-308J', 'odealy3y@google.com.au', 'Olvan', 'Dealy'),
-(30144, 'Sweden', '873573-046Q', 'kpilkington3z@shareasale.com', 'Katine', 'Pilkington'),
-(30145, 'Sweden', '933153-676J', 'mrivel40@rambler.ru', 'Marie', 'Rivel'),
-(30146, 'Sweden', '678254-899M', 'dlay41@scientificamerican.com', 'Dougie', 'Lay'),
-(30147, 'Finland', '784683-792D', 'twoonton42@themeforest.net', 'Tremayne', 'Woonton'),
-(30148, 'Finland', '518635-071V', 'aburdett43@prnewswire.com', 'Abbey', 'Burdett'),
-(30149, 'Sweden', '748142-910X', 'minstone44@blogger.com', 'Marie-ann', 'Instone'),
-(30150, 'Sweden', '575235-408V', 'rkibby45@cbc.ca', 'Rosalynd', 'Kibby'),
-(30151, 'Sweden', '825227-041I', 'kboyen46@usda.gov', 'Klara', 'Boyen'),
-(30152, 'Sweden', '799488-441A', 'dlouw47@photobucket.com', 'Doreen', 'Louw'),
-(30153, 'Sweden', '836594-526D', 'pangrove48@fastcompany.com', 'Pegeen', 'Angrove'),
-(30154, 'Sweden', '608390-462M', 'bvinnick49@miitbeian.gov.cn', 'Bernie', 'Vinnick'),
-(30155, 'Finland', '367621-472W', 'ddreschler4a@miibeian.gov.cn', 'Diann', 'Dreschler'),
-(30156, 'Finland', '343655-976R', 'omcwaters4b@vkontakte.ru', 'Opaline', 'McWaters'),
-(30157, 'Norway', '885527-540B', 'egelly4c@bbc.co.uk', 'Earle', 'Gelly'),
-(30158, 'Sweden', '669191-271M', 'gheight4d@skype.com', 'Gillian', 'Height'),
-(30159, 'Sweden', '147866-551S', 'ygleadle4e@stumbleupon.com', 'Yasmin', 'Gleadle'),
-(30160, 'Sweden', '382605-919F', 'dtrimme4f@arstechnica.com', 'Douglass', 'Trimme'),
-(30161, 'Sweden', '838908-138B', 'hlandrick4g@stanford.edu', 'Hermione', 'Landrick'),
-(30162, 'Sweden', '786288-323Z', 'hrowlett4h@mlb.com', 'Howie', 'Rowlett'),
-(30163, 'Sweden', '394372-923I', 'obollom4i@reuters.com', 'Odele', 'Bollom'),
-(30164, 'Sweden', '310402-727F', 'kjosefsen4j@ask.com', 'Katy', 'Josefsen'),
-(30165, 'Finland', '950963-088D', 'kmctrustrie4k@elpais.com', 'Kalie', 'McTrustrie'),
-(30166, 'Sweden', '601945-131Z', 'lfowle4l@state.gov', 'Lorri', 'Fowle'),
-(30167, 'Sweden', '726226-662T', 'averson4m@census.gov', 'Adi', 'Verson'),
-(30168, 'Sweden', '690966-061H', 'sfarlambe4n@unblog.fr', 'Silvanus', 'Farlambe'),
-(30169, 'Norway', '028490-876N', 'cstallard4o@cafepress.com', 'Colman', 'Stallard'),
-(30170, 'Sweden', '220018-308F', 'pbrettell4p@aol.com', 'Phillie', 'Brettell'),
-(30171, 'Sweden', '795419-691Z', 'barmstrong4q@webs.com', 'Bartolomeo', 'Armstrong'),
-(30172, 'Sweden', '183652-123G', 'pchampney4r@slideshare.net', 'Parsifal', 'Champney'),
-(30173, 'Sweden', '539283-106A', 'mgladdis4s@ocn.ne.jp', 'Maddy', 'Gladdis'),
-(30174, 'Sweden', '392296-500B', 'gbunhill4t@wisc.edu', 'Goldi', 'Bunhill'),
-(30175, 'Finland', '998918-900D', 'aweeks4u@yolasite.com', 'Abbie', 'Weeks'),
-(30176, 'Sweden', '314046-974R', 'jsudlow4v@dagondesign.com', 'Jacquelynn', 'Sudlow'),
-(30177, 'Norway', '333951-465F', 'nacklands4w@gnu.org', 'Niko', 'Acklands'),
-(30178, 'Sweden', '824223-068E', 'lthewlis4x@mozilla.org', 'Lura', 'Thewlis'),
-(30179, 'Sweden', '198421-039N', 'bdorward4y@opera.com', 'Bran', 'Dorward'),
-(30180, 'Sweden', '716754-037T', 'lhumbell4z@auda.org.au', 'Lizette', 'Humbell'),
-(30181, 'Finland', '662437-870F', 'bkellogg50@hostgator.com', 'Bail', 'Kellogg'),
-(30182, 'Finland', '380954-596E', 'vkofax51@mashable.com', 'Vinnie', 'Kofax'),
-(30183, 'Sweden', '897562-492V', 'hwolfinger52@tinypic.com', 'Homerus', 'Wolfinger'),
-(30184, 'Finland', '600421-873B', 'acarrier53@arstechnica.com', 'Aeriela', 'Carrier'),
-(30185, 'Sweden', '950502-465Q', 'blingner54@twitter.com', 'Bram', 'Lingner'),
-(30186, 'Sweden', '713692-356N', 'rdoorly55@marriott.com', 'Ruprecht', 'Doorly'),
-(30187, 'Sweden', '101162-519P', 'tkidson56@vkontakte.ru', 'Thaine', 'Kidson'),
-(30188, 'Sweden', '109107-925B', 'greace57@ow.ly', 'Gran', 'Reace'),
-(30189, 'Sweden', '667646-951L', 'carnecke58@chron.com', 'Cynthia', 'Arnecke'),
-(30190, 'Sweden', '740445-638E', 'tkeling59@hubpages.com', 'Tawnya', 'Keling'),
-(30191, 'Finland', '148497-507J', 'rhallatt5a@wikispaces.com', 'Rowney', 'Hallatt'),
-(30192, 'Sweden', '778895-091S', 'acurro5b@github.io', 'Andriana', 'Curro'),
-(30193, 'Sweden', '925272-120E', 'vtythe5c@ucla.edu', 'Victoria', 'Tythe'),
-(30194, 'Sweden', '405663-285Q', 'ehingeley5d@va.gov', 'Elisha', 'Hingeley'),
-(30195, 'Finland', '999805-166L', 'kjuschka5e@angelfire.com', 'Ken', 'Juschka'),
-(30196, 'Norway', '145469-408T', 'pbrekonridge5f@topsy.com', 'Patrizio', 'Brekonridge'),
-(30197, 'Norway', '305694-920Y', 'bfaier5g@shutterfly.com', 'Barri', 'Faier'),
-(30198, 'Sweden', '621864-485I', 'mvallender5h@yellowbook.com', 'Meagan', 'Vallender'),
-(30199, 'Norway', '750312-265S', 'msearston5i@yolasite.com', 'Melba', 'Searston'),
-(30200, 'Finland', '232056-682C', 'wfeedham5j@buzzfeed.com', 'Wally', 'Feedham'),
-(30201, 'Sweden', '812129-791J', 'amcdonnell5k@example.com', 'Alvina', 'McDonnell'),
-(30202, 'Sweden', '387536-404N', 'adivill5l@nasa.gov', 'Addi', 'Divill'),
-(30203, 'Sweden', '299459-538T', 'bbrazil5m@simplemachines.org', 'Bron', 'Brazil'),
-(30204, 'Sweden', '945126-120R', 'mwoller5n@fc2.com', 'Morly', 'Woller'),
-(30205, 'Finland', '085878-445A', 'mlamyman5o@google.com.au', 'Mireille', 'Lamyman'),
-(30206, 'Norway', '769276-171B', 'fberryman5p@ft.com', 'Freeman', 'Berryman'),
-(30207, 'Norway', '895212-441Q', 'eschroter5q@stumbleupon.com', 'Erika', 'Schroter'),
-(30208, 'Sweden', '517817-778U', 'jcordeiro5r@google.co.uk', 'Jon', 'Cordeiro'),
-(30209, 'Sweden', '048708-099Y', 'gtutill5s@hexun.com', 'Gaelan', 'Tutill'),
-(30210, 'Sweden', '615157-855U', 'bbowgen5t@toplist.cz', 'Brear', 'Bowgen'),
-(30211, 'Sweden', '965480-526P', 'rpomfrey5u@huffingtonpost.com', 'Rafi', 'Pomfrey'),
-(30212, 'Sweden', '015108-775W', 'sguilloneau5v@hhs.gov', 'Shirlene', 'Guilloneau'),
-(30213, 'Sweden', '251711-556M', 'rgrigoletti5w@sbwire.com', 'Renelle', 'Grigoletti'),
-(30214, 'Norway', '952013-440P', 'cmacrae5x@acquirethisname.com', 'Cece', 'Macrae'),
-(30215, 'Sweden', '079883-472T', 'imcvane5y@hexun.com', 'Iorgos', 'McVane'),
-(30216, 'Norway', '540521-718Z', 'icoathup5z@telegraph.co.uk', 'Isiahi', 'Coathup'),
-(30217, 'Sweden', '347698-887Z', 'srobel60@census.gov', 'Sheba', 'Robel'),
-(30218, 'Sweden', '061677-542N', 'dstirton61@usgs.gov', 'Donavon', 'Stirton'),
-(30219, 'Sweden', '656284-176G', 'poffer62@addtoany.com', 'Pearl', 'Offer'),
-(30220, 'Sweden', '640009-897L', 'fbrasseur63@unblog.fr', 'Frans', 'Brasseur'),
-(30221, 'Sweden', '202367-814B', 'dbeardsworth64@ucsd.edu', 'Donica', 'Beardsworth'),
-(30222, 'Norway', '734261-987W', 'rwinspare65@newsvine.com', 'Reg', 'Winspare'),
-(30223, 'Sweden', '211703-902W', 'hrothwell66@tmall.com', 'Hildagarde', 'Rothwell'),
-(30224, 'Finland', '607302-422T', 'eedsell67@gmpg.org', 'Emory', 'Edsell'),
-(30225, 'Sweden', '838992-263E', 'gdeporte68@dyndns.org', 'Gayleen', 'Deporte'),
-(30226, 'Sweden', '606048-813E', 'abangham69@macromedia.com', 'Ariella', 'Bangham'),
-(30227, 'Finland', '096573-714A', 'rbatrip6a@t.co', 'Rosalia', 'Batrip'),
-(30228, 'Norway', '573080-747U', 'ccabotto6b@theglobeandmail.com', 'Calley', 'Cabotto'),
-(30229, 'Sweden', '229103-590W', 'bgrieve6c@so-net.ne.jp', 'Billi', 'Grieve'),
-(30230, 'Sweden', '182169-588L', 'hmcgroarty6d@adobe.com', 'Haley', 'McGroarty'),
-(30231, 'Norway', '232691-469Q', 'gmandrake6e@dell.com', 'Gelya', 'Mandrake'),
-(30232, 'Finland', '302623-193Y', 'oloddon6f@so-net.ne.jp', 'Orrin', 'Loddon'),
-(30233, 'Finland', '386911-526J', 'tstockow6g@earthlink.net', 'Tabitha', 'Stockow'),
-(30234, 'Norway', '979994-226Z', 'bhaquin6h@dailymotion.com', 'Bertha', 'Haquin'),
-(30235, 'Sweden', '613624-879I', 'fbatters6i@craigslist.org', 'Faythe', 'Batters'),
-(30236, 'Sweden', '309770-904U', 'gvint6j@a8.net', 'Giovanni', 'Vint'),
-(30237, 'Sweden', '307444-787N', 'hpatriche6k@goo.ne.jp', 'Hilario', 'Patriche'),
-(30238, 'Sweden', '373761-136V', 'zcrimpe6l@51.la', 'Zoe', 'Crimpe'),
-(30239, 'Finland', '983271-486J', 'rdemschke6m@redcross.org', 'Ramona', 'Demschke'),
-(30240, 'Sweden', '550111-278A', 'chavock6n@ameblo.jp', 'Christiana', 'Havock'),
-(30241, 'Norway', '327601-796B', 'fpenswick6o@geocities.com', 'Fletch', 'Penswick'),
-(30242, 'Sweden', '879767-746I', 'jwestnage6p@histats.com', 'Jerrilyn', 'Westnage'),
-(30243, 'Sweden', '441741-208G', 'lomurtagh6q@privacy.gov.au', 'Lothaire', 'OMurtagh'),
-(30244, 'Finland', '936366-709K', 'ahorlock6r@jimdo.com', 'Alisun', 'Horlock'),
-(30245, 'Sweden', '240665-448X', 'ksendley6s@amazon.co.jp', 'Kenn', 'Sendley'),
-(30246, 'Finland', '191186-325L', 'jtomek6t@geocities.com', 'Jill', 'Tomek'),
-(30247, 'Sweden', '702018-633X', 'qgeddis6u@uol.com.br', 'Quinlan', 'Geddis'),
-(30248, 'Sweden', '236215-935W', 'rwindrum6v@ezinearticles.com', 'Rosy', 'Windrum'),
-(30249, 'Sweden', '175202-102L', 'imerfin6w@ucoz.com', 'Ignazio', 'Merfin'),
-(30250, 'Sweden', '911215-584E', 'vvardie6x@artisteer.com', 'Violette', 'Vardie'),
-(30251, 'Sweden', '305726-820A', 'apruckner6y@taobao.com', 'Arvy', 'Pruckner'),
-(30252, 'Sweden', '855697-393F', 'tlumsdaine6z@simplemachines.org', 'Tatum', 'Lumsdaine'),
-(30253, 'Sweden', '793216-878Z', 'jfannin70@51.la', 'Jerad', 'Fannin'),
-(30254, 'Finland', '143184-744C', 'cpennyman71@odnoklassniki.ru', 'Cristie', 'Pennyman'),
-(30255, 'Sweden', '798590-089V', 'vdunne72@bbb.org', 'Viole', 'Dunne'),
-(30256, 'Norway', '313218-412F', 'njozef73@hao123.com', 'Nigel', 'Jozef'),
-(30257, 'Sweden', '796296-082M', 'jmacieiczyk74@istockphoto.com', 'Jacky', 'Macieiczyk'),
-(30258, 'Sweden', '252652-090P', 'ganderton75@archive.org', 'Gan', 'Anderton'),
-(30259, 'Norway', '335464-602P', 'scoleyshaw76@vinaora.com', 'Stu', 'Coleyshaw'),
-(30260, 'Sweden', '395004-469S', 'dteaz77@cbsnews.com', 'Dominica', 'Teaz'),
-(30261, 'Sweden', '635669-844W', 'bpetris78@howstuffworks.com', 'Bettine', 'Petris'),
-(30262, 'Sweden', '675839-009C', 'spowles79@so-net.ne.jp', 'Stepha', 'Powles'),
-(30263, 'Sweden', '527773-358P', 'plashmar7a@netvibes.com', 'Pauly', 'Lashmar'),
-(30264, 'Sweden', '515663-024C', 'mtollerfield7b@ow.ly', 'Meredith', 'Tollerfield'),
-(30265, 'Sweden', '462090-693U', 'alebarre7c@ox.ac.uk', 'Aridatha', 'Le Barre'),
-(30266, 'Norway', '614563-494F', 'ahubbart7d@dagondesign.com', 'Anastasie', 'Hubbart'),
-(30267, 'Sweden', '489988-531O', 'bgooddy7e@dedecms.com', 'Blondelle', 'Gooddy'),
-(30268, 'Finland', '388271-646Z', 'bcotte7f@msn.com', 'Bastien', 'Cotte'),
-(30269, 'Sweden', '574274-802L', 'pcastagnaro7g@privacy.gov.au', 'Peyter', 'Castagnaro'),
-(30270, 'Sweden', '400374-198W', 'bsiggens7h@wikispaces.com', 'Britte', 'Siggens'),
-(30271, 'Sweden', '799168-474K', 'gbattyll7i@utexas.edu', 'Gualterio', 'Battyll'),
-(30272, 'Sweden', '994121-077W', 'nisaacson7j@washingtonpost.com', 'Nona', 'Isaacson'),
-(30273, 'Sweden', '825615-556L', 'dpirri7k@smh.com.au', 'Durand', 'Pirri'),
-(30274, 'Sweden', '496218-345C', 'akeoghan7l@mediafire.com', 'Aryn', 'Keoghan'),
-(30275, 'Sweden', '108135-310C', 'fdyne7m@spotify.com', 'Feodor', 'Dyne'),
-(30276, 'Norway', '318065-693F', 'bmeakin7n@washington.edu', 'Bent', 'Meakin'),
-(30277, 'Finland', '447928-199N', 'amixon7o@oakley.com', 'Aubert', 'Mixon'),
-(30278, 'Sweden', '725857-636R', 'ebascomb7p@plala.or.jp', 'Ewen', 'Bascomb'),
-(30279, 'Finland', '962576-068L', 'frentz7q@mysql.com', 'Francine', 'Rentz'),
-(30280, 'Sweden', '510062-333A', 'fklinck7r@quantcast.com', 'Fifine', 'Klinck'),
-(30281, 'Norway', '123145-809A', 'rerett7s@fc2.com', 'Richard', 'Erett'),
-(30282, 'Norway', '113433-932U', 'gbilson7t@google.com.hk', 'Gardie', 'Bilson'),
-(30283, 'Sweden', '849518-933C', 'bhavercroft7u@cnet.com', 'Brittan', 'Havercroft'),
-(30284, 'Sweden', '862682-872W', 'mduffet7v@nsw.gov.au', 'Monty', 'Duffet'),
-(30285, 'Sweden', '709034-394D', 'bnuss7w@cbslocal.com', 'Brett', 'Nuss'),
-(30286, 'Sweden', '301359-310S', 'lavey7x@feedburner.com', 'Lockwood', 'Avey'),
-(30287, 'Sweden', '319164-180Z', 'froeby7y@is.gd', 'Foster', 'Roeby'),
-(30288, 'Sweden', '096508-082M', 'kshakeshaft7z@time.com', 'Keven', 'Shakeshaft'),
-(30289, 'Sweden', '260342-120I', 'csweedy80@symantec.com', 'Carmella', 'Sweedy'),
-(30290, 'Sweden', '846299-321A', 'ctaggart81@myspace.com', 'Clovis', 'Taggart'),
-(30291, 'Sweden', '336350-720O', 'sgoldhill82@prlog.org', 'Shirlene', 'Goldhill'),
-(30292, 'Sweden', '260240-090K', 'cmart83@pen.io', 'Clerkclaude', 'Mart'),
-(30293, 'Finland', '600892-846L', 'jharcase84@usatoday.com', 'Janenna', 'Harcase'),
-(30294, 'Sweden', '585906-764Y', 'rlapslie85@so-net.ne.jp', 'Royall', 'Lapslie'),
-(30295, 'Sweden', '128238-584F', 'rdantonio86@cnn.com', 'Roanna', 'DAntonio'),
-(30296, 'Norway', '763349-759E', 'aspurr87@people.com.cn', 'Ardyce', 'Spurr'),
-(30297, 'Sweden', '648220-165M', 'rgaroghan88@goo.ne.jp', 'Roanne', 'Garoghan'),
-(30298, 'Sweden', '241283-919Y', 'wcotterell89@un.org', 'Willa', 'Cotterell'),
-(30299, 'Finland', '772552-654S', 'mfirmin8a@bloomberg.com', 'Moshe', 'Firmin'),
-(30300, 'Sweden', '727551-653T', 'fmaddison8b@sun.com', 'Filberte', 'Maddison'),
-(30301, 'Sweden', '171456-250L', 'fmacneill8c@istockphoto.com', 'Finley', 'MacNeill'),
-(30302, 'Norway', '392308-730X', 'rbamblett8d@shareasale.com', 'Rahal', 'Bamblett'),
-(30303, 'Sweden', '962031-152J', 'htrevan8e@rakuten.co.jp', 'Hephzibah', 'Trevan'),
-(30304, 'Sweden', '041061-914S', 'bbarfield8f@sciencedirect.com', 'Barton', 'Barfield'),
-(30305, 'Finland', '326471-838Z', 'cludlom8g@deviantart.com', 'Carlyle', 'Ludlom'),
-(30306, 'Sweden', '433944-734K', 'preadman8h@blogger.com', 'Pru', 'Readman'),
-(30307, 'Finland', '239188-635S', 'eottiwill8i@imdb.com', 'Elenore', 'Ottiwill'),
-(30308, 'Finland', '144793-964F', 'santonazzi8j@springer.com', 'Stinky', 'Antonazzi'),
-(30309, 'Finland', '967531-534M', 'gaddlestone8k@bluehost.com', 'Gert', 'Addlestone'),
-(30310, 'Sweden', '149688-502O', 'jortsmann8l@japanpost.jp', 'Jesus', 'Ortsmann'),
-(30311, 'Sweden', '455113-785X', 'ljeandel8m@ft.com', 'Levon', 'Jeandel'),
-(30312, 'Sweden', '439042-212N', 'jmcmechan8n@issuu.com', 'Jorgan', 'Mc Mechan'),
-(30313, 'Finland', '883724-972V', 'aoldacres8o@wikispaces.com', 'Arabela', 'Oldacres'),
-(30314, 'Sweden', '359221-297E', 'wborgnol8p@umich.edu', 'Willy', 'Borgnol'),
-(30315, 'Norway', '393778-286I', 'tmathey8q@sogou.com', 'Tobe', 'Mathey'),
-(30316, 'Sweden', '952012-090E', 'dambrogini8r@princeton.edu', 'Dan', 'Ambrogini'),
-(30317, 'Sweden', '102768-018C', 'dcottisford8s@ft.com', 'Dalton', 'Cottisford'),
-(30318, 'Sweden', '544976-263I', 'sstanistrete8t@fc2.com', 'Salvidor', 'Stanistrete'),
-(30319, 'Sweden', '049322-616F', 'iprahm8u@google.ca', 'Ignacius', 'Prahm'),
-(30320, 'Sweden', '153713-651C', 'svickarman8v@wikia.com', 'Sherline', 'Vickarman'),
-(30321, 'Sweden', '544852-947Z', 'kantoniottii8w@alibaba.com', 'Klemens', 'Antoniottii'),
-(30322, 'Sweden', '622214-099E', 'oamberg8x@dedecms.com', 'Obediah', 'Amberg'),
-(30323, 'Norway', '479883-235C', 'dnewvell8y@squarespace.com', 'Devlen', 'Newvell'),
-(30324, 'Sweden', '382206-413X', 'dscotter8z@bloomberg.com', 'Duncan', 'Scotter'),
-(30325, 'Sweden', '798207-295H', 'jmcclements90@freewebs.com', 'Jeniece', 'McClements'),
-(30326, 'Sweden', '936366-222Q', 'nlillyman91@nydailynews.com', 'Noland', 'Lillyman'),
-(30327, 'Sweden', '688242-863B', 'mgilder92@networkadvertising.org', 'Merrill', 'Gilder'),
-(30328, 'Sweden', '845758-824I', 'yskingley93@ted.com', 'Yetty', 'Skingley'),
-(30329, 'Sweden', '340693-897W', 'tnaile94@ca.gov', 'Tabbi', 'Naile'),
-(30330, 'Sweden', '461800-266U', 'cbeevor95@abc.net.au', 'Cristabel', 'Beevor'),
-(30331, 'Sweden', '319031-979J', 'fshakesbye96@jiathis.com', 'Fred', 'Shakesbye'),
-(30332, 'Sweden', '846500-790Q', 'sputtan97@examiner.com', 'Sarine', 'Puttan'),
-(30333, 'Sweden', '973890-113P', 'jfryer98@cdc.gov', 'Jamima', 'Fryer'),
-(30334, 'Sweden', '123784-016X', 'hmonroe99@hhs.gov', 'Hallsy', 'Monroe'),
-(30335, 'Sweden', '690491-483G', 'adrysdell9a@google.co.jp', 'Angelina', 'Drysdell'),
-(30336, 'Finland', '634814-758U', 'lmancer9b@dedecms.com', 'Leon', 'Mancer'),
-(30337, 'Sweden', '000831-261T', 'abisley9c@bbb.org', 'Auberta', 'Bisley'),
-(30338, 'Sweden', '829518-328T', 'krhucroft9d@cbsnews.com', 'Karlen', 'Rhucroft'),
-(30339, 'Sweden', '659839-311P', 'cellery9e@arstechnica.com', 'Cornell', 'Ellery'),
-(30340, 'Norway', '666204-667D', 'cmaudett9f@yandex.ru', 'Celene', 'Maudett'),
-(30341, 'Norway', '005783-232M', 'mdoreward9g@timesonline.co.uk', 'Marcellina', 'Doreward'),
-(30342, 'Norway', '460734-012Z', 'ieitter9h@tumblr.com', 'Ivor', 'Eitter'),
-(30343, 'Sweden', '983894-678M', 'jbastone9i@ibm.com', 'Jasun', 'Bastone'),
-(30344, 'Sweden', '464653-476D', 'tstede9j@statcounter.com', 'Teddie', 'Stede'),
-(30345, 'Sweden', '450873-539Z', 'apotzold9k@yahoo.com', 'Arly', 'Potzold'),
-(30346, 'Norway', '336216-988S', 'scarcas9l@ibm.com', 'Shaine', 'Carcas'),
-(30347, 'Sweden', '509320-465R', 'chaney9m@google.fr', 'Clem', 'Haney'),
-(30348, 'Sweden', '692019-942D', 'crestieaux9n@cnet.com', 'Clive', 'Restieaux'),
-(30349, 'Sweden', '157693-973W', 'rcarlett9o@yandex.ru', 'Ritchie', 'Carlett'),
-(30350, 'Sweden', '266270-280L', 'ncarver9p@shutterfly.com', 'Nonie', 'Carver'),
-(30351, 'Sweden', '988898-439E', 'rolpin9q@slideshare.net', 'Rabi', 'Olpin'),
-(30352, 'Finland', '241739-448T', 'cleivesley9r@fastcompany.com', 'Constantina', 'Leivesley'),
-(30353, 'Sweden', '386767-209C', 'aforlong9s@businessweek.com', 'Alla', 'Forlong'),
-(30354, 'Sweden', '979780-053A', 'fewbanks9t@nsw.gov.au', 'Faustine', 'Ewbanks'),
-(30355, 'Sweden', '097899-689U', 'bkopfer9u@yelp.com', 'Brandyn', 'Kopfer'),
-(30356, 'Norway', '039430-413V', 'echipping9v@123-reg.co.uk', 'Elie', 'Chipping'),
-(30357, 'Sweden', '233503-619W', 'bfollin9w@mediafire.com', 'Blanca', 'Follin'),
-(30358, 'Finland', '000783-439W', 'cstartin9x@wsj.com', 'Cedric', 'Startin'),
-(30359, 'Sweden', '128512-913S', 'bfurlong9y@disqus.com', 'Berty', 'Furlong'),
-(30360, 'Sweden', '124164-497I', 'rranyell9z@youtu.be', 'Rani', 'Ranyell'),
-(30361, 'Sweden', '140711-680Z', 'astanlicka0@godaddy.com', 'Agretha', 'Stanlick'),
-(30362, 'Sweden', '222805-722Q', 'ibolzena1@nbcnews.com', 'Iorgo', 'Bolzen'),
-(30363, 'Sweden', '696597-836V', 'mellita2@dropbox.com', 'Moina', 'Ellit'),
-(30364, 'Finland', '800233-501X', 'ltreagusta3@technorati.com', 'Lesya', 'Treagust'),
-(30365, 'Sweden', '890770-543J', 'asheara4@foxnews.com', 'Adeline', 'Shear'),
-(30366, 'Finland', '072614-527Q', 'emenezesa5@loc.gov', 'Evangelia', 'Menezes'),
-(30367, 'Sweden', '908770-594D', 'wchildrena6@dailymotion.com', 'Woody', 'Children'),
-(30368, 'Sweden', '862919-222C', 'dgorriesa7@google.com.au', 'Debbie', 'Gorries'),
-(30369, 'Norway', '524959-749Q', 'equodlinga8@unblog.fr', 'Eugenio', 'Quodling'),
-(30370, 'Sweden', '442498-417E', 'nwhittletona9@themeforest.net', 'Normie', 'Whittleton'),
-(30371, 'Sweden', '997697-163Z', 'dshelfordaa@paginegialle.it', 'Desi', 'Shelford'),
-(30372, 'Sweden', '482966-022B', 'cscotsbrookab@hexun.com', 'Cecil', 'Scotsbrook'),
-(30373, 'Norway', '810481-849U', 'hpaolucciac@artisteer.com', 'Honey', 'Paolucci'),
-(30374, 'Sweden', '975894-431H', 'mkensetad@dedecms.com', 'Mari', 'Kenset'),
-(30375, 'Finland', '624689-619T', 'fateggartae@goo.gl', 'Farra', 'Ateggart'),
-(30376, 'Sweden', '283186-121U', 'eiacovidesaf@prnewswire.com', 'Eolanda', 'Iacovides'),
-(30377, 'Sweden', '795024-607L', 'jsymcoxag@cyberchimps.com', 'Joleen', 'Symcox'),
-(30378, 'Sweden', '505283-748T', 'tstanhopeah@google.fr', 'Tracey', 'Stanhope'),
-(30379, 'Sweden', '363448-781J', 'cstreatfieldai@tmall.com', 'Cassandry', 'Streatfield'),
-(30380, 'Finland', '388020-889F', 'pspackmanaj@hubpages.com', 'Philis', 'Spackman'),
-(30381, 'Sweden', '643672-164L', 'kgwillymak@hostgator.com', 'Kippar', 'Gwillym'),
-(30382, 'Sweden', '116796-558U', 'pcollumal@jugem.jp', 'Pavia', 'Collum'),
-(30383, 'Sweden', '148165-698U', 'rgreesonam@digg.com', 'Renaldo', 'Greeson'),
-(30384, 'Sweden', '467445-015L', 'nvaughanan@chicagotribune.com', 'Natty', 'Vaughan'),
-(30385, 'Finland', '364547-730K', 'jzanussiiao@alibaba.com', 'Jenifer', 'Zanussii'),
-(30386, 'Sweden', '038641-954F', 'tcanepeap@prlog.org', 'Torrance', 'Canepe'),
-(30387, 'Norway', '462682-917Y', 'cdorkingaq@umich.edu', 'Cale', 'Dorking'),
-(30388, 'Sweden', '332343-617K', 'atembyar@army.mil', 'Ase', 'Temby'),
-(30389, 'Sweden', '634703-112A', 'ddahlbackas@ow.ly', 'Daven', 'Dahlback'),
-(30390, 'Norway', '640343-894B', 'aburchessat@ovh.net', 'Addia', 'Burchess'),
-(30391, 'Sweden', '763151-722T', 'efrobisherau@amazonaws.com', 'Evin', 'Frobisher'),
-(30392, 'Finland', '143303-615O', 'soruddenav@ftc.gov', 'Sherwin', 'ORudden'),
-(30393, 'Finland', '869075-125W', 'ebeddisaw@sciencedirect.com', 'Evelyn', 'Beddis'),
-(30394, 'Sweden', '492549-410A', 'ddetloffax@timesonline.co.uk', 'Dermot', 'Detloff'),
-(30395, 'Sweden', '692760-542O', 'fainsbyay@bloglines.com', 'Freeland', 'Ainsby'),
-(30396, 'Sweden', '176546-642W', 'ltombsaz@nature.com', 'Lovell', 'Tombs'),
-(30397, 'Sweden', '356944-520T', 'cbellanyb0@comcast.net', 'Caz', 'Bellany'),
-(30398, 'Sweden', '695678-641O', 'tfulleyloveb1@sfgate.com', 'Tanitansy', 'Fulleylove'),
-(30399, 'Sweden', '936462-311O', 'mwoofendellb2@upenn.edu', 'Marlene', 'Woofendell'),
-(30400, 'Sweden', '112356-989S', 'crabbetb3@xrea.com', 'Corinne', 'Rabbet'),
-(30401, 'Sweden', '059535-595T', 'ckernockb4@bandcamp.com', 'Christan', 'Kernock'),
-(30402, 'Sweden', '427279-623W', 'lriccib5@mit.edu', 'Lurline', 'Ricci'),
-(30403, 'Finland', '258792-392P', 'jgorkeb6@google.co.uk', 'Jeff', 'Gorke'),
-(30404, 'Sweden', '275809-568U', 'adudmanb7@newyorker.com', 'Allyn', 'Dudman'),
-(30405, 'Norway', '165381-251V', 'vdunnettb8@imdb.com', 'Vasili', 'Dunnett'),
-(30406, 'Norway', '776903-931S', 'esimionib9@usnews.com', 'Elane', 'Simioni'),
-(30407, 'Sweden', '785282-778A', 'ndoylandba@furl.net', 'Ninon', 'Doyland'),
-(30408, 'Finland', '514683-106F', 'agrishkovbb@ucsd.edu', 'Adella', 'Grishkov'),
-(30409, 'Finland', '433114-431A', 'rparemanbc@ehow.com', 'Ruthann', 'Pareman'),
-(30410, 'Sweden', '106301-297K', 'cmarkosbd@hatena.ne.jp', 'Ches', 'Markos'),
-(30411, 'Sweden', '611562-427C', 'rcoggellbe@gmpg.org', 'Rodd', 'Coggell'),
-(30412, 'Sweden', '146550-754W', 'bcrowcumbf@ow.ly', 'Brandy', 'Crowcum'),
-(30413, 'Sweden', '406221-337M', 'vlavillebg@soup.io', 'Virgil', 'Laville'),
-(30414, 'Sweden', '409297-868M', 'erankmorebh@4shared.com', 'Evangelin', 'Rankmore'),
-(30415, 'Finland', '726027-463A', 'etwinbournebi@blog.com', 'Elnar', 'Twinbourne'),
-(30416, 'Finland', '004018-256P', 'cantoniewskibj@slashdot.org', 'Christoper', 'Antoniewski'),
-(30417, 'Norway', '577907-571I', 'msorbiebk@lulu.com', 'Maude', 'Sorbie'),
-(30418, 'Finland', '246858-898Z', 'squippbl@epa.gov', 'Stephani', 'Quipp'),
-(30419, 'Finland', '155525-570Z', 'cbleierbm@pagesperso-orange.fr', 'Corrianne', 'Bleier'),
-(30420, 'Sweden', '346537-164F', 'vscarsbrickbn@de.vu', 'Vachel', 'Scarsbrick'),
-(30421, 'Finland', '644319-976M', 'lyegoshinbo@weibo.com', 'Lucho', 'Yegoshin'),
-(30422, 'Finland', '213770-647Q', 'schadbp@tamu.edu', 'Stormy', 'Chad'),
-(30423, 'Sweden', '381851-648N', 'eshuttellbq@1und1.de', 'Eryn', 'Shuttell'),
-(30424, 'Sweden', '601825-337Q', 'hpawlettbr@linkedin.com', 'Hoyt', 'Pawlett'),
-(30425, 'Sweden', '195353-372G', 'csuttiebs@delicious.com', 'Creight', 'Suttie'),
-(30426, 'Finland', '977807-590M', 'cmcmorranbt@angelfire.com', 'Carolynn', 'McMorran'),
-(30427, 'Sweden', '188388-245B', 'aovernellbu@upenn.edu', 'Angela', 'Overnell'),
-(30428, 'Norway', '788708-212G', 'vallcottbv@a8.net', 'Vicki', 'Allcott'),
-(30429, 'Sweden', '349303-737W', 'jellulbw@bbc.co.uk', 'Jeremiah', 'Ellul'),
-(30430, 'Norway', '414453-606K', 'kbrogiottibx@google.co.jp', 'Kelsey', 'Brogiotti'),
-(30431, 'Sweden', '272153-694D', 'ajohlby@wikia.com', 'Alanna', 'Johl'),
-(30432, 'Norway', '695802-105D', 'smcturloughbz@yahoo.com', 'Sallyann', 'McTurlough'),
-(30433, 'Sweden', '697258-748S', 'jdawidsohnc0@smh.com.au', 'Jocelin', 'Dawidsohn'),
-(30434, 'Finland', '346822-707K', 'nleekec1@sogou.com', 'Nalani', 'Leeke'),
-(30435, 'Finland', '711552-164J', 'sjenkingc2@macromedia.com', 'Sascha', 'Jenking'),
-(30436, 'Finland', '874758-463U', 'thearnamanc3@slideshare.net', 'Tommy', 'Hearnaman'),
-(30437, 'Sweden', '184270-284E', 'tjervoisc4@mlb.com', 'Tanner', 'Jervois'),
-(30438, 'Sweden', '564494-313X', 'dstainsc5@ed.gov', 'Deane', 'Stains'),
-(30439, 'Norway', '520365-683H', 'cdevericksc6@java.com', 'Calhoun', 'Devericks'),
-(30440, 'Finland', '227964-754E', 'iyeilesc7@nih.gov', 'Izak', 'Yeiles'),
-(30441, 'Sweden', '544652-553N', 'anisardc8@symantec.com', 'Amata', 'Nisard'),
-(30442, 'Sweden', '656533-645W', 'bblazyc9@hugedomains.com', 'Bonnie', 'Blazy'),
-(30443, 'Sweden', '376298-325P', 'lpuddefootca@pbs.org', 'Loutitia', 'Puddefoot'),
-(30444, 'Sweden', '702184-276A', 'ljolincb@multiply.com', 'Lorens', 'Jolin'),
-(30445, 'Sweden', '635858-364X', 'spoulsencc@indiegogo.com', 'Sher', 'Poulsen'),
-(30446, 'Sweden', '854420-125K', 'cjeschnercd@shinystat.com', 'Car', 'Jeschner'),
-(30447, 'Sweden', '535619-238D', 'rgodlipce@chron.com', 'Rockwell', 'Godlip'),
-(30448, 'Sweden', '678615-845W', 'jsilversmidcf@spiegel.de', 'Janek', 'Silversmid'),
-(30449, 'Sweden', '741964-782T', 'wfullomcg@t-online.de', 'Weylin', 'Fullom'),
-(30450, 'Norway', '861373-128N', 'hfarfullch@ifeng.com', 'Huberto', 'Farfull'),
-(30451, 'Norway', '710370-300Q', 'rtowci@constantcontact.com', 'Roberto', 'Tow'),
-(30452, 'Sweden', '161426-268O', 'edeardscj@irs.gov', 'Erin', 'Deards'),
-(30453, 'Finland', '917933-660Y', 'fbaudick@wordpress.com', 'Ferd', 'Baudi'),
-(30454, 'Sweden', '787084-512C', 'swrefordcl@1und1.de', 'Sophey', 'Wreford'),
-(30455, 'Norway', '735021-029Y', 'rforsoncm@furl.net', 'Rouvin', 'Forson'),
-(30456, 'Sweden', '965629-681Z', 'rchelnamcn@ihg.com', 'Ronnie', 'Chelnam'),
-(30457, 'Finland', '352487-203G', 'cmaccallionco@stumbleupon.com', 'Clevey', 'MacCallion'),
-(30458, 'Finland', '875367-771V', 'rpowleycp@hostgator.com', 'Roxi', 'Powley'),
-(30459, 'Sweden', '519231-724J', 'lcorkellcq@phoca.cz', 'Lenee', 'Corkell'),
-(30460, 'Sweden', '866286-520K', 'smcphadencr@deviantart.com', 'Stormy', 'McPhaden'),
-(30461, 'Sweden', '186676-111S', 'agillittcs@topsy.com', 'Alfonse', 'Gillitt'),
-(30462, 'Sweden', '860403-107L', 'mriggertct@comsenz.com', 'Morley', 'Riggert'),
-(30463, 'Sweden', '139110-813V', 'gwalickicu@meetup.com', 'Gabriellia', 'Walicki'),
-(30464, 'Sweden', '794158-098F', 'gzealycv@google.ca', 'Gayleen', 'Zealy'),
-(30465, 'Sweden', '725876-273E', 'ssouthcoatcw@dailymotion.com', 'Shaw', 'Southcoat'),
-(30466, 'Sweden', '397513-552C', 'mdepinnacx@wsj.com', 'Muffin', 'de Pinna'),
-(30467, 'Sweden', '743511-597D', 'awinklecy@wired.com', 'Arnold', 'Winkle'),
-(30468, 'Finland', '576293-687S', 'cgamagecz@plala.or.jp', 'Cyril', 'Gamage'),
-(30469, 'Sweden', '490173-015O', 'rhebardd0@tiny.cc', 'Rowland', 'Hebard'),
-(30470, 'Sweden', '500890-304A', 'nkamienskid1@senate.gov', 'Noelani', 'Kamienski'),
-(30471, 'Finland', '270764-853I', 'kgannand2@reddit.com', 'Kym', 'Gannan'),
-(30472, 'Sweden', '840396-868O', 'mclausend3@artisteer.com', 'Miles', 'Clausen'),
-(30473, 'Sweden', '508194-714X', 'ndowleyd4@youku.com', 'Nevins', 'Dowley'),
-(30474, 'Sweden', '268224-915H', 'pkepped5@i2i.jp', 'Portie', 'Keppe'),
-(30475, 'Sweden', '414815-631Z', 'amccullockd6@sciencedaily.com', 'Alicea', 'McCullock'),
-(30476, 'Sweden', '357153-214Y', 'sfeldkleind7@tripod.com', 'Sophronia', 'Feldklein'),
-(30477, 'Sweden', '706442-107U', 'sfrosdickd8@histats.com', 'Shirline', 'Frosdick'),
-(30478, 'Sweden', '815144-989J', 'swrasselld9@stanford.edu', 'Sheena', 'Wrassell'),
-(30479, 'Sweden', '085771-707C', 'bsargersonda@wix.com', 'Benedikt', 'Sargerson'),
-(30480, 'Sweden', '342203-874F', 'gmallettdb@archive.org', 'Guinevere', 'Mallett'),
-(30481, 'Sweden', '837067-849X', 'kshippeydc@squidoo.com', 'Kennedy', 'Shippey'),
-(30482, 'Sweden', '750669-530M', 'rpadlydd@cpanel.net', 'Reece', 'Padly'),
-(30483, 'Sweden', '915942-163Z', 'plaunchburyde@skyrock.com', 'Perice', 'Launchbury'),
-(30484, 'Sweden', '788177-829A', 'wcarderodf@seesaa.net', 'Willdon', 'Cardero'),
-(30485, 'Sweden', '504051-018P', 'knoldadg@geocities.com', 'Klaus', 'Nolda'),
-(30486, 'Sweden', '579259-596U', 'cbrownleedh@live.com', 'Claribel', 'Brownlee'),
-(30487, 'Sweden', '203544-962K', 'cgilmoredi@reference.com', 'Caleb', 'Gilmore'),
-(30488, 'Sweden', '880512-815S', 'ddenesdj@wordpress.com', 'Daffy', 'Denes'),
-(30489, 'Sweden', '367146-942M', 'kreadittdk@taobao.com', 'Kikelia', 'Readitt'),
-(30490, 'Finland', '581968-305Z', 'jberdaledl@techcrunch.com', 'Jami', 'Berdale'),
-(30491, 'Sweden', '870009-296C', 'bbleslidm@google.nl', 'Bartram', 'Blesli'),
-(30492, 'Sweden', '761391-106O', 'fbowleydn@princeton.edu', 'Frannie', 'Bowley'),
-(30493, 'Sweden', '236871-255I', 'pmilhenchdo@economist.com', 'Patricia', 'Milhench'),
-(30494, 'Sweden', '575515-818D', 'nlardezdp@senate.gov', 'Nollie', 'Lardez'),
-(30495, 'Sweden', '341913-448I', 'smcaveydq@netlog.com', 'Shepherd', 'McAvey'),
-(30496, 'Norway', '943077-454T', 'geilertdr@shop-pro.jp', 'Gawen', 'Eilert'),
-(30497, 'Sweden', '370476-214V', 'ilaidlerds@meetup.com', 'Isabel', 'Laidler'),
-(30498, 'Finland', '905742-342N', 'nmalleydt@soup.io', 'Nigel', 'Malley'),
-(30499, 'Finland', '470592-572C', 'dclynterdu@shinystat.com', 'Donny', 'Clynter'),
-(30500, 'Sweden', '512333-108P', 'upaskdv@gmpg.org', 'Urban', 'Pask'),
-(0, 'Finland', '456878-1458', 'user@mail.com', 'First', 'Last');
 
-INSERT INTO inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, oct_scan_ref, visual_field_ref, inspection_time, login_token) VALUES
-(40001, 30307, 'Finland', 10029, 'Sweden', 20013, 'Sweden', 'Sweden', 6295407, 1140929, 7435766, '2020-03-16 22:28:55', 'YCFB-I4TV-5CVQ'),
-(40002, 30340, 'Norway', 10003, 'Sweden', 20012, 'Norway', 'Sweden', 7516048, 8448326, 8772627, '2020-05-16 13:14:33', 'O0UO-LFUZ-DF9D'),
-(40003, 30288, 'Sweden', 10026, 'Sweden', 20031, 'Sweden', 'Sweden', 1019417, 8999872, 3290099, '2020-04-22 08:02:06', 'MS1O-271E-N5EC'),
-(40004, 30230, 'Sweden', 10015, 'Norway', 20041, 'Sweden', 'Norway', 9491703, 1775530, 7297439, '2020-11-23 05:54:33', 'JRIH-29VJ-NR06'),
-(40005, 30102, 'Sweden', 10017, 'Sweden', 20021, 'Sweden', 'Sweden', 1997100, 5650017, 5950103, '2020-09-13 16:05:34', 'UPJ4-32BX-UIC4'),
-(40006, 30033, 'Sweden', 10050, 'Finland', 20017, 'Finland', 'Finland', 9530613, 7461384, 1003862, '2020-10-18 08:39:30', 'XF4Y-080M-ZC89'),
-(40007, 30398, 'Sweden', 10048, 'Sweden', 20025, 'Norway', 'Sweden', 1638505, 1096326, 8994762, '2020-01-27 22:33:56', '3YM5-41GN-DF9D'),
-(40008, 30321, 'Sweden', 10017, 'Sweden', 20021, 'Sweden', 'Sweden', 6463629, 7014748, 6632421, '2020-02-22 01:05:36', 'ZQL1-7D3R-FUC0'),
-(40009, 30053, 'Finland', 10021, 'Sweden', 20041, 'Sweden', 'Sweden', 3403529, 5191491, 7693506, '2020-07-23 00:34:10', 'J2UM-14X1-6204'),
-(40010, 30440, 'Finland', 10045, 'Finland', 20026, 'Sweden', 'Finland', 9002856, 1588893, 5663373, '2020-02-19 13:01:40', 'YWXN-QHN5-UFC9'),
-(40011, 30154, 'Sweden', 10024, 'Sweden', 20003, 'Finland', 'Sweden', 2192507, 4479400, 6243678, '2020-04-22 16:38:07', 'SLOL-13AX-IYRX'),
-(40012, 30486, 'Sweden', 10010, 'Sweden', 20043, 'Sweden', 'Sweden', 5702785, 4360676, 9044210, '2020-07-30 23:36:48', 'JH9W-V0RA-11VK'),
-(40013, 30068, 'Sweden', 10003, 'Sweden', 20039, 'Sweden', 'Sweden', 7274098, 4286001, 2879246, '2020-07-08 08:36:49', '5K40-ZFO1-WOAI'),
-(40014, 30456, 'Sweden', 10027, 'Norway', 20049, 'Sweden', 'Norway', 8573125, 9655969, 3869627, '2020-07-11 17:16:53', 'S4BK-NLQM-E1K8'),
-(40015, 30003, 'Sweden', 10021, 'Sweden', 20018, 'Sweden', 'Sweden', 1148150, 9336472, 7265588, '2020-10-03 17:29:55', 'A6CF-GTD2-L4Y6'),
-(40016, 30060, 'Sweden', 10001, 'Sweden', 20021, 'Sweden', 'Sweden', 2640507, 8635851, 8568822, '2020-09-11 20:03:42', '8IOY-D70Z-TJLF'),
-(40017, 30409, 'Finland', 10011, 'Finland', 20046, 'Sweden', 'Finland', 9940818, 4397839, 6406872, '2020-03-17 03:31:38', 'ELMZ-RI83-Y97T'),
-(40018, 30384, 'Sweden', 10039, 'Sweden', 20013, 'Sweden', 'Sweden', 6304697, 7442273, 4585531, '2019-12-24 14:26:12', 'ETVU-YI9V-MB1A'),
-(40019, 30098, 'Sweden', 10042, 'Sweden', 20037, 'Sweden', 'Sweden', 4629687, 1249822, 6615320, '2020-05-02 09:04:24', '79FH-24NV-0BMF'),
-(40020, 30486, 'Sweden', 10025, 'Norway', 20046, 'Sweden', 'Norway', 1675915, 9688388, 7688624, '2020-04-09 10:06:45', 'E5IG-ZPVL-ATDV'),
-(40021, 30462, 'Sweden', 10002, 'Sweden', 20042, 'Sweden', 'Sweden', 6092047, 7076153, 3502043, '2020-10-10 11:58:20', 'O38S-OJDS-HUKP'),
-(40022, 30192, 'Sweden', 10015, 'Norway', 20010, 'Sweden', 'Norway', 3755722, 3813032, 5269140, '2019-12-31 04:59:21', 'FYNW-06OE-7Q9M'),
-(40023, 30178, 'Sweden', 10047, 'Sweden', 20034, 'Sweden', 'Sweden', 1542679, 5967327, 7497027, '2020-06-20 20:08:58', '0J9L-ZEMZ-SG2Q'),
-(40024, 30110, 'Sweden', 10001, 'Sweden', 20014, 'Sweden', 'Sweden', 4923106, 3862096, 3873584, '2020-08-23 08:31:23', 'EYJ7-3JHZ-D6JC'),
-(40025, 30263, 'Sweden', 10024, 'Sweden', 20034, 'Sweden', 'Sweden', 8114818, 4483405, 7369278, '2020-06-06 19:45:04', 'FP8I-XNJG-ATEC'),
-(40026, 30290, 'Sweden', 10039, 'Sweden', 20036, 'Sweden', 'Sweden', 4692354, 1099731, 3146264, '2020-06-01 22:36:43', 'I1AJ-1FK9-ZBAE'),
-(40027, 30224, 'Finland', 10013, 'Norway', 20014, 'Sweden', 'Norway', 6627360, 7306355, 3802909, '2020-06-06 15:48:37', 'EZG2-1L70-I5H2'),
-(40028, 30161, 'Sweden', 10011, 'Finland', 20015, 'Finland', 'Finland', 7779549, 1150521, 8424266, '2020-11-24 04:35:13', 'IXE0-TQJR-UU5F'),
-(40029, 30258, 'Sweden', 10013, 'Norway', 20041, 'Sweden', 'Norway', 5106929, 5291891, 4606707, '2020-10-11 22:40:32', '3MC4-168E-6WSF'),
-(40030, 30062, 'Sweden', 10006, 'Sweden', 20027, 'Sweden', 'Sweden', 5183001, 2868642, 7210853, '2020-08-13 05:55:22', '07VJ-2Q3H-7YPY'),
-(40031, 30104, 'Sweden', 10034, 'Sweden', 20036, 'Sweden', 'Sweden', 7107649, 7949144, 1241716, '2020-11-11 18:59:19', 'OOJ8-1T08-NXS5'),
-(40032, 30138, 'Norway', 10027, 'Norway', 20014, 'Sweden', 'Norway', 7051961, 2052027, 8403365, '2020-11-20 23:36:13', '1EOI-PQDA-4QFO'),
-(40033, 30421, 'Finland', 10040, 'Finland', 20043, 'Sweden', 'Finland', 4196025, 2381703, 2184439, '2020-08-29 10:19:20', '4H3M-GGI5-R06M'),
-(40034, 30268, 'Finland', 10027, 'Norway', 20012, 'Norway', 'Norway', 9079405, 3645676, 5118450, '2020-11-28 09:10:24', 'V9WJ-L5XA-308M'),
-(40035, 30078, 'Finland', 10018, 'Sweden', 20041, 'Sweden', 'Sweden', 8029829, 5856971, 6726645, '2020-01-09 20:19:13', 'V4WH-MGJJ-HFW4'),
-(40036, 30436, 'Finland', 10033, 'Sweden', 20035, 'Sweden', 'Sweden', 6519688, 4003815, 4208967, '2020-11-28 04:23:02', 'EG7G-CAF7-MW0T'),
-(40037, 30255, 'Sweden', 10009, 'Sweden', 20022, 'Norway', 'Sweden', 6599146, 7095165, 8782213, '2020-07-09 04:41:52', 'KP02-EULA-FI74'),
-(40038, 30213, 'Sweden', 10037, 'Sweden', 20037, 'Sweden', 'Sweden', 4633972, 8165763, 1669726, '2020-07-23 16:29:16', 'O1C7-75W1-DJ7I'),
-(40039, 30424, 'Sweden', 10043, 'Sweden', 20041, 'Sweden', 'Sweden', 8295078, 1667285, 7061500, '2020-08-12 23:59:52', 'WTHE-C7DI-U1JV'),
-(40040, 30158, 'Sweden', 10035, 'Norway', 20021, 'Sweden', 'Norway', 8808184, 5756001, 3488829, '2020-09-09 00:49:58', '6UE8-TBCN-7BL6'),
-(40041, 30260, 'Sweden', 10017, 'Sweden', 20015, 'Finland', 'Sweden', 2426116, 7488233, 2856779, '2020-03-22 23:43:16', 'AJSJ-IKIJ-YYYT'),
-(40042, 30126, 'Sweden', 10042, 'Sweden', 20018, 'Sweden', 'Sweden', 3136301, 7072019, 8926102, '2020-02-03 18:00:34', 'WIFQ-KXDE-LZ6G'),
-(40043, 30340, 'Norway', 10023, 'Sweden', 20039, 'Sweden', 'Sweden', 2554933, 1742201, 4065566, '2019-12-11 08:15:34', 'JWKG-RJ36-Z778'),
-(40044, 30098, 'Sweden', 10006, 'Sweden', 20005, 'Sweden', 'Sweden', 4057801, 7110898, 2779792, '2019-12-15 07:00:23', 'XT81-XDO6-X2Y7'),
-(40045, 30017, 'Sweden', 10037, 'Sweden', 20047, 'Sweden', 'Sweden', 6037978, 3702706, 9731917, '2020-01-10 22:56:20', 'UMXG-VF7U-EMM1'),
-(40046, 30305, 'Finland', 10020, 'Norway', 20007, 'Sweden', 'Norway', 8730719, 6985123, 4601143, '2019-12-11 22:26:24', 'IHZL-X226-PJIZ'),
-(40047, 30470, 'Sweden', 10010, 'Sweden', 20004, 'Sweden', 'Sweden', 5340543, 7299357, 7172113, '2020-02-08 06:41:37', 'F7BH-H9F0-5QM8'),
-(40048, 30202, 'Sweden', 10015, 'Norway', 20045, 'Sweden', 'Norway', 4379019, 2352580, 6523276, '2020-09-13 17:23:00', 'V755-N8CR-Z685'),
-(40049, 30383, 'Sweden', 10022, 'Sweden', 20036, 'Sweden', 'Sweden', 7647088, 2222447, 8420153, '2020-10-16 15:06:44', 'REYO-H7QG-1Z32'),
-(40050, 30316, 'Sweden', 10001, 'Sweden', 20032, 'Finland', 'Sweden', 8293113, 7227387, 6284870, '2020-02-17 21:37:08', 'QI5J-RIQZ-L8ZX'),
-(40051, 30113, 'Finland', 10043, 'Sweden', 20041, 'Sweden', 'Sweden', 3268193, 5530343, 8221995, '2020-04-20 08:35:00', '9RVA-AHTO-R724'),
-(40052, 30234, 'Norway', 10044, 'Sweden', 20036, 'Sweden', 'Sweden', 9345079, 8664841, 1851073, '2020-04-01 19:02:03', '2RZF-NDQO-J7X6'),
-(40053, 30291, 'Sweden', 10028, 'Sweden', 20027, 'Sweden', 'Sweden', 5522257, 1541636, 9403025, '2020-09-24 17:54:30', 'N86Z-WTNY-7ODW'),
-(40054, 30453, 'Finland', 10046, 'Sweden', 20028, 'Sweden', 'Sweden', 8151992, 7576845, 5117076, '2020-04-26 11:49:43', 'QYDB-REAE-Y5R7'),
-(40055, 30038, 'Finland', 10009, 'Sweden', 20033, 'Finland', 'Sweden', 2190510, 5584668, 7569190, '2020-04-06 15:59:59', 'UIVD-X9DG-Q4F6'),
-(40056, 30444, 'Sweden', 10044, 'Sweden', 20033, 'Finland', 'Sweden', 1816711, 1317708, 3932505, '2020-03-16 21:00:24', 'Q4KX-I23L-OFYS'),
-(40057, 30209, 'Sweden', 10025, 'Norway', 20018, 'Sweden', 'Norway', 9896886, 1681378, 8076698, '2020-08-20 21:42:36', 'PX4P-9U5P-XS1C'),
-(40058, 30220, 'Sweden', 10008, 'Sweden', 20021, 'Sweden', 'Sweden', 2619075, 1098159, 3631179, '2020-03-31 21:42:29', '5RON-REBD-SS05'),
-(40059, 30379, 'Sweden', 10029, 'Sweden', 20030, 'Finland', 'Sweden', 8666953, 8885971, 4688056, '2020-02-16 08:12:22', 'RED8-TSI3-5I62'),
-(40060, 30225, 'Sweden', 10044, 'Sweden', 20024, 'Sweden', 'Sweden', 5186386, 2464564, 7789624, '2020-08-27 14:49:02', '845Z-6GIX-82Y3'),
-(40061, 30016, 'Norway', 10017, 'Sweden', 20016, 'Sweden', 'Sweden', 9239463, 6897593, 4354371, '2020-04-01 17:12:40', 'EQER-BCS5-KCK9'),
-(40062, 30132, 'Sweden', 10022, 'Sweden', 20015, 'Finland', 'Sweden', 6563640, 6073854, 5600557, '2020-06-07 07:42:07', '9A3G-JVKC-IWLM'),
-(40063, 30373, 'Norway', 10005, 'Norway', 20017, 'Finland', 'Norway', 8182790, 6399436, 7652271, '2020-05-29 14:57:43', 'MBUX-DYQH-QPV9'),
-(40064, 30369, 'Norway', 10006, 'Sweden', 20004, 'Sweden', 'Sweden', 9646906, 3205509, 1721516, '2020-10-21 14:41:51', 'I665-P7CX-EAML'),
-(40065, 30200, 'Finland', 10010, 'Sweden', 20005, 'Sweden', 'Sweden', 6536345, 7609452, 8217080, '2020-08-14 01:31:43', 'EDTX-88N9-GFO6'),
-(40066, 30438, 'Sweden', 10023, 'Sweden', 20029, 'Finland', 'Sweden', 6992544, 7795377, 9078901, '2020-06-24 14:38:42', '63UA-DMT7-76KY'),
-(40067, 30156, 'Finland', 10014, 'Sweden', 20019, 'Finland', 'Sweden', 6960053, 3006141, 8865746, '2020-08-03 09:04:27', '1KD8-XOT5-SYKV'),
-(40068, 30488, 'Sweden', 10002, 'Sweden', 20028, 'Sweden', 'Sweden', 2296014, 4316010, 7960020, '2020-01-17 04:06:11', 'FADD-E9KZ-FIK3'),
-(40069, 30135, 'Sweden', 10009, 'Sweden', 20004, 'Sweden', 'Sweden', 3146077, 7054260, 3946998, '2020-04-07 02:39:51', 'OJ65-TF6D-8Q2O'),
-(40070, 30426, 'Finland', 10030, 'Norway', 20011, 'Finland', 'Norway', 3652013, 8513757, 1775528, '2020-05-07 03:48:48', 'LD71-B7X0-VZ2U'),
-(40071, 30137, 'Sweden', 10038, 'Finland', 20049, 'Sweden', 'Finland', 4374928, 2641115, 5167352, '2020-11-01 22:02:36', 'AN7B-512H-HZS6'),
-(40072, 30169, 'Norway', 10027, 'Norway', 20027, 'Sweden', 'Norway', 1093458, 7909411, 6233606, '2020-05-30 22:45:06', '9T6J-99RD-6ZMT'),
-(40073, 30196, 'Norway', 10014, 'Sweden', 20050, 'Sweden', 'Sweden', 8462916, 4944816, 7376336, '2020-10-06 01:44:28', 'UB8Z-JNZ8-TD4R'),
-(40074, 30462, 'Sweden', 10041, 'Norway', 20027, 'Sweden', 'Norway', 3808741, 6549436, 8599725, '2020-02-23 02:30:57', '5LRV-S1HC-Z113'),
-(40075, 30273, 'Sweden', 10017, 'Sweden', 20006, 'Sweden', 'Sweden', 4732777, 1579201, 9798015, '2020-08-09 15:03:00', 'USBF-OVVH-C1OL'),
-(40076, 30003, 'Sweden', 10024, 'Sweden', 20010, 'Sweden', 'Sweden', 9745845, 3840125, 2376516, '2020-08-17 12:59:02', 'QXYY-6GT7-SB80'),
-(40077, 30241, 'Norway', 10027, 'Norway', 20046, 'Sweden', 'Norway', 8765688, 8746798, 1216335, '2019-12-12 15:16:58', '628F-U4R2-19TG'),
-(40078, 30022, 'Finland', 10042, 'Sweden', 20042, 'Sweden', 'Sweden', 6301806, 2090789, 2975452, '2020-04-19 11:26:43', 'K8XQ-TVDV-SK2P'),
-(40079, 30168, 'Sweden', 10009, 'Sweden', 20006, 'Sweden', 'Sweden', 6561187, 5395267, 3503962, '2020-03-31 02:39:17', '26V1-CO89-8RYJ'),
-(40080, 30200, 'Finland', 10047, 'Sweden', 20003, 'Finland', 'Sweden', 2934967, 6725413, 6816336, '2020-07-21 16:23:15', 'MVAT-97H8-RKWE'),
-(40081, 30105, 'Sweden', 10049, 'Finland', 20011, 'Finland', 'Finland', 4290523, 5944254, 7271343, '2020-11-11 07:03:30', 'WM7L-UEVS-Y92F'),
-(40082, 30382, 'Sweden', 10004, 'Sweden', 20016, 'Sweden', 'Sweden', 1381137, 9491580, 1099749, '2020-08-31 04:06:59', 'P54X-JJR4-QCIN'),
-(40083, 30070, 'Sweden', 10010, 'Sweden', 20036, 'Sweden', 'Sweden', 5367556, 8569828, 1346239, '2020-01-05 19:40:09', '7QK6-168U-TVZ0'),
-(40084, 30244, 'Finland', 10044, 'Sweden', 20038, 'Sweden', 'Sweden', 4199673, 9253235, 1744887, '2020-07-28 12:36:46', '05BW-ZNVC-URST'),
-(40085, 30015, 'Sweden', 10015, 'Norway', 20011, 'Finland', 'Norway', 7819901, 1501719, 6044950, '2020-04-23 07:12:50', 'XQTQ-2TGW-1UQE'),
-(40086, 30117, 'Sweden', 10016, 'Sweden', 20002, 'Sweden', 'Sweden', 8206749, 5942707, 8416258, '2020-01-11 04:14:02', 'MY9G-QN4Y-4S7Q'),
-(40087, 30284, 'Sweden', 10045, 'Finland', 20042, 'Sweden', 'Finland', 8649966, 7936373, 1347758, '2020-07-27 20:15:35', 'K101-REEG-KK3E'),
-(40088, 30180, 'Sweden', 10048, 'Sweden', 20030, 'Finland', 'Sweden', 9512110, 3230204, 3199418, '2020-09-24 05:27:34', 'MK0N-261N-E49T'),
-(40089, 30060, 'Sweden', 10049, 'Finland', 20045, 'Sweden', 'Finland', 5604708, 5047963, 9267623, '2020-08-24 22:02:14', 'B5S5-G74X-O2GE'),
-(40090, 30210, 'Sweden', 10013, 'Norway', 20042, 'Sweden', 'Norway', 1626530, 2012920, 9120324, '2020-03-02 04:44:07', 'WKMN-8NOI-5GJS'),
-(40091, 30417, 'Norway', 10036, 'Sweden', 20029, 'Finland', 'Sweden', 2593277, 8543196, 9368508, '2020-06-22 09:53:44', 'X3SR-2P3Y-1HW2'),
-(40092, 30346, 'Norway', 10021, 'Sweden', 20005, 'Sweden', 'Sweden', 2020376, 1265725, 4630115, '2020-06-06 03:12:44', '112T-G8MX-VPNX'),
-(40093, 30383, 'Sweden', 10001, 'Sweden', 20015, 'Finland', 'Sweden', 8076646, 2819314, 2289907, '2020-08-25 14:22:04', '30QT-MRL7-ZMWO'),
-(40094, 30070, 'Sweden', 10009, 'Sweden', 20025, 'Norway', 'Sweden', 5279222, 1359239, 9768734, '2020-08-01 22:32:56', 'X1GJ-VIEG-YB9K'),
-(40095, 30134, 'Sweden', 10006, 'Sweden', 20002, 'Sweden', 'Sweden', 4921551, 7889117, 2104198, '2020-02-19 10:52:38', '60F7-2J58-8N44'),
-(40096, 30158, 'Sweden', 10040, 'Finland', 20011, 'Finland', 'Finland', 5100396, 4620728, 9873173, '2020-02-16 08:59:04', 'IN1T-4FA0-KNSY'),
-(40097, 30458, 'Finland', 10006, 'Sweden', 20037, 'Sweden', 'Sweden', 5528832, 1695675, 6216141, '2020-06-05 09:06:35', 'XFJW-I4QW-2NNJ'),
-(40098, 30100, 'Sweden', 10036, 'Sweden', 20043, 'Sweden', 'Sweden', 7710874, 5721360, 7846170, '2020-06-06 03:21:55', 'SNZA-945O-D0C2'),
-(40099, 30262, 'Sweden', 10041, 'Norway', 20049, 'Sweden', 'Norway', 6125141, 6774890, 5682760, '2020-10-29 10:01:09', '8RJ5-CPNW-G7QD'),
-(40100, 30427, 'Sweden', 10004, 'Sweden', 20050, 'Sweden', 'Sweden', 1474934, 1770512, 5331353, '2020-01-03 07:57:04', 'YMI4-51WY-MX0U'),
-(40101, 30187, 'Sweden', 10015, 'Norway', 20034, 'Sweden', 'Norway', 1608936, 4122317, 1733306, '2020-02-03 22:45:20', 'KU1S-1YR2-LHJ8'),
-(40102, 30423, 'Sweden', 10009, 'Sweden', 20005, 'Sweden', 'Sweden', 9656563, 9129678, 4832672, '2020-05-11 01:57:05', 'PDKB-V1T4-KHDG'),
-(40103, 30200, 'Finland', 10001, 'Sweden', 20045, 'Sweden', 'Sweden', 2820376, 2254059, 8745250, '2020-08-10 04:40:42', 'IA85-6WZR-UXVZ'),
-(40104, 30312, 'Sweden', 10026, 'Sweden', 20038, 'Sweden', 'Sweden', 2652711, 8607084, 4377541, '2020-07-30 05:12:12', 'PD70-D2AG-62H1'),
-(40105, 30360, 'Sweden', 10040, 'Finland', 20045, 'Sweden', 'Finland', 2642088, 8254761, 9227911, '2020-01-01 14:19:13', 'KVIG-DNWQ-CWD2'),
-(40106, 30074, 'Finland', 10050, 'Finland', 20005, 'Sweden', 'Finland', 7729089, 4476859, 4728653, '2020-07-13 08:48:50', 'WSR8-HMZL-UXZB'),
-(40107, 30232, 'Finland', 10031, 'Sweden', 20017, 'Finland', 'Sweden', 4737527, 7408176, 6730136, '2020-09-30 20:07:07', 'FO6Z-YWJD-IT8T'),
-(40108, 30338, 'Sweden', 10049, 'Finland', 20007, 'Sweden', 'Finland', 6163804, 7346256, 3671499, '2020-11-29 05:52:11', 'LG9Q-M8TV-KBC7'),
-(40109, 30152, 'Sweden', 10046, 'Sweden', 20005, 'Sweden', 'Sweden', 4235803, 9324095, 2254937, '2020-06-25 18:42:23', '7F7G-AHBI-I934'),
-(40110, 30010, 'Sweden', 10037, 'Sweden', 20017, 'Finland', 'Sweden', 8502553, 1296657, 6052146, '2020-09-15 14:29:57', '11BA-4LAX-5J6N'),
-(40111, 30035, 'Sweden', 10034, 'Sweden', 20013, 'Sweden', 'Sweden', 3897916, 2742437, 8896685, '2020-01-29 18:43:22', 'DNYE-XOMD-EELQ'),
-(40112, 30142, 'Sweden', 10050, 'Finland', 20026, 'Sweden', 'Finland', 8887609, 2720860, 3079154, '2020-07-15 20:59:15', 'DVFB-B83V-QX8O'),
-(40113, 30338, 'Sweden', 10035, 'Norway', 20029, 'Finland', 'Norway', 5296903, 6559626, 4452988, '2020-06-19 08:08:05', 'O2RF-XIA7-F51E'),
-(40114, 30314, 'Sweden', 10046, 'Sweden', 20042, 'Sweden', 'Sweden', 1892678, 1042479, 2321131, '2020-08-19 09:27:07', '3P41-SSMH-6XDJ'),
-(40115, 30093, 'Sweden', 10039, 'Sweden', 20021, 'Sweden', 'Sweden', 7005299, 6123664, 1469685, '2020-07-19 09:00:58', 'YH2N-CWWJ-BSGP'),
-(40116, 30152, 'Sweden', 10017, 'Sweden', 20044, 'Sweden', 'Sweden', 5153704, 1505770, 8683665, '2020-03-21 14:09:48', 'I1C6-NMOQ-NABT'),
-(40117, 30142, 'Sweden', 10033, 'Sweden', 20018, 'Sweden', 'Sweden', 9991598, 1192336, 6845156, '2020-09-29 13:32:46', 'FKJG-OUUP-C915'),
-(40118, 30232, 'Finland', 10021, 'Sweden', 20042, 'Sweden', 'Sweden', 3851091, 1482766, 1597093, '2020-09-14 10:28:47', 'OCK6-19IO-GBWN'),
-(40119, 30418, 'Finland', 10036, 'Sweden', 20017, 'Finland', 'Sweden', 9854806, 2089486, 6724352, '2020-04-05 09:02:03', 'FGHF-I7A5-U4T1'),
-(40120, 30199, 'Norway', 10044, 'Sweden', 20009, 'Sweden', 'Sweden', 8240031, 2908626, 6559163, '2020-08-24 01:34:39', '2S8A-SVAI-50ZK'),
-(40121, 30360, 'Sweden', 10047, 'Sweden', 20027, 'Sweden', 'Sweden', 1433547, 5367206, 4958407, '2020-07-23 21:11:16', 'OWXN-SUCL-Y5LR'),
-(40122, 30359, 'Sweden', 10011, 'Finland', 20039, 'Sweden', 'Finland', 3635746, 4010904, 3675339, '2020-06-16 00:29:15', 'N2A5-3FF0-TFXB'),
-(40123, 30043, 'Norway', 10013, 'Norway', 20002, 'Sweden', 'Norway', 6286873, 9556678, 1969209, '2020-03-22 10:07:42', 'EEP7-W5GR-QB5I'),
-(40124, 30205, 'Finland', 10004, 'Sweden', 20001, 'Sweden', 'Sweden', 8048342, 5764227, 1810031, '2020-04-01 00:21:35', 'QEL3-ZJKV-NNI4'),
-(40125, 30182, 'Finland', 10040, 'Finland', 20007, 'Sweden', 'Finland', 1823449, 9638916, 5306304, '2020-10-03 18:14:47', '11Q6-MT38-HSAF'),
-(40126, 30151, 'Sweden', 10008, 'Sweden', 20027, 'Sweden', 'Sweden', 6785681, 6414491, 4664090, '2020-01-29 16:26:13', '1N1I-A39W-E2ZW'),
-(40127, 30212, 'Sweden', 10024, 'Sweden', 20016, 'Sweden', 'Sweden', 8465715, 2483148, 6723057, '2020-07-10 05:09:37', 'YJWD-I1OP-OFIG'),
-(40128, 30284, 'Sweden', 10034, 'Sweden', 20043, 'Sweden', 'Sweden', 7930313, 7102403, 6914450, '2020-08-30 05:57:46', '0YQ4-S1V1-OIB5'),
-(40129, 30086, 'Sweden', 10042, 'Sweden', 20034, 'Sweden', 'Sweden', 2230026, 8791573, 6220447, '2020-04-25 16:53:25', '953K-J4KA-N9TA'),
-(40130, 30345, 'Sweden', 10015, 'Norway', 20029, 'Finland', 'Norway', 7534824, 7204119, 2319185, '2020-10-12 07:45:23', 'TWT0-90HA-LM3D'),
-(40131, 30468, 'Finland', 10005, 'Norway', 20012, 'Norway', 'Norway', 5497776, 6323189, 5175350, '2020-09-25 21:22:57', '0RW3-ZIBN-H032'),
-(40132, 30434, 'Finland', 10024, 'Sweden', 20009, 'Sweden', 'Sweden', 3302549, 4404101, 2043317, '2020-04-23 14:49:47', '2MM7-2Z3F-Q9WD'),
-(40133, 30002, 'Sweden', 10018, 'Sweden', 20002, 'Sweden', 'Sweden', 4600615, 9222107, 4736770, '2020-11-26 19:04:36', '1FRH-Z88T-0HLG'),
-(40134, 30184, 'Finland', 10027, 'Norway', 20031, 'Sweden', 'Norway', 6962552, 5435601, 6772620, '2020-01-27 03:34:55', 'DIF7-6WB1-BKUC'),
-(40135, 30026, 'Sweden', 10023, 'Sweden', 20032, 'Finland', 'Sweden', 9310685, 8303330, 6910510, '2020-07-12 05:43:29', 'VMN0-H0MQ-08PA'),
-(40136, 30364, 'Finland', 10009, 'Sweden', 20006, 'Sweden', 'Sweden', 8369268, 7443703, 6803897, '2020-01-11 23:05:28', '1PR0-2D61-A6TO'),
-(40137, 30069, 'Sweden', 10027, 'Norway', 20030, 'Finland', 'Norway', 9706267, 6598005, 5871862, '2020-10-21 20:49:34', '6STQ-SHMO-4YHM'),
-(40138, 30186, 'Sweden', 10011, 'Finland', 20009, 'Sweden', 'Finland', 6928147, 9194702, 9347357, '2020-01-25 17:23:47', 'TSRB-UXHT-M7WG'),
-(40139, 30252, 'Sweden', 10025, 'Norway', 20033, 'Finland', 'Norway', 3479843, 9770978, 2638357, '2020-03-16 12:52:08', 'JQS9-SI0O-SE9G'),
-(40140, 30440, 'Finland', 10024, 'Sweden', 20049, 'Sweden', 'Sweden', 5673538, 9899219, 6094096, '2020-06-07 04:55:26', 'XATW-3JII-I2KP'),
-(40141, 30399, 'Sweden', 10024, 'Sweden', 20015, 'Finland', 'Sweden', 1666328, 1144294, 4061795, '2020-05-26 10:59:20', 'VI95-XJMX-XIUO'),
-(40142, 30221, 'Sweden', 10026, 'Sweden', 20021, 'Sweden', 'Sweden', 2398867, 6824838, 9774495, '2020-07-11 16:59:12', '5CSS-KPYQ-DHJO'),
-(40143, 30236, 'Sweden', 10041, 'Norway', 20020, 'Sweden', 'Norway', 7568212, 3534990, 6168044, '2020-02-13 22:51:41', 'AQDB-Y0PK-NFIA'),
-(40144, 30100, 'Sweden', 10015, 'Norway', 20009, 'Sweden', 'Norway', 6181216, 3876692, 7930091, '2020-04-22 07:07:52', '9K2Z-98X5-KONA'),
-(40145, 30126, 'Sweden', 10042, 'Sweden', 20048, 'Sweden', 'Sweden', 5346407, 8704553, 9210390, '2020-07-06 05:25:37', '218R-4AKY-1S88'),
-(40146, 30295, 'Sweden', 10032, 'Finland', 20029, 'Finland', 'Finland', 3424033, 9314986, 6459545, '2020-04-21 18:02:21', 'BMEN-A9NA-A609'),
-(40147, 30318, 'Sweden', 10016, 'Sweden', 20019, 'Finland', 'Sweden', 7251249, 2755852, 8687877, '2020-06-19 12:20:08', 'C1PC-XJ96-9PEV'),
-(40148, 30267, 'Sweden', 10028, 'Sweden', 20047, 'Sweden', 'Sweden', 2007710, 3437711, 6416828, '2020-10-17 19:28:33', 'XPM1-D7BY-AC55'),
-(40149, 30253, 'Sweden', 10031, 'Sweden', 20032, 'Finland', 'Sweden', 2323541, 1405807, 7261669, '2020-11-06 00:46:23', 'UI2C-63IK-O6TZ'),
-(40150, 30109, 'Sweden', 10020, 'Norway', 20028, 'Sweden', 'Norway', 9369124, 7745658, 4400654, '2020-03-08 08:27:02', 'BY4R-M1TH-I0MJ'),
-(40151, 30026, 'Sweden', 10036, 'Sweden', 20019, 'Finland', 'Sweden', 8046638, 9037827, 4728098, '2020-10-01 17:16:11', 'TKSK-TW2V-OPFD'),
-(40152, 30250, 'Sweden', 10042, 'Sweden', 20027, 'Sweden', 'Sweden', 6519991, 4349444, 5398242, '2020-01-30 10:52:08', 'EYY1-VXMP-L10M'),
-(40153, 30297, 'Sweden', 10036, 'Sweden', 20028, 'Sweden', 'Sweden', 9123230, 2411102, 5471521, '2020-02-20 08:06:40', 'LUMD-F7WM-QTBJ'),
-(40154, 30279, 'Finland', 10010, 'Sweden', 20014, 'Sweden', 'Sweden', 7359408, 5838071, 7607720, '2020-11-07 17:29:11', 'TN85-CH9I-ZE4V'),
-(40155, 30353, 'Sweden', 10041, 'Norway', 20015, 'Finland', 'Norway', 8099553, 4146794, 7199350, '2020-05-29 01:26:53', '477I-FVUD-1L9V'),
-(40156, 30156, 'Finland', 10047, 'Sweden', 20015, 'Finland', 'Sweden', 1999471, 6357502, 2556300, '2020-07-16 00:22:36', 'GYOH-7JXC-DAST'),
-(40157, 30144, 'Sweden', 10038, 'Finland', 20047, 'Sweden', 'Finland', 4885797, 1862483, 6295877, '2020-02-01 01:36:41', 'HCFC-3UR7-RGTN'),
-(40158, 30048, 'Sweden', 10014, 'Sweden', 20045, 'Sweden', 'Sweden', 1918039, 3812440, 3501943, '2020-04-07 11:30:48', 'BCPO-GOY3-59EG'),
-(40159, 30096, 'Sweden', 10020, 'Norway', 20003, 'Finland', 'Norway', 3355256, 1248785, 6044490, '2020-05-30 21:57:04', '3SDN-YH97-QO7Z'),
-(40160, 30223, 'Sweden', 10040, 'Finland', 20004, 'Sweden', 'Finland', 3998082, 1202173, 9060777, '2020-11-19 11:31:21', 'ODLJ-VSUJ-P3NL'),
-(40161, 30466, 'Sweden', 10044, 'Sweden', 20031, 'Sweden', 'Sweden', 7394769, 9682596, 5531842, '2020-09-01 20:59:29', 'MYG4-6YJT-33O3'),
-(40162, 30136, 'Sweden', 10038, 'Finland', 20040, 'Finland', 'Finland', 1997261, 3136783, 9604112, '2020-02-13 17:56:20', 'Z36P-FLF2-Q7TO'),
-(40163, 30360, 'Sweden', 10034, 'Sweden', 20005, 'Sweden', 'Sweden', 2283148, 6915159, 4273584, '2020-09-19 19:22:18', 'GR4T-KMLM-60XG'),
-(40164, 30316, 'Sweden', 10042, 'Sweden', 20032, 'Finland', 'Sweden', 7513696, 7476190, 7968740, '2020-09-10 11:56:25', 'GXXI-W2NC-GS0R'),
-(40165, 30418, 'Finland', 10025, 'Norway', 20001, 'Sweden', 'Norway', 2080348, 1000079, 8425263, '2020-09-19 02:42:13', 'U037-ZLIY-8T3N'),
-(40166, 30125, 'Sweden', 10010, 'Sweden', 20049, 'Sweden', 'Sweden', 8087868, 8713430, 3329694, '2020-08-09 22:12:21', 'MBR2-SVRM-V5KU'),
-(40167, 30395, 'Sweden', 10024, 'Sweden', 20040, 'Finland', 'Sweden', 2941028, 1175667, 5598265, '2020-03-30 08:42:37', 'EVRP-20JQ-YJRG'),
-(40168, 30053, 'Finland', 10041, 'Norway', 20013, 'Sweden', 'Norway', 2033985, 4921069, 6429999, '2020-08-04 21:24:09', '16D4-HOS7-9J9V'),
-(40169, 30402, 'Sweden', 10031, 'Sweden', 20014, 'Sweden', 'Sweden', 1711472, 3206447, 2999700, '2020-04-20 05:10:03', 'IG3Z-27PL-Q1EK'),
-(40170, 30188, 'Sweden', 10027, 'Norway', 20028, 'Sweden', 'Norway', 4383990, 8305176, 1292548, '2020-05-25 12:52:30', '3FXA-4AAM-72KX'),
-(40171, 30209, 'Sweden', 10010, 'Sweden', 20045, 'Sweden', 'Sweden', 7280633, 2363575, 1825832, '2020-10-05 01:14:22', 'N3LO-A5W9-UL7S'),
-(40172, 30138, 'Norway', 10044, 'Sweden', 20028, 'Sweden', 'Sweden', 2417577, 8071212, 9853469, '2020-06-01 18:40:33', 'PEAG-UEGU-4F8J'),
-(40173, 30147, 'Finland', 10008, 'Sweden', 20036, 'Sweden', 'Sweden', 9130707, 6490159, 3414780, '2020-09-18 23:39:14', 'LKXZ-1TX8-VXQZ'),
-(40174, 30418, 'Finland', 10036, 'Sweden', 20004, 'Sweden', 'Sweden', 3747233, 7445192, 4006632, '2020-02-16 09:58:58', 'M45Y-TRIP-257S'),
-(40175, 30171, 'Sweden', 10028, 'Sweden', 20021, 'Sweden', 'Sweden', 1939577, 2990954, 4180005, '2020-08-03 12:10:27', 'UPPP-VH5K-N3QY'),
-(40176, 30449, 'Sweden', 10002, 'Sweden', 20031, 'Sweden', 'Sweden', 4590166, 8997114, 1797985, '2020-10-25 21:06:15', 'EKCK-VIX5-5FFZ'),
-(40177, 30028, 'Finland', 10042, 'Sweden', 20022, 'Norway', 'Sweden', 6777163, 6220646, 1789579, '2020-05-10 15:50:01', 'YLJP-2SB5-HOJR'),
-(40178, 30303, 'Sweden', 10039, 'Sweden', 20011, 'Finland', 'Sweden', 9729054, 4862080, 3540451, '2020-03-09 05:54:28', '5DEX-TK2E-PUHC'),
-(40179, 30084, 'Sweden', 10025, 'Norway', 20035, 'Sweden', 'Norway', 7922534, 7122043, 8813031, '2020-10-24 06:27:52', 'VIWW-K1NI-HRA5'),
-(40180, 30371, 'Sweden', 10003, 'Sweden', 20043, 'Sweden', 'Sweden', 7304905, 5406073, 4756845, '2020-11-23 01:14:22', 'JMVR-C19S-7SR2'),
-(40181, 30021, 'Sweden', 10033, 'Sweden', 20032, 'Finland', 'Sweden', 7761411, 5117570, 7185526, '2020-05-13 23:06:51', 'JHFC-8RO0-7WTS'),
-(40182, 30305, 'Finland', 10038, 'Finland', 20035, 'Sweden', 'Finland', 7306189, 3787638, 8322551, '2020-09-28 07:52:28', '4G6P-P7OU-APWQ'),
-(40183, 30239, 'Finland', 10001, 'Sweden', 20004, 'Sweden', 'Sweden', 9896592, 7620823, 7953865, '2020-06-14 17:04:23', '2NPJ-C602-OPKH'),
-(40184, 30270, 'Sweden', 10025, 'Norway', 20013, 'Sweden', 'Norway', 6139168, 7832699, 7490730, '2020-10-05 11:04:38', 'CLXO-C7KY-P7D6'),
-(40185, 30201, 'Sweden', 10022, 'Sweden', 20038, 'Sweden', 'Sweden', 3940070, 3903932, 1587052, '2020-11-20 02:53:33', '3QAD-31NY-8Z4N'),
-(40186, 30216, 'Norway', 10041, 'Norway', 20002, 'Sweden', 'Norway', 2872253, 4225800, 7701898, '2020-10-14 03:48:19', 'CO32-RY8Q-2GIP'),
-(40187, 30184, 'Finland', 10039, 'Sweden', 20042, 'Sweden', 'Sweden', 4048113, 5615178, 1260261, '2020-09-10 15:58:32', 'MTDY-51T3-U3Q9'),
-(40188, 30251, 'Sweden', 10024, 'Sweden', 20027, 'Sweden', 'Sweden', 6771583, 1297462, 4524397, '2020-01-12 22:23:46', '7SBQ-FXSF-FEYD'),
-(40189, 30229, 'Sweden', 10005, 'Norway', 20015, 'Finland', 'Norway', 5727146, 6776435, 2076880, '2020-06-17 02:41:55', '4FXN-ITPC-4WHI'),
-(40190, 30099, 'Sweden', 10014, 'Sweden', 20047, 'Sweden', 'Sweden', 5076339, 2102953, 6358197, '2020-10-04 17:33:11', 'VQUV-Q6CA-VWUZ'),
-(40191, 30484, 'Sweden', 10022, 'Sweden', 20014, 'Sweden', 'Sweden', 9402095, 9153781, 5486721, '2020-07-27 18:57:23', 'UNKT-B572-F2QH'),
-(40192, 30009, 'Sweden', 10026, 'Sweden', 20008, 'Sweden', 'Sweden', 7311676, 7303081, 6719753, '2020-08-26 19:32:49', 'HB89-NNF1-U527'),
-(40193, 30280, 'Sweden', 10025, 'Norway', 20017, 'Finland', 'Norway', 1486204, 2276929, 2588004, '2020-06-20 04:45:17', 'M8W4-P4Q1-PP08'),
-(40194, 30006, 'Sweden', 10049, 'Finland', 20026, 'Sweden', 'Finland', 9877139, 5787404, 8811635, '2020-11-20 03:20:06', 'PSII-MAZJ-UHSN'),
-(40195, 30380, 'Finland', 10031, 'Sweden', 20007, 'Sweden', 'Sweden', 2016529, 8917065, 5264753, '2020-05-23 21:42:40', 'S9O3-2LRV-PI7X'),
-(40196, 30054, 'Sweden', 10025, 'Norway', 20008, 'Sweden', 'Norway', 8929435, 5552910, 3085325, '2020-07-18 05:24:58', 'IDLD-2VQP-M36U'),
-(40197, 30438, 'Sweden', 10006, 'Sweden', 20021, 'Sweden', 'Sweden', 6728139, 8943559, 7377596, '2019-12-11 17:29:31', 'H01P-YQA4-SD5B'),
-(40198, 30396, 'Sweden', 10036, 'Sweden', 20005, 'Sweden', 'Sweden', 2986872, 5337615, 4608913, '2020-08-10 06:59:25', '47G3-DDA0-LU2L'),
-(40199, 30390, 'Norway', 10033, 'Sweden', 20050, 'Sweden', 'Sweden', 3428543, 1762593, 4148158, '2020-05-01 23:17:05', '52MZ-X6DM-890L'),
-(40200, 30454, 'Sweden', 10029, 'Sweden', 20026, 'Sweden', 'Sweden', 4027511, 8658394, 2507187, '2020-06-23 17:11:43', 'F8PX-I665-4S0X'),
-(40201, 30463, 'Sweden', 10027, 'Norway', 20039, 'Sweden', 'Norway', 7981542, 1066955, 5546859, '2020-10-13 15:17:26', 'IFI6-6VNW-H9JI'),
-(40202, 30338, 'Sweden', 10025, 'Norway', 20008, 'Sweden', 'Norway', 4419194, 1692644, 4265619, '2020-01-02 01:35:04', 'XV5X-8LGP-7PV5'),
-(40203, 30040, 'Sweden', 10020, 'Norway', 20027, 'Sweden', 'Norway', 1964288, 6153628, 8699000, '2020-02-15 15:36:50', 'HNSM-DQYI-SNNB'),
-(40204, 30490, 'Finland', 10036, 'Sweden', 20013, 'Sweden', 'Sweden', 9225912, 7128439, 7532794, '2020-12-10 05:13:30', 'ZN2Q-6QX3-67RQ'),
-(40205, 30004, 'Sweden', 10037, 'Sweden', 20012, 'Norway', 'Sweden', 1484436, 7884872, 2411505, '2020-07-06 00:17:12', 'DGWX-7G4W-3497'),
-(40206, 30113, 'Finland', 10005, 'Norway', 20041, 'Sweden', 'Norway', 2501495, 5994438, 8736573, '2020-02-23 15:00:21', 'R38O-28F9-5TB4'),
-(40207, 30497, 'Sweden', 10038, 'Finland', 20026, 'Sweden', 'Finland', 4014971, 2098789, 7073815, '2020-05-15 22:01:59', '0ZCY-I886-9F5R'),
-(40208, 30488, 'Sweden', 10043, 'Sweden', 20024, 'Sweden', 'Sweden', 1903140, 2764890, 5405192, '2020-07-24 02:52:17', '5R9Y-R9SM-M751'),
-(40209, 30358, 'Finland', 10044, 'Sweden', 20047, 'Sweden', 'Sweden', 7400275, 1815973, 7793270, '2020-05-19 01:05:00', 'BWOZ-IVJW-M2KX'),
-(40210, 30216, 'Norway', 10032, 'Finland', 20044, 'Sweden', 'Finland', 9381137, 7977940, 1750240, '2020-04-20 04:31:22', 'UWTN-BBJV-K5AW'),
-(40211, 30091, 'Finland', 10039, 'Sweden', 20004, 'Sweden', 'Sweden', 4335146, 7851549, 4505493, '2020-08-14 11:42:45', 'PJND-BHCL-S48K'),
-(40212, 30426, 'Finland', 10016, 'Sweden', 20049, 'Sweden', 'Sweden', 9755767, 8481608, 4773232, '2020-11-08 19:49:40', 'BOSG-3L15-GCHK'),
-(40213, 30112, 'Sweden', 10030, 'Norway', 20017, 'Finland', 'Norway', 7826450, 6520641, 7071826, '2020-09-12 04:21:16', '9EED-W951-2X29'),
-(40214, 30344, 'Sweden', 10037, 'Sweden', 20041, 'Sweden', 'Sweden', 3080219, 9191365, 1088715, '2020-01-11 23:19:26', 'UNO6-GIB3-FH1Y'),
-(40215, 30261, 'Sweden', 10041, 'Norway', 20035, 'Sweden', 'Norway', 4695737, 8474111, 2942389, '2020-10-12 22:43:55', 'PYEN-5X54-4I69'),
-(40216, 30065, 'Sweden', 10007, 'Sweden', 20010, 'Sweden', 'Sweden', 4988410, 7770827, 4520299, '2020-11-26 12:41:39', 'XGCJ-ULYS-54R7'),
-(40217, 30233, 'Finland', 10002, 'Sweden', 20045, 'Sweden', 'Sweden', 2432124, 5865387, 4524187, '2020-10-17 22:01:08', 'IWI8-4MUH-0RMN'),
-(40218, 30453, 'Finland', 10031, 'Sweden', 20003, 'Finland', 'Sweden', 1830279, 7806609, 4032835, '2020-09-09 19:58:58', 'YCIB-HSLQ-1D21'),
-(40219, 30428, 'Norway', 10004, 'Sweden', 20041, 'Sweden', 'Sweden', 2308320, 8382652, 6477015, '2019-12-16 14:24:53', 'UBIF-VOFU-5HRA'),
-(40220, 30412, 'Sweden', 10006, 'Sweden', 20022, 'Norway', 'Sweden', 9814722, 2222609, 1682345, '2020-07-07 05:01:14', 'XAUK-ZHP5-1AFH'),
-(40221, 30470, 'Sweden', 10037, 'Sweden', 20019, 'Finland', 'Sweden', 5302585, 6892103, 2431585, '2020-03-21 10:09:33', 'QJLR-S6EF-0XLX'),
-(40222, 30333, 'Sweden', 10045, 'Finland', 20048, 'Sweden', 'Finland', 8263835, 9457369, 6850075, '2020-06-18 15:43:48', 'U2XA-86D4-5K8R'),
-(40223, 30322, 'Sweden', 10025, 'Norway', 20017, 'Finland', 'Norway', 9176982, 8148860, 4373640, '2020-06-26 13:47:38', '1I13-EZ7M-KYUN'),
-(40224, 30179, 'Sweden', 10042, 'Sweden', 20007, 'Sweden', 'Sweden', 2302769, 6628379, 5865028, '2020-12-04 06:53:16', 'KG9T-NBLT-C37J'),
-(40225, 30325, 'Sweden', 10031, 'Sweden', 20013, 'Sweden', 'Sweden', 3038034, 9783685, 5449708, '2020-02-03 08:31:33', '3JXK-06P5-K9ZJ'),
-(40226, 30427, 'Sweden', 10050, 'Finland', 20035, 'Sweden', 'Finland', 8645799, 9792020, 7051177, '2020-08-20 01:25:37', '5Q69-EO1H-MTB5'),
-(40227, 30255, 'Sweden', 10001, 'Sweden', 20013, 'Sweden', 'Sweden', 8449622, 4106718, 1415851, '2020-11-09 17:55:59', 'WPQH-28FO-973Z'),
-(40228, 30088, 'Sweden', 10012, 'Sweden', 20043, 'Sweden', 'Sweden', 9203060, 6683391, 2384516, '2020-06-25 01:57:19', '4QOH-OFJ3-X9XT'),
-(40229, 30296, 'Norway', 10045, 'Finland', 20035, 'Sweden', 'Finland', 6564945, 6391499, 5962385, '2020-10-12 13:00:05', 'SGR8-R24B-LN0S'),
-(40230, 30451, 'Norway', 10020, 'Norway', 20012, 'Norway', 'Norway', 5895588, 3283935, 1299731, '2020-01-22 07:18:50', '262C-F2GQ-Z07G'),
-(40231, 30024, 'Sweden', 10007, 'Sweden', 20009, 'Sweden', 'Sweden', 3298155, 3871991, 2619286, '2020-05-09 15:55:15', 'LYY8-3NW2-E78Y'),
-(40232, 30368, 'Sweden', 10039, 'Sweden', 20035, 'Sweden', 'Sweden', 8947154, 7683114, 6280312, '2020-03-02 11:57:23', '2I1C-2STP-QPR9'),
-(40233, 30022, 'Finland', 10024, 'Sweden', 20048, 'Sweden', 'Sweden', 4076177, 8267895, 3391124, '2020-02-03 20:04:01', 'YR6G-45B5-7N0H'),
-(40234, 30478, 'Sweden', 10024, 'Sweden', 20031, 'Sweden', 'Sweden', 5791363, 5838077, 8671991, '2020-06-25 14:38:18', 'TKR5-Z2Y2-GFGR'),
-(40235, 30338, 'Sweden', 10026, 'Sweden', 20031, 'Sweden', 'Sweden', 5867212, 9443860, 5263540, '2020-03-09 10:47:21', '4QYB-K4FX-GR0I'),
-(40236, 30245, 'Sweden', 10041, 'Norway', 20021, 'Sweden', 'Norway', 8977621, 2429251, 1637149, '2020-02-20 21:48:35', 'PBM8-5MRV-RAVJ'),
-(40237, 30427, 'Sweden', 10017, 'Sweden', 20020, 'Sweden', 'Sweden', 6646322, 2721423, 1031792, '2020-10-07 06:57:31', '0N3P-F8Y1-OCAN'),
-(40238, 30028, 'Finland', 10040, 'Finland', 20021, 'Sweden', 'Finland', 4234312, 2971008, 3345569, '2020-04-15 03:01:36', 'X56X-DNI6-A50E'),
-(40239, 30330, 'Sweden', 10020, 'Norway', 20044, 'Sweden', 'Norway', 9440464, 8888327, 9106016, '2020-11-17 20:33:52', 'HTLI-J28C-I3BQ'),
-(40240, 30350, 'Sweden', 10048, 'Sweden', 20042, 'Sweden', 'Sweden', 5865308, 8520821, 3483610, '2019-12-12 14:04:42', 'AW6G-NRF5-OLE8'),
-(40241, 30294, 'Sweden', 10044, 'Sweden', 20009, 'Sweden', 'Sweden', 2232068, 4109223, 9389535, '2020-08-03 18:18:00', 'MAJ1-J2XZ-DQ3W'),
-(40242, 30437, 'Sweden', 10002, 'Sweden', 20032, 'Finland', 'Sweden', 4476078, 3715023, 5476664, '2020-05-26 08:28:48', 'MNW1-3LMY-IRH0'),
-(40243, 30321, 'Sweden', 10021, 'Sweden', 20047, 'Sweden', 'Sweden', 8660439, 2951391, 5582163, '2020-09-07 23:24:25', 'IX7M-8I00-VOJ0'),
-(40244, 30141, 'Sweden', 10012, 'Sweden', 20012, 'Norway', 'Sweden', 8709514, 8324750, 9692793, '2020-02-23 10:11:19', 'VSCW-WP7I-6YZ1'),
-(40245, 30333, 'Sweden', 10031, 'Sweden', 20031, 'Sweden', 'Sweden', 7136351, 4155799, 8744637, '2020-02-01 17:39:25', 'OHU2-SXW2-S5Y2'),
-(40246, 30072, 'Sweden', 10032, 'Finland', 20031, 'Sweden', 'Finland', 1712369, 6950102, 3569229, '2020-04-16 05:25:27', 'XPG5-BNTG-LY01'),
-(40247, 30220, 'Sweden', 10045, 'Finland', 20041, 'Sweden', 'Finland', 1232705, 8633074, 2156639, '2020-03-29 16:13:51', 'OZH0-0GV5-03YJ'),
-(40248, 30489, 'Sweden', 10039, 'Sweden', 20041, 'Sweden', 'Sweden', 6189608, 5825618, 6972196, '2020-09-17 14:56:57', 'FGV9-Y8L8-QOYC'),
-(40249, 30390, 'Norway', 10045, 'Finland', 20014, 'Sweden', 'Finland', 1407628, 9921356, 5846003, '2020-01-22 00:28:57', '25GP-8PQV-HAQY'),
-(40250, 30061, 'Sweden', 10011, 'Finland', 20026, 'Sweden', 'Finland', 1912729, 4806725, 4891384, '2020-04-29 09:20:59', 'OK3F-BZ4A-13AV'),
-(40251, 30015, 'Sweden', 10021, 'Sweden', 20001, 'Sweden', 'Sweden', 3898580, 8100484, 2101383, '2020-11-19 19:26:07', '80C5-DU30-K7ZG'),
-(40252, 30286, 'Sweden', 10016, 'Sweden', 20035, 'Sweden', 'Sweden', 6202317, 9375968, 9513939, '2020-07-06 03:20:31', '3GXA-SATD-ROTB'),
-(40253, 30419, 'Finland', 10042, 'Sweden', 20050, 'Sweden', 'Sweden', 9195460, 6589634, 3939961, '2020-05-22 13:10:45', '3D8H-U0MX-90PW'),
-(40254, 30228, 'Norway', 10014, 'Sweden', 20001, 'Sweden', 'Sweden', 5901920, 7315910, 9628540, '2020-06-09 17:07:38', 'UWJC-QVOU-8Q93'),
-(40255, 30139, 'Sweden', 10017, 'Sweden', 20035, 'Sweden', 'Sweden', 6196544, 1696631, 6548410, '2020-11-02 18:28:53', 'WM3C-YLTD-KZ4I'),
-(40256, 30434, 'Finland', 10007, 'Sweden', 20014, 'Sweden', 'Sweden', 7160510, 2573824, 5922880, '2020-04-24 18:09:27', 'ZRDF-HASY-Q6YY'),
-(40257, 30438, 'Sweden', 10038, 'Finland', 20049, 'Sweden', 'Finland', 6944323, 1270038, 6859920, '2020-06-13 04:51:09', 'V6VN-4Z2X-GCTG'),
-(40258, 30061, 'Sweden', 10043, 'Sweden', 20025, 'Norway', 'Sweden', 4256058, 1144045, 6309972, '2020-05-11 04:07:24', 'WCW2-VDGN-IYJ1'),
-(40259, 30211, 'Sweden', 10047, 'Sweden', 20042, 'Sweden', 'Sweden', 7747992, 7131583, 3369918, '2020-04-23 16:22:04', 'G6BG-AAC9-932P'),
-(40260, 30466, 'Sweden', 10046, 'Sweden', 20019, 'Finland', 'Sweden', 5863102, 7131911, 3924900, '2020-11-10 00:06:17', 'MENL-ELJQ-EWEB'),
-(40261, 30089, 'Sweden', 10037, 'Sweden', 20045, 'Sweden', 'Sweden', 1157714, 5300667, 6616142, '2020-08-03 10:44:17', 'M3F6-ZL03-EEDQ'),
-(40262, 30280, 'Sweden', 10008, 'Sweden', 20008, 'Sweden', 'Sweden', 9892005, 8647792, 3028214, '2020-03-02 00:27:06', 'P6PW-FUGC-HC03'),
-(40263, 30277, 'Finland', 10009, 'Sweden', 20013, 'Sweden', 'Sweden', 1671472, 8920801, 8235912, '2020-09-29 17:17:00', 'KDLT-RC2B-QSHQ'),
-(40264, 30319, 'Sweden', 10026, 'Sweden', 20034, 'Sweden', 'Sweden', 1367199, 3020713, 3042099, '2020-10-02 16:28:46', 'NVFR-0HFM-S7A1'),
-(40265, 30029, 'Sweden', 10050, 'Finland', 20034, 'Sweden', 'Finland', 7841185, 2703309, 3329938, '2020-06-27 08:10:25', 'I30N-K687-26GI'),
-(40266, 30102, 'Sweden', 10018, 'Sweden', 20024, 'Sweden', 'Sweden', 4321131, 5774018, 5359452, '2020-06-17 06:29:05', 'ZXSJ-PS8X-N4D6'),
-(40267, 30274, 'Sweden', 10045, 'Finland', 20021, 'Sweden', 'Finland', 4434080, 2881013, 5521299, '2020-09-11 13:45:31', 'LH1P-LO57-OMI7'),
-(40268, 30235, 'Sweden', 10010, 'Sweden', 20013, 'Sweden', 'Sweden', 3207707, 5829065, 6193095, '2019-12-12 18:34:28', 'Q2ZR-OORN-S9K9'),
-(40269, 30167, 'Sweden', 10027, 'Norway', 20001, 'Sweden', 'Norway', 6883681, 8314890, 6596632, '2020-05-06 05:37:04', 'MGNJ-WHI7-44Y3'),
-(40270, 30156, 'Finland', 10002, 'Sweden', 20001, 'Sweden', 'Sweden', 5100351, 4683290, 7924933, '2020-05-06 00:53:35', 'LY1N-AS0V-GBZB'),
-(40271, 30088, 'Sweden', 10028, 'Sweden', 20027, 'Sweden', 'Sweden', 1653989, 5348777, 2084551, '2019-12-11 22:45:02', 'C5TY-GHIS-SQ98'),
-(40272, 30183, 'Sweden', 10010, 'Sweden', 20009, 'Sweden', 'Sweden', 7879724, 2489474, 9866843, '2020-06-11 02:04:24', 'OK48-HFPG-3GP5'),
-(40273, 30457, 'Finland', 10002, 'Sweden', 20026, 'Sweden', 'Sweden', 4587879, 9488270, 3787343, '2020-08-10 17:36:24', 'QY6P-IIM2-F2US'),
-(40274, 30328, 'Sweden', 10037, 'Sweden', 20006, 'Sweden', 'Sweden', 9745090, 1631588, 4737111, '2020-04-01 20:31:00', 'NFUT-YVT2-Q153'),
-(40275, 30016, 'Norway', 10019, 'Sweden', 20018, 'Sweden', 'Sweden', 3345335, 1797676, 1230206, '2020-05-05 01:37:33', 'M8QE-CXAH-M0VA'),
-(40276, 30386, 'Sweden', 10038, 'Finland', 20034, 'Sweden', 'Finland', 4665086, 4952476, 5961546, '2020-08-31 08:04:03', 'XUII-PN8Q-J717'),
-(40277, 30250, 'Sweden', 10041, 'Norway', 20009, 'Sweden', 'Norway', 7158010, 8170644, 8333287, '2020-08-13 03:18:07', 'UQDG-M716-TAJY'),
-(40278, 30308, 'Finland', 10024, 'Sweden', 20027, 'Sweden', 'Sweden', 5352127, 8018708, 4969893, '2020-08-28 03:24:54', 'KR84-DBNH-AXH6'),
-(40279, 30470, 'Sweden', 10041, 'Norway', 20040, 'Finland', 'Norway', 1603841, 9339914, 7173491, '2020-02-14 10:12:47', 'OZZ8-C1J9-JVXN'),
-(40280, 30214, 'Norway', 10029, 'Sweden', 20005, 'Sweden', 'Sweden', 5748342, 3101877, 3763838, '2020-10-23 21:33:11', 'JN70-EKX9-XZDT'),
-(40281, 30373, 'Norway', 10050, 'Finland', 20005, 'Sweden', 'Finland', 4829005, 1699628, 1381047, '2020-03-21 09:52:50', 'CDK3-DA1X-2CEY'),
-(40282, 30440, 'Finland', 10043, 'Sweden', 20018, 'Sweden', 'Sweden', 4171115, 7054786, 1673022, '2020-02-24 00:19:59', '7QNH-R096-Q5RD'),
-(40283, 30181, 'Finland', 10043, 'Sweden', 20025, 'Norway', 'Sweden', 5870893, 8805864, 6235382, '2020-10-21 13:42:21', 'WFI5-Q3UZ-KB8Q'),
-(40284, 30317, 'Sweden', 10015, 'Norway', 20010, 'Sweden', 'Norway', 8907669, 8626521, 2682134, '2020-10-08 20:52:05', 'WRJD-CALW-KG2Q'),
-(40285, 30190, 'Sweden', 10012, 'Sweden', 20050, 'Sweden', 'Sweden', 7625492, 7621869, 3002351, '2020-05-31 16:51:35', 'JGXM-4GUV-KSCX'),
-(40286, 30280, 'Sweden', 10004, 'Sweden', 20007, 'Sweden', 'Sweden', 4753861, 3534316, 5043702, '2020-05-11 11:48:26', 'OF06-J1J1-I3ZA'),
-(40287, 30411, 'Sweden', 10006, 'Sweden', 20018, 'Sweden', 'Sweden', 3986407, 9491560, 7377148, '2020-04-06 12:12:02', 'HPFH-L6WB-KS6Q'),
-(40288, 30197, 'Norway', 10022, 'Sweden', 20043, 'Sweden', 'Sweden', 4687480, 8358852, 5772910, '2020-11-11 12:22:35', '6GLQ-T5AY-F0IS'),
-(40289, 30184, 'Finland', 10017, 'Sweden', 20003, 'Finland', 'Sweden', 2267390, 6591699, 1283537, '2020-06-05 20:04:16', 'HSZB-B6G5-YEAO'),
-(40290, 30308, 'Finland', 10031, 'Sweden', 20039, 'Sweden', 'Sweden', 2416468, 2090103, 6344783, '2020-03-30 01:07:08', '45HZ-PY1U-F4P0'),
-(40291, 30279, 'Finland', 10025, 'Norway', 20004, 'Sweden', 'Norway', 3259041, 4868263, 4955293, '2020-05-20 14:23:46', 'LQUM-BCUZ-DLNW'),
-(40292, 30425, 'Sweden', 10043, 'Sweden', 20006, 'Sweden', 'Sweden', 5031829, 1152822, 7734371, '2019-12-11 13:23:42', '998U-9RE2-DDCT'),
-(40293, 30410, 'Sweden', 10030, 'Norway', 20039, 'Sweden', 'Norway', 1010282, 5100052, 8167873, '2020-05-03 15:47:38', '8L3K-N22W-RVV7'),
-(40294, 30022, 'Finland', 10040, 'Finland', 20016, 'Sweden', 'Finland', 1536963, 9036340, 5627399, '2020-06-15 17:22:35', 'JD5F-SNOH-WYMA'),
-(40295, 30375, 'Finland', 10043, 'Sweden', 20008, 'Sweden', 'Sweden', 3856972, 7257743, 7831651, '2020-07-24 23:31:45', 'HLQJ-15D4-MIT7'),
-(40296, 30485, 'Sweden', 10050, 'Finland', 20018, 'Sweden', 'Finland', 4056138, 6914490, 6860581, '2020-11-20 05:23:49', '5MRZ-6U8Z-KH0H'),
-(40297, 30157, 'Norway', 10008, 'Sweden', 20005, 'Sweden', 'Sweden', 5684514, 8134315, 7470243, '2020-05-15 01:34:23', 'K7LI-77DI-SUES'),
-(40298, 30425, 'Sweden', 10031, 'Sweden', 20003, 'Finland', 'Sweden', 9488865, 8945981, 9166648, '2020-06-07 04:02:26', 'CA37-4BI8-SDHC'),
-(40299, 30247, 'Sweden', 10008, 'Sweden', 20013, 'Sweden', 'Sweden', 1333483, 3365092, 3533915, '2020-05-20 15:39:46', 'NN14-ELTP-PFNH'),
-(40300, 30310, 'Sweden', 10048, 'Sweden', 20049, 'Sweden', 'Sweden', 9817604, 4765290, 7495359, '2020-02-14 13:03:37', '0BIG-JCX3-XXB0'),
-(40301, 30044, 'Sweden', 10050, 'Finland', 20014, 'Sweden', 'Finland', 8167351, 4064840, 5854254, '2020-09-27 11:34:52', 'OT1K-NHC2-WVGJ'),
-(40302, 30285, 'Sweden', 10012, 'Sweden', 20018, 'Sweden', 'Sweden', 7530103, 6782309, 3508030, '2020-02-03 22:22:43', '52H3-7Q5Q-6IT5'),
-(40303, 30112, 'Sweden', 10021, 'Sweden', 20001, 'Sweden', 'Sweden', 8002465, 4219186, 9268848, '2020-10-23 17:23:41', 'GD17-8B1W-LU4U'),
-(40304, 30019, 'Sweden', 10001, 'Sweden', 20024, 'Sweden', 'Sweden', 1634609, 8887798, 9228877, '2020-01-27 11:50:39', 'OP34-YINK-FWHY'),
-(40305, 30306, 'Sweden', 10028, 'Sweden', 20022, 'Norway', 'Sweden', 9326230, 1689181, 3162521, '2020-10-30 06:38:49', 'KFOJ-RGAH-R1G1'),
-(40306, 30422, 'Finland', 10043, 'Sweden', 20028, 'Sweden', 'Sweden', 9492317, 8216253, 9840508, '2020-05-16 23:55:31', '4N5P-UVPQ-L49Z'),
-(40307, 30015, 'Sweden', 10003, 'Sweden', 20037, 'Sweden', 'Sweden', 5165267, 1272277, 5630331, '2020-10-29 10:14:49', 'X3VR-DQSH-A4FP'),
-(40308, 30114, 'Sweden', 10001, 'Sweden', 20008, 'Sweden', 'Sweden', 3104328, 4337738, 6243104, '2020-09-11 15:51:26', 'B8J1-BEJW-39EQ'),
-(40309, 30158, 'Sweden', 10040, 'Finland', 20018, 'Sweden', 'Finland', 4200289, 4249852, 3273726, '2020-02-17 20:09:22', 'L149-9QRT-DIA4'),
-(40310, 30158, 'Sweden', 10030, 'Norway', 20047, 'Sweden', 'Norway', 3757705, 8163767, 2283204, '2020-05-12 12:08:51', 'W7ZP-0FHL-826V'),
-(40311, 30065, 'Sweden', 10010, 'Sweden', 20016, 'Sweden', 'Sweden', 5254827, 3971237, 6620334, '2020-02-09 13:34:03', 'MCVE-IKUT-LHPH'),
-(40312, 30362, 'Sweden', 10020, 'Norway', 20040, 'Finland', 'Norway', 2554125, 9667329, 6693393, '2020-11-23 15:30:19', 'KYYE-XJ7K-IBEB'),
-(40313, 30075, 'Finland', 10046, 'Sweden', 20029, 'Finland', 'Sweden', 4581024, 9367224, 5913581, '2020-05-07 02:56:38', '64VG-AX0D-CWBS'),
-(40314, 30316, 'Sweden', 10013, 'Norway', 20004, 'Sweden', 'Norway', 3552574, 6196207, 2573579, '2020-08-21 05:00:35', 'ONR0-TL7X-XX4S'),
-(40315, 30379, 'Sweden', 10047, 'Sweden', 20039, 'Sweden', 'Sweden', 9805531, 2601277, 3849305, '2020-03-26 14:47:55', 'NVOZ-0UNB-NHE6'),
-(40316, 30359, 'Sweden', 10001, 'Sweden', 20029, 'Finland', 'Sweden', 7641651, 2530379, 7016157, '2020-03-26 10:54:25', '22T4-V98C-7IJF'),
-(40317, 30476, 'Sweden', 10044, 'Sweden', 20007, 'Sweden', 'Sweden', 8543187, 8030415, 2775085, '2020-10-08 15:15:39', 'USKG-F6CZ-HT5Q'),
-(40318, 30306, 'Sweden', 10046, 'Sweden', 20007, 'Sweden', 'Sweden', 4918516, 8932942, 6868035, '2020-08-09 07:48:33', 'WMPN-LUOZ-U9II'),
-(40319, 30319, 'Sweden', 10024, 'Sweden', 20018, 'Sweden', 'Sweden', 2600308, 5531037, 1666852, '2020-05-21 03:14:19', 'SDDF-2LTO-UHAU'),
-(40320, 30479, 'Sweden', 10049, 'Finland', 20020, 'Sweden', 'Finland', 2846830, 7285440, 1393599, '2020-01-01 21:12:44', '9LKP-9W19-WDGE'),
-(40321, 30244, 'Finland', 10032, 'Finland', 20009, 'Sweden', 'Finland', 9460358, 3221662, 1427272, '2020-01-24 03:49:03', 'ANWQ-8456-DXLG'),
-(40322, 30098, 'Sweden', 10037, 'Sweden', 20027, 'Sweden', 'Sweden', 4044645, 5007752, 9602060, '2019-12-30 11:47:44', 'NY6A-2ZZA-BOGM'),
-(40323, 30276, 'Norway', 10048, 'Sweden', 20028, 'Sweden', 'Sweden', 7570410, 7963211, 9565765, '2020-02-08 14:51:21', 'GZN7-ZQAN-IY7L'),
-(40324, 30125, 'Sweden', 10021, 'Sweden', 20048, 'Sweden', 'Sweden', 4021377, 8970010, 9135205, '2020-02-16 11:08:39', 'FCGF-F5K6-VC7G'),
-(40325, 30090, 'Sweden', 10031, 'Sweden', 20015, 'Finland', 'Sweden', 3359770, 4233071, 8182644, '2020-07-16 12:34:59', '3DC3-MYLW-OY8G'),
-(40326, 30276, 'Norway', 10031, 'Sweden', 20024, 'Sweden', 'Sweden', 1751262, 8317364, 7027909, '2020-01-15 15:04:19', '1DO4-553J-FKGT'),
-(40327, 30341, 'Norway', 10011, 'Finland', 20049, 'Sweden', 'Finland', 4419410, 2277849, 1113978, '2020-03-10 01:58:28', 'EI4L-7782-3YT5'),
-(40328, 30357, 'Sweden', 10007, 'Sweden', 20028, 'Sweden', 'Sweden', 2568155, 3606457, 8780949, '2020-01-22 00:13:08', 'LBEP-5N3D-LKES'),
-(40329, 30181, 'Finland', 10011, 'Finland', 20003, 'Finland', 'Finland', 2550562, 5357182, 1779405, '2020-10-28 16:04:10', 'D2MW-ADCW-Z8J2'),
-(40330, 30384, 'Sweden', 10037, 'Sweden', 20024, 'Sweden', 'Sweden', 5890455, 4547300, 1557147, '2020-02-27 17:20:51', 'ASVJ-VMOH-LF9R'),
-(40331, 30279, 'Finland', 10047, 'Sweden', 20035, 'Sweden', 'Sweden', 8425233, 9897770, 8994752, '2020-09-10 05:18:34', 'CC89-L2D8-05PU'),
-(40332, 30181, 'Finland', 10041, 'Norway', 20011, 'Finland', 'Norway', 5417893, 6889907, 4098876, '2020-10-05 03:40:39', '5WI4-HVL8-E3YQ'),
-(40333, 30391, 'Sweden', 10044, 'Sweden', 20044, 'Sweden', 'Sweden', 6816892, 7838223, 3998085, '2020-09-05 09:04:57', 'LL2Z-JL73-7304'),
-(40334, 30089, 'Sweden', 10011, 'Finland', 20006, 'Sweden', 'Finland', 1062846, 1063268, 6418240, '2020-04-07 21:10:24', 'E5P7-FTJ8-6YQW'),
-(40335, 30227, 'Finland', 10049, 'Finland', 20036, 'Sweden', 'Finland', 9074033, 7926473, 7262470, '2020-10-20 21:43:44', '6R9P-5NMI-D9VW'),
-(40336, 30068, 'Sweden', 10031, 'Sweden', 20040, 'Finland', 'Sweden', 8711923, 6938826, 8460117, '2020-02-21 11:18:59', 'K7TK-94BT-R6GX'),
-(40337, 30358, 'Finland', 10046, 'Sweden', 20035, 'Sweden', 'Sweden', 8190959, 4723202, 3754631, '2020-07-11 21:16:12', 'M1BQ-MX55-C7C3'),
-(40338, 30242, 'Sweden', 10043, 'Sweden', 20013, 'Sweden', 'Sweden', 2537227, 2062225, 1273438, '2020-03-21 12:38:44', 'TKIK-5MGI-PUWS'),
-(40339, 30285, 'Sweden', 10034, 'Sweden', 20017, 'Finland', 'Sweden', 4467607, 7800576, 4484539, '2020-08-18 01:24:55', 'MTYH-HQ5J-43ZV'),
-(40340, 30408, 'Finland', 10033, 'Sweden', 20027, 'Sweden', 'Sweden', 5882662, 7623510, 3740763, '2020-04-28 05:30:28', 'JXRE-UOL8-YKI4'),
-(40341, 30360, 'Sweden', 10038, 'Finland', 20004, 'Sweden', 'Finland', 9212901, 9371055, 8375371, '2020-08-03 10:17:59', 'NAQ6-B1QA-31ZW'),
-(40342, 30373, 'Norway', 10016, 'Sweden', 20036, 'Sweden', 'Sweden', 5876882, 8057661, 5691898, '2020-08-20 14:47:49', 'FUDP-ADSO-Y3J6'),
-(40343, 30160, 'Sweden', 10037, 'Sweden', 20034, 'Sweden', 'Sweden', 7046281, 9345439, 6075250, '2020-10-24 23:50:28', '8QBO-GW5L-QZX7'),
-(40344, 30367, 'Sweden', 10036, 'Sweden', 20033, 'Finland', 'Sweden', 4119473, 8470000, 6270577, '2020-05-26 00:58:30', '1CBN-FW8D-XR1L'),
-(40345, 30365, 'Sweden', 10006, 'Sweden', 20030, 'Finland', 'Sweden', 7141960, 1720790, 1457268, '2020-03-09 15:44:58', 'RNDK-738V-MXZY'),
-(40346, 30269, 'Sweden', 10015, 'Norway', 20006, 'Sweden', 'Norway', 8930936, 2777224, 5350091, '2020-07-10 13:19:35', 'HGYS-NCII-LL7K'),
-(40347, 30360, 'Sweden', 10004, 'Sweden', 20023, 'Sweden', 'Sweden', 8191919, 2207254, 6001563, '2020-01-19 06:57:24', '3Y9L-NCYV-YZXN'),
-(40348, 30419, 'Finland', 10043, 'Sweden', 20033, 'Finland', 'Sweden', 8091071, 7072580, 3234696, '2020-05-17 06:42:31', '15FR-5DJL-N0KW'),
-(40349, 30495, 'Sweden', 10042, 'Sweden', 20024, 'Sweden', 'Sweden', 8950597, 2637509, 1119231, '2020-07-15 08:43:06', 'M15K-HN9Z-5PDI'),
-(40350, 30207, 'Norway', 10018, 'Sweden', 20028, 'Sweden', 'Sweden', 6697820, 9548902, 5007260, '2020-03-28 11:23:28', 'DA9Z-H3GH-Y01K'),
-(40351, 30091, 'Finland', 10042, 'Sweden', 20020, 'Sweden', 'Sweden', 4687634, 2463542, 2276012, '2020-03-04 07:43:52', 'OB9E-0M3V-YBXC'),
-(40352, 30431, 'Sweden', 10039, 'Sweden', 20032, 'Finland', 'Sweden', 2822784, 5800537, 3100086, '2020-08-18 08:30:20', 'J8PF-FJFM-0XBY'),
-(40353, 30317, 'Sweden', 10038, 'Finland', 20029, 'Finland', 'Finland', 9131388, 4567450, 6662217, '2020-06-06 23:52:07', 'AO3F-MAGW-ZL7Z'),
-(40354, 30178, 'Sweden', 10029, 'Sweden', 20027, 'Sweden', 'Sweden', 8585076, 7213822, 8463689, '2020-09-02 18:17:18', '9430-KL05-NNIB'),
-(40355, 30024, 'Sweden', 10049, 'Finland', 20043, 'Sweden', 'Finland', 6051742, 9935965, 9069300, '2020-10-28 22:51:53', '4FZO-1HNQ-C0AV'),
-(40356, 30438, 'Sweden', 10024, 'Sweden', 20032, 'Finland', 'Sweden', 5500362, 9213264, 2359823, '2020-10-08 00:23:05', '0YYI-TBFA-TS4D'),
-(40357, 30467, 'Sweden', 10027, 'Norway', 20035, 'Sweden', 'Norway', 7043836, 6564863, 7968747, '2020-11-12 04:40:58', 'QDK4-6MJ7-6OKO'),
-(40358, 30141, 'Sweden', 10048, 'Sweden', 20045, 'Sweden', 'Sweden', 6307101, 3951548, 8494369, '2020-10-07 01:09:52', '85V5-C4QM-T8YA'),
-(40359, 30049, 'Sweden', 10017, 'Sweden', 20020, 'Sweden', 'Sweden', 8541687, 2760458, 2453502, '2020-06-26 15:39:01', 'O5JF-HBMG-L27N'),
-(40360, 30476, 'Sweden', 10013, 'Norway', 20039, 'Sweden', 'Norway', 2307694, 5603605, 4965574, '2020-10-14 13:26:25', '9B0C-W1N2-SULY'),
-(40361, 30025, 'Sweden', 10050, 'Finland', 20013, 'Sweden', 'Finland', 1954868, 2485529, 7980296, '2020-05-22 01:13:47', 'N3DE-9609-2VZH'),
-(40362, 30344, 'Sweden', 10038, 'Finland', 20017, 'Finland', 'Finland', 7551183, 5967160, 8698976, '2020-06-12 22:39:34', 'MMX1-NKAX-IOP5'),
-(40363, 30492, 'Sweden', 10022, 'Sweden', 20047, 'Sweden', 'Sweden', 8298335, 6806644, 8441315, '2020-04-05 17:32:36', 'KPOQ-1HT3-91Q9'),
-(40364, 30253, 'Sweden', 10007, 'Sweden', 20043, 'Sweden', 'Sweden', 9575415, 6421596, 9910255, '2020-01-25 00:30:36', '2N8Q-Y4XU-H91C'),
-(40365, 30458, 'Finland', 10034, 'Sweden', 20038, 'Sweden', 'Sweden', 2254230, 2105598, 3024344, '2020-04-23 09:15:48', '4BNV-1MSM-H0I2'),
-(40366, 30067, 'Sweden', 10045, 'Finland', 20045, 'Sweden', 'Finland', 3000369, 3507063, 2533122, '2019-12-21 14:18:34', 'L8J5-9RD3-4NLM'),
-(40367, 30329, 'Sweden', 10005, 'Norway', 20013, 'Sweden', 'Norway', 4737238, 4949909, 2240387, '2020-01-08 18:44:45', 'Y6M5-CTNV-2FMF'),
-(40368, 30146, 'Sweden', 10030, 'Norway', 20019, 'Finland', 'Norway', 1311872, 2984374, 3290206, '2020-10-20 12:54:10', '120O-9VTF-3MQ3'),
-(40369, 30112, 'Sweden', 10025, 'Norway', 20025, 'Norway', 'Norway', 8281474, 5946218, 3330033, '2020-09-30 04:53:09', 'NB8N-3ZL3-5CTL'),
-(40370, 30085, 'Sweden', 10049, 'Finland', 20025, 'Norway', 'Finland', 1826301, 5170481, 7298120, '2020-05-31 23:30:23', 'YNNP-T3YF-MMRA'),
-(40371, 30203, 'Sweden', 10019, 'Sweden', 20048, 'Sweden', 'Sweden', 9015545, 2192752, 4912526, '2020-03-30 03:58:12', '1NKK-48ST-MB5F'),
-(40372, 30146, 'Sweden', 10004, 'Sweden', 20023, 'Sweden', 'Sweden', 5377345, 4312383, 6834637, '2020-08-29 04:52:55', 'X2Z2-LSL6-6XAE'),
-(40373, 30474, 'Sweden', 10019, 'Sweden', 20014, 'Sweden', 'Sweden', 6581414, 7606083, 9589323, '2020-07-24 00:47:38', 'IU4I-LETC-KWVN'),
-(40374, 30459, 'Sweden', 10036, 'Sweden', 20038, 'Sweden', 'Sweden', 8564500, 8531961, 1076800, '2020-11-26 22:27:12', 'QN33-58OW-WIHU'),
-(40375, 30041, 'Sweden', 10003, 'Sweden', 20047, 'Sweden', 'Sweden', 6298576, 2492727, 6830074, '2020-07-30 14:54:27', 'TXR3-4WUX-1CCA'),
-(40376, 30373, 'Norway', 10046, 'Sweden', 20006, 'Sweden', 'Sweden', 9050769, 2818488, 1141074, '2020-06-24 19:29:42', '9LLL-ROFW-HEGP'),
-(40377, 30461, 'Sweden', 10023, 'Sweden', 20014, 'Sweden', 'Sweden', 2393215, 9777608, 1066901, '2020-06-08 09:04:13', '39MY-X1V3-UR5D'),
-(40378, 30469, 'Sweden', 10001, 'Sweden', 20045, 'Sweden', 'Sweden', 7697133, 2865258, 3647530, '2020-06-29 20:40:28', 'FSXA-1WC9-XCTK'),
-(40379, 30065, 'Sweden', 10023, 'Sweden', 20012, 'Norway', 'Sweden', 1523696, 1710945, 6469489, '2020-11-17 02:00:21', '6185-GKNB-CLE5'),
-(40380, 30088, 'Sweden', 10032, 'Finland', 20048, 'Sweden', 'Finland', 9456182, 2875359, 4584840, '2020-01-25 09:59:28', 'VIN1-92NX-45WG'),
-(40381, 30029, 'Sweden', 10007, 'Sweden', 20029, 'Finland', 'Sweden', 5037446, 9228405, 7709083, '2020-08-07 22:52:39', 'JYOG-FA43-OV9W'),
-(40382, 30454, 'Sweden', 10044, 'Sweden', 20030, 'Finland', 'Sweden', 1950283, 5040698, 2569695, '2020-04-09 19:39:59', 'I7NH-NOCL-9FDO'),
-(40383, 30342, 'Norway', 10019, 'Sweden', 20031, 'Sweden', 'Sweden', 7202352, 9808923, 7139262, '2020-04-04 04:52:58', 'C5RQ-IBYD-E7KR'),
-(40384, 30039, 'Sweden', 10026, 'Sweden', 20043, 'Sweden', 'Sweden', 6804939, 8523334, 1902284, '2020-11-01 23:44:12', 'AZ5I-T067-LB2E'),
-(40385, 30440, 'Finland', 10027, 'Norway', 20037, 'Sweden', 'Norway', 2166421, 5005249, 9017673, '2020-11-09 05:15:54', '6J2Q-2PDN-YK0I'),
-(40386, 30308, 'Finland', 10039, 'Sweden', 20008, 'Sweden', 'Sweden', 4945232, 1065577, 2553770, '2020-03-14 12:43:14', 'OFKI-JQUE-CX0D'),
-(40387, 30414, 'Sweden', 10031, 'Sweden', 20017, 'Finland', 'Sweden', 1933242, 9871804, 3501844, '2020-06-16 07:12:53', 'STJS-4MUR-DC73'),
-(40388, 30011, 'Sweden', 10032, 'Finland', 20048, 'Sweden', 'Finland', 4239058, 8410698, 6584130, '2020-02-22 17:22:49', 'VZJ6-C0DM-K0FM'),
-(40389, 30375, 'Finland', 10008, 'Sweden', 20045, 'Sweden', 'Sweden', 2378109, 6064329, 6586473, '2020-10-07 08:45:14', '4IF7-PWIE-FTWK'),
-(40390, 30404, 'Sweden', 10038, 'Finland', 20024, 'Sweden', 'Finland', 2625290, 3521459, 9834911, '2020-01-07 02:55:17', 'R5U0-1H4Q-VE92'),
-(40391, 30212, 'Sweden', 10001, 'Sweden', 20030, 'Finland', 'Sweden', 5157476, 4246216, 6998768, '2020-01-31 06:02:52', 'EI49-09FF-5TPR'),
-(40392, 30232, 'Finland', 10041, 'Norway', 20007, 'Sweden', 'Norway', 7689613, 4126314, 4409791, '2020-08-02 16:16:06', 'QF1I-Q5A5-7LN5'),
-(40393, 30456, 'Sweden', 10028, 'Sweden', 20031, 'Sweden', 'Sweden', 8594712, 7844956, 9785707, '2020-03-10 04:50:06', 'IP3X-HDNV-1V4J'),
-(40394, 30168, 'Sweden', 10009, 'Sweden', 20046, 'Sweden', 'Sweden', 1137873, 8349469, 1524655, '2020-02-12 22:02:33', '7U0Q-56XX-JHZ4'),
-(40395, 30105, 'Sweden', 10045, 'Finland', 20033, 'Finland', 'Finland', 3774914, 6542456, 8954998, '2020-08-24 06:23:57', 'VVQM-ZWI9-ZTHG'),
-(40396, 30301, 'Sweden', 10043, 'Sweden', 20006, 'Sweden', 'Sweden', 4992723, 4646418, 1815940, '2019-12-16 00:35:22', 'TO2T-KPNN-RLRO'),
-(40397, 30044, 'Sweden', 10023, 'Sweden', 20040, 'Finland', 'Sweden', 9161798, 4102530, 8718892, '2020-02-29 23:33:26', 'S4QH-EJZB-YZZV'),
-(40398, 30218, 'Sweden', 10044, 'Sweden', 20032, 'Finland', 'Sweden', 2990564, 8884910, 1324095, '2020-07-14 03:45:45', '0JYO-GKUD-MNE1'),
-(40399, 30123, 'Sweden', 10001, 'Sweden', 20012, 'Norway', 'Sweden', 4178926, 6446363, 3053538, '2020-04-02 06:09:35', 'S4MP-6K05-CEWI'),
-(40400, 30110, 'Sweden', 10027, 'Norway', 20003, 'Finland', 'Norway', 7917628, 9219119, 1361839, '2020-04-30 08:56:15', '3MHK-N13X-NJIJ'),
-(40401, 30053, 'Finland', 10001, 'Sweden', 20030, 'Finland', 'Sweden', 3347563, 8691869, 9344829, '2020-05-18 18:33:28', 'QEIQ-D94D-7ZCR'),
-(40402, 30142, 'Sweden', 10035, 'Norway', 20011, 'Finland', 'Norway', 3055642, 9135546, 2940001, '2020-09-14 21:06:40', '5788-4NFF-0S67'),
-(40403, 30245, 'Sweden', 10026, 'Sweden', 20028, 'Sweden', 'Sweden', 3645629, 5187913, 9143311, '2020-05-21 01:42:06', 'QEUQ-FMDP-G7CI'),
-(40404, 30201, 'Sweden', 10046, 'Sweden', 20017, 'Finland', 'Sweden', 5242535, 9850529, 2026116, '2020-01-31 12:34:12', '0QN4-P2YU-ZIXW'),
-(40405, 30416, 'Finland', 10036, 'Sweden', 20021, 'Sweden', 'Sweden', 1536615, 7040530, 1052352, '2020-02-11 18:49:21', 'MAI2-9O5O-6MZE'),
-(40406, 30360, 'Sweden', 10048, 'Sweden', 20041, 'Sweden', 'Sweden', 7167984, 6738456, 5647237, '2020-06-10 11:42:06', 'TJMR-3GQ2-YQ8N'),
-(40407, 30397, 'Sweden', 10038, 'Finland', 20020, 'Sweden', 'Finland', 9994081, 8164484, 9477602, '2020-09-22 22:32:29', 'AJ95-5TMA-EFIZ'),
-(40408, 30109, 'Sweden', 10010, 'Sweden', 20021, 'Sweden', 'Sweden', 5987191, 4862937, 9285177, '2020-02-20 08:37:31', 'VO0E-9WMJ-VK3I'),
-(40409, 30005, 'Finland', 10002, 'Sweden', 20030, 'Finland', 'Sweden', 4538351, 6875751, 6488568, '2020-10-16 03:49:07', 'NF7Z-ZAKU-29XF'),
-(40410, 30038, 'Finland', 10029, 'Sweden', 20020, 'Sweden', 'Sweden', 3994836, 9207121, 4312824, '2020-10-23 21:55:48', 'ZSUE-IGBW-XEH8'),
-(40411, 30110, 'Sweden', 10007, 'Sweden', 20005, 'Sweden', 'Sweden', 8912639, 7414076, 3398497, '2020-08-07 15:00:01', '2582-YWON-MYV7'),
-(40412, 30139, 'Sweden', 10006, 'Sweden', 20001, 'Sweden', 'Sweden', 8095819, 4306300, 1836457, '2020-11-19 21:40:52', 'FBPX-M3XI-5022'),
-(40413, 30444, 'Sweden', 10037, 'Sweden', 20011, 'Finland', 'Sweden', 9320157, 9515852, 7848307, '2020-09-24 03:25:25', 'D9EU-CSYX-IQYG'),
-(40414, 30203, 'Sweden', 10005, 'Norway', 20028, 'Sweden', 'Norway', 1255658, 4246241, 3091485, '2020-10-02 01:29:01', 'YCX8-3PAL-ADZ1'),
-(40415, 30147, 'Finland', 10001, 'Sweden', 20008, 'Sweden', 'Sweden', 4146581, 3664290, 2672860, '2020-04-24 15:04:22', 'UK39-GRU8-M7UU'),
-(40416, 30159, 'Sweden', 10007, 'Sweden', 20030, 'Finland', 'Sweden', 2159035, 5627159, 2425187, '2020-02-29 19:48:52', 'PEOZ-0GWV-HAFX'),
-(40417, 30272, 'Sweden', 10024, 'Sweden', 20032, 'Finland', 'Sweden', 7763378, 3338160, 8671500, '2020-02-08 17:49:15', 'BXUW-2UOG-YMUZ'),
-(40418, 30163, 'Sweden', 10001, 'Sweden', 20013, 'Sweden', 'Sweden', 5510432, 8523200, 4561579, '2020-06-12 00:22:15', 'CBVZ-Z8A0-6VEI'),
-(40419, 30473, 'Sweden', 10044, 'Sweden', 20015, 'Finland', 'Sweden', 9094896, 8528418, 3757508, '2020-09-19 20:48:50', '8QP9-308T-NGQC'),
-(40420, 30411, 'Sweden', 10006, 'Sweden', 20028, 'Sweden', 'Sweden', 9355347, 6060521, 8207906, '2020-09-07 15:09:24', 'Q29R-M580-AL6X'),
-(40421, 30203, 'Sweden', 10023, 'Sweden', 20007, 'Sweden', 'Sweden', 2403326, 4756765, 4455018, '2020-07-17 21:43:30', 'I5FB-T923-OFGE'),
-(40422, 30476, 'Sweden', 10026, 'Sweden', 20033, 'Finland', 'Sweden', 5815496, 5243501, 7148755, '2020-02-13 07:42:51', 'IKXK-0PGQ-1MRD'),
-(40423, 30038, 'Finland', 10004, 'Sweden', 20031, 'Sweden', 'Sweden', 2842137, 7143761, 5767062, '2019-12-27 08:45:38', 'ZOIN-BIX7-WAA6'),
-(40424, 30256, 'Norway', 10029, 'Sweden', 20031, 'Sweden', 'Sweden', 3720720, 2304676, 2121992, '2020-05-25 15:39:56', 'Q9ZM-NMS6-PG6F'),
-(40425, 30141, 'Sweden', 10012, 'Sweden', 20020, 'Sweden', 'Sweden', 4427401, 8902678, 7482678, '2020-01-01 21:13:27', 'WMI6-S4DD-1EY7'),
-(40426, 30088, 'Sweden', 10025, 'Norway', 20045, 'Sweden', 'Norway', 2817240, 2491860, 2591043, '2020-01-08 05:55:34', 'WRY9-OBCT-AWJW'),
-(40427, 30356, 'Norway', 10007, 'Sweden', 20002, 'Sweden', 'Sweden', 8062554, 3149644, 1037215, '2020-06-25 13:37:13', 'K3U9-3VQM-N4JG'),
-(40428, 30186, 'Sweden', 10024, 'Sweden', 20016, 'Sweden', 'Sweden', 1212147, 5137079, 4558910, '2020-02-08 00:31:52', '6N4L-NKU9-UXBG'),
-(40429, 30292, 'Sweden', 10013, 'Norway', 20048, 'Sweden', 'Norway', 8952912, 3586301, 9267384, '2020-05-13 14:51:58', 'K0YW-YXY6-LFIV'),
-(40430, 30061, 'Sweden', 10050, 'Finland', 20031, 'Sweden', 'Finland', 4427942, 5851052, 5591780, '2020-10-23 12:25:49', 'YYYW-BRXE-KYJW'),
-(40431, 30464, 'Sweden', 10042, 'Sweden', 20050, 'Sweden', 'Sweden', 2682596, 6158403, 5722549, '2020-06-17 09:47:21', '56DN-A2HR-CKRB'),
-(40432, 30007, 'Finland', 10039, 'Sweden', 20034, 'Sweden', 'Sweden', 3874276, 4925600, 6983386, '2020-09-30 03:15:19', '8275-KOA7-O4ZW'),
-(40433, 30033, 'Sweden', 10033, 'Sweden', 20014, 'Sweden', 'Sweden', 9153313, 8804458, 3899028, '2019-12-17 13:19:25', 'XQXR-EH35-PXJK'),
-(40434, 30108, 'Sweden', 10009, 'Sweden', 20018, 'Sweden', 'Sweden', 9944947, 4115528, 9643369, '2020-02-11 16:36:07', '0IOJ-3065-K3Y7'),
-(40435, 30070, 'Sweden', 10026, 'Sweden', 20022, 'Norway', 'Sweden', 5520629, 7708077, 9805068, '2020-05-23 06:38:47', 'MHJP-Y75Y-XLAB'),
-(40436, 30126, 'Sweden', 10004, 'Sweden', 20044, 'Sweden', 'Sweden', 9285385, 5099023, 9510835, '2020-06-22 00:56:23', 'M7R4-E9ME-8XIZ'),
-(40437, 30127, 'Sweden', 10044, 'Sweden', 20045, 'Sweden', 'Sweden', 7570753, 4847867, 7595038, '2020-01-14 08:24:01', 'J6W8-FGZC-RA2Q'),
-(40438, 30223, 'Sweden', 10025, 'Norway', 20037, 'Sweden', 'Norway', 2761691, 4258945, 8239451, '2020-01-26 12:48:39', 'C44N-A5MW-Z9Y8'),
-(40439, 30403, 'Finland', 10050, 'Finland', 20044, 'Sweden', 'Finland', 9705323, 5201709, 7069452, '2020-11-30 08:45:18', '199P-OUTF-6LQH'),
-(40440, 30450, 'Norway', 10014, 'Sweden', 20028, 'Sweden', 'Sweden', 5368213, 4303354, 6506932, '2020-03-29 02:19:40', 'MDL6-WSB4-ZTG2'),
-(40441, 30181, 'Finland', 10019, 'Sweden', 20031, 'Sweden', 'Sweden', 6634833, 8105297, 6727281, '2019-12-11 13:02:27', '1XZ6-KQJ7-794M'),
-(40442, 30044, 'Sweden', 10047, 'Sweden', 20045, 'Sweden', 'Sweden', 9008389, 1090512, 1064756, '2020-07-09 06:37:12', 'WQ7H-A9QU-KRP9'),
-(40443, 30170, 'Sweden', 10012, 'Sweden', 20037, 'Sweden', 'Sweden', 5862980, 4753170, 7441645, '2020-08-04 11:55:31', '9FNJ-QH1D-UJLL'),
-(40444, 30377, 'Sweden', 10034, 'Sweden', 20043, 'Sweden', 'Sweden', 9003199, 4843848, 1842810, '2020-06-24 09:44:41', 'T4IM-ESPL-5J63'),
-(40445, 30124, 'Sweden', 10044, 'Sweden', 20020, 'Sweden', 'Sweden', 8353317, 1741519, 1232721, '2020-12-04 00:09:01', 'A0XH-O9DC-L3JQ'),
-(40446, 30149, 'Sweden', 10028, 'Sweden', 20019, 'Finland', 'Sweden', 3853899, 9886415, 1033395, '2020-03-17 22:52:18', 'UO01-RKZZ-YMY7'),
-(40447, 30480, 'Sweden', 10014, 'Sweden', 20024, 'Sweden', 'Sweden', 3466366, 1581517, 2833608, '2020-03-16 02:59:41', 'C573-VRUJ-RO3V'),
-(40448, 30345, 'Sweden', 10025, 'Norway', 20019, 'Finland', 'Norway', 7283423, 3711216, 8622192, '2020-02-29 16:52:48', '64GE-QVVH-2V7T'),
-(40449, 30375, 'Finland', 10025, 'Norway', 20041, 'Sweden', 'Norway', 9895131, 8779807, 1691939, '2020-06-07 09:08:33', '5ESG-TMQ7-ELJZ'),
-(40450, 30164, 'Sweden', 10024, 'Sweden', 20047, 'Sweden', 'Sweden', 9426545, 8211832, 7143965, '2020-08-20 06:18:05', 'IT1K-I5JV-YKO5'),
-(40451, 30106, 'Sweden', 10005, 'Norway', 20022, 'Norway', 'Norway', 8089002, 8734198, 2479952, '2020-08-24 02:02:33', '0HTB-HF3C-EW3A'),
-(40452, 30218, 'Sweden', 10003, 'Sweden', 20016, 'Sweden', 'Sweden', 9773150, 1347601, 3462468, '2020-05-19 09:43:43', 'UBXB-YZR9-Y3TG'),
-(40453, 30239, 'Finland', 10045, 'Finland', 20035, 'Sweden', 'Finland', 8772063, 2225307, 4627685, '2020-11-03 11:06:37', 'VNXQ-REHT-8952'),
-(40454, 30349, 'Sweden', 10018, 'Sweden', 20013, 'Sweden', 'Sweden', 8050429, 5597869, 5090443, '2020-09-17 09:20:08', 'W4P9-O5GX-VY9M'),
-(40455, 30234, 'Norway', 10025, 'Norway', 20029, 'Finland', 'Norway', 4858348, 9385199, 8500641, '2020-07-06 12:48:46', 'G2AG-FADA-NPRD'),
-(40456, 30122, 'Norway', 10049, 'Finland', 20009, 'Sweden', 'Finland', 2438580, 3704796, 3582273, '2020-12-05 18:02:49', '2NPX-WUNS-Q7WW'),
-(40457, 30225, 'Sweden', 10037, 'Sweden', 20005, 'Sweden', 'Sweden', 6933770, 4372758, 1158922, '2020-01-17 11:54:19', 'S7BM-6L9C-NAZG'),
-(40458, 30043, 'Norway', 10025, 'Norway', 20012, 'Norway', 'Norway', 2942393, 5439364, 8332312, '2020-01-15 22:31:49', '5958-PQX0-0OJ4'),
-(40459, 30029, 'Sweden', 10006, 'Sweden', 20047, 'Sweden', 'Sweden', 8583324, 2095488, 8938166, '2020-07-30 02:29:28', 'E2U8-81HO-NGC8'),
-(40460, 30466, 'Sweden', 10025, 'Norway', 20002, 'Sweden', 'Norway', 2355929, 1561241, 5974495, '2020-09-09 00:18:39', '8HC3-V8X9-3QCB'),
-(40461, 30015, 'Sweden', 10009, 'Sweden', 20009, 'Sweden', 'Sweden', 1637918, 2571197, 7842103, '2020-08-25 04:08:15', 'G02F-8EGG-A0ZP'),
-(40462, 30272, 'Sweden', 10033, 'Sweden', 20034, 'Sweden', 'Sweden', 4259184, 1195236, 4513132, '2020-11-17 12:42:39', 'I9US-OUOL-HZ6Q'),
-(40463, 30454, 'Sweden', 10039, 'Sweden', 20037, 'Sweden', 'Sweden', 2964300, 6197454, 9101089, '2020-05-25 17:24:28', '3K81-CCQ3-PUU5'),
-(40464, 30059, 'Sweden', 10023, 'Sweden', 20008, 'Sweden', 'Sweden', 7945678, 3483613, 6607072, '2020-10-13 20:16:01', 'KXQY-4DTK-CKWZ'),
-(40465, 30084, 'Sweden', 10047, 'Sweden', 20003, 'Finland', 'Sweden', 3127827, 8173394, 3493159, '2020-02-27 21:39:42', 'OWSH-D166-8C7D'),
-(40466, 30262, 'Sweden', 10032, 'Finland', 20036, 'Sweden', 'Finland', 3210679, 5933960, 1672222, '2020-07-25 14:08:31', 'QMLN-IX4V-QBWW'),
-(40467, 30470, 'Sweden', 10018, 'Sweden', 20038, 'Sweden', 'Sweden', 9688968, 7370128, 9605776, '2020-04-20 07:05:33', '5WEY-1USI-5BR0'),
-(40468, 30464, 'Sweden', 10016, 'Sweden', 20018, 'Sweden', 'Sweden', 9663710, 7772341, 6119727, '2020-06-06 11:50:39', 'RCA6-US40-ZSZV'),
-(40469, 30457, 'Finland', 10032, 'Finland', 20037, 'Sweden', 'Finland', 2105227, 8069656, 1933032, '2020-12-07 12:15:20', '0RH9-Q0EF-K2JL'),
-(40470, 30476, 'Sweden', 10030, 'Norway', 20020, 'Sweden', 'Norway', 2912502, 3701904, 2881524, '2020-06-18 13:02:35', 'CTS7-8240-74YW'),
-(40471, 30413, 'Sweden', 10042, 'Sweden', 20031, 'Sweden', 'Sweden', 6201642, 6805438, 3148176, '2020-04-16 18:02:31', 'UVAR-J1ZD-ARH1'),
-(40472, 30403, 'Finland', 10026, 'Sweden', 20045, 'Sweden', 'Sweden', 5849973, 4452916, 1235819, '2020-05-01 12:34:52', '38O9-WXDD-PBAH'),
-(40473, 30391, 'Sweden', 10021, 'Sweden', 20017, 'Finland', 'Sweden', 9826661, 9229383, 7361995, '2019-12-21 16:16:36', 'TJZN-4UVW-S9PU'),
-(40474, 30027, 'Sweden', 10049, 'Finland', 20026, 'Sweden', 'Finland', 2325674, 2738784, 5046501, '2020-02-23 00:31:45', '8OJO-GKML-GGN2'),
-(40475, 30264, 'Sweden', 10030, 'Norway', 20013, 'Sweden', 'Norway', 5358037, 1055169, 5023839, '2020-03-09 22:26:40', '5KIG-VSRX-LMP1'),
-(40476, 30068, 'Sweden', 10022, 'Sweden', 20012, 'Norway', 'Sweden', 5561399, 4519785, 5319624, '2020-10-17 16:09:49', 'FLJU-MJ5F-G4X0'),
-(40477, 30008, 'Sweden', 10047, 'Sweden', 20001, 'Sweden', 'Sweden', 1193301, 2529361, 1822350, '2020-02-21 03:34:41', 'CUG5-AFD8-E14R'),
-(40478, 30470, 'Sweden', 10023, 'Sweden', 20012, 'Norway', 'Sweden', 5721693, 8303949, 3875808, '2020-03-23 03:22:15', '9SEL-GNXB-C0M1'),
-(40479, 30163, 'Sweden', 10035, 'Norway', 20049, 'Sweden', 'Norway', 7801902, 3061703, 4199522, '2020-07-07 09:27:43', '4DK5-7V5B-9JFC'),
-(40480, 30217, 'Sweden', 10026, 'Sweden', 20031, 'Sweden', 'Sweden', 1181299, 1566753, 9686055, '2019-12-15 00:12:37', 'J96L-X9N2-PZN3'),
-(40481, 30286, 'Sweden', 10030, 'Norway', 20005, 'Sweden', 'Norway', 9988552, 3783372, 1517888, '2020-01-13 16:50:06', 'H2UD-K0I6-M85X'),
-(40482, 30148, 'Finland', 10012, 'Sweden', 20035, 'Sweden', 'Sweden', 6938997, 1753869, 1694192, '2020-07-01 17:08:26', 'VTCB-Z8XB-84EY'),
-(40483, 30248, 'Sweden', 10046, 'Sweden', 20037, 'Sweden', 'Sweden', 6058656, 9265642, 5731192, '2020-02-16 22:19:25', 'VS70-ZCKK-128N'),
-(40484, 30398, 'Sweden', 10049, 'Finland', 20021, 'Sweden', 'Finland', 5524169, 9398281, 6122385, '2020-02-23 12:27:33', '0DPU-1NE4-3EBR'),
-(40485, 30475, 'Sweden', 10002, 'Sweden', 20032, 'Finland', 'Sweden', 6095138, 7017287, 1036623, '2020-05-25 08:08:16', 'DA3C-XV0R-S40B'),
-(40486, 30326, 'Sweden', 10029, 'Sweden', 20035, 'Sweden', 'Sweden', 3810012, 1325821, 1648554, '2020-07-18 13:26:51', '1KPM-0YTA-AUR2'),
-(40487, 30375, 'Finland', 10023, 'Sweden', 20022, 'Norway', 'Sweden', 4507560, 5970661, 1459359, '2020-11-10 12:21:59', 'AIEF-OY7H-XIJY'),
-(40488, 30274, 'Sweden', 10003, 'Sweden', 20049, 'Sweden', 'Sweden', 6702223, 9964841, 1096843, '2020-09-15 06:53:43', 'D9C5-PUEK-9OD2'),
-(40489, 30101, 'Norway', 10001, 'Sweden', 20040, 'Finland', 'Sweden', 9037514, 9104629, 9209582, '2020-08-23 10:31:07', 'LK3T-5UDS-HPTS'),
-(40490, 30453, 'Finland', 10045, 'Finland', 20005, 'Sweden', 'Finland', 6177370, 4432289, 5607201, '2020-09-13 09:06:46', 'UBKX-XNQ5-7DUL'),
-(40491, 30074, 'Finland', 10032, 'Finland', 20002, 'Sweden', 'Finland', 1537269, 2432024, 1558155, '2020-03-05 14:33:27', 'M65R-MVYO-GW3J'),
-(40492, 30487, 'Sweden', 10041, 'Norway', 20035, 'Sweden', 'Norway', 3387361, 8093857, 2065258, '2020-05-05 16:47:11', 'OQKD-RZ6F-V7CX'),
-(40493, 30258, 'Sweden', 10048, 'Sweden', 20035, 'Sweden', 'Sweden', 6919289, 7922333, 5941252, '2020-03-06 18:05:45', 'AKKA-HYEY-SKEJ'),
-(40494, 30216, 'Norway', 10002, 'Sweden', 20020, 'Sweden', 'Sweden', 3930588, 6944201, 5591841, '2020-01-14 07:42:06', '0ZI2-EIQ4-XIRD'),
-(40495, 30196, 'Norway', 10049, 'Finland', 20047, 'Sweden', 'Finland', 3963853, 8834744, 9712457, '2020-05-25 18:30:10', 'YBUO-F43Z-1GH3'),
-(40496, 30321, 'Sweden', 10025, 'Norway', 20030, 'Finland', 'Norway', 8811625, 4178665, 1579473, '2020-10-23 22:35:57', 'XLMQ-1ZFJ-CT4O'),
-(40497, 30292, 'Sweden', 10033, 'Sweden', 20039, 'Sweden', 'Sweden', 5187691, 9816466, 1227977, '2020-05-15 18:56:35', 'SRUH-YO8F-UZ8L'),
-(40498, 30244, 'Finland', 10045, 'Finland', 20038, 'Sweden', 'Finland', 3922674, 1673972, 4164311, '2020-02-18 20:29:56', '7H1L-4G2X-W1T4'),
-(40499, 30057, 'Sweden', 10025, 'Norway', 20033, 'Finland', 'Norway', 4355050, 8579045, 3700402, '2020-01-02 04:31:06', 'J044-9TGV-649Y'),
-(40500, 30446, 'Sweden', 10010, 'Sweden', 20024, 'Sweden', 'Sweden', 3876900, 1058066, 3647081, '2020-10-13 04:16:32', '3L2Y-BQQR-TPX1'),
-(0, 0, 'Finland', 0, 'Finland', 0, 'Finland', 'Finland', 1, 2, 3, NOW(), '1234567890123456');
+
+
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20001, 1051, 'Finland', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20002, 1052, 'Finland', 'KYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20003, 1053, 'Finland', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20004, 1054, 'Finland', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20005, 1055, 'Finland', 'KYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20006, 1056, 'Finland', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20007, 1057, 'Finland', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20008, 1058, 'Finland', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20009, 1059, 'Finland', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20010, 1060, 'Finland', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20011, 1061, 'Sweden', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20012, 1062, 'Sweden', 'KYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20013, 1063, 'Sweden', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20014, 1064, 'Sweden', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20015, 1065, 'Sweden', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20016, 1066, 'Sweden', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20017, 1067, 'Sweden', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20018, 1068, 'Sweden', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20019, 1069, 'Sweden', 'KYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20020, 1070, 'Sweden', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20021, 1071, 'Norway', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20022, 1072, 'Norway', 'KYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20023, 1073, 'Norway', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20024, 1074, 'Norway', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20025, 1075, 'Norway', 'KYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20026, 1076, 'Norway', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20027, 1077, 'Norway', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20028, 1078, 'Norway', 'KOKS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20029, 1079, 'Norway', 'TAYS');
+insert into opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name) values (20030, 1080, 'Norway', 'KOKS');
+INSERT INTO opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name)VALUES (0, 0, 'Finland', 'TAYS');
+INSERT INTO opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name)VALUES (1, 0, 'Finland', 'HUS');
+
+
+
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (51, 20001, 'Finland', 'Finland', '535686-264E', 'sjanda0@acquirethisname.com', 'gY5okgM', 'Sunshine', 'Janda', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (52, 20002, 'Finland', 'Finland', '582066-408Q', 'ngiovannacci1@yellowpages.com', '9LcDBcPa', 'Nola', 'Giovannacci', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (53, 20003, 'Finland', 'Finland', '257582-351X', 'sdowdell2@deviantart.com', 'SyQshMU5Mb', 'Sumner', 'Dowdell', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (54, 20004, 'Finland', 'Finland', '500937-946V', 'sharrigan3@wix.com', 'I0PK9rQZZyU', 'Solly', 'Harrigan', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (55, 20005, 'Finland', 'Finland', '292680-267W', 'utheobald4@unc.edu', 'FR4ipCW', 'Uta', 'Theobald', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (56, 20006, 'Finland', 'Finland', '950503-557U', 'gdominichetti5@accuweather.com', 'hLr6eNFVd', 'Garth', 'Dominichetti', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (57, 20007, 'Finland', 'Finland', '390038-242W', 'sbellenger6@sun.com', 'FL6d1nx', 'Suzette', 'Bellenger', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (58, 20008, 'Finland', 'Finland', '808927-253J', 'nworswick7@economist.com', 'BzfG6B', 'Nico', 'Worswick', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (59, 20009, 'Finland', 'Finland', '911000-266C', 'tdybell8@si.edu', 'jt5VWsnLA', 'Torrie', 'Dybell', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (60, 20010, 'Finland', 'Finland', '765758-127O', 'rlarder9@disqus.com', 'QlzhW3sAXsk', 'Rog', 'Larder', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (61, 20011, 'Sweden', 'Sweden', '491227-910E', 'tpraten0@example.com', 'KKKoI4Lgvm', 'Tove', 'Praten', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (62, 20012, 'Sweden', 'Sweden', '142185-196D', 'lprandy1@friendfeed.com', 'zVtXDtpV', 'Leonelle', 'Prandy', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (63, 20013, 'Sweden', 'Sweden', '775160-228L', 'lgroneway2@w3.org', '3uI17M7odhK', 'Lauritz', 'Groneway', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (64, 20014, 'Sweden', 'Sweden', '363307-699D', 'bmcnae3@constantcontact.com', 'yrHcu2dxQ', 'Bidget', 'McNae', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (65, 20015, 'Sweden', 'Sweden', '904233-687U', 'kgerrish4@webeden.co.uk', '6ngBPIYT6N', 'Kacey', 'Gerrish', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (66, 20016, 'Sweden', 'Sweden', '318328-885P', 'cokennavain5@businessinsider.com', 'g98AoaEL3', 'Colette', 'O''Kennavain', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (67, 20017, 'Sweden', 'Sweden', '161427-490J', 'cschultes6@wsj.com', 'sinNHkkeSx', 'Chelsea', 'Schultes', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (68, 20018, 'Sweden', 'Sweden', '823927-329B', 'kcollingdon7@bloglovin.com', '2QGoZecuRgM', 'Kalina', 'Collingdon', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (69, 20019, 'Sweden', 'Sweden', '695199-963G', 'rwytchard8@digg.com', 'jpHc9qULrn', 'Ruthi', 'Wytchard', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (70, 20020, 'Sweden', 'Sweden', '745719-734O', 'yfrancecione9@sitemeter.com', '36ssp5nxPvh', 'Yorgo', 'Francecione', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (71, 20021, 'Norway', 'Norway', '477074-125K', 'ngarbutt0@adobe.com', '6WbPTRVjO', 'Nessi', 'Garbutt', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (72, 20022, 'Norway', 'Norway', '686763-612L', 'jmuehle1@washington.edu', 'mY7YE5EFB', 'Joeann', 'Muehle', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (73, 20023, 'Norway', 'Norway', '373591-502Y', 'gpoluzzi2@yahoo.co.jp', 'VI2jEBF', 'Giacinta', 'Poluzzi', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (74, 20024, 'Norway', 'Norway', '337298-555S', 'gbrosenius3@blogger.com', 'R4lsbni', 'Guillaume', 'Brosenius', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (75, 20025, 'Norway', 'Norway', '715136-939B', 'kconner4@networksolutions.com', 'xK1wMA', 'Keefer', 'Conner', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (76, 20026, 'Norway', 'Norway', '878480-462U', 'vandresen5@ucoz.ru', 'aA7KVmWLqMI', 'Vernen', 'Andresen', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (77, 20027, 'Norway', 'Norway', '279866-156N', 'dgoseling6@blogger.com', 'OcCJ6jDUB7f', 'Dody', 'Goseling', 'Moderator');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (78, 20028, 'Norway', 'Norway', '155406-851B', 'rhainey7@nydailynews.com', 'pAJiqb', 'Rab', 'Hainey', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (79, 20029, 'Norway', 'Norway', '276004-318H', 'gmccurtain8@mediafire.com', 'orQhZaj63SXx', 'Giffer', 'McCurtain', 'Normal');
+insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (80, 20030, 'Norway', 'Norway', '455971-863S', 'brhoddie9@livejournal.com', 'd1YtaLS', 'Benson', 'Rhoddie', 'Moderator');
+INSERT INTO opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES (0, 0, 'Finland', 'Finland', '456878-1458', 'opthalmologist@mail.com', 'opthalmologist', 'First', 'Last', 'Normal');
+INSERT INTO opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES (1, 1, 'Finland', 'Finland', '448878-1458', 'heli.virtanen@mail.com', 'opthalmologist', 'Heli', 'Virtanen', 'Normal');
+
+
+
+
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30001, 'Finland', '509985-224P', 'oweight0@spiegel.de', 'Ottilie', 'Weight');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30002, 'Finland', '922693-921W', 'zwarrener1@dyndns.org', 'Zonda', 'Warrener');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30003, 'Finland', '122357-827X', 'vbenwell2@example.com', 'Vasily', 'Benwell');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30004, 'Finland', '276201-111C', 'blongmate3@google.com', 'Bryce', 'Longmate');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30005, 'Finland', '824714-069I', 'sbaum4@artisteer.com', 'Sabine', 'Baum');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30006, 'Finland', '976934-990O', 'gspeed5@nifty.com', 'Gusta', 'Speed');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30007, 'Finland', '516911-998B', 'eouslem6@g.co', 'Ewell', 'Ouslem');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30008, 'Finland', '188054-005M', 'scosstick7@networkadvertising.org', 'Shanna', 'Cosstick');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30009, 'Finland', '574811-316P', 'hepelett8@reference.com', 'Harmonia', 'Epelett');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30010, 'Finland', '352565-314Y', 'aludford9@google.es', 'Aldon', 'Ludford');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30011, 'Finland', '633774-563F', 'jcreusa@comcast.net', 'Jeremiah', 'Creus');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30012, 'Finland', '441578-752Z', 'mgibbb@opera.com', 'Maurene', 'Gibb');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30013, 'Finland', '106113-473Y', 'mratnagec@deviantart.com', 'Markus', 'Ratnage');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30014, 'Finland', '435157-570L', 'gtunstalld@pcworld.com', 'Grove', 'Tunstall');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30015, 'Finland', '727312-358D', 'scripse@dell.com', 'Susana', 'Crips');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30016, 'Finland', '340780-311A', 'arubenf@infoseek.co.jp', 'Alina', 'Ruben');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30017, 'Finland', '906681-893S', 'cgressg@icq.com', 'Corrie', 'Gress');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30018, 'Finland', '222738-800R', 'crumminh@wiley.com', 'Ciel', 'Rummin');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30019, 'Finland', '064369-253N', 'mpicoti@cmu.edu', 'Morse', 'Picot');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30020, 'Finland', '483396-709C', 'gpaynterj@google.es', 'Garrick', 'Paynter');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30021, 'Finland', '239493-146K', 'opratleyk@cargocollective.com', 'Ofella', 'Pratley');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30022, 'Finland', '554764-135U', 'lsouthcottl@a8.net', 'Laura', 'Southcott');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30023, 'Finland', '550340-003S', 'ckyndm@paginegialle.it', 'Conway', 'Kynd');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30024, 'Finland', '163984-690N', 'hloxstonn@washington.edu', 'Hort', 'Loxston');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30025, 'Finland', '337635-917E', 'garkleo@skyrock.com', 'George', 'Arkle');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30026, 'Finland', '092036-740F', 'cgutowskap@yellowbook.com', 'Clerkclaude', 'Gutowska');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30027, 'Finland', '860774-176C', 'mpadkinq@icio.us', 'Marco', 'Padkin');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30028, 'Finland', '359535-114G', 'kworsfieldr@fotki.com', 'Kaitlyn', 'Worsfield');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30029, 'Finland', '303641-013C', 'bmonteiths@squidoo.com', 'Bron', 'Monteith');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30030, 'Finland', '386467-795T', 'rjacombst@over-blog.com', 'Rochella', 'Jacombs');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30031, 'Finland', '836505-768T', 'esorrieu@webmd.com', 'Estrella', 'Sorrie');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30032, 'Finland', '261053-506F', 'dshaplandv@ehow.com', 'Dorotea', 'Shapland');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30033, 'Finland', '477307-285W', 'jdavioudw@ftc.gov', 'Jacquie', 'Davioud');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30034, 'Finland', '428038-893N', 'mbrameldx@mit.edu', 'Madella', 'Brameld');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30035, 'Finland', '824947-340E', 'wlaterzay@joomla.org', 'Wilmette', 'Laterza');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30036, 'Finland', '192644-069H', 'liapicoz@vinaora.com', 'Lindsay', 'Iapico');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30037, 'Finland', '170988-888Q', 'nberget10@hao123.com', 'Neilla', 'Berget');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30038, 'Finland', '637431-891M', 'dchristophle11@usgs.gov', 'Dallon', 'Christophle');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30039, 'Finland', '996471-765W', 'atetley12@cbsnews.com', 'Ax', 'Tetley');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30040, 'Finland', '250445-909D', 'egrishagin13@youtu.be', 'Ermina', 'Grishagin');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30041, 'Finland', '731258-810R', 'hranyard14@ebay.com', 'Harmon', 'Ranyard');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30042, 'Finland', '922155-104W', 'dgarrish15@gmpg.org', 'Dory', 'Garrish');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30043, 'Finland', '751977-123L', 'ostorks16@google.com.au', 'Obed', 'Storks');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30044, 'Finland', '333048-753P', 'batty17@istockphoto.com', 'Byran', 'Atty');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30045, 'Finland', '047728-072F', 'aonolan18@acquirethisname.com', 'Avigdor', 'O''Nolan');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30046, 'Finland', '486639-106X', 'airvine19@123-reg.co.uk', 'Alyce', 'Irvine');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30047, 'Finland', '319484-207R', 'mdaniells1a@hostgator.com', 'Millard', 'Daniells');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30048, 'Finland', '102093-091D', 'ceddoes1b@freewebs.com', 'Carilyn', 'Eddoes');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30049, 'Finland', '632970-187U', 'lloach1c@zimbio.com', 'Lacie', 'Loach');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30050, 'Finland', '679539-170T', 'ddonisthorpe1d@toplist.cz', 'Dukie', 'Donisthorpe');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30051, 'Finland', '562597-744B', 'menterle1e@google.fr', 'Meggy', 'Enterle');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30052, 'Finland', '600215-611M', 'lsomerbell1f@squidoo.com', 'Lenee', 'Somerbell');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30053, 'Finland', '509937-224P', 'sgai1g@marriott.com', 'Shalna', 'Gai');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30054, 'Finland', '204814-238I', 'kpurle1h@kickstarter.com', 'Karol', 'Purle');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30055, 'Finland', '282616-173G', 'psenior1i@google.ca', 'Pacorro', 'Senior');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30056, 'Finland', '015172-658K', 'rscough1j@hostgator.com', 'Redd', 'Scough');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30057, 'Finland', '791684-329T', 'rdaftor1k@com.com', 'Rita', 'Daftor');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30058, 'Finland', '189007-115R', 'fpiddle1l@addthis.com', 'Ferdinand', 'Piddle');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30059, 'Finland', '214019-360A', 'hhorlick1m@soup.io', 'Herrick', 'Horlick');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30060, 'Finland', '009614-388C', 'figgulden1n@prlog.org', 'Florrie', 'Iggulden');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30061, 'Finland', '587614-266X', 'adishman1o@opensource.org', 'Aline', 'Dishman');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30062, 'Finland', '652699-865T', 'criddel1p@wikimedia.org', 'Chloe', 'Riddel');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30063, 'Finland', '839740-152J', 'nthieme1q@blog.com', 'Neal', 'Thieme');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30064, 'Finland', '847454-803P', 'dcurl1r@spotify.com', 'Damien', 'Curl');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30065, 'Finland', '500090-052S', 'jrubenov1s@nbcnews.com', 'Jorge', 'Rubenov');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30066, 'Finland', '317785-516S', 'cdearan1t@linkedin.com', 'Corey', 'Dearan');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30067, 'Finland', '055101-197N', 'dcodeman1u@miibeian.gov.cn', 'Debbie', 'Codeman');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30068, 'Finland', '805494-158H', 'tjessup1v@fc2.com', 'Tory', 'Jessup');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30069, 'Finland', '295597-619D', 'dwestwick1w@hugedomains.com', 'Darby', 'Westwick');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30070, 'Finland', '243134-308E', 'kstuckow1x@accuweather.com', 'Klaus', 'Stuckow');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30071, 'Finland', '809645-927T', 'djeffery1y@msn.com', 'Deena', 'Jeffery');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30072, 'Finland', '478081-648O', 'dconiff1z@apache.org', 'Danni', 'Coniff');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30073, 'Finland', '587299-115S', 'atrudgion20@mtv.com', 'Augustin', 'Trudgion');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30074, 'Finland', '326463-474U', 'tcuel21@archive.org', 'Trip', 'Cuel');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30075, 'Finland', '864556-348V', 'bgery22@sciencedaily.com', 'Brett', 'Gery');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30076, 'Finland', '298180-588T', 'pdrewe23@quantcast.com', 'Peter', 'Drewe');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30077, 'Finland', '484226-555G', 'fpetit24@studiopress.com', 'Fleming', 'Petit');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30078, 'Finland', '725674-685Y', 'jjaggers25@apple.com', 'Jenica', 'Jaggers');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30079, 'Finland', '855276-128P', 'ritshak26@blogtalkradio.com', 'Rutledge', 'Itshak');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30080, 'Finland', '090419-637Q', 'tgoncalo27@techcrunch.com', 'Trefor', 'Goncalo');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30081, 'Finland', '604670-435G', 'ngianni28@blinklist.com', 'Nicoli', 'Gianni');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30082, 'Finland', '367949-037O', 'fdawdry29@usa.gov', 'Ferdinanda', 'Dawdry');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30083, 'Finland', '259524-195S', 'tvasenin2a@posterous.com', 'Tatum', 'Vasenin');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30084, 'Finland', '140745-201R', 'lsaxby2b@360.cn', 'Larry', 'Saxby');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30085, 'Finland', '611107-300Z', 'rmisk2c@prlog.org', 'Rafa', 'Misk');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30086, 'Finland', '481665-378S', 'dscoggins2d@sciencedirect.com', 'Donia', 'Scoggins');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30087, 'Finland', '301137-954M', 'ecowterd2e@barnesandnoble.com', 'Ella', 'Cowterd');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30088, 'Finland', '797759-047J', 'srimer2f@wikipedia.org', 'Sandie', 'Rimer');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30089, 'Finland', '219562-872R', 'cgregory2g@harvard.edu', 'Clayson', 'Gregory');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30090, 'Finland', '851035-937C', 'dalster2h@issuu.com', 'Davidde', 'Alster');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30091, 'Finland', '075906-769P', 'athys2i@flickr.com', 'Adena', 'Thys');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30092, 'Finland', '133135-548G', 'hmaccumeskey2j@nature.com', 'Hercule', 'MacCumeskey');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30093, 'Finland', '727369-770P', 'rbrandone2k@google.com.br', 'Rosanne', 'Brandone');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30094, 'Finland', '968272-666W', 'rstelle2l@nymag.com', 'Randie', 'Stelle');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30095, 'Finland', '837660-383R', 'miacovucci2m@slideshare.net', 'Miles', 'Iacovucci');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30096, 'Finland', '801735-870P', 'mcalcraft2n@people.com.cn', 'Muire', 'Calcraft');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30097, 'Finland', '869334-575I', 'gmacharg2o@flickr.com', 'Giovanna', 'MacHarg');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30098, 'Finland', '380708-065A', 'mishchenko2p@vimeo.com', 'Mattie', 'Ishchenko');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30099, 'Finland', '179389-929U', 'mbramelt2q@wsj.com', 'Mohammed', 'Bramelt');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30100, 'Finland', '954442-586S', 'miorns2r@answers.com', 'Minette', 'Iorns');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30101, 'Sweden', '237694-589J', 'pandre0@microsoft.com', 'Pippo', 'Andre');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30102, 'Sweden', '481294-871W', 'sloader1@wikispaces.com', 'Skylar', 'Loader');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30103, 'Sweden', '027919-260W', 'gbraley2@wix.com', 'Genvieve', 'Braley');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30104, 'Sweden', '889152-631W', 'aaven3@reference.com', 'Aggi', 'Aven');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30105, 'Sweden', '003691-427L', 'apoutress4@drupal.org', 'Agnes', 'Poutress');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30106, 'Sweden', '990047-810F', 'bblyden5@webmd.com', 'Bartram', 'Blyden');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30107, 'Sweden', '090721-556S', 'jwheal6@cocolog-nifty.com', 'Julia', 'Wheal');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30108, 'Sweden', '234703-023J', 'gfarahar7@examiner.com', 'Giacomo', 'Farahar');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30109, 'Sweden', '632069-362B', 'jskillett8@comcast.net', 'Joyous', 'Skillett');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30110, 'Sweden', '350654-981I', 'rriddiough9@google.es', 'Raddy', 'Riddiough');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30111, 'Sweden', '890374-744G', 'gtilneya@google.com.au', 'Giavani', 'Tilney');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30112, 'Sweden', '748369-810P', 'whousegoeb@netscape.com', 'William', 'Housegoe');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30113, 'Sweden', '012274-887F', 'lmunganec@sitemeter.com', 'Lonny', 'Mungane');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30114, 'Sweden', '943250-271J', 'ssanchod@house.gov', 'Sella', 'Sancho');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30115, 'Sweden', '732485-502U', 'fnattee@shutterfly.com', 'Faunie', 'Natte');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30116, 'Sweden', '002351-705P', 'astainingf@cmu.edu', 'Alyosha', 'Staining');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30117, 'Sweden', '120029-109Z', 'estofflerg@shutterfly.com', 'Erroll', 'Stoffler');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30118, 'Sweden', '484737-835T', 'hsalazarh@nbcnews.com', 'Hussein', 'Salazar');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30119, 'Sweden', '338783-368M', 'hblythei@nbcnews.com', 'Herve', 'Blythe');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30120, 'Sweden', '805720-133R', 'ahelbeckj@howstuffworks.com', 'Aveline', 'Helbeck');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30121, 'Sweden', '175468-968I', 'nredgatek@earthlink.net', 'Nils', 'Redgate');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30122, 'Sweden', '055393-430D', 'hoakenfordl@businesswire.com', 'Hatti', 'Oakenford');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30123, 'Sweden', '783056-895U', 'kdaltonm@i2i.jp', 'Kaylil', 'Dalton');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30124, 'Sweden', '401928-551W', 'adanielsohnn@nature.com', 'Abigail', 'Danielsohn');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30125, 'Sweden', '444876-059A', 'garyo@dmoz.org', 'Giavani', 'Ary');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30126, 'Sweden', '284505-058N', 'measeyp@dedecms.com', 'Mannie', 'Easey');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30127, 'Sweden', '031752-695W', 'ddonnisonq@jalbum.net', 'Dot', 'Donnison');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30128, 'Sweden', '890735-122W', 'dpymr@prlog.org', 'Deeyn', 'Pym');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30129, 'Sweden', '819065-432M', 'cstandalls@telegraph.co.uk', 'Clemmy', 'Standall');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30130, 'Sweden', '673401-158E', 'rlowerst@feedburner.com', 'Rubia', 'Lowers');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30131, 'Sweden', '426352-962S', 'csyrettu@livejournal.com', 'Caldwell', 'Syrett');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30132, 'Sweden', '243872-233T', 'rspondleyv@intel.com', 'Roseanna', 'Spondley');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30133, 'Sweden', '225488-908W', 'aalderwickw@nymag.com', 'Anitra', 'Alderwick');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30134, 'Sweden', '554687-374K', 'gradbonex@time.com', 'Gus', 'Radbone');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30135, 'Sweden', '786796-805L', 'ejinday@w3.org', 'Ernesta', 'Jinda');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30136, 'Sweden', '512463-279Z', 'lenglefieldz@harvard.edu', 'Laney', 'Englefield');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30137, 'Sweden', '726571-070I', 'rbaike10@princeton.edu', 'Rurik', 'Baike');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30138, 'Sweden', '820801-081U', 'jtheaker11@nps.gov', 'Joletta', 'Theaker');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30139, 'Sweden', '151454-984U', 'gbroadway12@msn.com', 'Garry', 'Broadway');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30140, 'Sweden', '756574-666Y', 'rgreim13@infoseek.co.jp', 'Rafaello', 'Greim');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30141, 'Sweden', '617169-876N', 'kmcminn14@wordpress.org', 'Kare', 'McMinn');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30142, 'Sweden', '216970-404E', 'cvigurs15@prlog.org', 'Cherye', 'Vigurs');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30143, 'Sweden', '522271-165B', 'vhannabus16@timesonline.co.uk', 'Velma', 'Hannabus');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30144, 'Sweden', '064694-162P', 'kavory17@dot.gov', 'Klemens', 'Avory');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30145, 'Sweden', '265264-020W', 'jcoaten18@blogtalkradio.com', 'Jefferey', 'Coaten');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30146, 'Sweden', '639500-732Y', 'bbras19@networksolutions.com', 'Bald', 'Bras');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30147, 'Sweden', '392706-587Z', 'gfido1a@google.com', 'Gina', 'Fido');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30148, 'Sweden', '780921-944R', 'jroelofs1b@networkadvertising.org', 'Jacqueline', 'Roelofs');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30149, 'Sweden', '576823-106O', 'jpeggram1c@techcrunch.com', 'Josefina', 'Peggram');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30150, 'Sweden', '725711-671T', 'mrosenvasser1d@mlb.com', 'Melamie', 'Rosenvasser');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30151, 'Sweden', '954143-406Q', 'gkings1e@nymag.com', 'Gay', 'Kings');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30152, 'Sweden', '361058-132G', 'shuzzey1f@sun.com', 'Sarina', 'Huzzey');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30153, 'Sweden', '439202-348X', 'kdyshart1g@friendfeed.com', 'Kettie', 'Dyshart');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30154, 'Sweden', '944900-091D', 'okenworthey1h@gov.uk', 'Orson', 'Kenworthey');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30155, 'Sweden', '261955-579F', 'lprangley1i@mlb.com', 'Lesya', 'Prangley');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30156, 'Sweden', '579357-987C', 'ndurram1j@360.cn', 'Nonie', 'Durram');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30157, 'Sweden', '201360-664S', 'bradish1k@mayoclinic.com', 'Blinny', 'Radish');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30158, 'Sweden', '408954-818F', 'ohugnot1l@fema.gov', 'Orland', 'Hugnot');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30159, 'Sweden', '740123-299H', 'tharby1m@walmart.com', 'Timmy', 'Harby');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30160, 'Sweden', '036139-643S', 'scherrett1n@bbb.org', 'Silvia', 'Cherrett');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30161, 'Sweden', '265661-766Z', 'soselton1o@myspace.com', 'Sheilakathryn', 'Oselton');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30162, 'Sweden', '699243-317S', 'mdedney1p@deviantart.com', 'Marijo', 'Dedney');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30163, 'Sweden', '110330-557Z', 'sstrange1q@photobucket.com', 'Sayer', 'Strange');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30164, 'Sweden', '989309-043B', 'dspurnier1r@census.gov', 'Demetra', 'Spurnier');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30165, 'Sweden', '594072-499L', 'tdraper1s@nba.com', 'Tiena', 'Draper');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30166, 'Sweden', '988780-986G', 'ccannop1t@infoseek.co.jp', 'Chanda', 'Cannop');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30167, 'Sweden', '289106-630X', 'pgilligan1u@columbia.edu', 'Pamelina', 'Gilligan');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30168, 'Sweden', '840100-634Z', 'mjotham1v@furl.net', 'Mannie', 'Jotham');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30169, 'Sweden', '463543-788D', 'eredwall1w@timesonline.co.uk', 'Ezechiel', 'Redwall');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30170, 'Sweden', '403245-970J', 'vgalway1x@foxnews.com', 'Velma', 'Galway');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30171, 'Sweden', '025703-648S', 'asamson1y@acquirethisname.com', 'Ami', 'Samson');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30172, 'Sweden', '424285-149P', 'bbiernacki1z@mac.com', 'Brear', 'Biernacki');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30173, 'Sweden', '079429-489G', 'bmckeon20@gizmodo.com', 'Bonita', 'McKeon');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30174, 'Sweden', '043216-367T', 'cshrimpling21@joomla.org', 'Cam', 'Shrimpling');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30175, 'Sweden', '593963-508H', 'magius22@ftc.gov', 'Merilee', 'Agius');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30176, 'Sweden', '806108-872E', 'scaslake23@wunderground.com', 'Selia', 'Caslake');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30177, 'Sweden', '474968-355R', 'ralbertson24@jiathis.com', 'Rance', 'Albertson');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30178, 'Sweden', '610374-789U', 'smurrow25@npr.org', 'Selia', 'Murrow');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30179, 'Sweden', '397189-094M', 'wboddis26@alibaba.com', 'Weber', 'Boddis');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30180, 'Sweden', '396053-658R', 'phucker27@opera.com', 'Palm', 'Hucker');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30181, 'Sweden', '310999-991G', 'sclacson28@jalbum.net', 'Sher', 'Clacson');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30182, 'Sweden', '445056-678J', 'tlait29@nytimes.com', 'Tim', 'Lait');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30183, 'Sweden', '029599-669O', 'fsustins2a@archive.org', 'Fowler', 'Sustins');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30184, 'Sweden', '346267-292X', 'bwenzel2b@sphinn.com', 'Bradly', 'Wenzel');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30185, 'Sweden', '039725-322B', 'mponton2c@businessinsider.com', 'Margit', 'Ponton');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30186, 'Sweden', '924345-344X', 'hcavy2d@bluehost.com', 'Hilliary', 'Cavy');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30187, 'Sweden', '952910-664Q', 'mrowles2e@cloudflare.com', 'Martyn', 'Rowles');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30188, 'Sweden', '594076-967L', 'adillamore2f@themeforest.net', 'Abraham', 'Dillamore');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30189, 'Sweden', '345990-873D', 'mpayne2g@jimdo.com', 'Marge', 'Payne');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30190, 'Sweden', '277718-636H', 'tnapoleone2h@latimes.com', 'Torry', 'Napoleone');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30191, 'Sweden', '151818-795F', 'wkinkead2i@hatena.ne.jp', 'Waneta', 'Kinkead');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30192, 'Sweden', '217637-122L', 'gsissons2j@yellowbook.com', 'Graeme', 'Sissons');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30193, 'Sweden', '950394-700J', 'kswanne2k@statcounter.com', 'Kimball', 'Swanne');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30194, 'Sweden', '146243-773S', 'aclother2l@google.it', 'Audy', 'Clother');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30195, 'Sweden', '270874-424C', 'mmctrusty2m@ow.ly', 'Meyer', 'Mc Trusty');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30196, 'Sweden', '645514-155V', 'vrolfs2n@miibeian.gov.cn', 'Vin', 'Rolfs');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30197, 'Sweden', '388827-088F', 'sboyce2o@slideshare.net', 'Stephi', 'Boyce');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30198, 'Sweden', '065823-345Z', 'agoscomb2p@dell.com', 'Alleyn', 'Goscomb');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30199, 'Sweden', '077923-767N', 'ttybalt2q@simplemachines.org', 'Trevar', 'Tybalt');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30200, 'Sweden', '649330-250L', 'hmachan2r@domainmarket.com', 'Hermy', 'Machan');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30201, 'Norway', '074983-425R', 'mburbage0@google.ru', 'Margarete', 'Burbage');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30202, 'Norway', '647725-732T', 'etruelock1@51.la', 'Emile', 'Truelock');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30203, 'Norway', '541390-578U', 'canshell2@scientificamerican.com', 'Charin', 'Anshell');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30204, 'Norway', '709858-007K', 'lveall3@baidu.com', 'Lamont', 'Veall');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30205, 'Norway', '806155-965W', 'ldassindale4@fema.gov', 'Lari', 'Dassindale');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30206, 'Norway', '255502-432L', 'igrumbridge5@posterous.com', 'Iormina', 'Grumbridge');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30207, 'Norway', '368596-202B', 'mspiring6@dion.ne.jp', 'Melina', 'Spiring');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30208, 'Norway', '103130-329R', 'hcarrington7@ycombinator.com', 'Harmon', 'Carrington');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30209, 'Norway', '920757-176W', 'gbachman8@ucoz.com', 'Gizela', 'Bachman');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30210, 'Norway', '116323-497P', 'edowyer9@t-online.de', 'Emlyn', 'Dowyer');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30211, 'Norway', '099691-206W', 'bbidmeada@mac.com', 'Barbra', 'Bidmead');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30212, 'Norway', '526111-103O', 'djanowskib@newyorker.com', 'Dorelle', 'Janowski');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30213, 'Norway', '072055-727C', 'cstonebridgec@rambler.ru', 'Celeste', 'Stonebridge');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30214, 'Norway', '031717-431B', 'cbonomed@prnewswire.com', 'Calhoun', 'Bonome');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30215, 'Norway', '731006-496X', 'blingarde@thetimes.co.uk', 'Bernelle', 'Lingard');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30216, 'Norway', '777273-483Y', 'adilstonf@liveinternet.ru', 'Amalee', 'Dilston');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30217, 'Norway', '546188-280J', 'jschollarg@cmu.edu', 'Jess', 'Schollar');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30218, 'Norway', '024619-624E', 'tlyndsh@wikipedia.org', 'Tadeas', 'Lynds');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30219, 'Norway', '790759-044I', 'fstowtei@tinypic.com', 'Field', 'Stowte');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30220, 'Norway', '485071-249I', 'ccatanheiraj@a8.net', 'Conroy', 'Catanheira');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30221, 'Norway', '801893-714L', 'ekehirk@cocolog-nifty.com', 'Elisha', 'Kehir');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30222, 'Norway', '344626-122H', 'ddomanl@cdbaby.com', 'Dougie', 'Doman');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30223, 'Norway', '036426-190T', 'nnanam@independent.co.uk', 'Nataniel', 'Nana');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30224, 'Norway', '519343-347O', 'rlacen@shinystat.com', 'Rosemonde', 'Lace');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30225, 'Norway', '565740-416Y', 'ushereo@jimdo.com', 'Ursa', 'Shere');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30226, 'Norway', '845387-009I', 'thamshawp@bloglovin.com', 'Travers', 'Hamshaw');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30227, 'Norway', '963352-217A', 'sgrimsleyq@sbwire.com', 'Scarface', 'Grimsley');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30228, 'Norway', '313364-221H', 'npiechar@aboutads.info', 'Nils', 'Piecha');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30229, 'Norway', '809719-305S', 'mgrabbans@ifeng.com', 'Munmro', 'Grabban');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30230, 'Norway', '285615-757L', 'jdyert@typepad.com', 'Judas', 'Dyer');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30231, 'Norway', '677345-276S', 'bvoaseu@google.com.au', 'Brittni', 'Voase');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30232, 'Norway', '251041-049R', 'tseadonv@dailymail.co.uk', 'Trev', 'Seadon');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30233, 'Norway', '543001-878E', 'prancew@vk.com', 'Pembroke', 'Rance');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30234, 'Norway', '483869-112P', 'vtresslerx@imageshack.us', 'Vanna', 'Tressler');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30235, 'Norway', '949983-952O', 'tograday@nyu.edu', 'Teddy', 'O''Grada');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30236, 'Norway', '936619-340D', 'hcollardz@hubpages.com', 'Hadlee', 'Collard');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30237, 'Norway', '779712-135X', 'tsercombe10@opensource.org', 'Tobit', 'Sercombe');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30238, 'Norway', '642028-101G', 'mbackshill11@intel.com', 'Melly', 'Backshill');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30239, 'Norway', '791366-121X', 'sbarringer12@addthis.com', 'Sherrie', 'Barringer');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30240, 'Norway', '700029-196H', 'rspancock13@soundcloud.com', 'Roddy', 'Spancock');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30241, 'Norway', '832382-010U', 'bmattia14@dion.ne.jp', 'Brandea', 'Mattia');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30242, 'Norway', '960695-173X', 'nwalcot15@alibaba.com', 'North', 'Walcot');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30243, 'Norway', '626873-873J', 'aorsi16@loc.gov', 'Arlinda', 'Orsi');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30244, 'Norway', '319140-853U', 'gventum17@illinois.edu', 'Granger', 'Ventum');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30245, 'Norway', '919302-023N', 'chuntingdon18@tripadvisor.com', 'Connor', 'Huntingdon');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30246, 'Norway', '592705-789T', 'dmcglynn19@hugedomains.com', 'Dianne', 'McGlynn');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30247, 'Norway', '041211-757D', 'mlugard1a@prweb.com', 'Miof mela', 'Lugard');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30248, 'Norway', '157215-105C', 'aaxworthy1b@bloomberg.com', 'Alastair', 'Axworthy');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30249, 'Norway', '934321-760W', 'ewoolaston1c@ucsd.edu', 'Esmeralda', 'Woolaston');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30250, 'Norway', '444273-929S', 'keasseby1d@theatlantic.com', 'Katina', 'Easseby');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30251, 'Norway', '024586-157E', 'kantrobus1e@state.tx.us', 'Katti', 'Antrobus');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30252, 'Norway', '813089-691D', 'crankine1f@slate.com', 'Charley', 'Rankine');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30253, 'Norway', '911906-855P', 'nohm1g@amazon.co.jp', 'Novelia', 'Ohm');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30254, 'Norway', '026345-856Z', 'rwoolf1h@whitehouse.gov', 'Reidar', 'Woolf');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30255, 'Norway', '054062-113U', 'hpollastrone1i@prweb.com', 'Heindrick', 'Pollastrone');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30256, 'Norway', '919263-137Z', 'sbottrill1j@google.co.jp', 'Shaylynn', 'Bottrill');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30257, 'Norway', '884491-936R', 'lescoffier1k@dailymotion.com', 'Lawry', 'Escoffier');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30258, 'Norway', '542778-243V', 'qewbanche1l@harvard.edu', 'Quintana', 'Ewbanche');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30259, 'Norway', '914039-085P', 'dhasted1m@bloomberg.com', 'Dory', 'Hasted');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30260, 'Norway', '798493-540B', 'mgeke1n@biglobe.ne.jp', 'Marchelle', 'Geke');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30261, 'Norway', '945310-497X', 'rshoesmith1o@bizjournals.com', 'Row', 'Shoesmith');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30262, 'Norway', '570794-105H', 'dknights1p@phpbb.com', 'Daffy', 'Knights');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30263, 'Norway', '650628-649P', 'bamort1q@ask.com', 'Brittney', 'Amort');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30264, 'Norway', '333040-419L', 'vsadry1r@cnn.com', 'Vanessa', 'Sadry');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30265, 'Norway', '023384-985W', 'ebaynon1s@marriott.com', 'Eulalie', 'Baynon');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30266, 'Norway', '833005-291E', 'cmulrooney1t@rediff.com', 'Conway', 'Mulrooney');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30267, 'Norway', '950804-111L', 'zfessier1u@mozilla.com', 'Zola', 'Fessier');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30268, 'Norway', '300936-356U', 'cjacobowitz1v@google.nl', 'Carlin', 'Jacobowitz');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30269, 'Norway', '050394-955I', 'kkaspar1w@usa.gov', 'Kara', 'Kaspar');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30270, 'Norway', '178060-412D', 'zroose1x@github.io', 'Zara', 'Roose');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30271, 'Norway', '614504-418A', 'lmigheli1y@psu.edu', 'Lockwood', 'Migheli');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30272, 'Norway', '477858-582W', 'kfreen1z@tamu.edu', 'Kit', 'Freen');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30273, 'Norway', '047401-337M', 'mbollon20@hud.gov', 'Maurise', 'Bollon');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30274, 'Norway', '644764-293B', 'lsercombe21@baidu.com', 'Loutitia', 'Sercombe');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30275, 'Norway', '365017-727M', 'eleconte22@about.com', 'Elvira', 'Le Conte');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30276, 'Norway', '269010-745Z', 'jrudolph23@google.fr', 'Juliet', 'Rudolph');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30277, 'Norway', '900390-863G', 'lhudless24@miitbeian.gov.cn', 'Lib', 'Hudless');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30278, 'Norway', '805663-595G', 'pdegiorgio25@skyrock.com', 'Papageno', 'De Giorgio');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30279, 'Norway', '575855-583U', 'mcharlton26@nydailynews.com', 'Margalo', 'Charlton');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30280, 'Norway', '134383-718P', 'ggreeding27@lycos.com', 'Gordon', 'Greeding');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30281, 'Norway', '701304-283N', 'skeedwell28@stanford.edu', 'Stanleigh', 'Keedwell');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30282, 'Norway', '660492-351J', 'tweatherburn29@whitehouse.gov', 'Tera', 'Weatherburn');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30283, 'Norway', '694851-358K', 'mwhimper2a@creativecommons.org', 'Merilee', 'Whimper');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30284, 'Norway', '565649-763S', 'gsarver2b@dmoz.org', 'Giavani', 'Sarver');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30285, 'Norway', '900186-309W', 'jdennison2c@wordpress.com', 'Jaimie', 'Dennison');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30286, 'Norway', '461020-763L', 'pashburne2d@biblegateway.com', 'Palmer', 'Ashburne');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30287, 'Norway', '312252-880Y', 'hlampett2e@hp.com', 'Hobard', 'Lampett');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30288, 'Norway', '337886-614M', 'dlarvin2f@comcast.net', 'Dyanna', 'Larvin');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30289, 'Norway', '901753-634J', 'skrimmer2g@godaddy.com', 'Shelby', 'Krimmer');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30290, 'Norway', '699889-754X', 'kallot2h@xrea.com', 'Karola', 'Allot');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30291, 'Norway', '403647-630S', 'hvanes2i@washingtonpost.com', 'Hazel', 'Vanes');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30292, 'Norway', '007319-423A', 'msampey2j@discuz.net', 'Maynord', 'Sampey');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30293, 'Norway', '053982-010O', 'hmcdell2k@pcworld.com', 'Harlan', 'McDell');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30294, 'Norway', '512685-257W', 'dmcgroarty2l@ustream.tv', 'Derril', 'McGroarty');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30295, 'Norway', '139777-185S', 'crodgier2m@moonfruit.com', 'Cassandry', 'Rodgier');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30296, 'Norway', '586560-635X', 'bbloore2n@telegraph.co.uk', 'Bertie', 'Bloore');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30297, 'Norway', '065120-658A', 'makenhead2o@cbc.ca', 'Monroe', 'Akenhead');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30298, 'Norway', '858368-985K', 'lpaulton2p@tripadvisor.com', 'Lucio', 'Paulton');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30299, 'Norway', '819845-235K', 'caingel2q@ovh.net', 'Caryl', 'Aingel');
+insert into customers (customer_id, customer_country, social_security_number, email, first_name, last_name) values (30300, 'Norway', '989116-690B', 'spaula2r@marketwatch.com', 'Susann', 'Paula');
+INSERT INTO customers (customer_id, customer_country, social_security_number, email, first_name, last_name) VALUES (0, 'Finland', '456878-1458', 'user@mail.com', 'First', 'Last');
+
+
+
+
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40001, 30016, 'Finland', 10002, 'Finland', 20001, 'Finland', 'Finland', 4076494, 1080302, 6508584, '2020-01-21 01:13:52', '3XYQ-RI5S-HNWX');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40002, 30008, 'Finland', 10005, 'Finland', 20007, 'Finland', 'Finland', 4441836, 6535363, 1797481, '2020-08-23 07:43:44', 'OGXI-KQJQ-SLAT');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40003, 30053, 'Finland', 10009, 'Finland', 20008, 'Finland', 'Finland', 6584949, 3017123, 8732422, '2019-12-30 21:51:42', '5OR7-93R7-MUNS');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40004, 30013, 'Finland', 10006, 'Finland', 20001, 'Finland', 'Finland', 5738550, 4277249, 7472571, '2020-01-22 19:39:55', 'FADN-XG70-NGR9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40005, 30095, 'Finland', 10008, 'Finland', 20006, 'Finland', 'Finland', 3283248, 1220961, 4264296, '2020-03-11 12:03:37', 'DWP9-9EDD-6GDK');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40006, 30028, 'Finland', 10004, 'Finland', 20003, 'Finland', 'Finland', 4672264, 2452888, 3137358, '2020-02-13 01:35:13', 'UUHL-7H5W-4LFQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40007, 30051, 'Finland', 10001, 'Finland', 20002, 'Finland', 'Finland', 7357829, 6245958, 7020655, '2020-04-17 06:34:55', 'TRVF-R858-86KN');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40008, 30067, 'Finland', 10008, 'Finland', 20001, 'Finland', 'Finland', 2110782, 5130971, 8010427, '2020-09-16 17:16:01', 'MFQW-PALL-NAJG');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40009, 30081, 'Finland', 10006, 'Finland', 20002, 'Finland', 'Finland', 2622726, 3745910, 2303709, '2020-02-25 01:11:53', '73AG-B9IG-3RDM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40010, 30042, 'Finland', 10008, 'Finland', 20010, 'Finland', 'Finland', 6537831, 1914565, 4994714, '2020-07-05 07:37:07', 'F5SU-0Z0V-MUEJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40011, 30051, 'Finland', 10007, 'Finland', 20006, 'Finland', 'Finland', 2264162, 1881777, 5320777, '2020-03-06 11:57:33', 'OCOY-IX3P-ERZA');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40012, 30049, 'Finland', 10005, 'Finland', 20001, 'Finland', 'Finland', 9740066, 4270628, 5064950, '2020-04-06 01:03:04', '9OHS-5UWG-K36Y');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40013, 30011, 'Finland', 10006, 'Finland', 20004, 'Finland', 'Finland', 2388885, 8901670, 9684274, '2020-10-16 14:53:38', 'ULOD-HBVW-P9ZI');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40014, 30029, 'Finland', 10004, 'Finland', 20002, 'Finland', 'Finland', 5385987, 7112784, 5711023, '2020-08-08 14:02:21', 'SHD1-MC05-IS1X');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40015, 30039, 'Finland', 10007, 'Finland', 20008, 'Finland', 'Finland', 1003894, 4307737, 9607936, '2020-01-09 04:16:50', '2VUP-ZSIQ-KRSL');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40016, 30026, 'Finland', 10008, 'Finland', 20008, 'Finland', 'Finland', 8797584, 2964157, 3977209, '2020-01-24 16:20:41', 'Y92Q-ZQTO-LS6R');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40017, 30008, 'Finland', 10005, 'Finland', 20004, 'Finland', 'Finland', 4706327, 6742606, 4294285, '2019-12-14 09:42:44', '3S6V-3V1V-5ZFT');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40018, 30073, 'Finland', 10007, 'Finland', 20009, 'Finland', 'Finland', 2115184, 7927917, 6048307, '2020-08-01 21:38:46', 'HI31-4JVS-24UM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40019, 30062, 'Finland', 10005, 'Finland', 20005, 'Finland', 'Finland', 1335009, 5733567, 2963188, '2020-08-12 12:52:11', 'DSX6-3MPY-FIU7');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40020, 30037, 'Finland', 10009, 'Finland', 20007, 'Finland', 'Finland', 5975715, 4319305, 7098105, '2020-04-30 12:50:06', 'TZ91-SKRC-R3D2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40021, 30047, 'Finland', 10008, 'Finland', 20007, 'Finland', 'Finland', 7239915, 1061023, 5939525, '2020-09-11 18:54:33', '9CQ7-FULH-LU9K');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40022, 30053, 'Finland', 10001, 'Finland', 20005, 'Finland', 'Finland', 8365089, 5584089, 8388541, '2020-01-11 18:21:26', 'GQXU-0F1K-08Y1');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40023, 30093, 'Finland', 10008, 'Finland', 20009, 'Finland', 'Finland', 1109344, 7254853, 5939041, '2020-04-28 05:33:43', '442E-DFA5-D28I');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40024, 30087, 'Finland', 10006, 'Finland', 20002, 'Finland', 'Finland', 2671962, 4898003, 2452553, '2020-04-02 06:37:32', '7RA0-TZP1-C45I');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40025, 30012, 'Finland', 10010, 'Finland', 20009, 'Finland', 'Finland', 4630981, 5508345, 8032547, '2020-04-03 16:08:01', 'PH3S-9LLG-4N1K');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40026, 30002, 'Finland', 10006, 'Finland', 20007, 'Finland', 'Finland', 5627762, 3243914, 4721513, '2020-01-28 18:16:08', 'A147-ZK4Y-XS1I');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40027, 30024, 'Finland', 10005, 'Finland', 20010, 'Finland', 'Finland', 1381417, 7478766, 1487153, '2020-07-06 03:37:07', 'I7AG-AQ3G-O29W');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40028, 30034, 'Finland', 10006, 'Finland', 20009, 'Finland', 'Finland', 8104088, 7226057, 5948545, '2020-02-10 17:21:08', 'YNE0-CBSH-6WOT');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40029, 30086, 'Finland', 10006, 'Finland', 20004, 'Finland', 'Finland', 9908955, 7391451, 7215177, '2020-02-07 23:05:55', '33B7-B06C-5NSE');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40030, 30012, 'Finland', 10008, 'Finland', 20001, 'Finland', 'Finland', 6149452, 7942791, 8694408, '2020-04-13 09:28:35', 'T7R3-AB8R-BPDB');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40031, 30020, 'Finland', 10006, 'Finland', 20007, 'Finland', 'Finland', 2090336, 9816385, 3362327, '2020-01-11 14:33:53', 'Q9U4-IPY6-SOVE');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40032, 30030, 'Finland', 10007, 'Finland', 20001, 'Finland', 'Finland', 6500810, 7863343, 6191824, '2020-09-09 02:20:26', 'UUW6-LXF8-0A3C');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40033, 30074, 'Finland', 10003, 'Finland', 20002, 'Finland', 'Finland', 8779599, 4738230, 5040380, '2020-12-02 12:44:37', 'VRR7-XICY-JB18');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40034, 30038, 'Finland', 10002, 'Finland', 20002, 'Finland', 'Finland', 6151272, 2580848, 9973943, '2020-02-24 05:16:19', 'G80O-ECPZ-FYKP');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40035, 30076, 'Finland', 10002, 'Finland', 20002, 'Finland', 'Finland', 3479110, 1630190, 2667417, '2020-03-24 12:25:22', 'IHGC-A34X-4N3A');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40036, 30100, 'Finland', 10001, 'Finland', 20009, 'Finland', 'Finland', 1868669, 8708708, 2023439, '2020-04-16 08:05:25', 'ESF1-8BZP-KDPN');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40037, 30033, 'Finland', 10008, 'Finland', 20005, 'Finland', 'Finland', 1460635, 8330924, 3487761, '2020-09-10 12:36:35', 'H43K-9RG5-YMUI');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40038, 30019, 'Finland', 10002, 'Finland', 20007, 'Finland', 'Finland', 9684077, 3989776, 3997581, '2020-08-20 02:50:27', '2EJ4-4MKL-N3JE');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40039, 30072, 'Finland', 10001, 'Finland', 20004, 'Finland', 'Finland', 2810882, 6857769, 9767692, '2020-01-27 16:40:32', 'W09L-U3GG-HDKZ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40040, 30080, 'Finland', 10003, 'Finland', 20001, 'Finland', 'Finland', 3365045, 9314147, 1098596, '2020-08-05 04:33:57', '16HO-VWFS-W4SW');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40041, 30051, 'Finland', 10007, 'Finland', 20006, 'Finland', 'Finland', 5851421, 2315870, 7001114, '2020-12-11 11:23:32', '26DB-PSJH-TX1Z');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40042, 30018, 'Finland', 10010, 'Finland', 20009, 'Finland', 'Finland', 3999955, 9710258, 8555843, '2020-06-27 10:20:43', 'F0JE-2YSI-Q9JD');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40043, 30030, 'Finland', 10002, 'Finland', 20007, 'Finland', 'Finland', 9082637, 7727456, 4554553, '2020-08-18 11:50:00', 'RXC5-RI92-B9IY');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40044, 30025, 'Finland', 10003, 'Finland', 20008, 'Finland', 'Finland', 8524807, 7488174, 3386492, '2020-09-30 18:45:09', 'X698-JIY9-7895');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40045, 30061, 'Finland', 10007, 'Finland', 20005, 'Finland', 'Finland', 4878648, 3893151, 8055743, '2020-12-05 04:36:37', 'AU5S-ZLK2-MO7Y');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40046, 30017, 'Finland', 10004, 'Finland', 20006, 'Finland', 'Finland', 1816922, 3084892, 8572634, '2020-02-12 05:15:52', '8NWZ-87N9-6ZUV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40047, 30095, 'Finland', 10004, 'Finland', 20007, 'Finland', 'Finland', 9640311, 2757724, 4673974, '2020-10-15 12:44:37', '3YW4-NO1G-CJGM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40048, 30067, 'Finland', 10002, 'Finland', 20010, 'Finland', 'Finland', 6509814, 3487681, 1125317, '2020-07-25 01:53:51', '9UG6-VNUI-U8LQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40049, 30057, 'Finland', 10006, 'Finland', 20006, 'Finland', 'Finland', 1442255, 3317991, 6368820, '2020-01-16 11:54:39', 'FJB5-4BPP-JO7X');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40050, 30093, 'Finland', 10006, 'Finland', 20004, 'Finland', 'Finland', 6671580, 7312785, 6373191, '2020-11-07 16:04:36', 'OJQ3-H0VK-THXA');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40051, 30077, 'Finland', 10003, 'Finland', 20006, 'Finland', 'Finland', 5508574, 4328771, 6776872, '2020-11-06 12:32:38', 'Q35E-W2M6-W8O4');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40052, 30012, 'Finland', 10005, 'Finland', 20007, 'Finland', 'Finland', 9569586, 9144394, 6204449, '2020-07-24 04:34:03', 'HHHE-OLZ8-0IP2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40053, 30077, 'Finland', 10010, 'Finland', 20009, 'Finland', 'Finland', 6704742, 1719529, 1636781, '2020-07-16 03:21:45', 'VVF9-5GUE-9RO1');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40054, 30080, 'Finland', 10009, 'Finland', 20003, 'Finland', 'Finland', 6218517, 6578111, 7540636, '2020-09-08 10:34:07', 'DDE2-94FC-WDJP');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40055, 30036, 'Finland', 10010, 'Finland', 20006, 'Finland', 'Finland', 6885649, 8486383, 7648731, '2020-01-04 08:46:09', 'I0SN-JSTS-EWBW');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40056, 30015, 'Finland', 10010, 'Finland', 20003, 'Finland', 'Finland', 4123547, 5971862, 9071097, '2020-03-07 01:59:40', 'ZULQ-A0SJ-9UKR');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40057, 30004, 'Finland', 10008, 'Finland', 20006, 'Finland', 'Finland', 2129762, 9769492, 5477922, '2020-08-04 18:38:15', '28I0-U01L-IPLT');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40058, 30017, 'Finland', 10006, 'Finland', 20006, 'Finland', 'Finland', 9544082, 6913883, 9348444, '2020-06-27 20:14:34', 'D4R5-LL2N-9AR9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40059, 30074, 'Finland', 10010, 'Finland', 20009, 'Finland', 'Finland', 7057632, 7797712, 2915306, '2020-09-16 21:49:03', '3TOP-DPZ3-KLIC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40060, 30088, 'Finland', 10002, 'Finland', 20007, 'Finland', 'Finland', 4222303, 4756885, 6215987, '2020-10-26 18:04:15', '57ZR-NNL0-MB7I');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40061, 30028, 'Finland', 10007, 'Finland', 20006, 'Finland', 'Finland', 1128760, 6083847, 4348510, '2020-07-08 20:52:53', 'DRDU-CAXX-KDE5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40062, 30088, 'Finland', 10001, 'Finland', 20001, 'Finland', 'Finland', 9962196, 8717289, 4865471, '2020-07-31 01:21:08', 'T33W-LVXQ-7CJY');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40063, 30087, 'Finland', 10008, 'Finland', 20010, 'Finland', 'Finland', 6934835, 7894294, 9741881, '2020-09-17 17:30:25', 'H1KW-2LWI-WQPD');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40064, 30025, 'Finland', 10005, 'Finland', 20006, 'Finland', 'Finland', 6805571, 2778186, 6942501, '2020-06-08 08:18:25', 'Q8LG-8VYZ-S72U');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40065, 30045, 'Finland', 10007, 'Finland', 20010, 'Finland', 'Finland', 2672071, 3678902, 6396599, '2020-04-14 20:30:53', 'UXXL-VXSL-XF36');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40066, 30059, 'Finland', 10001, 'Finland', 20003, 'Finland', 'Finland', 4712088, 6588234, 2056196, '2020-08-25 00:08:10', 'TAAL-JJYU-7I9B');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40067, 30017, 'Finland', 10009, 'Finland', 20001, 'Finland', 'Finland', 6135895, 3787693, 1153654, '2020-07-19 03:09:56', 'MYMS-Q5Y9-Z4DY');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40068, 30037, 'Finland', 10005, 'Finland', 20005, 'Finland', 'Finland', 6632573, 2082293, 4744815, '2020-10-12 02:01:26', 'VGVX-ZHHN-DTBD');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40069, 30072, 'Finland', 10006, 'Finland', 20004, 'Finland', 'Finland', 1237425, 4775403, 4169113, '2020-01-28 09:00:55', '8NMG-R372-8B05');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40070, 30034, 'Finland', 10008, 'Finland', 20004, 'Finland', 'Finland', 5662843, 3176474, 1576270, '2020-08-31 22:40:31', '6TWR-MLDL-EBRT');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40071, 30068, 'Finland', 10007, 'Finland', 20007, 'Finland', 'Finland', 4977367, 5632544, 4697461, '2020-11-05 17:53:49', 'UTHO-FWE6-2BL6');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40072, 30098, 'Finland', 10007, 'Finland', 20006, 'Finland', 'Finland', 5062062, 8727629, 9387933, '2020-06-21 07:45:38', 'CTZE-MC8B-D2HA');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40073, 30013, 'Finland', 10003, 'Finland', 20007, 'Finland', 'Finland', 4478316, 6768260, 4470616, '2020-09-18 14:35:54', '6RSM-U02V-JP76');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40074, 30014, 'Finland', 10002, 'Finland', 20008, 'Finland', 'Finland', 1421019, 9440432, 8194737, '2020-06-20 10:36:48', '35GD-QFQ7-BNY5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40075, 30036, 'Finland', 10007, 'Finland', 20002, 'Finland', 'Finland', 9608868, 7622619, 1834346, '2020-01-23 05:16:07', 'ALWY-LUAS-FKVS');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40076, 30099, 'Finland', 10010, 'Finland', 20008, 'Finland', 'Finland', 6020329, 4697161, 1902285, '2020-03-01 23:56:48', '4LJ8-AMUC-T7DT');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40077, 30067, 'Finland', 10007, 'Finland', 20003, 'Finland', 'Finland', 7949884, 8400101, 1230831, '2020-04-23 01:15:45', 'SKGH-6LGN-7JGQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40078, 30071, 'Finland', 10009, 'Finland', 20003, 'Finland', 'Finland', 4941032, 2586262, 5954206, '2020-09-21 05:44:54', 'P1JH-3HWI-7O09');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40079, 30032, 'Finland', 10003, 'Finland', 20001, 'Finland', 'Finland', 9399281, 4154204, 6292697, '2020-07-07 08:55:12', 'V8UQ-OPVU-RCOQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40080, 30030, 'Finland', 10001, 'Finland', 20005, 'Finland', 'Finland', 5381061, 2562583, 8834126, '2020-05-24 19:27:15', '8GRW-EDY0-9J4N');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40081, 30026, 'Finland', 10007, 'Finland', 20009, 'Finland', 'Finland', 1010575, 7983949, 3509703, '2020-08-29 09:40:12', '5TY0-V8EA-J279');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40082, 30067, 'Finland', 10002, 'Finland', 20008, 'Finland', 'Finland', 7901726, 2639616, 1629038, '2020-04-14 14:09:29', '6I6Z-U9GY-0RGB');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40083, 30024, 'Finland', 10002, 'Finland', 20002, 'Finland', 'Finland', 3816047, 7946730, 7614610, '2020-04-01 09:58:04', '1TJ7-19M0-LLSG');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40084, 30056, 'Finland', 10004, 'Finland', 20009, 'Finland', 'Finland', 9002800, 3296231, 2083011, '2020-02-26 22:48:29', 'R3FY-CEKL-E539');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40085, 30035, 'Finland', 10001, 'Finland', 20009, 'Finland', 'Finland', 4360888, 9278022, 9652330, '2020-01-08 22:47:05', 'XN8H-WM82-4VQQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40086, 30082, 'Finland', 10004, 'Finland', 20007, 'Finland', 'Finland', 4047272, 6404501, 1106091, '2020-05-20 01:23:22', 'UQBS-8NHJ-ZYVB');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40087, 30043, 'Finland', 10003, 'Finland', 20001, 'Finland', 'Finland', 3624121, 7840980, 4221583, '2020-10-21 06:59:52', 'HJSR-VRDD-HTGI');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40088, 30021, 'Finland', 10001, 'Finland', 20002, 'Finland', 'Finland', 7286863, 7685433, 5843623, '2020-05-15 18:54:36', 'BF2H-AG7P-O4PM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40089, 30038, 'Finland', 10010, 'Finland', 20003, 'Finland', 'Finland', 4668039, 4851170, 2199991, '2019-12-13 16:54:23', '3D73-POIV-68KJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40090, 30052, 'Finland', 10003, 'Finland', 20003, 'Finland', 'Finland', 5538938, 8909280, 2976537, '2020-12-11 22:32:31', 'UZGN-FIAV-OT9H');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40091, 30027, 'Finland', 10005, 'Finland', 20001, 'Finland', 'Finland', 9431842, 9430543, 3404005, '2020-02-27 10:05:19', 'FV5Z-1CAJ-JI0S');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40092, 30069, 'Finland', 10007, 'Finland', 20003, 'Finland', 'Finland', 5398721, 3758085, 3236761, '2020-03-07 17:12:58', '4TBH-E0WY-1IVM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40093, 30067, 'Finland', 10010, 'Finland', 20003, 'Finland', 'Finland', 8291805, 5530219, 7162613, '2020-11-14 02:41:17', 'HEEJ-KGGL-VI1E');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40094, 30048, 'Finland', 10008, 'Finland', 20001, 'Finland', 'Finland', 6893734, 5767135, 4644825, '2020-08-19 03:56:29', 'MG5B-AD3G-V6FW');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40095, 30011, 'Finland', 10001, 'Finland', 20004, 'Finland', 'Finland', 4480522, 9716917, 1571738, '2020-11-03 09:13:25', 'JA44-1XWT-GTF3');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40096, 30066, 'Finland', 10007, 'Finland', 20003, 'Finland', 'Finland', 2277913, 1786321, 1500724, '2020-11-13 19:16:55', 'KI5R-JTR6-7U59');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40097, 30089, 'Finland', 10003, 'Finland', 20009, 'Finland', 'Finland', 9905289, 9234599, 7669603, '2020-09-19 01:32:50', 'R5JN-4OMO-8QYL');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40098, 30063, 'Finland', 10004, 'Finland', 20004, 'Finland', 'Finland', 5600880, 5940778, 8076484, '2020-11-04 19:27:21', 'XV0O-DT7Y-ARTJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40099, 30095, 'Finland', 10010, 'Finland', 20002, 'Finland', 'Finland', 4771296, 1283605, 4076625, '2020-06-14 13:27:43', 'THV2-GFLC-D89K');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40100, 30096, 'Finland', 10010, 'Finland', 20005, 'Finland', 'Finland', 7823508, 8130712, 6083815, '2020-02-02 04:38:34', 'AFPC-HNA6-HU4V');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40101, 30137, 'Sweden', 10014, 'Sweden', 20012, 'Sweden', 'Sweden', 7597583, 2791417, 7247193, '2020-05-27 04:49:13', 'P1T3-0KYZ-SNEJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40102, 30113, 'Sweden', 10011, 'Sweden', 20019, 'Sweden', 'Sweden', 7901523, 3596450, 2826370, '2020-05-10 22:00:57', 'RAWI-DK18-0B7A');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40103, 30124, 'Sweden', 10017, 'Sweden', 20015, 'Sweden', 'Sweden', 1270297, 5068602, 8733572, '2020-02-29 03:44:31', 'EZJO-7QD1-6O2Y');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40104, 30152, 'Sweden', 10020, 'Sweden', 20014, 'Sweden', 'Sweden', 6843283, 9135472, 1968701, '2020-05-14 22:59:37', '7D9T-KAB9-7QHQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40105, 30114, 'Sweden', 10017, 'Sweden', 20020, 'Sweden', 'Sweden', 8348686, 2780613, 1049841, '2019-12-22 08:20:35', 'AG1C-MXXI-33KC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40106, 30185, 'Sweden', 10013, 'Sweden', 20016, 'Sweden', 'Sweden', 5762453, 5960405, 1862145, '2020-05-03 23:12:10', 'HG9C-YGUD-9C54');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40107, 30164, 'Sweden', 10020, 'Sweden', 20014, 'Sweden', 'Sweden', 1668175, 2215029, 9457066, '2020-04-24 07:23:50', '0YOZ-851U-8N1F');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40108, 30164, 'Sweden', 10017, 'Sweden', 20012, 'Sweden', 'Sweden', 9352903, 1073350, 9095608, '2020-01-11 15:16:31', 'FPOY-9SYO-H4GF');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40109, 30153, 'Sweden', 10017, 'Sweden', 20012, 'Sweden', 'Sweden', 8771154, 5967631, 1945145, '2020-03-17 09:23:53', 'KJC9-UH23-88OD');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40110, 30180, 'Sweden', 10011, 'Sweden', 20020, 'Sweden', 'Sweden', 6241037, 6417199, 7735995, '2020-07-29 05:28:15', 'P1WI-V1RR-AINO');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40111, 30184, 'Sweden', 10016, 'Sweden', 20013, 'Sweden', 'Sweden', 4509903, 3480670, 9133559, '2020-01-05 04:35:14', 'WVOS-NQSE-VTWK');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40112, 30104, 'Sweden', 10019, 'Sweden', 20011, 'Sweden', 'Sweden', 5089772, 4032118, 4442492, '2020-10-21 11:14:47', 'DUQH-ED6Q-THNN');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40113, 30171, 'Sweden', 10012, 'Sweden', 20011, 'Sweden', 'Sweden', 7465132, 8979367, 7607500, '2020-03-19 23:50:15', 'IOEY-RH5C-UA49');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40114, 30177, 'Sweden', 10012, 'Sweden', 20013, 'Sweden', 'Sweden', 1252785, 7233302, 8749331, '2020-07-20 09:35:24', 'MNC2-O1JW-NXZ9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40115, 30150, 'Sweden', 10015, 'Sweden', 20019, 'Sweden', 'Sweden', 8088874, 9684973, 4647409, '2020-11-18 19:49:38', 'L230-0LXZ-OE6B');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40116, 30137, 'Sweden', 10018, 'Sweden', 20018, 'Sweden', 'Sweden', 8871705, 8356501, 7471923, '2020-03-18 06:51:50', 'PL0L-8M65-OU5D');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40117, 30118, 'Sweden', 10019, 'Sweden', 20011, 'Sweden', 'Sweden', 1337347, 1664627, 4547510, '2020-09-23 23:15:19', 'APWR-OYS1-IA4I');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40118, 30142, 'Sweden', 10020, 'Sweden', 20013, 'Sweden', 'Sweden', 6563245, 6286422, 1960034, '2020-09-14 15:51:55', 'IYDQ-ZVAG-EXL4');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40119, 30105, 'Sweden', 10013, 'Sweden', 20014, 'Sweden', 'Sweden', 3406527, 7168060, 7254472, '2020-05-19 02:15:15', 'WQAE-CD8G-2E9J');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40120, 30152, 'Sweden', 10016, 'Sweden', 20014, 'Sweden', 'Sweden', 2019647, 5245029, 2095036, '2019-12-29 15:16:01', '8POC-QKAH-ZBW2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40121, 30125, 'Sweden', 10011, 'Sweden', 20015, 'Sweden', 'Sweden', 7439513, 3515568, 1197021, '2020-05-21 00:44:37', 'VFR9-EAXW-TKHJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40122, 30128, 'Sweden', 10015, 'Sweden', 20017, 'Sweden', 'Sweden', 2916767, 6178249, 6951646, '2020-05-07 13:59:34', 'JUJ2-XLZW-WWTR');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40123, 30191, 'Sweden', 10015, 'Sweden', 20018, 'Sweden', 'Sweden', 3024555, 2404972, 2992649, '2020-09-07 23:54:29', 'QVI1-RRUL-SG9Z');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40124, 30145, 'Sweden', 10014, 'Sweden', 20018, 'Sweden', 'Sweden', 2506765, 3830046, 6328236, '2020-02-13 20:58:20', 'WW67-XUAN-RKOV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40125, 30110, 'Sweden', 10015, 'Sweden', 20017, 'Sweden', 'Sweden', 2478179, 3875310, 9469128, '2020-02-23 08:03:10', '87X0-KEQP-FUY1');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40126, 30183, 'Sweden', 10019, 'Sweden', 20020, 'Sweden', 'Sweden', 4297164, 6180636, 8700647, '2020-10-13 02:23:32', 'Z7SL-RQ76-8UR7');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40127, 30176, 'Sweden', 10018, 'Sweden', 20015, 'Sweden', 'Sweden', 1228681, 2473942, 4595597, '2020-03-21 17:49:49', '9KIG-VJG0-A6Z1');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40128, 30154, 'Sweden', 10014, 'Sweden', 20012, 'Sweden', 'Sweden', 5876870, 9588115, 6902753, '2020-06-19 17:52:09', '8DJF-4972-AJ9U');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40129, 30196, 'Sweden', 10014, 'Sweden', 20019, 'Sweden', 'Sweden', 1767999, 2049504, 7925358, '2020-08-29 18:25:09', 'F7RP-8SEK-8M7X');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40130, 30151, 'Sweden', 10019, 'Sweden', 20016, 'Sweden', 'Sweden', 4456819, 3868571, 6623040, '2020-01-04 02:26:12', 'BJMM-PPN7-QP8Y');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40131, 30131, 'Sweden', 10015, 'Sweden', 20013, 'Sweden', 'Sweden', 9123361, 9757113, 5237276, '2020-10-05 09:00:07', '07LT-3WIQ-YE1N');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40132, 30101, 'Sweden', 10019, 'Sweden', 20016, 'Sweden', 'Sweden', 4106346, 9237050, 3751224, '2020-06-10 23:13:06', 'XV85-RFGQ-UQZ2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40133, 30126, 'Sweden', 10012, 'Sweden', 20012, 'Sweden', 'Sweden', 3193532, 6781805, 8706774, '2020-06-30 07:52:55', 'GJW3-CRT6-BVA1');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40134, 30165, 'Sweden', 10019, 'Sweden', 20013, 'Sweden', 'Sweden', 4747672, 2841134, 7505696, '2020-08-25 22:16:41', 'X3YD-YXJ5-X9YP');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40135, 30178, 'Sweden', 10012, 'Sweden', 20016, 'Sweden', 'Sweden', 9172015, 7218939, 6621956, '2020-04-09 01:10:17', '0XXW-7280-ISSB');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40136, 30148, 'Sweden', 10012, 'Sweden', 20014, 'Sweden', 'Sweden', 1984121, 4409114, 3742196, '2020-05-29 03:49:23', 'AC2W-X56N-ZXVS');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40137, 30177, 'Sweden', 10013, 'Sweden', 20014, 'Sweden', 'Sweden', 5735331, 9488403, 6597057, '2020-01-04 18:18:21', 'O0NL-7KBM-S4GD');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40138, 30104, 'Sweden', 10015, 'Sweden', 20017, 'Sweden', 'Sweden', 9414678, 9141650, 6503837, '2020-01-30 12:17:29', '00FK-1DJS-T97W');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40139, 30138, 'Sweden', 10011, 'Sweden', 20013, 'Sweden', 'Sweden', 5260320, 5645854, 5397202, '2020-02-24 22:11:43', '6HEQ-4N6Y-WVHO');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40140, 30105, 'Sweden', 10013, 'Sweden', 20020, 'Sweden', 'Sweden', 6242372, 7137978, 2258085, '2020-11-26 01:12:27', '2V74-YIXN-M2L9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40141, 30184, 'Sweden', 10018, 'Sweden', 20017, 'Sweden', 'Sweden', 7412291, 3536577, 3825958, '2019-12-24 19:46:23', 'HKC2-WVOL-B7DM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40142, 30116, 'Sweden', 10017, 'Sweden', 20017, 'Sweden', 'Sweden', 3298322, 8907789, 9480553, '2020-10-26 06:36:23', 'VY9K-24LW-2MB3');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40143, 30114, 'Sweden', 10020, 'Sweden', 20020, 'Sweden', 'Sweden', 7740666, 3459078, 6463243, '2020-01-03 12:03:45', 'KSP6-HS5L-0K4N');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40144, 30200, 'Sweden', 10018, 'Sweden', 20014, 'Sweden', 'Sweden', 3786911, 6271308, 2317677, '2020-01-16 07:28:18', 'D1M3-L8TY-4D0W');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40145, 30101, 'Sweden', 10020, 'Sweden', 20014, 'Sweden', 'Sweden', 3952662, 4829380, 8636785, '2020-05-22 16:16:06', 'YVMC-WGU2-3517');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40146, 30104, 'Sweden', 10013, 'Sweden', 20015, 'Sweden', 'Sweden', 8249132, 2438774, 9274207, '2020-03-05 02:34:53', '7KFR-XHH0-8W2I');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40147, 30154, 'Sweden', 10016, 'Sweden', 20012, 'Sweden', 'Sweden', 8814041, 3072699, 2946784, '2020-11-29 07:55:53', '03R6-4Q82-W6ZV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40148, 30141, 'Sweden', 10012, 'Sweden', 20016, 'Sweden', 'Sweden', 1486782, 3848477, 7925959, '2020-07-16 12:42:38', '7TUQ-X53F-I583');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40149, 30158, 'Sweden', 10020, 'Sweden', 20015, 'Sweden', 'Sweden', 4026426, 1480935, 3372845, '2020-04-18 22:09:07', 'BPQR-KG06-YJRC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40150, 30146, 'Sweden', 10018, 'Sweden', 20019, 'Sweden', 'Sweden', 6909802, 3397540, 7923045, '2020-01-14 18:45:45', 'KFHY-CZG9-DVNR');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40151, 30166, 'Sweden', 10012, 'Sweden', 20018, 'Sweden', 'Sweden', 6691033, 8632915, 1903647, '2020-07-14 02:26:23', 'CWX4-UDVZ-ZUCO');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40152, 30117, 'Sweden', 10011, 'Sweden', 20013, 'Sweden', 'Sweden', 4178190, 4626708, 3583959, '2020-05-05 09:44:46', '2AXN-2WXT-XDZ8');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40153, 30127, 'Sweden', 10018, 'Sweden', 20019, 'Sweden', 'Sweden', 8984538, 3601500, 8757328, '2020-09-02 06:52:58', 'ZWG3-MUXP-N9XU');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40154, 30130, 'Sweden', 10011, 'Sweden', 20017, 'Sweden', 'Sweden', 4270165, 2219097, 8215771, '2020-06-08 10:01:32', 'UO1O-YT35-8DFY');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40155, 30110, 'Sweden', 10018, 'Sweden', 20017, 'Sweden', 'Sweden', 9887574, 8848566, 3588167, '2020-07-04 11:22:41', 'EEJZ-TH27-IGXO');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40156, 30166, 'Sweden', 10013, 'Sweden', 20020, 'Sweden', 'Sweden', 8829788, 4200007, 7148733, '2020-01-08 11:54:25', 'H4A7-GM6N-CLHU');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40157, 30137, 'Sweden', 10011, 'Sweden', 20017, 'Sweden', 'Sweden', 9231003, 9562943, 4398836, '2020-05-22 07:24:00', 'NTJC-D5FM-71PU');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40158, 30132, 'Sweden', 10012, 'Sweden', 20011, 'Sweden', 'Sweden', 2983896, 9932358, 3446355, '2020-05-02 13:27:48', 'NRHR-P5J0-AEMU');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40159, 30157, 'Sweden', 10019, 'Sweden', 20017, 'Sweden', 'Sweden', 8750362, 8749436, 1988767, '2020-04-29 13:35:04', '24CP-84XU-09HM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40160, 30161, 'Sweden', 10013, 'Sweden', 20011, 'Sweden', 'Sweden', 1052112, 4093446, 2828104, '2020-02-03 23:32:29', 'ARFE-O47A-4KBP');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40161, 30148, 'Sweden', 10014, 'Sweden', 20016, 'Sweden', 'Sweden', 2823026, 9068746, 3272691, '2020-08-13 10:44:06', 'Y1JR-X382-CN1E');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40162, 30117, 'Sweden', 10012, 'Sweden', 20014, 'Sweden', 'Sweden', 6055608, 6458734, 7186372, '2020-01-26 02:19:06', 'QMWY-4ZYC-H1X5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40163, 30141, 'Sweden', 10019, 'Sweden', 20018, 'Sweden', 'Sweden', 8349797, 2338935, 4960566, '2020-05-24 21:18:32', '8GK4-65H3-2VDS');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40164, 30153, 'Sweden', 10017, 'Sweden', 20018, 'Sweden', 'Sweden', 9761030, 9531615, 7583207, '2019-12-20 14:49:28', 'RGFG-PPRZ-81EC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40165, 30146, 'Sweden', 10014, 'Sweden', 20018, 'Sweden', 'Sweden', 2537123, 2356995, 3256422, '2020-06-01 12:11:55', '7LQP-ERJ3-S53Q');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40166, 30140, 'Sweden', 10018, 'Sweden', 20019, 'Sweden', 'Sweden', 9315857, 6537049, 9661423, '2020-10-15 14:16:36', '5XAE-S9IM-T1XJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40167, 30177, 'Sweden', 10019, 'Sweden', 20019, 'Sweden', 'Sweden', 6047487, 5592602, 7093744, '2020-01-27 17:43:07', 'PWT9-S35S-2DYR');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40168, 30120, 'Sweden', 10019, 'Sweden', 20019, 'Sweden', 'Sweden', 9523327, 4643406, 2949376, '2020-09-30 21:58:03', '4ZHL-6A5Z-C9AO');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40169, 30188, 'Sweden', 10017, 'Sweden', 20015, 'Sweden', 'Sweden', 2269507, 3549581, 5218069, '2020-10-10 03:43:30', 'DILN-E31H-2KS2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40170, 30131, 'Sweden', 10020, 'Sweden', 20011, 'Sweden', 'Sweden', 3101510, 5686094, 2660103, '2020-05-13 18:46:48', '9QZJ-PE36-LHQK');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40171, 30117, 'Sweden', 10011, 'Sweden', 20011, 'Sweden', 'Sweden', 3438027, 6547024, 6339686, '2020-06-17 10:19:30', '4EDJ-9L7W-XIO5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40172, 30114, 'Sweden', 10017, 'Sweden', 20018, 'Sweden', 'Sweden', 8650216, 6735690, 4250375, '2020-04-22 12:15:05', 'RA1L-FVO8-2BOL');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40173, 30113, 'Sweden', 10013, 'Sweden', 20020, 'Sweden', 'Sweden', 4040967, 5368989, 2855297, '2020-03-02 20:41:34', 'WPMC-G0KO-1JQ9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40174, 30121, 'Sweden', 10017, 'Sweden', 20013, 'Sweden', 'Sweden', 1476590, 7679019, 9933759, '2020-05-25 23:42:29', 'WVDV-IR4O-HDYC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40175, 30145, 'Sweden', 10012, 'Sweden', 20013, 'Sweden', 'Sweden', 5422179, 7642171, 4301908, '2020-04-06 13:37:34', '121O-S28K-LSGQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40176, 30146, 'Sweden', 10014, 'Sweden', 20020, 'Sweden', 'Sweden', 1934498, 7624528, 2081413, '2020-07-09 04:05:59', 'U1VA-7AW6-N0C1');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40177, 30116, 'Sweden', 10019, 'Sweden', 20020, 'Sweden', 'Sweden', 6000269, 6038333, 5411499, '2020-04-15 17:15:32', 'OPOD-1NNL-ZO7M');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40178, 30177, 'Sweden', 10019, 'Sweden', 20018, 'Sweden', 'Sweden', 1768964, 9151192, 6562859, '2020-08-30 19:48:22', 'T5SU-T1ET-U2RD');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40179, 30125, 'Sweden', 10012, 'Sweden', 20014, 'Sweden', 'Sweden', 7806724, 7223888, 2685866, '2020-01-19 10:28:42', '3A0H-80DF-L4II');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40180, 30126, 'Sweden', 10014, 'Sweden', 20020, 'Sweden', 'Sweden', 3905331, 1298825, 1581921, '2020-03-05 18:12:29', 'JMW0-XH12-EXRW');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40181, 30128, 'Sweden', 10015, 'Sweden', 20011, 'Sweden', 'Sweden', 6236928, 9066679, 6891678, '2020-06-17 17:00:00', 'EET3-MRL4-VGJR');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40182, 30154, 'Sweden', 10016, 'Sweden', 20012, 'Sweden', 'Sweden', 5632575, 5854206, 9517098, '2020-12-10 08:14:35', 'RKQ6-0ZTP-NAQT');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40183, 30131, 'Sweden', 10015, 'Sweden', 20014, 'Sweden', 'Sweden', 8694008, 9077038, 2038276, '2020-11-15 09:47:13', 'IMDG-M1O9-PKGN');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40184, 30155, 'Sweden', 10018, 'Sweden', 20011, 'Sweden', 'Sweden', 1774623, 3536640, 3352411, '2020-07-06 15:59:24', 'W9KC-DK9F-M6KC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40185, 30160, 'Sweden', 10016, 'Sweden', 20019, 'Sweden', 'Sweden', 9919870, 3766952, 1548323, '2020-11-11 16:43:20', 'ABG8-3LJW-28LR');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40186, 30107, 'Sweden', 10014, 'Sweden', 20013, 'Sweden', 'Sweden', 5083306, 8173346, 8231292, '2020-04-02 13:39:17', 'SPD2-SA9E-FM75');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40187, 30180, 'Sweden', 10018, 'Sweden', 20019, 'Sweden', 'Sweden', 8464369, 4798335, 6863010, '2020-11-12 11:30:49', 'F3V0-KXJX-45EJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40188, 30123, 'Sweden', 10013, 'Sweden', 20020, 'Sweden', 'Sweden', 6725276, 8961668, 2180705, '2020-10-22 00:46:33', 'TM88-KDZV-YGRE');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40189, 30185, 'Sweden', 10017, 'Sweden', 20013, 'Sweden', 'Sweden', 3462825, 1908610, 1535281, '2020-09-28 12:12:18', '6H2N-AHT7-DNFV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40190, 30138, 'Sweden', 10020, 'Sweden', 20015, 'Sweden', 'Sweden', 8016868, 5118255, 1767242, '2020-05-18 01:21:14', 'GA6Z-SUSX-DMWA');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40191, 30118, 'Sweden', 10012, 'Sweden', 20019, 'Sweden', 'Sweden', 9744421, 9576501, 3817129, '2020-08-12 10:28:27', '00MC-T3BN-3T1G');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40192, 30152, 'Sweden', 10012, 'Sweden', 20013, 'Sweden', 'Sweden', 9616006, 8065924, 2762725, '2020-02-16 16:34:58', 'ODIZ-JHPS-NAM1');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40193, 30165, 'Sweden', 10017, 'Sweden', 20011, 'Sweden', 'Sweden', 8151944, 2562047, 6527842, '2020-02-15 11:57:30', 'CG0I-3AFG-TP3W');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40194, 30112, 'Sweden', 10019, 'Sweden', 20012, 'Sweden', 'Sweden', 7602842, 5922501, 3417059, '2020-02-08 08:59:53', '64QM-GGFI-AZWM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40195, 30104, 'Sweden', 10014, 'Sweden', 20011, 'Sweden', 'Sweden', 7280043, 8066483, 9285765, '2020-06-03 14:17:48', 'P259-D3BH-B94Q');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40196, 30118, 'Sweden', 10013, 'Sweden', 20018, 'Sweden', 'Sweden', 1455878, 1624931, 5233316, '2020-12-01 13:35:55', '60XT-ECCX-OA82');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40197, 30107, 'Sweden', 10012, 'Sweden', 20015, 'Sweden', 'Sweden', 5041252, 2347775, 1913966, '2020-01-10 13:17:28', '9UHO-6EVV-8LQC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40198, 30155, 'Sweden', 10017, 'Sweden', 20012, 'Sweden', 'Sweden', 6285367, 2260746, 4486016, '2020-02-01 03:31:36', 'OH9N-NEDT-25HQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40199, 30197, 'Sweden', 10018, 'Sweden', 20013, 'Sweden', 'Sweden', 2296765, 7035996, 2725164, '2020-11-09 15:58:06', 'VOQ3-YUXB-001O');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40200, 30183, 'Sweden', 10013, 'Sweden', 20011, 'Sweden', 'Sweden', 6499426, 2987805, 8408588, '2020-06-12 02:50:03', 'EBKV-PSRS-CHZ3');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40201, 30202, 'Norway', 10027, 'Norway', 20030, 'Norway', 'Norway', 1382685, 6966637, 4975267, '2020-02-20 01:00:32', 'WXAU-2R3Q-A6QC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40202, 30272, 'Norway', 10027, 'Norway', 20025, 'Norway', 'Norway', 9383508, 3321937, 2519211, '2020-05-20 17:53:47', 'D4FE-ED6A-D48M');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40203, 30281, 'Norway', 10024, 'Norway', 20021, 'Norway', 'Norway', 2294559, 9509118, 3042575, '2020-04-12 15:15:03', '5KX6-OPE6-AOCQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40204, 30269, 'Norway', 10022, 'Norway', 20029, 'Norway', 'Norway', 6647927, 3390372, 8199430, '2020-05-13 07:36:38', '0U81-TN9Q-5V6V');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40205, 30285, 'Norway', 10026, 'Norway', 20026, 'Norway', 'Norway', 8201499, 3490010, 7088393, '2020-11-07 14:14:17', 'INT6-GFLP-B157');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40206, 30282, 'Norway', 10029, 'Norway', 20024, 'Norway', 'Norway', 5279986, 2243874, 4527228, '2020-11-26 08:26:18', 'YS9B-YYBF-I5ME');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40207, 30260, 'Norway', 10021, 'Norway', 20021, 'Norway', 'Norway', 9326077, 9717687, 2894700, '2020-07-08 17:39:34', 'P4MC-TPFM-9WWI');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40208, 30242, 'Norway', 10028, 'Norway', 20030, 'Norway', 'Norway', 7018428, 8410572, 5841650, '2020-09-03 23:46:55', 'T8XU-IZ7R-YOV9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40209, 30251, 'Norway', 10026, 'Norway', 20030, 'Norway', 'Norway', 6939048, 8294818, 8079572, '2020-11-18 18:18:01', 'EX2Z-KQF1-I3D7');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40210, 30263, 'Norway', 10024, 'Norway', 20021, 'Norway', 'Norway', 5939551, 3956387, 2657312, '2020-09-02 04:18:01', 'P97N-SOK0-9CCV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40211, 30226, 'Norway', 10028, 'Norway', 20024, 'Norway', 'Norway', 4591049, 6601254, 7029763, '2020-06-10 05:00:18', '1W5S-EQXJ-7F01');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40212, 30288, 'Norway', 10021, 'Norway', 20022, 'Norway', 'Norway', 4362452, 6108362, 8827289, '2020-02-12 15:34:00', 'ZFN8-82LJ-6E9Z');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40213, 30267, 'Norway', 10025, 'Norway', 20028, 'Norway', 'Norway', 2561405, 4242312, 6159351, '2020-12-05 22:15:01', 'X0J1-3VUX-4BHV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40214, 30250, 'Norway', 10030, 'Norway', 20025, 'Norway', 'Norway', 7061641, 7156894, 2733215, '2020-04-12 22:22:51', 'G0X3-BCZZ-HJG5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40215, 30261, 'Norway', 10021, 'Norway', 20025, 'Norway', 'Norway', 2480688, 8584536, 9740200, '2020-01-28 01:04:18', '1MWQ-L5Y1-GLXV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40216, 30263, 'Norway', 10027, 'Norway', 20028, 'Norway', 'Norway', 8328988, 7657686, 7492417, '2019-12-13 04:45:22', '3134-3UXK-6XV0');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40217, 30255, 'Norway', 10022, 'Norway', 20021, 'Norway', 'Norway', 1215830, 3996396, 6386392, '2020-02-26 07:33:18', '4DOR-BTZR-JQE8');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40218, 30214, 'Norway', 10026, 'Norway', 20022, 'Norway', 'Norway', 9429425, 2631157, 4110219, '2020-06-03 05:20:10', 'UPC7-X3TF-2BSH');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40219, 30210, 'Norway', 10026, 'Norway', 20025, 'Norway', 'Norway', 2268238, 3103447, 3657231, '2020-07-30 07:25:10', '6SRT-KK86-0I22');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40220, 30232, 'Norway', 10022, 'Norway', 20027, 'Norway', 'Norway', 6910735, 6274954, 7751929, '2020-01-12 23:02:28', 'B8Q8-ARLC-CZKZ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40221, 30215, 'Norway', 10030, 'Norway', 20030, 'Norway', 'Norway', 4418630, 6594501, 4350488, '2020-05-02 08:04:47', 'KNQS-WX4P-LYNF');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40222, 30214, 'Norway', 10026, 'Norway', 20023, 'Norway', 'Norway', 8777155, 7370624, 9909400, '2020-07-16 00:16:25', '7I42-LOH8-LJFF');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40223, 30234, 'Norway', 10030, 'Norway', 20029, 'Norway', 'Norway', 5337133, 5032578, 3050423, '2019-12-18 12:15:28', '0J9Y-INTM-EX34');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40224, 30271, 'Norway', 10022, 'Norway', 20021, 'Norway', 'Norway', 2738781, 8277875, 4392128, '2020-03-05 12:29:44', 'FMAT-544L-ARAL');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40225, 30285, 'Norway', 10025, 'Norway', 20024, 'Norway', 'Norway', 1526511, 7843334, 8708119, '2019-12-10 13:07:44', '85Q2-3GMO-SKOV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40226, 30236, 'Norway', 10028, 'Norway', 20030, 'Norway', 'Norway', 1586608, 6003734, 4697402, '2020-05-24 07:41:53', '93DE-6T4G-33FD');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40227, 30289, 'Norway', 10026, 'Norway', 20030, 'Norway', 'Norway', 3078284, 3622004, 8552540, '2020-05-05 17:53:08', 'RH1F-6XXL-N1YN');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40228, 30211, 'Norway', 10022, 'Norway', 20024, 'Norway', 'Norway', 8773875, 4846832, 5254962, '2020-05-07 11:46:56', 'HRK8-UPXZ-06R7');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40229, 30261, 'Norway', 10030, 'Norway', 20023, 'Norway', 'Norway', 4335906, 5607513, 9419044, '2020-02-13 18:45:30', '3N44-P1D5-S4DZ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40230, 30222, 'Norway', 10024, 'Norway', 20023, 'Norway', 'Norway', 1468142, 1484630, 9346082, '2020-11-25 09:49:50', 'F0PG-91Z9-KE1J');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40231, 30254, 'Norway', 10027, 'Norway', 20021, 'Norway', 'Norway', 6113803, 4509805, 2804253, '2020-07-17 17:56:49', '9HCD-5DV8-IA4A');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40232, 30221, 'Norway', 10021, 'Norway', 20025, 'Norway', 'Norway', 7534906, 8538772, 5815632, '2020-05-29 15:55:58', 'GVSL-069J-HLJ4');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40233, 30216, 'Norway', 10029, 'Norway', 20029, 'Norway', 'Norway', 1807845, 7550469, 6463720, '2019-12-25 05:25:53', 'T404-FQEG-Y15T');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40234, 30296, 'Norway', 10021, 'Norway', 20026, 'Norway', 'Norway', 1163913, 9955029, 5856764, '2020-07-21 16:37:58', '5A1V-HMXN-ENRI');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40235, 30275, 'Norway', 10026, 'Norway', 20021, 'Norway', 'Norway', 8449326, 7377011, 8249760, '2020-07-06 00:54:26', 'KHDI-0350-56M2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40236, 30212, 'Norway', 10023, 'Norway', 20030, 'Norway', 'Norway', 8172841, 4022557, 1137048, '2020-02-15 19:52:15', 'JBPZ-OJYO-NKBN');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40237, 30247, 'Norway', 10022, 'Norway', 20023, 'Norway', 'Norway', 7876574, 1858711, 6624242, '2020-05-21 16:11:26', 'S0OH-A67M-CDCM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40238, 30280, 'Norway', 10026, 'Norway', 20022, 'Norway', 'Norway', 4954245, 8490245, 3171381, '2020-04-10 09:39:11', 'OXS6-GG37-HBNM');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40239, 30216, 'Norway', 10027, 'Norway', 20025, 'Norway', 'Norway', 3837225, 6786770, 1512002, '2020-03-30 05:39:41', 'YL8X-CTVB-OFG2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40240, 30230, 'Norway', 10028, 'Norway', 20030, 'Norway', 'Norway', 2295576, 7612710, 1307649, '2020-09-20 18:06:22', 'X2E7-ITS6-RQRK');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40241, 30240, 'Norway', 10026, 'Norway', 20021, 'Norway', 'Norway', 1673746, 1762188, 5296315, '2020-10-13 16:57:26', '88O5-RNW5-FQ28');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40242, 30238, 'Norway', 10022, 'Norway', 20023, 'Norway', 'Norway', 4762503, 5635452, 7371286, '2020-09-20 17:09:16', '23YH-A7JY-8AV9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40243, 30209, 'Norway', 10028, 'Norway', 20023, 'Norway', 'Norway', 8604280, 2407551, 6491619, '2020-03-13 19:14:52', 'O43S-3X0B-BB7B');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40244, 30276, 'Norway', 10027, 'Norway', 20026, 'Norway', 'Norway', 3624566, 4702531, 2397732, '2020-08-19 21:01:07', '29A7-OHVY-P564');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40245, 30284, 'Norway', 10026, 'Norway', 20024, 'Norway', 'Norway', 3672663, 1859017, 1989147, '2020-05-25 16:35:25', 'M6EC-5SYF-QBM4');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40246, 30208, 'Norway', 10022, 'Norway', 20025, 'Norway', 'Norway', 5771602, 3650625, 7050800, '2020-10-14 09:44:31', '8DKN-59Q8-P2U2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40247, 30221, 'Norway', 10030, 'Norway', 20028, 'Norway', 'Norway', 1197284, 4829525, 5891853, '2020-10-03 14:43:26', 'VZJU-C6P0-GTSQ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40248, 30282, 'Norway', 10028, 'Norway', 20021, 'Norway', 'Norway', 4596246, 2868933, 3305043, '2019-12-23 07:05:34', '8K66-037I-KMFJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40249, 30213, 'Norway', 10025, 'Norway', 20029, 'Norway', 'Norway', 6996134, 8178390, 1955919, '2020-07-20 12:13:22', 'SSM1-80DJ-FE7K');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40250, 30204, 'Norway', 10024, 'Norway', 20030, 'Norway', 'Norway', 7601867, 1179462, 6637296, '2020-05-01 17:05:41', 'A0GB-D0Q6-35S5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40251, 30296, 'Norway', 10022, 'Norway', 20021, 'Norway', 'Norway', 6935929, 7334491, 3815714, '2020-04-30 01:23:02', 'SX81-RHWQ-TJ67');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40252, 30257, 'Norway', 10028, 'Norway', 20024, 'Norway', 'Norway', 6317730, 4237863, 7190774, '2020-08-31 19:40:32', 'S354-HUEV-MK2O');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40253, 30216, 'Norway', 10025, 'Norway', 20030, 'Norway', 'Norway', 8317762, 2637757, 4201320, '2020-12-08 11:16:47', 'MQ4I-T5W4-LJV4');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40254, 30233, 'Norway', 10025, 'Norway', 20028, 'Norway', 'Norway', 8361484, 8435536, 2010544, '2020-04-03 15:42:09', '5DT2-4ZSK-TCYJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40255, 30239, 'Norway', 10023, 'Norway', 20025, 'Norway', 'Norway', 2790113, 4836846, 4930092, '2020-06-30 04:31:20', 'D7RP-TR62-IUPN');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40256, 30274, 'Norway', 10028, 'Norway', 20023, 'Norway', 'Norway', 9788990, 5973067, 7600695, '2020-04-19 16:01:32', 'OF58-NM1J-1TK5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40257, 30299, 'Norway', 10029, 'Norway', 20028, 'Norway', 'Norway', 2240877, 5538618, 8404980, '2020-11-28 04:50:55', 'K8SB-K6B9-2IAS');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40258, 30264, 'Norway', 10025, 'Norway', 20024, 'Norway', 'Norway', 1380301, 4787235, 2745383, '2020-03-09 00:39:15', 'ESDP-BPJA-3TIV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40259, 30232, 'Norway', 10024, 'Norway', 20029, 'Norway', 'Norway', 1283233, 3736610, 7098337, '2020-10-21 00:48:38', 'PCJR-TYSW-IP82');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40260, 30215, 'Norway', 10029, 'Norway', 20026, 'Norway', 'Norway', 1565597, 9367297, 2254994, '2019-12-19 19:46:51', 'PD18-VJ2H-MIMH');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40261, 30205, 'Norway', 10030, 'Norway', 20030, 'Norway', 'Norway', 8043837, 4992928, 7276078, '2020-07-29 15:39:19', '7WWD-0BX1-5JKE');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40262, 30260, 'Norway', 10025, 'Norway', 20025, 'Norway', 'Norway', 3999524, 4508181, 5338279, '2020-02-19 11:13:50', 'UJQC-YYF4-OIX5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40263, 30221, 'Norway', 10022, 'Norway', 20024, 'Norway', 'Norway', 1977821, 9563966, 3184763, '2020-10-05 09:44:32', 'M13X-H3XD-Z0T9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40264, 30221, 'Norway', 10022, 'Norway', 20030, 'Norway', 'Norway', 7360199, 5086978, 8131597, '2019-12-10 23:16:11', 'YSAM-K92X-DYAC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40265, 30282, 'Norway', 10028, 'Norway', 20025, 'Norway', 'Norway', 1174311, 2424926, 5468629, '2020-05-10 05:39:40', 'CZX0-F2SL-8NIZ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40266, 30284, 'Norway', 10029, 'Norway', 20023, 'Norway', 'Norway', 2390882, 1304174, 4911389, '2020-12-10 23:53:26', 'LFZ6-92M0-MD3B');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40267, 30282, 'Norway', 10022, 'Norway', 20028, 'Norway', 'Norway', 5049256, 1573013, 4957978, '2020-12-06 14:23:43', 'AL2T-FSRU-7SLB');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40268, 30240, 'Norway', 10021, 'Norway', 20029, 'Norway', 'Norway', 6829943, 2139127, 3235601, '2020-09-30 18:37:59', '3F0U-TEOF-8LDL');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40269, 30226, 'Norway', 10021, 'Norway', 20029, 'Norway', 'Norway', 8283608, 8397830, 8870262, '2020-05-17 13:49:00', '5FMK-2M55-A3WU');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40270, 30272, 'Norway', 10021, 'Norway', 20029, 'Norway', 'Norway', 2767230, 7132262, 9098621, '2020-05-13 17:21:31', '5LNP-79UR-BSZJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40271, 30294, 'Norway', 10021, 'Norway', 20030, 'Norway', 'Norway', 6586850, 6339324, 1366976, '2020-01-21 14:32:39', 'IZEL-Y7GX-UGIJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40272, 30249, 'Norway', 10028, 'Norway', 20021, 'Norway', 'Norway', 2624015, 6205584, 3840502, '2020-09-29 00:45:34', 'ZEPX-ZOHN-SKTG');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40273, 30254, 'Norway', 10026, 'Norway', 20022, 'Norway', 'Norway', 2792299, 4565130, 2143347, '2020-01-18 15:47:25', 'BH21-U4MA-JIGJ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40274, 30254, 'Norway', 10027, 'Norway', 20027, 'Norway', 'Norway', 6794361, 8951977, 5636494, '2020-06-08 04:02:26', 'XPAH-RNXG-09WR');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40275, 30246, 'Norway', 10026, 'Norway', 20024, 'Norway', 'Norway', 8195347, 2588725, 6922506, '2020-09-11 04:51:56', 'EBED-0UPS-L98T');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40276, 30210, 'Norway', 10024, 'Norway', 20023, 'Norway', 'Norway', 3205094, 8340708, 3966921, '2020-03-22 18:24:15', 'STCR-EECB-3PB5');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40277, 30274, 'Norway', 10030, 'Norway', 20021, 'Norway', 'Norway', 5028442, 2856466, 4696053, '2020-08-08 06:42:43', 'Z0IQ-SQCU-5MLZ');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40278, 30243, 'Norway', 10029, 'Norway', 20026, 'Norway', 'Norway', 2098489, 5768146, 3891698, '2020-11-16 21:43:54', 'MU2K-BA8O-6F4U');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40279, 30281, 'Norway', 10022, 'Norway', 20028, 'Norway', 'Norway', 8325702, 7601630, 9348603, '2020-03-10 14:40:01', 'PBTF-MTNJ-1UK0');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40280, 30219, 'Norway', 10028, 'Norway', 20023, 'Norway', 'Norway', 5629950, 7440150, 9428360, '2020-07-27 13:24:08', 'DNZD-3DX8-0UAO');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40281, 30221, 'Norway', 10021, 'Norway', 20029, 'Norway', 'Norway', 4562675, 3647117, 2494233, '2020-02-26 08:42:45', 'QIPR-R3YF-OI42');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40282, 30286, 'Norway', 10030, 'Norway', 20029, 'Norway', 'Norway', 6914803, 4452740, 6994503, '2020-06-21 05:15:46', 'SQT9-UAWS-1BAH');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40283, 30201, 'Norway', 10025, 'Norway', 20025, 'Norway', 'Norway', 3159759, 5535147, 3234522, '2020-01-30 11:10:50', 'PWIE-NK7M-M6F8');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40284, 30274, 'Norway', 10030, 'Norway', 20022, 'Norway', 'Norway', 5694141, 4311355, 3321410, '2020-04-01 00:00:40', 'D6FM-HV7O-DX6P');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40285, 30210, 'Norway', 10024, 'Norway', 20023, 'Norway', 'Norway', 4580565, 2596660, 3813536, '2020-07-17 17:53:26', '7CAL-14AC-6XS3');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40286, 30254, 'Norway', 10022, 'Norway', 20029, 'Norway', 'Norway', 4703484, 2514533, 3153255, '2020-03-16 16:51:42', 'TB1S-VPR1-7R7I');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40287, 30246, 'Norway', 10024, 'Norway', 20024, 'Norway', 'Norway', 4800502, 8923303, 8614002, '2020-09-18 20:14:31', 'Q05N-MCDZ-97XN');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40288, 30298, 'Norway', 10029, 'Norway', 20029, 'Norway', 'Norway', 7576508, 6870385, 4477226, '2020-06-23 14:33:04', 'MGMS-CCTO-ZTEC');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40289, 30272, 'Norway', 10027, 'Norway', 20030, 'Norway', 'Norway', 5484167, 2010886, 9448988, '2020-04-06 23:13:10', 'ZRKU-T622-6RLV');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40290, 30258, 'Norway', 10023, 'Norway', 20028, 'Norway', 'Norway', 2109606, 8023465, 6162485, '2020-06-08 01:33:09', 'PYF2-CL5T-OBZ8');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40291, 30299, 'Norway', 10030, 'Norway', 20022, 'Norway', 'Norway', 2965171, 5783427, 8602356, '2020-09-22 11:13:47', 'SOLU-HL5H-27SB');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40292, 30237, 'Norway', 10028, 'Norway', 20024, 'Norway', 'Norway', 6155607, 1213274, 9842119, '2020-03-02 05:06:19', '39H0-R5P8-JBL9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40293, 30279, 'Norway', 10024, 'Norway', 20026, 'Norway', 'Norway', 8269766, 9011951, 6657279, '2020-08-14 02:29:04', 'Q90T-2B1K-LQA9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40294, 30201, 'Norway', 10024, 'Norway', 20029, 'Norway', 'Norway', 9717878, 2931546, 6492567, '2020-08-04 01:35:14', '97HY-GQC9-XQL2');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40295, 30202, 'Norway', 10030, 'Norway', 20026, 'Norway', 'Norway', 3942056, 1103499, 9592965, '2020-02-28 02:10:16', 'U7N8-DGVR-TGD4');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40296, 30252, 'Norway', 10023, 'Norway', 20028, 'Norway', 'Norway', 2838179, 2183717, 8427166, '2020-05-04 08:43:24', 'WRRE-IA52-GF2H');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40297, 30205, 'Norway', 10025, 'Norway', 20027, 'Norway', 'Norway', 7393006, 5709925, 7166037, '2020-02-17 09:22:59', '3W40-D39K-WA8M');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40298, 30273, 'Norway', 10028, 'Norway', 20030, 'Norway', 'Norway', 6585415, 9402563, 6387814, '2020-02-14 16:54:04', 'HXLD-AYBT-V4JG');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40299, 30264, 'Norway', 10028, 'Norway', 20027, 'Norway', 'Norway', 9911247, 9370589, 7427141, '2020-08-28 11:16:29', 'YBG1-3BLQ-E4C9');
+insert into inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, visual_field_ref, oct_scan_ref, inspection_time, login_token) values (40300, 30294, 'Norway', 10026, 'Norway', 20027, 'Norway', 'Norway', 2146147, 2900589, 6374027, '2020-08-10 01:19:19', 'SEMC-ZXTW-W9NH');
+INSERT INTO inspections (inspection_id, customer_id, customer_country, optician_id, optician_country, opthalmologist_id, opthalmologist_country, inspections_country, fundus_photo_ref, oct_scan_ref, visual_field_ref, inspection_time, login_token) VALUES (0, 0, 'Finland', 0, 'Finland', 0, 'Finland', 'Finland', 1, 2, 3, NOW(), '1234567890123456');
+
+
 
 INSERT INTO contracts (contract_id, optician_id, optician_country, opthalmologist_id, opthalmologist_country, contracts_country) VALUES
-(50001, 10001, 'Sweden', 20035, 'Sweden', 'Sweden'),
-(50002, 10002, 'Sweden', 20021, 'Sweden', 'Sweden'),
-(50003, 10003, 'Sweden', 20042, 'Sweden', 'Sweden'),
-(50004, 10004, 'Sweden', 20001, 'Sweden', 'Sweden'),
-(50005, 10005, 'Norway', 20011, 'Finland', 'Norway'),
-(50006, 10006, 'Sweden', 20011, 'Finland', 'Sweden'),
-(50007, 10007, 'Sweden', 20002, 'Sweden', 'Sweden'),
-(50008, 10008, 'Sweden', 20047, 'Sweden', 'Sweden'),
-(50009, 10009, 'Sweden', 20032, 'Finland', 'Sweden'),
-(50010, 10010, 'Sweden', 20030, 'Finland', 'Sweden'),
-(50011, 10011, 'Finland', 20018, 'Sweden', 'Finland'),
-(50012, 10012, 'Sweden', 20016, 'Sweden', 'Sweden'),
-(50013, 10013, 'Norway', 20050, 'Sweden', 'Norway'),
-(50014, 10014, 'Sweden', 20050, 'Sweden', 'Sweden'),
-(50015, 10015, 'Norway', 20045, 'Sweden', 'Norway'),
-(50016, 10016, 'Sweden', 20046, 'Sweden', 'Sweden'),
-(50017, 10017, 'Sweden', 20039, 'Sweden', 'Sweden'),
-(50018, 10018, 'Sweden', 20008, 'Sweden', 'Sweden'),
-(50019, 10019, 'Sweden', 20022, 'Norway', 'Sweden'),
-(50020, 10020, 'Norway', 20026, 'Sweden', 'Norway'),
-(50021, 10021, 'Sweden', 20045, 'Sweden', 'Sweden'),
-(50022, 10022, 'Sweden', 20003, 'Finland', 'Sweden'),
-(50023, 10023, 'Sweden', 20042, 'Sweden', 'Sweden'),
-(50024, 10024, 'Sweden', 20022, 'Norway', 'Sweden'),
-(50025, 10025, 'Norway', 20012, 'Norway', 'Norway'),
-(50026, 10026, 'Sweden', 20036, 'Sweden', 'Sweden'),
-(50027, 10027, 'Norway', 20018, 'Sweden', 'Norway'),
-(50028, 10028, 'Sweden', 20030, 'Finland', 'Sweden'),
-(50029, 10029, 'Sweden', 20041, 'Sweden', 'Sweden'),
-(50030, 10030, 'Norway', 20035, 'Sweden', 'Norway'),
-(50031, 10031, 'Sweden', 20028, 'Sweden', 'Sweden'),
-(50032, 10032, 'Finland', 20045, 'Sweden', 'Finland'),
-(50033, 10033, 'Sweden', 20016, 'Sweden', 'Sweden'),
-(50034, 10034, 'Sweden', 20018, 'Sweden', 'Sweden'),
-(50035, 10035, 'Norway', 20024, 'Sweden', 'Norway'),
-(50036, 10036, 'Sweden', 20034, 'Sweden', 'Sweden'),
-(50037, 10037, 'Sweden', 20011, 'Finland', 'Sweden'),
-(50038, 10038, 'Finland', 20032, 'Finland', 'Finland'),
-(50039, 10039, 'Sweden', 20026, 'Sweden', 'Sweden'),
-(50040, 10040, 'Finland', 20002, 'Sweden', 'Finland'),
-(50041, 10041, 'Norway', 20023, 'Sweden', 'Norway'),
-(50042, 10042, 'Sweden', 20038, 'Sweden', 'Sweden'),
-(50043, 10043, 'Sweden', 20032, 'Finland', 'Sweden'),
-(50044, 10044, 'Sweden', 20036, 'Sweden', 'Sweden'),
-(50045, 10045, 'Finland', 20046, 'Sweden', 'Finland'),
-(50046, 10046, 'Sweden', 20038, 'Sweden', 'Sweden'),
-(50047, 10047, 'Sweden', 20021, 'Sweden', 'Sweden'),
-(50048, 10048, 'Sweden', 20004, 'Sweden', 'Sweden'),
-(50049, 10049, 'Finland', 20015, 'Finland', 'Finland'),
-(50050, 10050, 'Finland', 20049, 'Sweden', 'Finland'),
+(50001, 10002, 'Finland', 20005, 'Finland', 'Finland'),
+(50002, 10013, 'Sweden', 20015, 'Sweden', 'Sweden'),
+(50003, 10022, 'Norway', 20026, 'Norway', 'Norway'),
 (0, 0, 'Finland', 0, 'Finland', 'Finland');
+
+
+
 
 INSERT INTO administrators (admin_id, access_level, email, password) VALUES
 (60001, 'Administrator', 'gmerritt6@indiatimes.com', 'li9rMZmdc'),
@@ -1387,29 +872,6 @@ INSERT INTO administrators (admin_id, access_level, email, password) VALUES
 (60008, 'Administrator', 'sburbagev@psu.edu', 'yAEGhRIL'),
 (60009, 'Administrator', 'jmalyonx@jugem.jp', 'swXUfMAU'),
 (60010, 'Administrator', 'ahargeriez@uiuc.edu', 'CTJXtvcA'),
-(60011, 'Administrator', 'rwoodroff10@cargocollective.com', 'EWjw7PB1Y'),
-(60012, 'Administrator', 'bking11@google.ru', 'H7iSG9'),
-(60013, 'Administrator', 'vgligorijevic1b@smh.com.au', '8DSwsy'),
-(60014, 'Administrator', 'nverchambre1@blog.com', '2zvNv4'),
-(60015, 'Administrator', 'larnoult2@over-blog.com', 'VTQZsq5lggj5'),
-(60016, 'Administrator', 'cdufoure3@google.cn', 'SLHgph90'),
-(60017, 'Administrator', 'tmcconnell4@vimeo.com', 'IOgJIcqr0HC5'),
-(60018, 'Administrator', 'cburnsides6@unicef.org', '3zLQSJn'),
-(60019, 'Administrator', 'rstolza@canalblog.com', 'J5IbyIZo9'),
-(60020, 'Administrator', 'aoreheadc@list-manage.com', 'Z55n1VQU8'),
-(60021, 'Administrator', 'jdayk@virginia.edu', 'nDlqU70fH'),
-(60022, 'Administrator', 'rdelamarm@e-recht24.de', 'Y5VuP8'),
-(60023, 'Administrator', 'arundalln@altervista.org', 'PLaGlc2MM'),
-(60024, 'Administrator', 'pwipperp@edublogs.org', 'tJqEbiuLuRPD'),
-(60025, 'Administrator', 'kboyleq@ezinearticles.com', 'pmQMNq4IgIiq'),
-(60026, 'Administrator', 'wdannr@chron.com', 'u26iDrd5NEhk'),
-(60027, 'Administrator', 'fpresswellw@sina.com.cn', 'j7G6Ff'),
-(60028, 'Administrator', 'mcanteroy@studiopress.com', 'dXv3r9H'),
-(60029, 'Administrator', 'tjansey13@umich.edu', 'jeIn1LM'),
-(60030, 'Administrator', 'bairlie14@answers.com', 'p7qRrd28'),
-(60031, 'Administrator', 'dhuggan18@army.mil', 'Pr8RgXq8a'),
-(60032, 'Administrator', 'lgahan1a@cbc.ca', 'PdnX21Ak'),
-(60033, 'Administrator', 'nmcgahern1b@1und1.de', 'OGGePJwT'),
-(60034, 'Administrator', 'dsein1d@addthis.com', 'NUp223vW0vm4'),
 (0, 'Administrator', 'admin@mail.com', 'admin1');
+
 
