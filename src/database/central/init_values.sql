@@ -832,9 +832,9 @@ INSERT INTO inspections (inspection_id, customer_id, customer_country, optician_
 
 INSERT INTO contracts (contract_id, optician_id, optician_country, opthalmologist_id, opthalmologist_country, contracts_country) VALUES
 (50001, 10002, 'Finland', 20001, 'Finland', 'Finland'),
-(50002, 10013, 'Sweden', 20012, 'Sweden', 'Sweden'),
+(50002, 10013, 'Sweden', 20022, 'Sweden', 'Sweden'),
 (50003, 10022, 'Norway', 20021, 'Norway', 'Norway'),
-(0, 0, 'Finland', 0, 'Finland', 'Finland');
+(0, 0, 'Finland', 1, 'Finland', 'Finland');
 
 
 
