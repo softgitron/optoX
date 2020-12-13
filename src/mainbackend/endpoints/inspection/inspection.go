@@ -149,6 +149,7 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 
 		insp := h.Body.(connection.InspectionDetails)
 		body := InspectionFromInspectionDetails(insp)
+		body.Status = "InProgress"
 		err := h.DBHandler.AddInspection(body)
 
 		if err != nil {

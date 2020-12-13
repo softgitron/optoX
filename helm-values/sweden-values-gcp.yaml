@@ -70,7 +70,7 @@ mediator:
   credentials:
     pgpoolAdminUsername: "optox"
     pgpoolAdminPassword: "optox"
-  backendNodes: "0:database-central:5432,1:database:5432"
+  backendNodes: "0:database-central:5432:0,1:database:5432:1"
 
 syncbackend:
   name: syncbackend

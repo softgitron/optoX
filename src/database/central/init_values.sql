@@ -152,7 +152,8 @@ INSERT INTO opticians (optician_id, bank_account_id, optician_country, name)VALU
 (10048, 1048, 'Sweden', 'Instrumentarium'),
 (10049, 1049, 'Finland', 'Specsavers'),
 (10050, 1050, 'Finland', 'Nissen'),
-(0, 0, 'Finland', 'Nissen');
+(0, 0, 'Finland', 'Nissen'),
+(1, 0, 'Finland', 'OpticX');
 
 INSERT INTO optician_employees (employee_id, optician_id, optician_country, optician_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES
 (1, 10001, 'Sweden', 'Sweden', '127268-030U', 'btreswell0@friendfeed.com', '5DF7Ojbcoch', 'Betta', 'Treswell', 'Normal'),
@@ -205,7 +206,8 @@ INSERT INTO optician_employees (employee_id, optician_id, optician_country, opti
 (48, 10048, 'Sweden', 'Sweden', '850387-653G', 'vgligorijevic1b@smh.com.au', '8DSwsy', 'Van', 'Gligorijevic', 'Administrator'),
 (49, 10049, 'Finland', 'Finland', '637932-916E', 'jdunguy1c@altervista.org', 'ppEfyV68', 'Junie', 'Dunguy', 'Moderator'),
 (50, 10050, 'Finland', 'Finland', '315237-175K', 'jdelcastel1d@constantcontact.com', 'AaWytkowoWsU', 'June', 'Delcastel', 'Normal'),
-(0, 0, 'Finland', 'Finland', '456878-1458', 'optician@mail.com', 'optician', 'First', 'Last', 'Normal');
+(0, 0, 'Finland', 'Finland', '456878-1458', 'optician@mail.com', 'optician', 'First', 'Last', 'Normal'),
+(51, 1, 'Finland', 'Finland', '454888-1458', 'jukka.salonen@mail.com', 'optician', 'Jukka', 'Salonen', 'Normal');
 
 INSERT INTO opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_country, name)VALUES
 (20001, 1051, 'Sweden', 'KYS'),
@@ -258,7 +260,8 @@ INSERT INTO opthalmologists (opthalmologist_id, bank_account_id, opthalmologist_
 (20048, 1098, 'Sweden', 'KYS'),
 (20049, 1099, 'Sweden', 'TAYS'),
 (20050, 1100, 'Sweden', 'KYS'),
-(0, 0, 'Finland', 'TAYS');
+(0, 0, 'Finland', 'TAYS'),
+(1, 0, 'Finland', 'HUS');
 
 INSERT INTO opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES
 (51, 20001, 'Sweden', 'Sweden', '438140-631J', 'mjandl0@fda.gov', 'ya6vQU3', 'Malinde', 'Jandl', 'Normal'),
@@ -311,7 +314,8 @@ INSERT INTO opthalmologist_employees (employee_id, opthalmologist_id, opthalmolo
 (98, 20048, 'Sweden', 'Sweden', '775082-566K', 'nmcgahern1b@1und1.de', 'OGGePJwT', 'Neilla', 'McGahern', 'Administrator'),
 (99, 20049, 'Sweden', 'Sweden', '547895-832U', 'lmckerrow1c@multiply.com', 'Atc8trX', 'Larina', 'McKerrow', 'Normal'),
 (100, 20050, 'Sweden', 'Sweden', '186572-805S', 'dsein1d@addthis.com', 'NUp223vW0vm4', 'Dinny', 'Sein', 'Administrator'),
-(0, 0, 'Finland', 'Finland', '456878-1458', 'opthalmologist@mail.com', 'opthalmologist', 'First', 'Last', 'Normal');
+(0, 0, 'Finland', 'Finland', '456878-1458', 'opthalmologist@mail.com', 'opthalmologist', 'First', 'Last', 'Normal'),
+(1, 1, 'Finland', 'Finland', '448878-1458', 'heli.virtanen@mail.com', 'opthalmologist', 'Heli', 'Virtanen', 'Normal');
 
 INSERT INTO customers (customer_id, customer_country, social_security_number, email, first_name, last_name)VALUES
 (30001, 'Finland', '160955-825Z', 'gmarkovic0@vimeo.com', 'Gabriell', 'Markovic'),
