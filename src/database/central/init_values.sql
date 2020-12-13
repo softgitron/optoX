@@ -238,7 +238,7 @@ insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmolo
 insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (79, 20029, 'Norway', 'Norway', '276004-318H', 'gmccurtain8@mediafire.com', 'orQhZaj63SXx', 'Giffer', 'McCurtain', 'Normal');
 insert into opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) values (80, 20030, 'Norway', 'Norway', '455971-863S', 'brhoddie9@livejournal.com', 'd1YtaLS', 'Benson', 'Rhoddie', 'Moderator');
 INSERT INTO opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES (0, 0, 'Finland', 'Finland', '456878-1458', 'opthalmologist@mail.com', 'opthalmologist', 'First', 'Last', 'Normal');
-INSERT INTO opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES (1, 1, 'Finland', 'Finland', '448878-1458', 'heli.virtanen@mail.com', 'opthalmologist', 'Heli', 'Virtanen', 'Normal');
+INSERT INTO opthalmologist_employees (employee_id, opthalmologist_id, opthalmologist_country, opthalmologist_employee_country, social_security_number, email, password, first_name, last_name, access_level) VALUES (81, 1, 'Finland', 'Finland', '448878-1458', 'heli.virtanen@mail.com', 'opthalmologist', 'Heli', 'Virtanen', 'Normal');
 
 
 
