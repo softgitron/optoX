@@ -28,7 +28,7 @@ then
   # Join publications if regional node
   # Wait while for central database to come online
   sleep 10
-  CONNECTION_STRING="user=$POSTGRES_USER password=$POSTGRES_PASSWORD host=database-central port=5432 dbname=$POSTGRES_DB"
+  CONNECTION_STRING="user=$POSTGRES_USER password=$POSTGRES_PASSWORD host=database-central.$REGION.svc.cluster.local port=5432 dbname=$POSTGRES_DB"
   run_dbcommand "CREATE SUBSCRIPTION ${REGION}_subscription CONNECTION '$CONNECTION_STRING' PUBLICATION ${REGION}_publication;"
 else
   # Create initial administrator user
