@@ -19,6 +19,7 @@ import {
   getInspectionInfoCID,
   getOpticianCustomers,
 } from "../../API/API";
+import { getCountry, getFlag, Countries } from "../../Helpers/Country";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -336,6 +337,7 @@ export default function Optician() {
     }
   };
   const AvatarInfo = () => {
+    getCountry();
     return (
       <div className={classes.profilewrapper}>
         <Avatar
@@ -349,7 +351,7 @@ export default function Optician() {
         <img
           alt={"flag"}
           className={classes.flag}
-          src={FinlandFlag}
+          src={getFlag(getCountry())}
           width="200"
         />
       </div>

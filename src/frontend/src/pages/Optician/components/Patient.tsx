@@ -18,6 +18,7 @@ import {
   getSilmalaakarit,
   uploadImage,
 } from "../../../API/API";
+import { getCountry } from "../../../Helpers/Country";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -523,7 +524,7 @@ export default function InputAdornments(props: any) {
               setLoading(true);
               console.log("uploading images...");
               const CustomerID = await createCustomer(
-                "Finland",
+                getCountry(),
                 values.socialnumber,
                 values.email,
                 values.firstname,
@@ -556,13 +557,16 @@ export default function InputAdornments(props: any) {
                 setLoading(false);
               });
               if (!Fundusfoto || !OctScan || !VisualField) return;
+              console.log("Creating inspection...");
+              console.log(values.silmalaakari);
               const res = await createInspection(
                 CustomerID,
-                "Finland",
+                getCountry(),
                 parseInt(Fundusfoto.ImageID),
                 parseInt(OctScan.ImageID),
                 parseInt(VisualField.ImageID),
-                loginToken
+                loginToken,
+                values.silmalaakari
               ).catch((e) => {
                 alert("Something went wrong!");
                 setLoading(false);

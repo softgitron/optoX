@@ -192,8 +192,11 @@ export const createInspection = async (
   FundusPhotoRef: number,
   OctScanRef: number,
   VisualFieldRef: number,
-  LoginToken: string
+  LoginToken: string,
+  OpthalmologistID: number
 ) => {
+  console.log("Hello?");
+  console.log(OpthalmologistID);
   const Body = JSON.stringify({
     CustomerID,
     InspectionCountry,
@@ -202,6 +205,7 @@ export const createInspection = async (
     VisualFieldRef,
     LoginToken,
     TimeStamp: new Date(),
+    OpthalmologistID,
   });
 
   const res = await axios

@@ -21,17 +21,7 @@ import {
   downloadImage,
   getInspectionInfoCID,
 } from "../../API/API";
-
-const handleDownload = (url: string, filename: string) => {
-  axios
-    .get(url, {
-      responseType: "blob",
-    })
-    .then((res) => {
-      console.log(res);
-      fileDownload(res.data, filename);
-    });
-};
+import { getCountry, getFlag } from "../../Helpers/Country";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -119,7 +109,6 @@ export default function Customer() {
       const inspections = await getInspectionInfoCID(user.ID);
       for (const inspection of inspections) {
         if (inspection.LoginToken === user.loginToken) {
-          console.log("Found match");
           setInspectionData(inspection);
         }
       }
@@ -129,13 +118,10 @@ export default function Customer() {
   const [inspectionData, setInspectionData] = React.useState<any | undefined>(
     undefined
   );
-  const [values, setValues] = React.useState({
-    state: 0,
-  });
   const classes = useStyles();
 
   const history = useHistory();
-  console.log(user);
+
   const renderSwitch = (state: any) => {
     switch (state) {
       case "Waiting":
@@ -193,7 +179,6 @@ export default function Customer() {
                 alt="Profile picture"
                 src={ProfileExamplePic}
               />
-
               <Typography className={classes.hellotext}>
                 Hello customer {user.FirstName}&nbsp;
                 {user.LastName}!
@@ -201,7 +186,7 @@ export default function Customer() {
               <img
                 alt={"flag"}
                 className={classes.flag}
-                src={FinlandFlag}
+                src={getFlag(getCountry())}
                 width="200"
               />
             </div>

@@ -82,6 +82,7 @@ type InspectionDetails struct {
 	VisualFieldRef    int
 	TimeStamp         time.Time
 	LoginToken        string
+	OpthalmologistID  int
 }*/
 
 func InspectionFromInspectionDetails(details connection.InspectionDetails) db.Inspection {
@@ -94,6 +95,7 @@ func InspectionFromInspectionDetails(details connection.InspectionDetails) db.In
 		OctScanRef:         details.OctScanRef,
 		VisualFieldRef:     details.VisualFieldRef,
 		LoginToken:         details.LoginToken,
+		OpthalmologistID:	details.OpthalmologistID,
 	}
 }
 

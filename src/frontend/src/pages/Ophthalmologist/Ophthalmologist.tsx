@@ -24,6 +24,7 @@ import {
   getOpthalmologistCustomers,
   makeDecision,
 } from "../../API/API";
+import { getCountry, getFlag } from "../../Helpers/Country";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -121,7 +122,6 @@ interface CustomerData {
 }
 
 export default function Ophthamologist() {
-  console.log("opth");
   const [loading, setLoading] = React.useState(false);
   const [decisionLoading, setDecisionLoading] = React.useState(false);
   const [values, setValues] = React.useState({
@@ -132,9 +132,9 @@ export default function Ophthamologist() {
     const getCustomers = async () => {
       setLoading(true);
       let finalArray: CustomerData[] = [];
-      let map = new Map();
+
       const customersArray = await getOpthalmologistCustomers();
-      let promises: any[] = [];
+
       for (const customer of customersArray) {
         const newData = await getCustomerInfo(customer.CustomerID);
         let finalCustomerData = {
@@ -143,26 +143,11 @@ export default function Ophthamologist() {
         };
         finalArray.push(finalCustomerData);
       }
-      /*       customersArray.forEach((customer: any) => {
-        map.set(customer.CustomerID, customer);
-        promises.push(getCustomerInfo(customer.CustomerID));
-      });
-      await Promise.all(promises).then((values) => {
-        values.forEach((newCustomerData) => {
-          let initialCustomerData = map.get(newCustomerData.CustomerID);
-          let finalCustomerData = {
-            ...initialCustomerData,
-            ...newCustomerData,
-          };
-          finalArray.push(finalCustomerData);
-        });
-      });
-      console.log(finalArray); */
+
       finalArray = finalArray.filter((x) => x.Status !== "Approved");
       finalArray = finalArray.filter((x) => x.Status !== "Rejected");
       await Promise.all(
         finalArray.map(async (customer) => {
-          console.log(customer);
           const fundusFoto = await getImage(customer.FundusPhotoRef.toString());
           const octScan = await getImage(customer.OctScanRef.toString());
           const visualField = await getImage(
@@ -197,7 +182,6 @@ export default function Ophthamologist() {
   });
   const classes = useStyles();
   const handlePreview = (url: any) => {
-    console.log(url);
     setopenModal({
       ...openModal,
       url: url,
@@ -211,7 +195,7 @@ export default function Ophthamologist() {
   const [user, setUser] = React.useState(
     authenticationService.currentUserValue
   );
-  console.log(user);
+
   const renderSwitch = (state: ScreenStates) => {
     switch (state) {
       case 0:
@@ -232,7 +216,7 @@ export default function Ophthamologist() {
                   <img
                     alt={"flag"}
                     className={classes.flag}
-                    src={FinlandFlag}
+                    src={getFlag(getCountry())}
                     width="200"
                   />
                 </div>

@@ -41,4 +41,5 @@ type InspectionDetails struct {
 	VisualFieldRef    int
 	TimeStamp         time.Time
 	LoginToken        string
+	OpthalmologistID  int
 }
