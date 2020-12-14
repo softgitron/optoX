@@ -13,7 +13,6 @@ export const getCountry = (): Countries => {
 };
 
 export const getFlag = (country: Countries) => {
-  console.log(Countries.Finland);
   switch (country) {
     case Countries.Finland:
       return FinlandFlag;

@@ -46,9 +46,6 @@ export default function Asynchronous({
   selectAppointment: (index: any, customerInfo: any) => void;
   customers: CustomerData[] | undefined;
 }) {
-  React.useEffect(() => {
-    console.log("Rendered");
-  }, []);
   const classes = useStyles();
   const [loading, setLoading] = React.useState(false);
   const outlinedInputClasses = useOutlinedInputStyles();
@@ -59,15 +56,13 @@ export default function Asynchronous({
   const [chosenCustomer, setCustomer] = React.useState<
     CustomerData | undefined
   >(undefined);
-  console.log(values);
 
   const handleChange = (prop: any) => (event: any) => {
     setValues({ ...values, [prop]: event.target.value });
-    console.log("Should fire now");
+
     selectAppointment(event.target.value, chosenCustomer);
   };
   const chooseCustomer = (event: any) => {
-    console.log(event.target.value);
     const customerData = customers || [];
     setCustomer(customerData[event.target.value]);
     setValues({ ...values, appointment: "" });

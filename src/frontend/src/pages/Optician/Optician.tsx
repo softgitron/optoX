@@ -97,7 +97,6 @@ interface CustomerData {
   FullName: string;
 }
 export default function Optician() {
-  console.log("Hello i am optician");
   const [customers, setCustomers] = React.useState<CustomerData[] | undefined>(
     undefined
   );
@@ -126,7 +125,6 @@ export default function Optician() {
       });
       await Promise.all(promises).then((values) => {
         values.forEach((newCustomerData: any[]) => {
-          console.log(newCustomerData);
           let initialCustomerData = map.get(newCustomerData[0].CustomerID);
           initialCustomerData.Inspections = newCustomerData;
           finalArray.push(initialCustomerData);
@@ -146,9 +144,7 @@ export default function Optician() {
   const [user, setUser] = React.useState(
     authenticationService.currentUserValue
   );
-  console.log(user);
-  console.log(customers);
-  console.log(chosenCustomer);
+
   const renderSwitch = (state: ScreenStates) => {
     switch (state) {
       case 0:
@@ -250,7 +246,6 @@ export default function Optician() {
                           appointment: any,
                           customerInfo: any
                         ) => {
-                          console.log(appointment, customerInfo);
                           setValues({
                             ...values,
                             selectedAppointment: appointment,

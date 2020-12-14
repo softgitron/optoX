@@ -124,13 +124,12 @@ export default function InputAdornments(props: any) {
       let silmalaakariArray: any[] = [];
       const silmalaakarit = await getSilmalaakarit();
       for (const silmalaakari of silmalaakarit) {
-        console.log(silmalaakari);
         silmalaakariArray.push({
           name: silmalaakari.Name,
           id: silmalaakari.OpthalmologistID,
         });
       }
-      console.log(silmalaakariArray);
+
       setSilmalaakarit(silmalaakariArray);
     };
     getSilmaLaakarit();
@@ -181,7 +180,6 @@ export default function InputAdornments(props: any) {
     });
   };
   const handlePreview = (url: any) => {
-    console.log(url);
     setopenModal({
       ...openModal,
       url: url,
@@ -222,7 +220,7 @@ export default function InputAdornments(props: any) {
     setDone(false);
     setLoginToken(uuidv4().toUpperCase());
   };
-  console.log(values);
+
   return (
     <div className={classes.root}>
       <SimpleModal
@@ -478,7 +476,7 @@ export default function InputAdornments(props: any) {
           required={true}
           input={
             <OutlinedInput
-              labelWidth={140}
+              labelWidth={240}
               id="outlined-method"
               classes={outlinedInputClasses}
             />
@@ -522,7 +520,7 @@ export default function InputAdornments(props: any) {
             onClick={async () => {
               let a = false;
               setLoading(true);
-              console.log("uploading images...");
+
               const CustomerID = await createCustomer(
                 getCountry(),
                 values.socialnumber,
@@ -557,8 +555,7 @@ export default function InputAdornments(props: any) {
                 setLoading(false);
               });
               if (!Fundusfoto || !OctScan || !VisualField) return;
-              console.log("Creating inspection...");
-              console.log(values.silmalaakari);
+
               const res = await createInspection(
                 CustomerID,
                 getCountry(),
@@ -571,8 +568,7 @@ export default function InputAdornments(props: any) {
                 alert("Something went wrong!");
                 setLoading(false);
               });
-              console.log(res);
-              console.log(Fundusfoto, OctScan, VisualField);
+
               //after this show only Go back and make a new inspection etc. button that resets forms
               setLoading(false);
               setDone(true);

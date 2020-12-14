@@ -132,7 +132,6 @@ export default function Customer({
     }
   };
   const classes = useStyles();
-  console.log(values.state);
   const renderSwitch = (state: any) => {
     switch (state) {
       case "Waiting":

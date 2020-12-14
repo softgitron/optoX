@@ -114,7 +114,6 @@ export default function InputAdornments(props: any) {
       values.password
     );
     if (res) {
-      console.log(res);
       setValues({ ...values, error: "", loading: false });
       if (res === "Administrator") {
         history.push("/admin");

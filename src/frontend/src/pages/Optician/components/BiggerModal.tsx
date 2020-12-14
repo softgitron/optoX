@@ -37,7 +37,6 @@ export default function SimpleModal({
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
-  console.log(url);
 
   const handleClose = () => {
     setModal(false);

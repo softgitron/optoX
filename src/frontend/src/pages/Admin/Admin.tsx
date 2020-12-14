@@ -107,7 +107,7 @@ export default function Admin() {
   const [user, setUser] = React.useState(
     authenticationService.currentUserValue
   );
-  console.log(user);
+
   const renderSwitch = (state: ScreenStates) => {
     switch (state) {
       case ScreenStates.landScreen:

@@ -93,7 +93,6 @@ export default function InputAdornments(props: any) {
     const res = await authenticationService.tokenLogin(values.token);
 
     if (res) {
-      console.log(res);
       setValues({ ...values, error: "", loading: false });
       if (res === "Customer") {
         history.push("/customer");

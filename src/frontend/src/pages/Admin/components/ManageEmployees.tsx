@@ -89,7 +89,6 @@ export default function ManageEmployees({
   );
   //get employees through api
   const deleteEmployee = async (id: string) => {
-    console.log("deleting employee?");
     employees.employees.splice(
       employees.employees.findIndex((a) => a.id === id),
       1
@@ -104,8 +103,6 @@ export default function ManageEmployees({
     handleClick();
   };
   const setFilter = (search: string, role: number) => {
-    console.log(search);
-    console.log(role);
     if (search === "") {
       let newArray = employees.employees.filter(function (el) {
         return el.role === role || role === 2;
@@ -121,7 +118,6 @@ export default function ManageEmployees({
       );
     });
     setFilteredEmployees(newArray);
-    console.log(newArray);
   };
   return (
     <>

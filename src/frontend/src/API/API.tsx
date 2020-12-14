@@ -59,7 +59,7 @@ export const getOpticianCustomers = async () => {
 export const uploadImage = async (Fileupload: any) => {
   const formData: any = new FormData();
   const config: any = tokenConfig();
-  console.log(config);
+
   const auth = config.headers.Authentication;
   config.headers = {
     "content-type": "multipart/form-data",
@@ -73,7 +73,6 @@ export const uploadImage = async (Fileupload: any) => {
 };
 
 export const getImage = async (id: string) => {
-  console.log(id);
   let returnURL = null;
   const config: any = tokenConfig();
   const auth = config.headers.Authentication;
@@ -95,7 +94,7 @@ export const getImage = async (id: string) => {
       document.body.appendChild(link);
       //link.click();
     })
-    .catch((error) => console.log(error));
+    .catch((error) => null);
   return returnURL;
 };
 export const downloadImage = async (name: string, id: string) => {
@@ -114,14 +113,14 @@ export const downloadImage = async (name: string, id: string) => {
     .then((response) => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       returnURL = url;
-      console.log(url);
+
       const link = document.createElement("a");
       link.href = url;
       link.setAttribute("download", name + ".jpeg"); //or any other extension
       document.body.appendChild(link);
       link.click();
     })
-    .catch((error) => console.log(error));
+    .catch((error) => null);
   return returnURL;
 };
 export const customerGetOwnInfo = async (id: string) => {
@@ -150,8 +149,6 @@ export const makeDecision = async (inspectionID: string, isOK: boolean) => {
     Body,
     tokenConfig()
   );
-
-  console.log(res);
 };
 
 export const createCustomer = async (
@@ -179,7 +176,7 @@ export const createCustomer = async (
     const res = await axios
       .get(API + `/customer?Email=${Email}`, tokenConfig())
       .catch((e) => null);
-    console.log(res);
+
     if (res?.data.Email === "") {
       throw new Error("Customer creating error");
     }
@@ -195,8 +192,6 @@ export const createInspection = async (
   LoginToken: string,
   OpthalmologistID: number
 ) => {
-  console.log("Hello?");
-  console.log(OpthalmologistID);
   const Body = JSON.stringify({
     CustomerID,
     InspectionCountry,
@@ -211,5 +206,4 @@ export const createInspection = async (
   const res = await axios
     .post(API + "/inspection ", Body, tokenConfig())
     .catch((e) => null);
-  console.log(res);
 };

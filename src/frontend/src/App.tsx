@@ -7,17 +7,7 @@ import Optician from "./pages/Optician/Optician";
 import Opthalmologist from "./pages/Ophthalmologist/Ophthalmologist";
 import { PrivateRoute } from "./Helpers/PrivateRoute";
 
-import { authenticationService } from "./Helpers/Authenthication";
-
 export default function App() {
-  React.useEffect(() => {
-    authenticationService.currentUser.subscribe((user) => {
-      //subscribe to changes
-      if (user) {
-        console.log(user);
-      }
-    });
-  }, []);
   return (
     <Router>
       <Switch>

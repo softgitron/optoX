@@ -1,9 +1,9 @@
 import axios from "axios";
 import { BehaviorSubject } from "rxjs";
 import jwt_decode from "jwt-decode";
-const API = "http://" + window.location.hostname + "/api";
-console.log(API);
+
 const token = "OptoXAuthToken";
+const API = window.location.protocol + "//" + window.location.hostname + "/api";
 
 try {
   //in case that the token item is invalid, we delete it
@@ -35,7 +35,6 @@ async function login(email: string, password: string) {
   const body = JSON.stringify({ email, password });
   try {
     const res = await axios.post(API + "/authentication/employee", body);
-    console.log(res);
 
     const userObject: { [k: string]: any } = jwt_decode(
       res.data.Authentication
@@ -53,7 +52,6 @@ async function tokenLogin(customerToken: String) {
   const body = JSON.stringify({ token: customerToken });
   try {
     const res = await axios.post(API + "/authentication/customer", body);
-    console.log(res);
 
     const userObject: { [k: string]: any } = jwt_decode(
       res.data.Authentication
