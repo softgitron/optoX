@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net"
+	"os"
 	"time"
 
 	"github.com/cenkalti/rpc2"
@@ -15,7 +16,7 @@ const reconnectTime = 5 * time.Second
 // StartSyncClient starts service that works on
 // slave nodes
 func (se *Syncengine) StartSyncClient() {
-	host := "syncbackend-central"
+	host := fmt.Sprintf("syncbackend-central.%s.svc.cluster.local", os.Getenv("REGION"))
 
 	var err error
 	var connection net.Conn

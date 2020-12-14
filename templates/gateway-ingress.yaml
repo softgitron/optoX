@@ -50,6 +50,7 @@ spec:
           - pathType: "ImplementationSpecific"
             backend:
               serviceName: {{ $fullName }}
+              servicePort: {{ $svcPort }}
     {{- end }}
   {{- end }}
   {{- end }}

@@ -31,12 +31,19 @@
 - Update gcloud command: `gcloud components update`
 - Activate kubectl commands environment: `gcloud container clusters get-credentials optox-cluster`
 
-4. Build the application for the cloud
+4. Configure static IP
+
+- Create new static IP `gcloud compute addresses create central-static-ip --global`
+- Create new static IP `gcloud compute addresses create finland-static-ip --global`
+- Create new static IP `gcloud compute addresses create sweden-static-ip --global`
+- Create new static IP `gcloud compute addresses create norway-static-ip --global`
+
+5. Build the application for the cloud
 
 - Change project id `optox-298015` in _cloudbuild.yaml_ to your value
 - Build application using `gcloud builds submit --config ./cloudbuild.yaml ./`
 
-5. Deploy application to GCP
+6. Deploy application to GCP
 
 - Chnage project id `optox-298015` in _helm-values/\*-values-gcp_ to your value
 - Chnage ingress domain `*.sopala.fi` in _helm-values/\*-values-gcp_ to your value

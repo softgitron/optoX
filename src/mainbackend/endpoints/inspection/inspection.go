@@ -95,7 +95,7 @@ func InspectionFromInspectionDetails(details connection.InspectionDetails) db.In
 		OctScanRef:         details.OctScanRef,
 		VisualFieldRef:     details.VisualFieldRef,
 		LoginToken:         details.LoginToken,
-		OpthalmologistID:	details.OpthalmologistID,
+		OpthalmologistID:   details.OpthalmologistID,
 	}
 }
 
@@ -152,6 +152,8 @@ func Handler(res http.ResponseWriter, req *http.Request, h *connection.Handler) 
 		insp := h.Body.(connection.InspectionDetails)
 		body := InspectionFromInspectionDetails(insp)
 		body.Status = "InProgress"
+		body.OpticianID = h.Claims.EmployerID
+		body.OpticianCountry = h.Claims.Country
 		err := h.DBHandler.AddInspection(body)
 
 		if err != nil {
